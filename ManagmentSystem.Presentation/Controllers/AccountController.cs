@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ManagmentSystem.Presentation.Controllers
-{
+{ 
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -46,6 +46,13 @@ namespace ManagmentSystem.Presentation.Controllers
             }
 
             return RedirectToAction("Index", "Home", new { Area = userRole[0].ToString() });
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+
         }
     }
 }
