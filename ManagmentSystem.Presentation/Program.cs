@@ -1,7 +1,16 @@
+using ManagmentSystem.Business.Extentions;
+using ManagmentSystem.Infrastructure.Extentions;
+using ManagmentSystem.Presentation.Extentions;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddBusinessServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddPresentationServices();
+
 
 var app = builder.Build();
 
@@ -17,11 +26,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+    name: "Areas",
+    pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
+app.MapDefaultControllerRoute();
 app.Run();

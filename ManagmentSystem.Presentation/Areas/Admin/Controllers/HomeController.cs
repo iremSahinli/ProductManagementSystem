@@ -5,8 +5,11 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class AdminBaseController : Controller
+    public class HomeController : AdminBaseController
     {
-       
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
