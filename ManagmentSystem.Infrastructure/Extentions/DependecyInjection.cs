@@ -1,4 +1,5 @@
 ﻿using ManagmentSystem.Infrastructure.AppContext;
+using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
 using ManagmentSystem.Infrastructure.Seeds;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +22,13 @@ namespace ManagmentSystem.Infrastructure.Extentions
                 opt.UseSqlServer(configuration.GetConnectionString("AppConnectionString"));
             });
 
-        
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+
+
+
+
+
             AdminSeed.AdminSeedAsync(configuration).GetAwaiter().GetResult();
 
             return services;

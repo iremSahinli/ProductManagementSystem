@@ -23,6 +23,7 @@ namespace ManagmentSystem.Infrastructure.AppContext
         {
         }
         public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
