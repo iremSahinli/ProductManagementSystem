@@ -24,4 +24,8 @@
     <ProjectReference Include="..\ManagmentSystem.Domain\ManagmentSystem.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataAccess\EntityFramework\" />
+  </ItemGroup>
+
 </Project>
