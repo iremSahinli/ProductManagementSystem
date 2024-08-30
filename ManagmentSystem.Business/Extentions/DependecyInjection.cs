@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using ManagmentSystem.Business.Services.CategoryServices;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace ManagmentSystem.Business.Extentions
 
         {
 
+            services.AddScoped<ICategoryService, CategoryService>();
 
             return services;
         }

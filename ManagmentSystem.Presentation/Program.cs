@@ -31,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "Areas",
-    pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 app.MapDefaultControllerRoute();
 app.Run();
