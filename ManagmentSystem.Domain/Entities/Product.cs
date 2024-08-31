@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace ManagmentSystem.Domain.Entities
 {
-    public class Category : AuditableEntity
+    public class Product:AuditableEntity
     {
-        public Category()
+        public Product()
         {
-            ProductCategories = new HashSet<ProductCategory>();
+            ProductCategories=new HashSet<ProductCategory>();
         }
-        public string CategoryName { get; set; }
-        public string Description { get; set; }
+        public string ProductName { get; set; }
+        public string ProductDescription { get; set; }
+        public double ProductPrice { get; set; }
 
         // Nav Prop
         public virtual IEnumerable<ProductCategory> ProductCategories { get; set; }

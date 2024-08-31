@@ -66,6 +66,11 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             return new SuccessDataResult<CategoryDTO>(category.Adapt<CategoryDTO>(), "Kategori getirildi");
         }
 
+        public async Task<string>? GetNameById(Guid categoryId)
+        {
+            return (await _categoryRepository.GetByIdAsync(categoryId)).CategoryName;
+        }
+
         public async Task<IResult> UpdateAsync(CategoryUpdateDTO categoryUpdateDTO)
         {
             var updatingCategory = await _categoryRepository.GetByIdAsync(categoryUpdateDTO.Id);
