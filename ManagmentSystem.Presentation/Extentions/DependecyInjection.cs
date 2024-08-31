@@ -12,7 +12,7 @@ namespace ManagmentSystem.Presentation.Extentions
 
 
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+           // services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             return services;
         }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ManagmentSystem.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class ilk : Migration
+    public partial class RemoteDbTransfer : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
