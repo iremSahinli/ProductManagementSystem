@@ -1,5 +1,7 @@
 ﻿using ManagmentSystem.Infrastructure.AppContext;
 using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
+using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
+using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
 using ManagmentSystem.Infrastructure.Seeds;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,9 +25,9 @@ namespace ManagmentSystem.Infrastructure.Extentions
             });
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
-
-
+            services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
 
 
 

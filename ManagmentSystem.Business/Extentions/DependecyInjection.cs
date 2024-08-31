@@ -1,4 +1,5 @@
 ﻿using ManagmentSystem.Business.Services.CategoryServices;
+using ManagmentSystem.Business.Services.ProductServices;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace ManagmentSystem.Business.Extentions
         {
 
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
 
             return services;
         }
