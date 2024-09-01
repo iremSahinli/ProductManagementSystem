@@ -1,5 +1,7 @@
-﻿using ManagmentSystem.Business.Services.CategoryServices;
+﻿using ManagmentSystem.Business.DTOs.UserProfileDTOs;
+using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Business.Services.ProductServices;
+using ManagmentSystem.Business.Services.UserProfileServices;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,7 @@ namespace ManagmentSystem.Business.Extentions
 
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUserProfileService, UserProfileService>();
 
             return services;
         }
