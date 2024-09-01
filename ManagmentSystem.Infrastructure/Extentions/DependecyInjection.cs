@@ -2,6 +2,7 @@
 using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
+using ManagmentSystem.Infrastructure.Repositories.UserProfileRepositories;
 using ManagmentSystem.Infrastructure.Seeds;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +29,7 @@ namespace ManagmentSystem.Infrastructure.Extentions
             services.AddScoped<IProductRepository, ProductRepository>();
 
             services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
-
+            services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 
 
             AdminSeed.AdminSeedAsync(configuration).GetAwaiter().GetResult();

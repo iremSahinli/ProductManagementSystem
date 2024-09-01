@@ -1,0 +1,29 @@
+﻿@model ManagmentSystem.Business.DTOs.UserProfileDTOs.UserProfileDTO
+
+@{
+    ViewData["Title"] = "Profile Settings";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-2">First Name:</dt>
+            <dd class="col-sm-10">@Model.FirstName</dd>
+
+            <dt class="col-sm-2">Last Name:</dt>
+            <dd class="col-sm-10">@Model.LastName</dd>
+
+            <dt class="col-sm-2">Phone Number:</dt>
+            <dd class="col-sm-10">@Model.PhoneNumber</dd>
+
+            <dt class="col-sm-2">Date of Birth:</dt>
+            <dd class="col-sm-10">@Model.DateOfBirth?.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-2">Address:</dt>
+            <dd class="col-sm-10">@Model.Address</dd>
+        </dl>
+    </div>
+</div>
+
