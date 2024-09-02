@@ -9,16 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mapster;
+using Microsoft.EntityFrameworkCore;
+using ManagmentSystem.Infrastructure.AppContext;
 
 namespace ManagmentSystem.Business.Services.UserProfileServices
 {
     public class UserProfileService : IUserProfileService
     {
         private readonly IUserProfileRepository _userProfileRepository;
+        private readonly AppDbContext _context;
 
-        public UserProfileService(IUserProfileRepository userProfileRepository)
+        public UserProfileService(IUserProfileRepository userProfileRepository, AppDbContext context)
         {
             _userProfileRepository = userProfileRepository;
+            _context = context;
         }
 
         public async Task<IResult> CreateUserAsync(UserProfileDTO userProfileDTO)
@@ -27,6 +31,25 @@ namespace ManagmentSystem.Business.Services.UserProfileServices
             await _userProfileRepository.AddAsync(newUserProfile);
             await _userProfileRepository.SaveChangeAsync();
             return new SuccessResult("Kullanıcı profili başarıyla oluşturuldu.");
+        }
+
+        public async Task<List<UserDTO>> GetAllUserProfilesAsync()
+        {
+            var profiles = await _userProfileRepository.GetAllAsync();
+            var userProfilesWithEmail = new List<UserDTO>();
+
+            foreach (var profile in profiles)
+            {
+                var email = await _context.Users
+                                          .Where(u => u.Id == profile.IdentityUserId)
+                                          .Select(u => u.Email)
+                                          .FirstOrDefaultAsync();
+                var userProfileDTO = profile.Adapt<UserDTO>();
+                userProfileDTO.Mail = email;
+                userProfilesWithEmail.Add(userProfileDTO);
+            }
+
+            return userProfilesWithEmail;
         }
 
         public async Task<UserProfileDTO?> GetUserProfileAsync(string identityUserId)
@@ -39,6 +62,7 @@ namespace ManagmentSystem.Business.Services.UserProfileServices
             }
 
             return userProfile.Adapt<UserProfileDTO>();
+
 
         }
 
@@ -68,6 +92,6 @@ namespace ManagmentSystem.Business.Services.UserProfileServices
             return new SuccessResult("Kullanıcı profili başarıyla güncellendi.");
         }
 
-       
+
     }
 }
