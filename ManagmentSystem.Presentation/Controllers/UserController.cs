@@ -26,7 +26,7 @@ namespace ManagmentSystem.Presentation.Controllers
                 return RedirectToAction("Create");
             }
 
-            return View(userProfile); 
+            return View(userProfile);
         }
 
         public async Task<IActionResult> ProfileSettings()
@@ -57,7 +57,7 @@ namespace ManagmentSystem.Presentation.Controllers
                 return View(model);
             }
 
-            var userProfileDTO = model.Adapt<UserProfileDTO>();  
+            var userProfileDTO = model.Adapt<UserProfileDTO>();
             userProfileDTO.IdentityUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var result = await _userProfileService.CreateUserAsync(userProfileDTO);

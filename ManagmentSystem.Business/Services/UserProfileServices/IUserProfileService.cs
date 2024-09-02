@@ -14,7 +14,9 @@ namespace ManagmentSystem.Business.Services.UserProfileServices
         Task<IResult> UpdateUserAsync(UserProfileDTO userProfileDTO);
         Task<UserProfileDTO?> GetUserProfileAsync(string identityUserId); 
 
-        Task<UserProfileDTO?> GetUserProfileByIdAsync(Guid userId); 
+        Task<UserProfileDTO?> GetUserProfileByIdAsync(Guid userId);
+        Task<List<UserDTO>> GetAllUserProfilesAsync();
+
 
     }
 }

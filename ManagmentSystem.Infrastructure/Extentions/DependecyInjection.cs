@@ -32,6 +32,7 @@ namespace ManagmentSystem.Infrastructure.Extentions
             services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 
 
+            
             AdminSeed.AdminSeedAsync(configuration).GetAwaiter().GetResult();
 
             return services;
