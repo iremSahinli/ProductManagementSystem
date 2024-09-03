@@ -2,7 +2,6 @@
 using ManagmentSystem.Business.DTOs.ProductDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Business.Services.ProductServices;
-using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs;
 using Mapster;
@@ -53,16 +52,22 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
                 return View(model);
             }
-            var selectedCategoryIds = model.Categories != null
-                    ? model.Categories.Where(x => x.IsSelected == true).Select(x => x.Id).ToList() : new List<Guid>();
-            var productCreateDTO = model.Adapt<ProductCreateDTO>();
-            productCreateDTO.SelectedCategories = selectedCategoryIds;
+            var productCreateDTO = new ProductCreateDTO
+            {
+                ProductName = model.ProductName,
+                ProductDescription = model.ProductDescription,
+                ProductPrice = model.ProductPrice,
+                SelectedCategoryId = model.SelectedCategoryId,
+            };
+
+            // Ürünü ekleme işlemi
             var result = await _productService.AddAsync(productCreateDTO);
             if (!result.IsSucces)
             {
                 Console.Out.WriteLineAsync(result.Message);
                 return View(model);
             }
+
             Console.Out.WriteLineAsync(result.Message);
             return RedirectToAction("Index");
         }

@@ -12,5 +12,7 @@ namespace ManagmentSystem.Business.DTOs.ProductDTOs
         public string ProductDescription { get; set; }
         public double ProductPrice { get; set; }
         public List<Guid> SelectedCategories { get; set; }=new List<Guid>();
+        public Guid SelectedCategoryId { get; set; }  // Tek kategori için
+
     }
 }
