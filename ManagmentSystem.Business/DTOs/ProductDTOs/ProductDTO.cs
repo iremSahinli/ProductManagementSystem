@@ -13,7 +13,6 @@ namespace ManagmentSystem.Business.DTOs.ProductDTOs
         public string ProductDescription { get; set; }
         public double ProductPrice { get; set; }
         public List<string> CategoryName { get; set; } = new List<string>();
-        //public Guid CategoryId { get; set; }
-        //public string CategoryName { get; set; }
+        
     }
 }

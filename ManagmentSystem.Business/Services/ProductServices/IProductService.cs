@@ -19,5 +19,6 @@ namespace ManagmentSystem.Business.Services.ProductServices
         Task<IDataResult<ProductDTO>> GetByIdAsync(Guid prodcutId);
         Task<IDataResult<List<Guid>>> GetCategoryIdsByProductId(Guid? productId);
         Task<double> GetPriceByProductId(Guid productId);
+        Task<string> GetCategoryNameByProductIdAsync(Guid productId);
     }
 }

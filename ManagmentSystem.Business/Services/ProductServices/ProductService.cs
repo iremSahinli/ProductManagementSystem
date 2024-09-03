@@ -4,6 +4,7 @@ using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Domain.Entities;
 using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Domain.Utilities.Interfaces;
+using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
 using Mapster;
@@ -20,11 +21,13 @@ namespace ManagmentSystem.Business.Services.ProductServices
         private readonly IProductRepository _productRepository;
         private readonly IProductCategoryRepository _productCategoryRepository;
         private readonly ICategoryService _categoryService;
-        public ProductService(IProductRepository productRepository, IProductCategoryRepository productCategoryRepository, ICategoryService categoryService)
+        private readonly ICategoryRepository _categoryRepository;
+        public ProductService(IProductRepository productRepository, IProductCategoryRepository productCategoryRepository, ICategoryService categoryService, ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
             _productCategoryRepository = productCategoryRepository;
             _categoryService = categoryService;
+            _categoryRepository = categoryRepository;
         }
 
         public async Task<IResult> AddAsync(ProductCreateDTO productCreateDTO)
@@ -137,7 +140,7 @@ namespace ManagmentSystem.Business.Services.ProductServices
             }
             return new SuccessDataResult<ProductDTO>(productDto, "Kategori Görüntüleme Başarılı");
         }
-        
+
         public async Task<IDataResult<List<Guid>>> GetCategoryIdsByProductId(Guid? productId)
         {
             var categoryIds = new List<Guid>();
@@ -148,6 +151,8 @@ namespace ManagmentSystem.Business.Services.ProductServices
             }
             return new SuccessDataResult<List<Guid>>(categoryIds, "Kategori ID'ler listelendi.");
         }
+
+
 
         public async Task<double> GetPriceByProductId(Guid productId)
         {
@@ -189,6 +194,19 @@ namespace ManagmentSystem.Business.Services.ProductServices
             {
                 return new ErrorResult("Hata: " + ex.Message);
             }
+        }
+
+        public async Task<string> GetCategoryNameByProductIdAsync(Guid productId)
+        {
+            var productCategory = await _productCategoryRepository.GetAsync(pc => pc.ProductId == productId);
+            var categoryId = productCategory?.CategoryId;
+
+            if (categoryId == null)
+            {
+                return string.Empty;
+            }
+            var category = await _categoryRepository.GetByIdAsync(categoryId.Value);
+            return category.CategoryName;
         }
     }
 }
