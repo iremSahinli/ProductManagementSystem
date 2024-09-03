@@ -33,30 +33,44 @@ namespace ManagmentSystem.Business.Services.ProductServices
             {
                 return new ErrorResult("Ürün Sistemde Mevcut");
             }
-            try
-            {
-                var newProduct = productCreateDTO.Adapt<Product>();
-                await _productRepository.AddAsync(newProduct);
 
-                foreach (var categoryId in productCreateDTO.SelectedCategories)
-                {
-                    var newProductCategory = new ProductCategory()
-                    {
-                        CategoryId = categoryId,
-                        ProductId = newProduct.Id
-                    };
-                    await _productCategoryRepository.AddAsync(newProductCategory);
-                    // await _productCategoryRepository.SaveChangeAsync();
-                }
-                await _productRepository.SaveChangeAsync();
-                return new SuccessResult("Ürün Ekeleme Başarılı");
-            }
-            catch (Exception ex)
+            // Transaction oluşturma
+            using (var transaction = await _productRepository.BeginTransactionAsync())
             {
-                return new ErrorResult("Hata: " + ex.Message);
+                try
+                {
+                    // Yeni ürünü ekleme
+                    var newProduct = productCreateDTO.Adapt<Product>();
+                    await _productRepository.AddAsync(newProduct);
+
+                    // Seçilen kategori için ProductCategory tablosuna kayıt ekleme
+                    if (productCreateDTO.SelectedCategoryId != Guid.Empty)
+                    {
+                        var newProductCategory = new ProductCategory
+                        {
+                            CategoryId = productCreateDTO.SelectedCategoryId,
+                            ProductId = newProduct.Id
+                        };
+                        await _productCategoryRepository.AddAsync(newProductCategory);
+                    }
+
+                    // Değişiklikleri kaydetme
+                    await _productRepository.SaveChangeAsync();
+                    await _productCategoryRepository.SaveChangeAsync();
+
+                    // Transaction'ı onaylama
+                    await transaction.CommitAsync();
+
+                    return new SuccessResult("Ürün Ekleme Başarılı");
+                }
+                catch (Exception ex)
+                {
+                    // Hata durumunda transaction'ı geri alma
+                    await transaction.RollbackAsync();
+                    return new ErrorResult("Hata: " + ex.Message);
+                }
             }
         }
-
         public async Task<IResult> DeleteAsync(Guid productId)
         {
             var deletingProduct = await _productRepository.GetByIdAsync(productId);
