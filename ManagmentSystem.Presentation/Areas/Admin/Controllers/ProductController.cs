@@ -2,6 +2,7 @@
 using ManagmentSystem.Business.DTOs.ProductDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Business.Services.ProductServices;
+using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs;
 using Mapster;
@@ -13,11 +14,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IProductRepository _productRepository;
 
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _productRepository = productRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -42,7 +45,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 Categories = await GetCategories()
             };
             return View(productCreateVM);
-        }        
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create(AdminProductCreateVM model)
@@ -107,18 +110,23 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
         public async Task<IActionResult> Details(Guid id)
         {
-            var result = await _productService.GetByIdAsync(id);
-            if (!result.IsSucces)
+            var product = await _productRepository.GetByIdAsync(id);
+            if (product == null)
             {
-                Console.Out.WriteLineAsync(result.Message);
                 return RedirectToAction("Index");
             }
-            return View(result.Data.Adapt<AdminProductDetailVM>());
-            //CategoryName listesini tek bir string haline getiriyoruz
-            //var adminProductDetailVM = result.Data.Adapt<AdminProductDetailVM>();
-            //adminProductDetailVM.CategoryName = string.Join(", ", result.Data.CategoryName);
+            var categoryName = await _productService.GetCategoryNameByProductIdAsync(id);
 
-            //return View(adminProductDetailVM);
+            var model = new AdminProductDetailVM
+            {
+                Id = product.Id,
+                ProductName = product.ProductName,
+                ProductDescription = product.ProductDescription,
+                ProductPrice = product.ProductPrice,
+                CategoryName = categoryName,
+
+            };
+            return View(model);
         }
 
         public async Task<IActionResult> Delete(Guid id)
