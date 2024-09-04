@@ -2,12 +2,15 @@
 using ManagmentSystem.Business.DTOs.ProductDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Domain.Entities;
+using ManagmentSystem.Domain.Enums;
 using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Domain.Utilities.Interfaces;
+using ManagmentSystem.Infrastructure.AppContext;
 using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
 using Mapster;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,12 +25,14 @@ namespace ManagmentSystem.Business.Services.ProductServices
         private readonly IProductCategoryRepository _productCategoryRepository;
         private readonly ICategoryService _categoryService;
         private readonly ICategoryRepository _categoryRepository;
-        public ProductService(IProductRepository productRepository, IProductCategoryRepository productCategoryRepository, ICategoryService categoryService, ICategoryRepository categoryRepository)
+        private readonly AppDbContext _context;
+        public ProductService(IProductRepository productRepository, IProductCategoryRepository productCategoryRepository, ICategoryService categoryService, ICategoryRepository categoryRepository, AppDbContext context)
         {
             _productRepository = productRepository;
             _productCategoryRepository = productCategoryRepository;
             _categoryService = categoryService;
             _categoryRepository = categoryRepository;
+            _context = context;
         }
 
         public async Task<IResult> AddAsync(ProductCreateDTO productCreateDTO)
@@ -76,27 +81,45 @@ namespace ManagmentSystem.Business.Services.ProductServices
         }
         public async Task<IResult> DeleteAsync(Guid productId)
         {
-            var deletingProduct = await _productRepository.GetByIdAsync(productId);
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    var deletingProduct = await _productRepository.GetByIdAsync(productId);
 
-            foreach (var item in deletingProduct.ProductCategories)
-            {
-                await _productCategoryRepository.DeleteAsync(item);
+                    if (deletingProduct == null)
+                    {
+                        return new ErrorResult("Silinecek Ürün Bulunamadı");
+                    }
+
+                    
+                    foreach (var item in deletingProduct.ProductCategories)
+                    {
+                        await _productCategoryRepository.DeleteAsync(item);
+                    }
+
+                    
+                    await _productRepository.DeleteAsync(deletingProduct);
+
+                    
+                    await _productRepository.SaveChangeAsync();
+
+                    
+                    await transaction.CommitAsync(); //Transaction işlemini bitir.
+
+                    return new SuccessResult("Ürün Silme İşlemi Başarılı");
+                }
+                catch (Exception ex)
+                {
+                   
+                    await transaction.RollbackAsync(); //Herhangi bir tabloda silme işlemi hatalıysa tüm işlemleri geri al.
+                    return new ErrorResult("Hata: " + ex.Message);
+                }
             }
-            if (deletingProduct == null)
-            {
-                return new ErrorResult("Silinecek Ürün Bulunamadı");
-            }
-            try
-            {
-                await _productRepository.DeleteAsync(deletingProduct);
-                await _productRepository.SaveChangeAsync();
-                return new SuccessResult("Ürün Silme İşlemi Başarılı");
-            }
-            catch (Exception ex)
-            {
-                return new ErrorResult("Hata: " + ex.Message);
-            }
+
         }
+
+
 
         public async Task<IDataResult<List<ProductListDTO>>> GetAllAsync()
         {
@@ -207,6 +230,11 @@ namespace ManagmentSystem.Business.Services.ProductServices
             }
             var category = await _categoryRepository.GetByIdAsync(categoryId.Value);
             return category.CategoryName;
+        }
+
+        public async Task<bool> IsCategoryUsedAsync(Guid categoryId)
+        {
+            return await _context.ProductCategories.AnyAsync(pc => pc.CategoryId == categoryId && pc.Status != Status.Deleted); 
         }
     }
 }

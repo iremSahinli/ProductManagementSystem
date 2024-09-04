@@ -1,5 +1,6 @@
 ﻿using ManagmentSystem.Business.DTOs.CategoryDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
+using ManagmentSystem.Business.Services.ProductServices;
 using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using Mapster;
@@ -11,10 +12,12 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
     {
 
         private readonly ICategoryService _categoryService;
+        private readonly IProductService _productService;
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController(ICategoryService categoryService, IProductService productService)
         {
             _categoryService = categoryService;
+            _productService = productService;
         }
 
 
@@ -56,6 +59,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
+            var isCategoryUsed = await _productService.IsCategoryUsedAsync(id); //Product tablosunda kullanılıyor mu kontrol eder.
+            if (isCategoryUsed)
+            {
+                await Console.Out.WriteLineAsync("Silmek İstediğiniz Kategori Üründe Kullanılıyor, Silinemez ");
+                return RedirectToAction("Index");
+            }
+
             var result = await _categoryService.DeleteAsync(id);
             if (!result.IsSucces)
             {
@@ -66,6 +76,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             return RedirectToAction("Index");
 
         }
+
+
 
 
         public async Task<IActionResult> Update(Guid id)

@@ -20,5 +20,11 @@ namespace ManagmentSystem.Business.Services.ProductServices
         Task<IDataResult<List<Guid>>> GetCategoryIdsByProductId(Guid? productId);
         Task<double> GetPriceByProductId(Guid productId);
         Task<string> GetCategoryNameByProductIdAsync(Guid productId);
+        /// <summary>
+        /// Silme işlemi için kategorinin kullanılıp kullanılmadığını kontrol eden Asenkron yapısı.
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns>geriye true veya false döner.</returns>
+        Task<bool> IsCategoryUsedAsync(Guid categoryId);  //silinmek istenen category product tablosunda kullanılıyormu?.
     }
 }
