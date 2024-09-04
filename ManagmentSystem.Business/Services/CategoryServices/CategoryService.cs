@@ -1,9 +1,12 @@
 ﻿using ManagmentSystem.Business.DTOs.CategoryDTOs;
 using ManagmentSystem.Domain.Entities;
+using ManagmentSystem.Domain.Enums;
 using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Domain.Utilities.Interfaces;
+using ManagmentSystem.Infrastructure.AppContext;
 using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
 using Mapster;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +18,14 @@ namespace ManagmentSystem.Business.Services.CategoryServices
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
+        private readonly AppDbContext _context;
 
 
-        public CategoryService(ICategoryRepository categoryRepository)
+
+        public CategoryService(ICategoryRepository categoryRepository, AppDbContext context)
         {
             _categoryRepository = categoryRepository;
+            _context = context;
         }
 
 
@@ -40,10 +46,7 @@ namespace ManagmentSystem.Business.Services.CategoryServices
 
         public async Task<IResult> DeleteAsync(Guid id)
         {
-            //if (await _categoryRepository.AnyAsync(c =>c.Id == id))
-            //{
-            //    return new ErrorResult("Kategori Kullanılıyor");
-            //}
+
             var deletingCategory = await _categoryRepository.GetByIdAsync(id);
             if (deletingCategory is null)
             {
@@ -71,6 +74,7 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             return (await _categoryRepository.GetByIdAsync(categoryId)).CategoryName;
         }
 
+
         public async Task<IResult> UpdateAsync(CategoryUpdateDTO categoryUpdateDTO)
         {
             var updatingCategory = await _categoryRepository.GetByIdAsync(categoryUpdateDTO.Id);
@@ -78,6 +82,13 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             {
                 return new ErrorResult("Güncellenecek Kategori Bulunamadı");
             }
+
+            bool isCategoryUsed = await IsCategoryUsedAsync(categoryUpdateDTO.Id);
+            if (isCategoryUsed)
+            {
+                return new ErrorResult("Güncellenmek istenen kategori sistemde kullanıldığından güncelleme işlemi yapılamaz");
+            }
+
             try
             {
                 var updatedCategory = categoryUpdateDTO.Adapt(updatingCategory);
@@ -90,6 +101,12 @@ namespace ManagmentSystem.Business.Services.CategoryServices
 
                 return new ErrorResult("Hata: " + ex.Message);
             }
+        }
+
+        public async Task<bool> IsCategoryUsedAsync(Guid categoryId)
+        {
+            return await _context.ProductCategories
+                .AnyAsync(pc => pc.CategoryId == categoryId && pc.Status != Status.Deleted);
         }
     }
 }
