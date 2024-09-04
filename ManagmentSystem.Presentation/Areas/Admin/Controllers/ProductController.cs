@@ -2,6 +2,7 @@
 using ManagmentSystem.Business.DTOs.ProductDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Business.Services.ProductServices;
+using ManagmentSystem.Infrastructure.AppContext;
 using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs;
@@ -15,12 +16,14 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly IProductRepository _productRepository;
+       
 
         public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository)
         {
             _productService = productService;
             _categoryService = categoryService;
             _productRepository = productRepository;
+           
         }
 
         public async Task<IActionResult> Index()
