@@ -10,10 +10,12 @@ namespace ManagmentSystem.Presentation.Controllers
     public class UserController : Controller
     {
         private readonly IUserProfileService _userProfileService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public UserController(IUserProfileService userProfileService)
+        public UserController(IUserProfileService userProfileService, IWebHostEnvironment webHostEnvironment)
         {
             _userProfileService = userProfileService;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public async Task<IActionResult> Index()
@@ -59,6 +61,25 @@ namespace ManagmentSystem.Presentation.Controllers
 
             var userProfileDTO = model.Adapt<UserProfileDTO>();
             userProfileDTO.IdentityUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (model.ProfileImage != null)
+            {
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads"); Directory.CreateDirectory(uploadsFolder);
+
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ProfileImage.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                { 
+                    await model.ProfileImage.CopyToAsync(fileStream); 
+                }
+                userProfileDTO.ProfileImage = "/uploads/" + uniqueFileName;
+            }
+
+
+
+
+
 
             var result = await _userProfileService.CreateUserAsync(userProfileDTO);
 
