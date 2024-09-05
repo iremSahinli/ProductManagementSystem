@@ -14,9 +14,8 @@ namespace ManagmentSystem.Domain.Entities
         public string PhoneNumber { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Address { get; set; }
-
-        public string? Mail { get; set; }
+        public string Mail {  get; set; }
         public string IdentityUserId { get; set; }
-        public string? ProfileImage {  get; set; }
+        public string? ProfileImage { get; set; }
     }
 }
