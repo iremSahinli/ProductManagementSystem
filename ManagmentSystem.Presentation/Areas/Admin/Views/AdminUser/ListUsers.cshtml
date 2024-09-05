@@ -1,27 +1,22 @@
 ﻿@model IEnumerable<ManagmentSystem.Presentation.Areas.Admin.Models.UserVMs.AdminUserListVM>
 
 @{
-    ViewData["Title"] = "ListUsers";
+    ViewData["Title"] = "Kullanıcılar";
 }
 
 <h1>Users</h1>
 
+<div class="button-container mb-3">
+    <a href="@Url.Action("Create", "AdminUser")" class="btn btn-success">Create New User</a>
+</div>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LockoutEnabled)
-            </th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mail</th>
+            <th>Lock or Unlock Swich</th>
             <th></th>
         </tr>
     </thead>
@@ -49,17 +44,14 @@
                     </div>
                 </td>
                 <td>
-                    <!-- Create ve Edit bağlantıları -->
-                    <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Edit</a>
-
+                    <!-- Düzenle butonu -->
+                    <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Update</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<div class="button-container">
-    <a href="@Url.Action("Create", "AdminUser")" class="btn btn-success">Create</a>
-</div>
+
 <style>
     .switch {
         position: relative;
@@ -119,7 +111,7 @@
             element.addEventListener('change', function () {
                 var userId = this.getAttribute('data-user-id');
                 var isEnabled = this.checked;
-                console.log("User ID: " + userId + " | LockoutEnabled: " + isEnabled);
+                console.log("Kullanıcı ID: " + userId + " | Kilit Durumu: " + isEnabled);
 
                 $.ajax({
                     url: '/Admin/AdminUser/UpdateLockoutStatus',

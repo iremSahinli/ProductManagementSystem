@@ -6,36 +6,36 @@
 
 <h1>Update</h1>
 
-<h4>AdminCategoryUpdateVM</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Update">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
                 <input asp-for="Id" class="form-control" />
                 <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
-                <label asp-for="CategoryName" class="control-label"></label>
+                <label asp-for="CategoryName" class="control-label">Category Name</label>@* Category Name Ekranda görünen Yazı *@
                 <input asp-for="CategoryName" class="form-control" />
                 <span asp-validation-for="CategoryName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">Description</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <p></p>
+            <div class="form-group" style="margin-top: 10px">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div style="margin-top: 5px;">
+    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
 </div>
 
 @section Scripts {

@@ -1,48 +1,46 @@
 ﻿@model ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs.AdminProductDetailVM
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detaylar";
 }
 
 <h1>Details</h1>
 
 <div>
-    <h4>AdminProductDetailVM</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        @* <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Id)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductName)
+        </dd> *@
+        <dt class="col-sm-2">
+            Product Name
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ProductName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductPrice)
+        <dt class="col-sm-2">
+            Product Price
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ProductPrice)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductDescription)
+        <dt class="col-sm-2">
+            Product Description
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ProductDescription)
         </dd>
-
-        <dt class="col-sm-2">    @Html.DisplayNameFor(model => model.CategoryName)</dt>
-        <dd class="col-sm-10">    @Html.DisplayFor(model => model.CategoryName)</dd>
-        
-
-
+        <dt class="col-sm-2">
+            Category Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
     </dl>
 </div>
-<div>
-    
-    <a asp-action="Index">Back to List</a>
+<div style="margin-top: 5px;">
+    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
 </div>
