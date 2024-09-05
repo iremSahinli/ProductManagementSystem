@@ -7,7 +7,10 @@
         public string PhoneNumber { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Address { get; set; }
-        
-        public IFormFile ProfileImage { get; set; }
+
+        public string IdentityUserId { get; set; }
+        public IFormFile? ProfileImage { get; set; }
+        public string ProfileImagePath { get; set; }
+
     }
 }
