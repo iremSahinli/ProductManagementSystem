@@ -1,4 +1,6 @@
 ﻿using ManagmentSystem.Business.Services.UserProfileServices;
+using ManagmentSystem.Domain.Core.Helpers;
+using ManagmentSystem.Domain.Entities;
 using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Infrastructure.AppContext;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
@@ -37,11 +39,87 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
         public async Task<IActionResult> ListUsers()
         {
-            var users = await _userProfileService.GetAllUserProfilesAsync();
-            var usersVm = users.Adapt<List<AdminUserListVM>>();
+            var userProfiles = await _userProfileService.GetAllUserProfilesAsync();
 
-            return View(usersVm);
+            // Kullanıcıları IdentityUser tablosundan al ve LockoutEnabled bilgilerini ekle
+            var userList = new List<AdminUserListVM>();
+            foreach (var profile in userProfiles)
+            {
+                var identityUser = await _userManager.FindByIdAsync(profile.IdentityUserId);
+
+                if (identityUser != null)
+                {
+                    var userVm = new AdminUserListVM
+                    {
+                        Id = profile.Id,
+                        FirstName = profile.FirstName,
+                        LastName = profile.LastName,
+                        Mail = profile.Mail,
+                        LockoutEnabled = identityUser.LockoutEnabled
+                    };
+                    userList.Add(userVm);
+                }
+            }
+
+            return View(userList);
         }
+
+        public IActionResult Create()
+        {
+            var model = new AdminUserCreateVM();
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Create(AdminUserCreateVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Model geçerli değilse, kullanıcıyı oluşturma sayfasına geri dön
+                return View(model);
+            }
+
+            // IdentityUser nesnesini oluştur
+            var newUser = new IdentityUser
+            {
+                UserName = model.Mail,
+                Email = model.Mail
+            };
+
+            string password = PasswordGenerator.GeneratePassword(); //Burada passwordGenerator statik yapıdan rastgele şifre ataması yapıyoruz.
+
+            var result = await _userManager.CreateAsync(newUser, password); // Şifre belirleyin
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError(string.Empty, "Kullanıcı oluşturma başarısız.");
+            }
+
+            // UserProfile nesnesini oluştur
+            var userProfile = new UserProfile
+            {
+
+                IdentityUserId = newUser.Id, //newUser alıyoruz.
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber,
+                DateOfBirth = model.DateOfBirth,
+                Address = model.Address,
+                ProfileImage = model.ProfileImage
+            };
+
+
+            _context.UserProfile.Add(userProfile);
+            await _context.SaveChangesAsync();
+
+
+            return RedirectToAction("ListUsers", "AdminUser");
+        }
+
+
+
+
+
 
 
 
@@ -55,44 +133,93 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             Console.WriteLine($"Kullanıcı ID: {id}");
 
 
-
-
             var userProfile = await _userProfileService.GetUserProfileByIdAsync(id);
             if (userProfile == null || userProfile.IdentityUserId == null)
             {
                 return RedirectToAction("ListUsers", "AdminUser");
             }
 
-
             var user = await _context.Users
                 .Where(u => u.Id == userProfile.IdentityUserId)
                 .FirstOrDefaultAsync();
 
-
-
-
             var model = new AdminUserEditVM
             {
-                Id = id,
-                Email = user.Email,
-                LockoutEnabled = user.LockoutEnabled
 
-
+                FirstName = userProfile.FirstName,
+                LastName = userProfile.LastName,
+                Mail = user.Email,
+                PhoneNumber = userProfile.PhoneNumber,
+                DateOfBirth = userProfile.DateOfBirth,
+                Address = userProfile.Address,
+                ProfileImage = userProfile.ProfileImage
 
             };
             return View(model);
 
         }
 
+
+
+
+
+
         [HttpPost]
         public async Task<IActionResult> Edit(AdminUserEditVM model)
         {
+
             if (!ModelState.IsValid)
             {
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    // Hata mesajlarını loglayın veya kullanıcıya gösterin
+                    Console.WriteLine(error.ErrorMessage);
+                }
                 return View(model);
             }
 
-            var userProfile = await _userProfileService.GetUserProfileByIdAsync(model.Id); //Userprofile de arıyorum.
+            var existingUserProfile = await _context.UserProfile
+        .AsNoTracking()
+        .FirstOrDefaultAsync(up => up.Id == model.Id);
+
+            if (existingUserProfile == null)
+            {
+                return RedirectToAction("ListUsers", "AdminUser");
+            }
+
+            // Güncellenmiş bilgileri mevcut varlık üzerinde uygulayın
+            existingUserProfile.FirstName = model.FirstName;
+            existingUserProfile.LastName = model.LastName;
+            existingUserProfile.PhoneNumber = model.PhoneNumber;
+            existingUserProfile.DateOfBirth = model.DateOfBirth;
+            existingUserProfile.Address = model.Address;
+            existingUserProfile.Mail = model.Mail;
+            existingUserProfile.ProfileImage = model.ProfileImage;
+
+            var identityUserId = existingUserProfile.IdentityUserId;
+            var identityUser = await _userManager.FindByIdAsync(identityUserId);
+            if (identityUser == null)
+            {
+                return RedirectToAction("ListUsers", "AdminUser");
+            }
+            identityUser.Email = model.Mail;
+            identityUser.UserName = model.Mail;
+            identityUser.NormalizedUserName = model.Mail;
+            var updatedResult = await _userManager.UpdateAsync(identityUser);
+
+            // Varlığı `DbContext`'e yeniden ekleyin ve güncelleyin
+            _context.Update(existingUserProfile);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("ListUsers", "AdminUser");
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateLockoutStatus(Guid userId, bool lockoutEnabled)
+        {
+            var userProfile = await _userProfileService.GetUserProfileByIdAsync(userId); //Userprofile de arıyorum.
             if (userProfile == null)
             {
                 return RedirectToAction("ListUsers", "AdminUser");
@@ -103,33 +230,49 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             {
                 return RedirectToAction("ListUsers", "AdminUser");
             }
+            user.LockoutEnabled = lockoutEnabled;
 
-            user.LockoutEnabled = model.LockoutEnabled;
-
-            if (model.LockoutEnabled)
+            if (lockoutEnabled)
             {
-                
-                user.LockoutEnd = DateTimeOffset.MaxValue;
+                user.LockoutEnd = DateTimeOffset.MaxValue; // Kullanıcıyı kalıcı şekilde kilitler.
             }
             else
             {
-
-                user.LockoutEnd = null;
+                user.LockoutEnd = null; // Kilidi kaldırır
             }
 
-            var result = await _userManager.UpdateAsync(user); //Kullanıcıyı IdentityUserda güncelle.
-            return View(model);
+            var result = await _userManager.UpdateAsync(user); // Kullanıcıyı güncelle
 
-
-
+            if (result.Succeeded)
+            {
+                return Ok("Kullanıcı durumu güncellendi.");
+            }
+            else
+            {
+                return BadRequest("Güncelleme başarısız oldu.");
+            }
         }
-
-
-
-
-
-
-
-
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

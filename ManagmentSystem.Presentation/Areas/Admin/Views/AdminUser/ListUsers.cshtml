@@ -11,9 +11,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
@@ -22,6 +19,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Mail)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LockoutEnabled)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -29,9 +29,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FirstName)
                 </td>
@@ -42,11 +39,104 @@
                     @Html.DisplayFor(modelItem => item.Mail)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit Status", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
-
+                    <div class="form-group d-flex align-items-center" style="margin: 5px">
+                        <label class="switch" style="margin-left: 10px;">
+                            <input type="checkbox" id="lockoutEnabledSwitch-@item.Id"
+                                   data-user-id="@item.Id"
+                            @(item.LockoutEnabled ? "checked" : "")>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <!-- Create ve Edit bağlantıları -->
+                    <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Edit</a>
 
                 </td>
             </tr>
         }
     </tbody>
 </table>
+<div class="button-container">
+    <a href="@Url.Action("Create", "AdminUser")" class="btn btn-success">Create</a>
+</div>
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: red;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: green;
+    }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+</style>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('input[type="checkbox"][id^="lockoutEnabledSwitch-"]').forEach(function (element) {
+            element.addEventListener('change', function () {
+                var userId = this.getAttribute('data-user-id');
+                var isEnabled = this.checked;
+                console.log("User ID: " + userId + " | LockoutEnabled: " + isEnabled);
+
+                $.ajax({
+                    url: '/Admin/AdminUser/UpdateLockoutStatus',
+                    type: 'POST',
+                    data: {
+                        userId: userId,
+                        lockoutEnabled: isEnabled
+                    },
+                    success: function (response) {
+                        console.log("Başarılı");
+                    },
+                    error: function (error) {
+                        console.log("Hata:", error);
+                    }
+                });
+
+            });
+        });
+    </script>
+}
