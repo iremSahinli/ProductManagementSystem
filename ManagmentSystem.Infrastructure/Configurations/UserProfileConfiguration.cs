@@ -17,6 +17,7 @@ namespace ManagmentSystem.Infrastructure.Configurations
             builder.Property(up => up.FirstName).IsRequired().HasMaxLength(100);
             builder.Property(up => up.LastName).IsRequired().HasMaxLength(100);
             builder.Property(up => up.PhoneNumber).HasMaxLength(15);
+
             builder.HasOne<IdentityUser>()
                 .WithOne()
                 .HasForeignKey<UserProfile>(up => up.IdentityUserId);

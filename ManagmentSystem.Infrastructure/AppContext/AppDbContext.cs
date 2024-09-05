@@ -17,7 +17,7 @@ namespace ManagmentSystem.Infrastructure.AppContext
 {
     public class AppDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
-        
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -26,6 +26,8 @@ namespace ManagmentSystem.Infrastructure.AppContext
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
+        public virtual DbSet<UserProfile> UserProfile { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(typeof(IEntityConfiguration).Assembly);
