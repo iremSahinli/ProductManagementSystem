@@ -1,36 +1,38 @@
 ﻿@model ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs.AdminCategoryDetailVM
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detaylar";
 }
 
 <h1>Details</h1>
 
 <div>
-    <h4>AdminCategoryDetailVM</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
+        @* İsteğe bağlı ekleyip çıkartabiliriz *@
+        @* <dt class="col-sm-2">
+            Id
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryName)
+        </dd> *@
+        <dt class="col-sm-2">
+            Category Name
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CategoryName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
+        <dt class="col-sm-2">
+            Description
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
     </dl>
 </div>
-<div>
-    
-    <a class="btn btn-primary" style="margin-left: 10x" asp-action="Index">Back to List</a>
+@* <div>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>@* Style değişimi için  style="margin-left: 10px" 
+</div> *@
+<div style="margin-top: 5px;">
+    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
 </div>
