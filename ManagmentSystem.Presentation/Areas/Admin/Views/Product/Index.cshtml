@@ -31,9 +31,16 @@
                     <td>
                     @Html.DisplayFor(modelItem => item.ProductName)
                     </td>
-                    <td>
-                    @Html.DisplayFor(modelItem => item.ProductPrice)
-                    </td>
+                <td>
+                    @if (item.ProductPrice != null)
+                    {
+                        <span>@item.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
+                    }
+                    else
+                    {
+                        <span>No price available</span>
+                    }
+                </td>
                     <td>
                     @Html.DisplayFor(modelItem => item.ProductDescription)
                     </td>

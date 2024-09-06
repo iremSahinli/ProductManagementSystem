@@ -2,6 +2,7 @@
 using ManagmentSystem.Business.DTOs.ProductDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Business.Services.ProductServices;
+using ManagmentSystem.Domain.Entities;
 using ManagmentSystem.Infrastructure.AppContext;
 using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
@@ -10,6 +11,7 @@ using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 {
@@ -19,16 +21,18 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly ICategoryService _categoryService;
         private readonly IProductRepository _productRepository;
         private readonly IProductCategoryRepository _productCategoryRepository;
+        private readonly AppDbContext _context;
 
 
 
 
-        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository, IProductCategoryRepository productCategoryRepository)
+        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository, IProductCategoryRepository productCategoryRepository, AppDbContext context)
         {
             _productService = productService;
             _categoryService = categoryService;
             _productRepository = productRepository;
             _productCategoryRepository = productCategoryRepository;
+            _context = context;
         }
 
         public async Task<IActionResult> Index()
@@ -90,27 +94,56 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+
+                await Console.Out.WriteLineAsync(result.Message);
                 return RedirectToAction("Index");
             }
+
+
             var productUpdateVM = result.Data.Adapt<AdminProductUpdateVM>();
+
+            // Kategorileri getiriyoruz.
             productUpdateVM.Categories = await GetCategories(id);
+
+            var product = await _context.Products
+                    .Include(p => p.ProductCategories)
+                    .ThenInclude(pc => pc.Category)
+                    .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product != null)
+            {
+                productUpdateVM.SelectedCategories = product.ProductCategories
+                    .Select(pc => pc.CategoryId)
+                    .ToList();
+            }
+
             return View(productUpdateVM);
+
         }
         [HttpPost]
         public async Task<IActionResult> Update(AdminProductUpdateVM model)
         {
             if (!ModelState.IsValid)
             {
+                // Eğer model geçersizse sayfa tekrar yüklenir.
+                model.Categories = await GetCategories(model.Id); // Kategoriler yeniden yüklenir.
                 return View(model);
             }
+
+
+            // Modeli DTO'ya dönüştürüp güncelleme işlemini çağırıyoruz.
             var result = await _productService.UpdateAsync(model.Adapt<ProductUpdateDTO>());
+
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                // Eğer güncelleme başarısız olursa, hata mesajı ile sayfa tekrar yüklenir.
+                await Console.Out.WriteLineAsync(result.Message);
+                model.Categories = await GetCategories(model.Id); // Kategoriler yeniden yüklenir.
                 return View(model);
             }
-            Console.Out.WriteLineAsync(result.Message);
+
+            // Başarılıysa liste sayfasına yönlendiriyoruz.
+            await Console.Out.WriteLineAsync(result.Message);
             return RedirectToAction("Index");
         }
 
