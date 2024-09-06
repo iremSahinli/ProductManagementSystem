@@ -12,17 +12,17 @@
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label">E-posta</label>
+                <label asp-for="Email" class="control-label">E-Mail Address</label>
                 <input asp-for="Email" class="form-control" placeholder="Write your E-mail" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label">Şifre</label>
+                <label asp-for="Password" class="control-label">Password</label>
                 <input asp-for="Password" class="form-control" placeholder="Write your password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label">Şifreyi Onayla</label>
+                <label asp-for="ConfirmPassword" class="control-label">Confirm Password</label>
                 <input asp-for="ConfirmPassword" class="form-control" placeholder="Write again your password " />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
