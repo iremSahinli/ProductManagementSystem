@@ -11,7 +11,7 @@ namespace ManagmentSystem.Domain.Core.Helpers
         private static readonly Random Random = new Random();
         private const string Characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=<>?";
 
-        public static string GeneratePassword(int length = 12)
+        public static string GeneratePassword(int length = 8)
         {
             var password = new char[length];
             for (int i = 0; i < length; i++)

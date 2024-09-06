@@ -191,38 +191,55 @@ namespace ManagmentSystem.Business.Services.ProductServices
 
         public async Task<IResult> UpdateAsync(ProductUpdateDTO productUpdateDTO)
         {
-            var updateingProduct = await _productRepository.GetByIdAsync(productUpdateDTO.Id);
-
-            foreach (var item in updateingProduct.ProductCategories)
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                await _productCategoryRepository.DeleteAsync(item);
-            }
-
-            if (updateingProduct is null)
-            {
-                return new ErrorResult("Güncellenecek Ürün Bulunamadı");
-            }
-            try
-            {
-                var updatedProduct = productUpdateDTO.Adapt(updateingProduct);
-                foreach (var categoryId in productUpdateDTO.SelectedCategories)
+                try
                 {
-                    var newProductCategory = new ProductCategory()
-                    {
-                        CategoryId = categoryId,
-                        ProductId = updateingProduct.Id
-                    };
 
-                    await _productCategoryRepository.AddAsync(newProductCategory);
-                    // await _productCategoryRepository.SaveChangeAsync();
+                    var updatingProduct = await _productRepository.GetByIdAsync(productUpdateDTO.Id);
+
+                    if (updatingProduct is null)
+                    {
+                        return new ErrorResult("Güncellenecek Ürün Bulunamadı");
+                    }
+
+
+                    foreach (var item in updatingProduct.ProductCategories)
+                    {
+                        await _productCategoryRepository.DeleteAsync(item);
+                    }
+
+
+                    // Ürün bilgilerini güncelliyoruz.
+                    var updatedProduct = productUpdateDTO.Adapt(updatingProduct);
+                    await _productRepository.UpdateAsync(updatedProduct);
+
+                    // Yeni seçilen kategorileri ekliyoruz.
+                    foreach (var categoryId in productUpdateDTO.SelectedCategories)
+                    {
+                        var newProductCategory = new ProductCategory()
+                        {
+                            CategoryId = categoryId,
+                            ProductId = updatingProduct.Id
+                        };
+
+                        await _productCategoryRepository.AddAsync(newProductCategory);
+                    }
+
+                    // Değişiklikleri kaydediyoruz.
+                    await _productRepository.SaveChangeAsync();
+
+                    // Eğer tüm işlemler başarılı olursa transaction'ı commit ediyoruz.
+                    await transaction.CommitAsync();
+
+                    return new SuccessResult("Ürün Güncelleme Başarılı");
                 }
-                await _productRepository.UpdateAsync(updatedProduct);
-                await _productRepository.SaveChangeAsync();
-                return new SuccessResult("Ürün Güncelleme Başarılı");
-            }
-            catch (Exception ex)
-            {
-                return new ErrorResult("Hata: " + ex.Message);
+                catch (Exception ex)
+                {
+                    // Eğer bir hata olursa, yapılan tüm işlemleri geri alıyoruz (rollback).
+                    await transaction.RollbackAsync();
+                    return new ErrorResult("Hata: " + ex.Message);
+                }
             }
         }
 

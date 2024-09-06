@@ -1,4 +1,5 @@
-﻿using ManagmentSystem.Business.Services.UserProfileServices;
+﻿using ManagmentSystem.Business.Services.MailService;
+using ManagmentSystem.Business.Services.UserProfileServices;
 using ManagmentSystem.Domain.Core.Helpers;
 using ManagmentSystem.Domain.Entities;
 using ManagmentSystem.Domain.Utilities.Concretes;
@@ -21,12 +22,14 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly IUserProfileService _userProfileService;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppDbContext _context;
+        private readonly IMailService _mailService;
 
-        public AdminUserController(IUserProfileService userProfileService, UserManager<IdentityUser> userManager, AppDbContext context)
+        public AdminUserController(IUserProfileService userProfileService, UserManager<IdentityUser> userManager, AppDbContext context, IMailService mailService)
         {
             _userProfileService = userProfileService;
             _userManager = userManager;
             _context = context;
+            _mailService = mailService;
         }
 
 
@@ -84,7 +87,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var newUser = new IdentityUser
             {
                 UserName = model.Mail,
-                Email = model.Mail
+                Email = model.Mail,
+                EmailConfirmed = true
             };
 
             string password = PasswordGenerator.GeneratePassword(); //Burada passwordGenerator statik yapıdan rastgele şifre ataması yapıyoruz.
@@ -99,15 +103,21 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var userProfile = new UserProfile
             {
 
-                IdentityUserId = newUser.Id, //newUser alıyoruz.
+                IdentityUserId = newUser.Id,//newUser alıyoruz.
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
                 DateOfBirth = model.DateOfBirth,
                 Address = model.Address,
-                Mail = model.Mail,  
+                Mail = model.Mail,
                 ProfileImage = model.ProfileImage
             };
+
+            //Yeni kullanıcı eklendiğinde oluşturulan şifresi mail olarak gidecek.
+            string subject = "Hesap Bilgileriniz: ";
+            string body = $"Merhaba {model.FirstName} {model.LastName},\n\nHesabınız başarıyla oluşturuldu.Giriş yapmak için kullanıcıadınız: {model.Mail},\nşifreniz: {password}";
+            await _mailService.SendMailAsync(newUser.Email, subject, body);
+
 
 
             _context.UserProfile.Add(userProfile);
@@ -116,6 +126,9 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             return RedirectToAction("ListUsers", "AdminUser");
         }
+
+           
+            
 
 
 
