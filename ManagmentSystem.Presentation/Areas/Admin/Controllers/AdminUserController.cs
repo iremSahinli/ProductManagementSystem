@@ -105,6 +105,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 PhoneNumber = model.PhoneNumber,
                 DateOfBirth = model.DateOfBirth,
                 Address = model.Address,
+                Mail = model.Mail,  
                 ProfileImage = model.ProfileImage
             };
 
