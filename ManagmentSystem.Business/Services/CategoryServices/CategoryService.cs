@@ -5,6 +5,7 @@ using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Domain.Utilities.Interfaces;
 using ManagmentSystem.Infrastructure.AppContext;
 using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
+using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,13 +19,15 @@ namespace ManagmentSystem.Business.Services.CategoryServices
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IProductCategoryRepository _productCategoryRepository;
         private readonly AppDbContext _context;
 
 
 
-        public CategoryService(ICategoryRepository categoryRepository, AppDbContext context)
+        public CategoryService(ICategoryRepository categoryRepository, AppDbContext context, IProductCategoryRepository productCategoryRepository)
         {
             _categoryRepository = categoryRepository;
+            _productCategoryRepository = productCategoryRepository;
             _context = context;
         }
 
@@ -107,6 +110,27 @@ namespace ManagmentSystem.Business.Services.CategoryServices
         {
             return await _context.ProductCategories
                 .AnyAsync(pc => pc.CategoryId == categoryId && pc.Status != Status.Deleted);
+        }
+
+        public async Task<List<Guid>> GetCategoryIdsByProductIdAsync(Guid productId) //burada categoryıd leri liste oalrak getirmek istedim.
+        {
+            return await _context.ProductCategories.Where(pc => pc.ProductId == productId).Select(pc => pc.CategoryId).ToListAsync();
+        }
+
+        public async Task<List<string>> GetCategoryNamesByIdsAsync(List<Guid> categoryIds) //burada categoryId lere karşılık gelen categoryNameler gelir.
+        {
+            return await _context.Categories.Where(c => categoryIds.Contains(c.Id)).Select(c => c.CategoryName).ToListAsync();
+        }
+
+        public async Task<List<GetCategoryNameDTO>> GetAllCategoriesAsync() //Kategorileri dropdownda listelemek için gereklidir.
+        {
+            var categories = await _categoryRepository.GetAllAsync();
+            return categories.Select(c => new GetCategoryNameDTO
+            {
+                Id = c.Id,
+                CategoryName = c.CategoryName,
+
+            }).ToList();
         }
     }
 }

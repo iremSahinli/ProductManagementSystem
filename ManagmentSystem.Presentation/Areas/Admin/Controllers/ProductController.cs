@@ -3,6 +3,8 @@ using ManagmentSystem.Business.DTOs.ProductDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Business.Services.ProductServices;
 using ManagmentSystem.Infrastructure.AppContext;
+using ManagmentSystem.Infrastructure.Repositories.CategoryRepositories;
+using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs;
@@ -16,14 +18,17 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly IProductRepository _productRepository;
-       
+        private readonly IProductCategoryRepository _productCategoryRepository;
 
-        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository)
+
+
+
+        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository, IProductCategoryRepository productCategoryRepository)
         {
             _productService = productService;
             _categoryService = categoryService;
             _productRepository = productRepository;
-           
+            _productCategoryRepository = productCategoryRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -63,7 +68,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ProductName = model.ProductName,
                 ProductDescription = model.ProductDescription,
                 ProductPrice = model.ProductPrice,
-                SelectedCategoryId = model.SelectedCategoryId,
+                SelectedCategories = model.SelectedCategories,
             };
 
             // Ürünü ekleme işlemi
@@ -118,7 +123,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             {
                 return RedirectToAction("Index");
             }
-            var categoryName = await _productService.GetCategoryNameByProductIdAsync(id);
+            var categoryIds = await _productService.GetCategoryIdsByProductId(id);
+            if (!categoryIds.IsSucces)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var categoryNames = await _categoryService.GetCategoryNamesByIdsAsync(categoryIds.Data);
 
             var model = new AdminProductDetailVM
             {
@@ -126,11 +137,15 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ProductName = product.ProductName,
                 ProductDescription = product.ProductDescription,
                 ProductPrice = product.ProductPrice,
-                CategoryName = categoryName,
+                CategoryNames = categoryNames,
 
             };
             return View(model);
+
         }
+
+
+
 
         public async Task<IActionResult> Delete(Guid id)
         {

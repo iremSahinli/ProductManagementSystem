@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ManagmentSystem.Infrastructure.Repositories.ProductRepositories
 {
-    public interface IProductRepository: IAsyncRepository, IAsyncFindableRepository<Product>, IAsyncInsertableRepository<Product>, IAsyncQueryableRepository<Product>, IAsyncDeletableRepository<Product>, IAsyncUpdatebleRepository<Product>, IAsyncTransactionRepository
+    public interface IProductRepository: IAsyncRepository, IRepository, IAsyncFindableRepository<Product>, IAsyncInsertableRepository<Product>, IAsyncQueryableRepository<Product>, IAsyncDeletableRepository<Product>, IAsyncUpdatebleRepository<Product>, IAsyncTransactionRepository, IAsyncOrderableRepository<Product>
     {
     }
 }

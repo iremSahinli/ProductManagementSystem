@@ -37,7 +37,14 @@
             Category Name
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CategoryName)
+            @if (Model.CategoryNames != null && Model.CategoryNames.Any())
+            {
+                @string.Join(" - ", Model.CategoryNames)
+            }
+            else
+            {
+                <span>No categories</span>
+            }
         </dd>
     </dl>
 </div>
