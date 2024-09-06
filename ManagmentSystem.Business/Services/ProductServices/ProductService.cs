@@ -52,14 +52,17 @@ namespace ManagmentSystem.Business.Services.ProductServices
                     await _productRepository.AddAsync(newProduct);
 
                     // Seçilen kategori için ProductCategory tablosuna kayıt ekleme
-                    if (productCreateDTO.SelectedCategoryId != Guid.Empty)
+                    if (productCreateDTO.SelectedCategories != null && productCreateDTO.SelectedCategories.Any())
                     {
-                        var newProductCategory = new ProductCategory
+                        foreach (var categoryId in productCreateDTO.SelectedCategories)
                         {
-                            CategoryId = productCreateDTO.SelectedCategoryId,
-                            ProductId = newProduct.Id
-                        };
-                        await _productCategoryRepository.AddAsync(newProductCategory);
+                            var newProductCategory = new ProductCategory
+                            {
+                                CategoryId = categoryId,
+                                ProductId = newProduct.Id
+                            };
+                            await _productCategoryRepository.AddAsync(newProductCategory);
+                        }
                     }
 
                     // Değişiklikleri kaydetme
@@ -92,26 +95,26 @@ namespace ManagmentSystem.Business.Services.ProductServices
                         return new ErrorResult("Silinecek Ürün Bulunamadı");
                     }
 
-                    
+
                     foreach (var item in deletingProduct.ProductCategories)
                     {
                         await _productCategoryRepository.DeleteAsync(item);
                     }
 
-                    
+
                     await _productRepository.DeleteAsync(deletingProduct);
 
-                    
+
                     await _productRepository.SaveChangeAsync();
 
-                    
+
                     await transaction.CommitAsync(); //Transaction işlemini bitir.
 
                     return new SuccessResult("Ürün Silme İşlemi Başarılı");
                 }
                 catch (Exception ex)
                 {
-                   
+
                     await transaction.RollbackAsync(); //Herhangi bir tabloda silme işlemi hatalıysa tüm işlemleri geri al.
                     return new ErrorResult("Hata: " + ex.Message);
                 }
@@ -166,6 +169,10 @@ namespace ManagmentSystem.Business.Services.ProductServices
 
         public async Task<IDataResult<List<Guid>>> GetCategoryIdsByProductId(Guid? productId)
         {
+            if (productId == null)
+            {
+                return new ErrorDataResult<List<Guid>>(null, "Geçersiz Ürün ID");
+            }
             var categoryIds = new List<Guid>();
             var productCategories = await _productCategoryRepository.GetAllAsync(x => x.ProductId == productId);
             foreach (var item in productCategories)
@@ -234,7 +241,7 @@ namespace ManagmentSystem.Business.Services.ProductServices
 
         public async Task<bool> IsCategoryUsedAsync(Guid categoryId)
         {
-            return await _context.ProductCategories.AnyAsync(pc => pc.CategoryId == categoryId && pc.Status != Status.Deleted); 
+            return await _context.ProductCategories.AnyAsync(pc => pc.CategoryId == categoryId && pc.Status != Status.Deleted);
         }
     }
 }

@@ -18,5 +18,8 @@ namespace ManagmentSystem.Business.Services.CategoryServices
         /// <param name="categoryId">Kontrol edilecek anahtar property.</param>
         /// <returns>Geriye true veya false döndürür.</returns>
         Task<bool> IsCategoryUsedAsync(Guid categoryId);
+        Task<List<Guid>> GetCategoryIdsByProductIdAsync(Guid productId);
+        Task<List<string>> GetCategoryNamesByIdsAsync(List<Guid> categoryIds);
+        Task<List<GetCategoryNameDTO>> GetAllCategoriesAsync(); //Formda categorileri getirebilmek için eklendi.
     }
 }

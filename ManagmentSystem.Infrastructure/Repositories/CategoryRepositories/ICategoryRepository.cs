@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ManagmentSystem.Infrastructure.Repositories.CategoryRepositories
 {
-    public interface ICategoryRepository : IAsyncRepository, IAsyncFindableRepository<Category>, IAsyncInsertableRepository<Category>, IAsyncQueryableRepository<Category>, IAsyncDeletableRepository<Category>, IAsyncUpdatebleRepository<Category>, IAsyncTransactionRepository
+    public interface ICategoryRepository : IAsyncRepository, IRepository ,IAsyncFindableRepository<Category>, IAsyncInsertableRepository<Category>, IAsyncQueryableRepository<Category>, IAsyncDeletableRepository<Category>, IAsyncUpdatebleRepository<Category>, IAsyncTransactionRepository, IAsyncOrderableRepository<Category>
     {
     }
 }
