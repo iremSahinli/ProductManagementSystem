@@ -8,7 +8,7 @@
         public DateTime? DateOfBirth { get; set; }
         public string Address { get; set; }
 
-        
+        public string Mail { get; set; }
         public IFormFile? ProfileImage { get; set; }
        
 
