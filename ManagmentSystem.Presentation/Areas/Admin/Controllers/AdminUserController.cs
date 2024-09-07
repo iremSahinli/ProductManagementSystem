@@ -231,6 +231,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> UpdateLockoutStatus(Guid userId, bool lockoutEnabled)
         {
             var userProfile = await _userProfileService.GetUserProfileByIdAsync(userId); //Userprofile de arıyorum.
@@ -246,13 +247,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             }
             user.LockoutEnabled = lockoutEnabled;
 
-            if (lockoutEnabled)
+            if (lockoutEnabled == false)
             {
-                user.LockoutEnd = DateTimeOffset.MaxValue; // Kullanıcıyı kalıcı şekilde kilitler.
+                user.LockoutEnd = null; // kullanıcı hesabı aktif olur.
             }
             else
             {
-                user.LockoutEnd = null; // Kilidi kaldırır
+                user.LockoutEnd = DateTimeOffset.MaxValue; // süresiz kilitler.
             }
 
             var result = await _userManager.UpdateAsync(user); // Kullanıcıyı güncelle
@@ -266,6 +267,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 return BadRequest("Güncelleme başarısız oldu.");
             }
         }
+
     }
 
 }
