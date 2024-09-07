@@ -111,8 +111,12 @@ namespace ManagmentSystem.Presentation.Controllers
                 }
 
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, false, false);
+                if (!result.Succeeded)
+                {
+                    ErrorNotyf("Email or password failed.");
+                }
 
-                if (result.Succeeded)
+                else if (result.Succeeded)
                 {
                     var roles = await _userManager.GetRolesAsync(user);
 
@@ -125,7 +129,7 @@ namespace ManagmentSystem.Presentation.Controllers
                     }
                     else
                     {
-                        TempData["ToastMessage"] = "Giriş Başarılı!";
+                        SuccesNotyf("Login Succeeded.");
                         TempData["ToastType"] = "success";
                         return RedirectToAction("Index", "User");
                     }

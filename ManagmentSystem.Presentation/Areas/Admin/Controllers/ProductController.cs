@@ -64,9 +64,11 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-
+               
+                model.Categories = await GetCategories();
                 return View(model);
             }
+
             var productCreateDTO = new ProductCreateDTO
             {
                 ProductName = model.ProductName,
@@ -75,17 +77,19 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 SelectedCategories = model.SelectedCategories,
             };
 
-            // Ürünü ekleme işlemi
             var result = await _productService.AddAsync(productCreateDTO);
             if (!result.IsSucces)
             {
+                
                 ErrorNotyf(result.Message);
+                model.Categories = await GetCategories(); 
                 return View(model);
             }
 
             SuccesNotyf(result.Message);
             return RedirectToAction("Index");
         }
+
 
 
         public async Task<IActionResult> Update(Guid id)
@@ -95,7 +99,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             if (!result.IsSucces)
             {
 
-                //ErrorNotyf(result.Message);
+                await Console.Out.WriteLineAsync(result.Message);
                 return RedirectToAction("Index");
             }
 
@@ -116,6 +120,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                     .Select(pc => pc.CategoryId)
                     .ToList();
             }
+
             return View(productUpdateVM);
 
         }
@@ -136,13 +141,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             if (!result.IsSucces)
             {
                 // Eğer güncelleme başarısız olursa, hata mesajı ile sayfa tekrar yüklenir.
-                ErrorNotyf(result.Message);
+                await Console.Out.WriteLineAsync(result.Message);
                 model.Categories = await GetCategories(model.Id); // Kategoriler yeniden yüklenir.
                 return View(model);
             }
 
             // Başarılıysa liste sayfasına yönlendiriyoruz.
-            SuccesNotyf(result.Message);
+            await Console.Out.WriteLineAsync(result.Message);
             return RedirectToAction("Index");
         }
 
