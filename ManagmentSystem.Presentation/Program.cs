@@ -24,7 +24,7 @@ builder.Services.AddPresentationServices();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddTransient<IMailService, MailService>();
 
-
+//middleware
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

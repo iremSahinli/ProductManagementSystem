@@ -1,6 +1,7 @@
 ﻿using ManagmentSystem.Domain.Core.BaseEntities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,11 @@ namespace ManagmentSystem.Domain.Entities
         {
             ProductCategories = new HashSet<ProductCategory>();
         }
+        [Required(ErrorMessage = "The CategoryName field is required.")]
+        [MaxLength(128, ErrorMessage = "The CategoryName must be less than 128 characters.")]
         public string CategoryName { get; set; }
+        [Required(ErrorMessage = "The Description field is required.")]
+        [MaxLength(128, ErrorMessage = "The Description must be less than 128 characters.")]
         public string Description { get; set; }
 
         // Nav Prop

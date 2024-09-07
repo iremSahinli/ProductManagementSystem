@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace ManagmentSystem.Presentation.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -15,6 +15,7 @@ namespace ManagmentSystem.Presentation.Controllers
 
         public IActionResult Index()
         {
+            //SuccesNotyf("Admin Page Opened Successfully");
             return View();
         }
 

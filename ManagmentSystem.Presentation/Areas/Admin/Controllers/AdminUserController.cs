@@ -43,7 +43,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         public async Task<IActionResult> ListUsers()
         {
             var userProfiles = await _userProfileService.GetAllUserProfilesAsync();
-
+            if (userProfiles is null)
+            {
+                ErrorNotyf("User List is Empty");
+            }
             // Kullanıcıları IdentityUser tablosundan al ve LockoutEnabled bilgilerini ekle
             var userList = new List<AdminUserListVM>();
             foreach (var profile in userProfiles)
@@ -63,7 +66,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                     userList.Add(userVm);
                 }
             }
-
+            SuccesNotyf("Users listed successfully.");
             return View(userList);
         }
 
@@ -79,7 +82,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Model geçerli değilse, kullanıcıyı oluşturma sayfasına geri dön
+                
                 return View(model);
             }
 
@@ -126,16 +129,6 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             return RedirectToAction("ListUsers", "AdminUser");
         }
-
-           
-            
-
-
-
-
-
-
-
 
 
         public async Task<IActionResult> Edit(Guid id)

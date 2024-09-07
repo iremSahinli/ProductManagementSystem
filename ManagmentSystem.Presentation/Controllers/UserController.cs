@@ -7,7 +7,7 @@ using System.Security.Claims;
 
 namespace ManagmentSystem.Presentation.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private readonly IUserProfileService _userProfileService;
         private readonly IWebHostEnvironment _webHostEnvironment;

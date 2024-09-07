@@ -1,6 +1,7 @@
 ﻿using ManagmentSystem.Business.DTOs.CategoryDTOs;
 using ManagmentSystem.Business.Services.CategoryServices;
 using ManagmentSystem.Business.Services.ProductServices;
+using ManagmentSystem.Domain.Entities;
 using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using Mapster;
@@ -26,10 +27,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.GetAllAsync();
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf("Failed");
                 return View(result.Data.Adapt<List<AdminCategoryListVM>>());
             }
-            Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf("Categories Listed");
             return View(result.Data.Adapt<List<AdminCategoryListVM>>());
         }
 
@@ -50,10 +51,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.AddAsync(model.Adapt<CategoryCreateDTO>());
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf("Failed");
                 return View(model);
             }
-            Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf("Create is successfully");
             return RedirectToAction("Index");
         }
 
@@ -62,17 +63,17 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var isCategoryUsed = await _productService.IsCategoryUsedAsync(id); //Product tablosunda kullanılıyor mu kontrol eder.
             if (isCategoryUsed)
             {
-                await Console.Out.WriteLineAsync("Silmek İstediğiniz Kategori Üründe Kullanılıyor, Silinemez ");
+                ErrorNotyf("Silmek İstediğiniz Kategori Üründe Kullanılıyor, Silinemez ");
                 return RedirectToAction("Index");
             }
 
             var result = await _categoryService.DeleteAsync(id);
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf("Failed");
                 return RedirectToAction("Index");
             }
-            Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf("Deleted is successfully");
             return RedirectToAction("Index");
 
         }
@@ -85,9 +86,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.GetByIdAsync(id);
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf(result.Message);
                 return RedirectToAction("Index");
             }
+            SuccesNotyf("Category updating page.");
             return View(result.Data.Adapt<AdminCategoryUpdateVM>());
         }
 
@@ -102,10 +104,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.UpdateAsync(model.Adapt<CategoryUpdateDTO>());
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf("Category update failed.");
                 return View(model);
             }
-            Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf("Category updated successfully.");
             return RedirectToAction("Index");
         }
 
@@ -115,9 +117,11 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.GetByIdAsync(id);
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf("Category Detail Page Loaded Successfully");
                 return RedirectToAction("Index");
             }
+
+            SuccesNotyf("Category Detail Page Loaded Successfully");
             return View(result.Data.Adapt<AdminCategoryDetailVM>());
 
         }

@@ -9,6 +9,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
     {
         public IActionResult Index()
         {
+            SuccesNotyf("Success");
             return View();
         }
     }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ManagmentSystem.Presentation.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -121,7 +121,7 @@ namespace ManagmentSystem.Presentation.Controllers
                     {
                         TempData["ToastMessage"] = "Admin Sayfasına Hoş geldiniz";
                         TempData["ToastType"] = "success";
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Home", new { area = "Admin" });
                     }
                     else
                     {
@@ -140,6 +140,9 @@ namespace ManagmentSystem.Presentation.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+            
+            
+            SuccesNotyf("Logout is success");
             return RedirectToAction("Login", "Account");
         }
     }
