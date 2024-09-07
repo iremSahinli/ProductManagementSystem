@@ -6,9 +6,16 @@
 
 <h1>Users</h1>
 
+
 <div class="button-container mb-3">
     <a href="@Url.Action("Create", "AdminUser")" class="btn btn-success">Create New User</a>
 </div>
+
+<form method="post" asp-controller="AdminUser" asp-action="UpdateLockoutStatus">
+    <!--Anti token koruması eklendi.-->
+    @Html.AntiForgeryToken() <!-- koruma için Antiforgery token -->
+</form>
+
 
 <table class="table">
     <thead>
@@ -111,23 +118,30 @@
             element.addEventListener('change', function () {
                 var userId = this.getAttribute('data-user-id');
                 var isEnabled = this.checked;
+                var token = $('input[name="__RequestVerificationToken"]').val(); // Antiforgery token
+
                 console.log("Kullanıcı ID: " + userId + " | Kilit Durumu: " + isEnabled);
 
                 $.ajax({
                     url: '/Admin/AdminUser/UpdateLockoutStatus',
                     type: 'POST',
                     data: {
+                        __RequestVerificationToken: token,  // Antiforgery token
                         userId: userId,
                         lockoutEnabled: isEnabled
                     },
                     success: function (response) {
-                        console.log("Başarılı");
+                        console.log("Başarılı: Kullanıcı durumu güncellendi.");
+                        alert('Kullanıcı durumu başarıyla güncellendi.');
                     },
                     error: function (error) {
                         console.log("Hata:", error);
+                        alert('Kullanıcı durumu güncellenirken bir hata oluştu.');
+
+
+                        element.checked = !isEnabled;// hata olursa Switch'i eski durumuna geri döndür.
                     }
                 });
-
             });
         });
     </script>
