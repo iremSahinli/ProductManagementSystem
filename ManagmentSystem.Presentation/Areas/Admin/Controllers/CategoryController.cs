@@ -48,10 +48,19 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 return View(model);
             }
 
+            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName, model.Description); //Aynı kategori ve description sistemde varmı kontrol eder.
+            if (categoryExist)
+            {
+                ErrorNotyf("Kaydetmek istedğiniz kategori sistemde bulunmaktadır, Lütfen farklı bir kategori ekleyiniz");
+                return View(model);
+            }
+
+
+
             var result = await _categoryService.AddAsync(model.Adapt<CategoryCreateDTO>());
             if (!result.IsSucces)
             {
-                
+
                 ErrorNotyf(result.Message); // Mesaj: "Kategori Sistemde Mevcut"
                 return View(model);
             }
@@ -103,6 +112,16 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             {
                 return View(model);
             }
+
+            //Kategori sistemde varmı kontrol ediyor ve model dönüyor.
+            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName, model.Description);
+            if (categoryExist)
+            {
+                ErrorNotyf("A category with this name or description already exists.");
+                return View(model);
+            }
+
+
             var result = await _categoryService.UpdateAsync(model.Adapt<CategoryUpdateDTO>());
             if (!result.IsSucces)
             {
@@ -133,5 +152,6 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
     }
 }
+
 
 

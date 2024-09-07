@@ -83,7 +83,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             {
                 return View(model);
             }
-//Email kısmı kontrolü
+            //Email kısmı kontrolü
             var existingUser = await _userManager.FindByEmailAsync(model.Mail);
             if (existingUser != null)
             {
@@ -227,6 +227,99 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             return RedirectToAction("ListUsers", "AdminUser");
         }
+
+
+        public async Task<IActionResult> UserDetail(Guid id)
+        {
+            var userProfile = await _context.UserProfile.FirstOrDefaultAsync(up => up.Id == id);
+
+            if (userProfile == null)
+            {
+                ErrorNotyf("Kullanıcı bulunamadı,tekrar deneyin");
+                return RedirectToAction("ListUsers", "AdminUser");
+            }
+
+            var model = new AdminUserDetailVM
+            {
+                FirstName = userProfile.FirstName,
+                LastName = userProfile.LastName,
+                Mail = userProfile.Mail,
+                PhoneNumber = userProfile.PhoneNumber,
+                DateOfBirth = userProfile.DateOfBirth.Value,
+                Address = userProfile.Address,
+                ProfileImagePath = !string.IsNullOrEmpty(userProfile.ProfileImage)
+                            ? "/uploads/" + userProfile.ProfileImage
+                            : "/uploads/default.png" // Varsayılan resim
+
+            };
+            return View(model);
+        }
+
+
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    
+                    var userProfile = await _context.UserProfile.FirstOrDefaultAsync(up => up.Id == id);
+                    if (userProfile == null)
+                    {
+                        ErrorNotyf("Kullanıcı bulunamadı, tekrar deneyin!");
+                        return RedirectToAction("ListUsers", "AdminUser");
+                    }
+
+                    
+                    var user = await _userManager.FindByIdAsync(userProfile.IdentityUserId);
+                    if (user == null)
+                    {
+                        ErrorNotyf("Kullanıcı bulunamadı, tekrar deneyin!");
+                        return RedirectToAction("ListUsers", "AdminUser");
+                    }
+
+                   
+                    _context.UserProfile.Remove(userProfile); //UserProfile tablosundan sil.
+
+                    
+                    var result = await _userManager.DeleteAsync(user); //AspNetUsers sil.
+                    if (!result.Succeeded)
+                    {
+                        ErrorNotyf("Kullanıcı silinirken bir hata oluştu, tekrar deneyin!");
+                        return RedirectToAction("ListUsers", "AdminUser");
+                    }
+
+                    
+                    await _context.SaveChangesAsync();
+                    await transaction.CommitAsync(); //Transaction tamamlanır.
+
+                    SuccesNotyf("Kullanıcı başarıyla silindi");
+                    return RedirectToAction("ListUsers", "AdminUser");
+                }
+                catch (Exception ex)
+                {
+                    
+                    await transaction.RollbackAsync();
+                    ErrorNotyf(ex.Message);
+                    return RedirectToAction("ListUsers", "AdminUser");
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
