@@ -41,10 +41,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var categoryVMs = result.Data.Adapt<List<AdminProductListVM>>();
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf(result.Message);
                 return View(categoryVMs);
             }
-            Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf(result.Message);
             return View(categoryVMs);
         }
 
@@ -79,11 +79,11 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _productService.AddAsync(productCreateDTO);
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf(result.Message);
                 return View(model);
             }
 
-            Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf(result.Message);
             return RedirectToAction("Index");
         }
 
@@ -95,7 +95,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             if (!result.IsSucces)
             {
 
-                await Console.Out.WriteLineAsync(result.Message);
+                //ErrorNotyf(result.Message);
                 return RedirectToAction("Index");
             }
 
@@ -116,7 +116,6 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                     .Select(pc => pc.CategoryId)
                     .ToList();
             }
-
             return View(productUpdateVM);
 
         }
@@ -137,13 +136,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             if (!result.IsSucces)
             {
                 // Eğer güncelleme başarısız olursa, hata mesajı ile sayfa tekrar yüklenir.
-                await Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf(result.Message);
                 model.Categories = await GetCategories(model.Id); // Kategoriler yeniden yüklenir.
                 return View(model);
             }
 
             // Başarılıysa liste sayfasına yönlendiriyoruz.
-            await Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf(result.Message);
             return RedirectToAction("Index");
         }
 
@@ -159,6 +158,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var categoryIds = await _productService.GetCategoryIdsByProductId(id);
             if (!categoryIds.IsSucces)
             {
+                ErrorNotyf("Error");
                 return RedirectToAction("Index");
             }
 
@@ -173,6 +173,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 CategoryNames = categoryNames,
 
             };
+            SuccesNotyf("Product Detail Page Loaded Successfully");
             return View(model);
 
         }
@@ -185,10 +186,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _productService.DeleteAsync(id);
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf(result.Message);
                 return RedirectToAction("Index");
             }
-            Console.Out.WriteLineAsync(result.Message);
+            SuccesNotyf(result.Message);
             return RedirectToAction("Index");
 
         }
@@ -203,7 +204,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _productService.GetCategoryIdsByProductId(productId);
             if (!result.IsSucces)
             {
-                Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf(result.Message);
                 return categoriSelectModels;
             }
 

@@ -209,7 +209,6 @@ namespace ManagmentSystem.Business.Services.ProductServices
                         await _productCategoryRepository.DeleteAsync(item);
                     }
 
-
                     // Ürün bilgilerini güncelliyoruz.
                     var updatedProduct = productUpdateDTO.Adapt(updatingProduct);
                     await _productRepository.UpdateAsync(updatedProduct);
