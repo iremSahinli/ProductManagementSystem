@@ -82,7 +82,6 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                
                 return View(model);
             }
 
@@ -122,14 +121,12 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             await _mailService.SendMailAsync(newUser.Email, subject, body);
 
 
-
             _context.UserProfile.Add(userProfile);
             await _context.SaveChangesAsync();
 
 
             return RedirectToAction("ListUsers", "AdminUser");
         }
-
 
         public async Task<IActionResult> Edit(Guid id)
         {

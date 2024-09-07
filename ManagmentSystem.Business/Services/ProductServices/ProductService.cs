@@ -42,46 +42,42 @@ namespace ManagmentSystem.Business.Services.ProductServices
                 return new ErrorResult("Ürün Sistemde Mevcut");
             }
 
-            // Transaction oluşturma
+            if (productCreateDTO.SelectedCategories == null || !productCreateDTO.SelectedCategories.Any())
+            {
+                return new ErrorResult("Kategori seçilmedi.");
+            }
+
             using (var transaction = await _productRepository.BeginTransactionAsync())
             {
                 try
                 {
-                    // Yeni ürünü ekleme
                     var newProduct = productCreateDTO.Adapt<Product>();
                     await _productRepository.AddAsync(newProduct);
 
-                    // Seçilen kategori için ProductCategory tablosuna kayıt ekleme
-                    if (productCreateDTO.SelectedCategories != null && productCreateDTO.SelectedCategories.Any())
+                    foreach (var categoryId in productCreateDTO.SelectedCategories)
                     {
-                        foreach (var categoryId in productCreateDTO.SelectedCategories)
+                        var newProductCategory = new ProductCategory
                         {
-                            var newProductCategory = new ProductCategory
-                            {
-                                CategoryId = categoryId,
-                                ProductId = newProduct.Id
-                            };
-                            await _productCategoryRepository.AddAsync(newProductCategory);
-                        }
+                            CategoryId = categoryId,
+                            ProductId = newProduct.Id
+                        };
+                        await _productCategoryRepository.AddAsync(newProductCategory);
                     }
 
-                    // Değişiklikleri kaydetme
                     await _productRepository.SaveChangeAsync();
                     await _productCategoryRepository.SaveChangeAsync();
 
-                    // Transaction'ı onaylama
                     await transaction.CommitAsync();
-
                     return new SuccessResult("Ürün Ekleme Başarılı");
                 }
                 catch (Exception ex)
                 {
-                    // Hata durumunda transaction'ı geri alma
                     await transaction.RollbackAsync();
                     return new ErrorResult("Hata: " + ex.Message);
                 }
             }
         }
+
         public async Task<IResult> DeleteAsync(Guid productId)
         {
             using (var transaction = await _context.Database.BeginTransactionAsync())
