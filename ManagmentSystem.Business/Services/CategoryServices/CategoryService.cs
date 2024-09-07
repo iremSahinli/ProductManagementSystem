@@ -39,8 +39,8 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             if (await _categoryRepository.AnyAsync(x => x.CategoryName.ToLower() == categoryCreateDTO.CategoryName.ToLower()))
             {
                 return new ErrorResult("Kategori Sistemde Mevcut");
-
             }
+
             var newCategory = categoryCreateDTO.Adapt<Category>();
             await _categoryRepository.AddAsync(newCategory);
             await _categoryRepository.SaveChangeAsync();

@@ -39,22 +39,24 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             return View();
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Create(AdminCategoryCreateVM model)
         {
             if (!ModelState.IsValid)
             {
+                ErrorNotyf("Lütfen formu doğru şekilde doldurun.");
                 return View(model);
-
             }
+
             var result = await _categoryService.AddAsync(model.Adapt<CategoryCreateDTO>());
             if (!result.IsSucces)
             {
-                ErrorNotyf("Failed");
+                
+                ErrorNotyf(result.Message); // Mesaj: "Kategori Sistemde Mevcut"
                 return View(model);
             }
-            SuccesNotyf("Create is successfully");
+
+            SuccesNotyf("Kategori başarıyla eklendi.");
             return RedirectToAction("Index");
         }
 
