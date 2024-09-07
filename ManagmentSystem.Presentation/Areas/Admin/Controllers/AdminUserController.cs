@@ -76,12 +76,18 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             return View(model);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Create(AdminUserCreateVM model)
         {
             if (!ModelState.IsValid)
             {
+                return View(model);
+            }
+//Email kısmı kontrolü
+            var existingUser = await _userManager.FindByEmailAsync(model.Mail);
+            if (existingUser != null)
+            {
+                ErrorNotyf("Bu e-posta adresine sahip kullanıcı zaten mevcut.");
                 return View(model);
             }
 
@@ -93,19 +99,23 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 EmailConfirmed = true
             };
 
-            string password = PasswordGenerator.GeneratePassword(); //Burada passwordGenerator statik yapıdan rastgele şifre ataması yapıyoruz.
+            string password = PasswordGenerator.GeneratePassword(); //Rastgele şifre oluştur.
 
-            var result = await _userManager.CreateAsync(newUser, password); // Şifre belirleyin
+            // Kullanıcıyı oluştur
+            var result = await _userManager.CreateAsync(newUser, password);
             if (!result.Succeeded)
             {
-                ModelState.AddModelError(string.Empty, "Kullanıcı oluşturma başarısız.");
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description); // Tüm hataları model durumuna ekleyin.
+                }
+                return View(model); // Hataları döndür.
             }
 
             // UserProfile nesnesini oluştur
             var userProfile = new UserProfile
             {
-
-                IdentityUserId = newUser.Id,//newUser alıyoruz.
+                IdentityUserId = newUser.Id, //newUser.Id kullanarak kullanıcıyı bağla.
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
@@ -115,18 +125,18 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ProfileImage = model.ProfileImage
             };
 
-            //Yeni kullanıcı eklendiğinde oluşturulan şifresi mail olarak gidecek.
-            string subject = "Hesap Bilgileriniz: ";
-            string body = $"Merhaba {model.FirstName} {model.LastName},\n\nHesabınız başarıyla oluşturuldu.Giriş yapmak için kullanıcıadınız: {model.Mail},\nşifreniz: {password}";
+            // Kullanıcıya şifreyi içeren bir mail gönder
+            string subject = "Hesap Bilgileriniz";
+            string body = $"Merhaba {model.FirstName} {model.LastName},\n\nHesabınız başarıyla oluşturuldu. Giriş yapmak için kullanıcı adınız: {model.Mail}, şifreniz: {password}";
             await _mailService.SendMailAsync(newUser.Email, subject, body);
 
-
+            // UserProfile'ı veritabanına kaydet
             _context.UserProfile.Add(userProfile);
             await _context.SaveChangesAsync();
 
-
             return RedirectToAction("ListUsers", "AdminUser");
         }
+
 
         public async Task<IActionResult> Edit(Guid id)
         {
