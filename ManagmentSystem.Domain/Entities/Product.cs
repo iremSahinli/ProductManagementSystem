@@ -16,6 +16,7 @@ namespace ManagmentSystem.Domain.Entities
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public double ProductPrice { get; set; }
+        public string ProductImage { get; set; }
 
         // Nav Prop
         public virtual IEnumerable<ProductCategory> ProductCategories { get; set; }

@@ -11,11 +11,7 @@ using ManagmentSystem.Infrastructure.Repositories.ProductCategoryRepositories;
 using ManagmentSystem.Infrastructure.Repositories.ProductRepositories;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ManagmentSystem.Business.Services.ProductServices
 {
@@ -199,15 +195,22 @@ namespace ManagmentSystem.Business.Services.ProductServices
                         return new ErrorResult("Güncellenecek Ürün Bulunamadı");
                     }
 
+                    updatingProduct = productUpdateDTO.Adapt(updatingProduct);
+
+                    if (!string.IsNullOrEmpty(productUpdateDTO.ProductImagePath))
+                    {
+                        updatingProduct.ProductImage = productUpdateDTO.ProductImagePath; // Görsel güncelleniyor
+                    }
+
+
+
 
                     foreach (var item in updatingProduct.ProductCategories)
                     {
                         await _productCategoryRepository.DeleteAsync(item);
                     }
 
-                    // Ürün bilgilerini güncelliyoruz.
-                    var updatedProduct = productUpdateDTO.Adapt(updatingProduct);
-                    await _productRepository.UpdateAsync(updatedProduct);
+
 
                     // Yeni seçilen kategorileri ekliyoruz.
                     foreach (var categoryId in productUpdateDTO.SelectedCategories)
@@ -221,10 +224,9 @@ namespace ManagmentSystem.Business.Services.ProductServices
                         await _productCategoryRepository.AddAsync(newProductCategory);
                     }
 
-                    // Değişiklikleri kaydediyoruz.
+                    await _productRepository.UpdateAsync(updatingProduct);
                     await _productRepository.SaveChangeAsync();
 
-                    // Eğer tüm işlemler başarılı olursa transaction'ı commit ediyoruz.
                     await transaction.CommitAsync();
 
                     return new SuccessResult("Ürün Güncelleme Başarılı");
@@ -255,5 +257,7 @@ namespace ManagmentSystem.Business.Services.ProductServices
         {
             return await _context.ProductCategories.AnyAsync(pc => pc.CategoryId == categoryId && pc.Status != Status.Deleted);
         }
+
+       
     }
 }

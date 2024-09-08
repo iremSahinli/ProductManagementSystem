@@ -1,60 +1,62 @@
 ﻿@model ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs.AdminProductDetailVM
 
 @{
-    ViewData["Title"] = "Detaylar";
+    ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Product Details</h1>
 
-<div>
-    <hr />
-    <dl class="row">
-        @* <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd> *@
-        <dt class="col-sm-2">
-            Product Name
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
-        <dt class="col-sm-2">
-            Product Price
-        </dt>
-        <dd class="col-sm-10">
-            @if (Model.ProductPrice != null)
-            {
-                <span>@Model.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
-            }
-            else
-            {
-                <span>No price available</span>
-            }
-        </dd>
-        <dt class="col-sm-2">
-            Product Description
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProductDescription)
-        </dd>
-        <dt class="col-sm-2">
-            Category Name
-        </dt>
-        <dd class="col-sm-10">
-            @if (Model.CategoryNames != null && Model.CategoryNames.Any())
-            {
-                @string.Join(" - ", Model.CategoryNames)
-            }
-            else
-            {
-                <span>No categories</span>
-            }
-        </dd>
-    </dl>
-</div>
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">Product Name</dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.ProductName)
+    </dd>
+
+    <dt class="col-sm-2">Product Price</dt>
+    <dd class="col-sm-10">
+        @if (Model.ProductPrice != null)
+        {
+            <span>@Model.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
+        }
+        else
+        {
+            <span>No price available</span>
+        }
+    </dd>
+
+    <dt class="col-sm-2">Product Description</dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.ProductDescription)
+    </dd>
+    <dt class="col-sm-2">Categories</dt>
+    <dd class="col-sm-10">
+        @if (Model.CategoryNames != null && Model.CategoryNames.Any())
+        {
+            <span>@string.Join(" - ", Model.CategoryNames)</span>
+        }
+        else
+        {
+            <span>No categories assigned</span>
+        }
+    </dd>
+    <dt class="col-sm-2">Image</dt>
+    <dd class="col-sm-10">
+        @if (!string.IsNullOrEmpty(Model.ProductImage))
+        {
+            <img src ="@Model.ProductImage" alt="Ürün Görseli" style="max-width: 200px;" />
+        }
+        else
+        {
+            <p>No profile image uploaded.</p>
+        }
+    </dd>
+
+
+</dl>
+
 <div style="margin-top: 5px;">
-    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
+    <a asp-action="Index" class="btn" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px;">Back to List</a>
 </div>
+
+
