@@ -21,5 +21,11 @@ namespace ManagmentSystem.Business.Services.CategoryServices
         Task<List<Guid>> GetCategoryIdsByProductIdAsync(Guid productId);
         Task<List<string>> GetCategoryNamesByIdsAsync(List<Guid> categoryIds);
         Task<List<GetCategoryNameDTO>> GetAllCategoriesAsync(); //Formda categorileri getirebilmek için eklendi.
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categoryName"></param>
+        /// <returns></returns>
+        Task<bool> IsCategoryNameExistAsync(string categoryName, string description);
     }
 }

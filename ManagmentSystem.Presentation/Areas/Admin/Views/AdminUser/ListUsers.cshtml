@@ -53,6 +53,9 @@
                 <td>
                     <!-- Düzenle butonu -->
                     <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Update</a>
+                    <a href="@Url.Action("UserDetail", "AdminUser", new { id = item.Id })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Delete", "AdminUser", new { id = item.Id })" class="btn btn-danger">Delete</a>
+
                 </td>
             </tr>
         }

@@ -76,11 +76,6 @@ namespace ManagmentSystem.Presentation.Controllers
                 userProfileDTO.ProfileImage = "/uploads/" + uniqueFileName;
             }
 
-
-
-
-
-
             var result = await _userProfileService.CreateUserAsync(userProfileDTO);
 
             if (result.IsSucces)
@@ -90,6 +85,11 @@ namespace ManagmentSystem.Presentation.Controllers
 
             ModelState.AddModelError(string.Empty, result.Message);
             return View(model);
+
+
+
+
+
         }
 
         [HttpGet]
