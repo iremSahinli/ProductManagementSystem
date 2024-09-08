@@ -1,12 +1,6 @@
 ﻿
 using ManagmentSystem.Business.DTOs.ProductDTOs;
 using ManagmentSystem.Domain.Utilities.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ManagmentSystem.Business.Services.ProductServices
 {
     public interface IProductService
@@ -26,5 +20,6 @@ namespace ManagmentSystem.Business.Services.ProductServices
         /// <returns>geriye true veya false döner.</returns>
         Task<bool> IsCategoryUsedAsync(Guid categoryId);  //silinmek istenen category product tablosunda kullanılıyormu?.
         Task<IDataResult<List<Guid>>> GetCategoryIdsByProductId(Guid? productId); //Idlerine göre Categoriyleri getirir.
+        
     }
 }

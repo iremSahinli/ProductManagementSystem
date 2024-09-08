@@ -11,6 +11,8 @@ namespace ManagmentSystem.Business.DTOs.ProductDTOs
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public double ProductPrice { get; set; }
+        public string ProductImage { get; set; }
+
         public List<Guid> SelectedCategories { get; set; }=new List<Guid>();
         //public Guid SelectedCategoryId { get; set; }  // Tek kategori için
 

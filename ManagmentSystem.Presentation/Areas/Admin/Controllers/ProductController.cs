@@ -20,18 +20,16 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly IProductRepository _productRepository;
-        private readonly IProductCategoryRepository _productCategoryRepository;
         private readonly AppDbContext _context;
 
 
 
 
-        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository, IProductCategoryRepository productCategoryRepository, AppDbContext context)
+        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository, AppDbContext context)
         {
             _productService = productService;
             _categoryService = categoryService;
             _productRepository = productRepository;
-            _productCategoryRepository = productCategoryRepository;
             _context = context;
         }
 
@@ -64,25 +62,44 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-               
+
                 model.Categories = await GetCategories();
                 return View(model);
             }
+
+
+            string productImagePath = null; //Görsel kaydetme işlemi için gerekli alan.
+            if (model.ProductImage != null)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ProductImage.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ProductImage.CopyToAsync(fileStream);
+                }
+
+                productImagePath = "/uploads/" + uniqueFileName;
+            }
+
 
             var productCreateDTO = new ProductCreateDTO
             {
                 ProductName = model.ProductName,
                 ProductDescription = model.ProductDescription,
                 ProductPrice = model.ProductPrice,
+                ProductImage = productImagePath,
                 SelectedCategories = model.SelectedCategories,
             };
+
 
             var result = await _productService.AddAsync(productCreateDTO);
             if (!result.IsSucces)
             {
-                
+
                 ErrorNotyf(result.Message);
-                model.Categories = await GetCategories(); 
+                model.Categories = await GetCategories();
                 return View(model);
             }
 
@@ -95,10 +112,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         public async Task<IActionResult> Update(Guid id)
         {
             var result = await _productService.GetByIdAsync(id);
-
             if (!result.IsSucces)
             {
-
                 await Console.Out.WriteLineAsync(result.Message);
                 return RedirectToAction("Index");
             }
@@ -106,19 +121,25 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             var productUpdateVM = result.Data.Adapt<AdminProductUpdateVM>();
 
-            // Kategorileri getiriyoruz.
+
             productUpdateVM.Categories = await GetCategories(id);
 
-            var product = await _context.Products
+
+            if (string.IsNullOrEmpty(productUpdateVM.ProductImagePath))
+            {
+                var product = await _context.Products
                     .Include(p => p.ProductCategories)
                     .ThenInclude(pc => pc.Category)
                     .FirstOrDefaultAsync(p => p.Id == id);
 
-            if (product != null)
-            {
-                productUpdateVM.SelectedCategories = product.ProductCategories
-                    .Select(pc => pc.CategoryId)
-                    .ToList();
+                if (product != null)
+                {
+                    productUpdateVM.SelectedCategories = product.ProductCategories
+                        .Select(pc => pc.CategoryId)
+                        .ToList();
+
+                    productUpdateVM.ProductImagePath = product.ProductImage;
+                }
             }
 
             return View(productUpdateVM);
@@ -129,25 +150,52 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Eğer model geçersizse sayfa tekrar yüklenir.
-                model.Categories = await GetCategories(model.Id); // Kategoriler yeniden yüklenir.
+                model.Categories = await GetCategories(model.Id);
                 return View(model);
+                
             }
 
+            if (model.ProductImage != null)
+            {
 
-            // Modeli DTO'ya dönüştürüp güncelleme işlemini çağırıyoruz.
+                if (!string.IsNullOrEmpty(model.ProductImagePath))
+                {
+                    var existingFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", model.ProductImagePath.TrimStart('/'));
+                    if (System.IO.File.Exists(existingFilePath))
+                    {
+                        System.IO.File.Delete(existingFilePath);
+                    }
+                }
+                // Dosya adı benzersiz bir ad ile değiştirilir
+                var uniqueFileName = $"{Guid.NewGuid()}_{model.ProductImage.FileName}";
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ProductImage.CopyToAsync(stream);
+                }
+
+                
+                model.ProductImagePath = $"/uploads/{uniqueFileName}"; //doğru dosya yolunu DTO ya veriyoruz.
+            }
+
+            var productUpdateDTO = model.Adapt<ProductUpdateDTO>();
+
+
+            
             var result = await _productService.UpdateAsync(model.Adapt<ProductUpdateDTO>());
 
             if (!result.IsSucces)
             {
                 // Eğer güncelleme başarısız olursa, hata mesajı ile sayfa tekrar yüklenir.
-                await Console.Out.WriteLineAsync(result.Message);
+                ErrorNotyf(result.Message);
                 model.Categories = await GetCategories(model.Id); // Kategoriler yeniden yüklenir.
                 return View(model);
             }
 
-            // Başarılıysa liste sayfasına yönlendiriyoruz.
-            await Console.Out.WriteLineAsync(result.Message);
+           
+            SuccesNotyf(result.Message);
+            Console.WriteLine(model.ProductImage);
             return RedirectToAction("Index");
         }
 
@@ -176,6 +224,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ProductDescription = product.ProductDescription,
                 ProductPrice = product.ProductPrice,
                 CategoryNames = categoryNames,
+                ProductImage = product.ProductImage
 
             };
             SuccesNotyf("Product Detail Page Loaded Successfully");
