@@ -1,4 +1,4 @@
-﻿@model ManagmentSystem.Presentation.Models.AccountVM.LoginVM
+﻿@* @model ManagmentSystem.Presentation.Models.AccountVM.LoginVM
 
 @{
     ViewData["Title"] = "Giriş Yap";
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
-            </div>            
+            </div>
             <div class="form-group" style="margin-top: 10px">
                 <input type="submit" value="Login" class="btn btn-primary" />
             </div>
@@ -38,12 +38,12 @@
 
 <div style="margin-top: 5px;">
     <a asp-controller="Home"  asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to Home</a>
-</div>
+</div> *@
 @* <div style="margin-top: 5px;">
     <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Home</a>
 </div> *@
 
-@section Scripts {
+@* @section Scripts {
     <script>
         function togglePassword() {
             var passwordField = document.getElementById("password");
@@ -63,4 +63,184 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+} *@
+
+
+
+@model ManagmentSystem.Presentation.Models.AccountVM.LoginVM
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - Argon Dashboard 2</title>
+    <!-- Fonts and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="~/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="~/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="~/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100">
+    <div class="container position-sticky z-index-sticky top-0">
+        <div class="row">
+            <div class="col-12">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
+                    <div class="container-fluid">
+                        <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3" href="/Home/Index" ">
+                            Home
+                        </a>
+                        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon mt-2">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navigation">
+                            <ul class="navbar-nav mx-auto">
+
+                                <li class="nav-item">
+                                    <a class="nav-link me-2" href="/Account/Register">
+                                        <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                                        Register
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link me-2" href="/Account/Login">
+                                        <i class="fa fa-user opacity-6 text-dark me-1"></i>
+                                        Login
+                                    </a>
+                                </li>
+
+
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+            </nav>
+            <!-- End Navbar -->
+        </div>
+    </div>
+    </div>
+
+    <main class="main-content mt-0">
+        <section>
+            <div class="page-header min-vh-100">
+                <div class="container d-flex flex-column justify-content-end ">
+                    <div class="row">
+                        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+                            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column;">
+                                <div class="card card-plain">
+                                    <div class="card-header pb-0 text-start" style="background-color: transparent;">
+                                        <h4 class="font-weight-bolder">Login</h4>
+                                        <p class="mb-0">Enter your email and password to sign in</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form asp-action="Login">
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                            <div class="mb-3">
+                                                <input asp-for="Email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                                                <span asp-validation-for="Password" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="rememberme">
+                                                <label class="form-check-label" for="rememberme">remember me</label>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-primary btn-lg active w-100 mt-4 mb-0" role="button" aria-pressed="true">
+                                                    Login
+                                                </button>
+                                            </div>
+
+
+                                        </form>
+                                    </div>
+                                    <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                                        <p class="mb-4 text-sm mx-auto">
+                                            Don't have an account?
+                                            <a href="~/Account/Register" class="text-primary text-gradient font-weight-bold">Register</a>
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Image Panel Place-->
+                            <div class="col-md-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+                                <div class="background-image-container">
+                                    <span class="mask bg-gradient-primary opacity-6"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Core JS Files -->
+    <script src="~/assets/js/core/popper.min.js"></script>
+    <script src="~/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+
+   
+
+    <!---->
+  @*  @section Styles {
+    <style>
+        @media only screen and (max-width: 768px) {
+            .card.card-plain {
+                width: 70%;
+                transform: translate(5%, 50%);
+            }
+        } *@
+    <style>
+
+        .card.card-plain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(80%, 50%);
+            width: 400px;
+            padding: 0px;
+            background-color: transparent !important;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .background-image-container {
+            position: relative;
+            background-image: url('/assets/img/plastikler.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 1;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 }
+
+
+</body>
+
+</html>
+
+
