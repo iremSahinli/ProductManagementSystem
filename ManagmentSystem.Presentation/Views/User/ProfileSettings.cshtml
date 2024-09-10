@@ -1,42 +1,84 @@
 ﻿@model ManagmentSystem.Business.DTOs.UserProfileDTOs.UserProfileDTO
 
 @{
-    ViewData["Title"] = "Profile Settings";
+    ViewData["Title"] = "Profile Details";
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="container text-center">
+    <h2>@ViewData["Title"]</h2>
 
-<div class="card">
-    <div class="card-body">
-        <dl class="row">
-            <dt class="col-sm-2">First Name:</dt>
-            <dd class="col-sm-10">@Model.FirstName</dd>
-
-            <dt class="col-sm-2">Last Name:</dt>
-            <dd class="col-sm-10">@Model.LastName</dd>
-
-            <dt class="col-sm-2">Phone Number:</dt>
-            <dd class="col-sm-10">@Model.PhoneNumber</dd>
-
-            <dt class="col-sm-2">Date of Birth:</dt>
-            <dd class="col-sm-10">@Model.DateOfBirth?.ToString("dd/MM/yyyy")</dd>
-
-            <dt class="col-sm-2">Address:</dt>
-            <dd class="col-sm-10">@Model.Address</dd>
-
-            <dt class="col-sm-2">Profile Image:</dt>
-            <dd class="col-sm-10">
+    <div class="card profile-card mx-auto">
+        <div class="card-body">
+            <div class="profile-header">
+                <!-- Profil fotoğrafı burada gösterilecek -->
                 @if (!string.IsNullOrEmpty(Model.ProfileImage))
                 {
-                    <img src="@Model.ProfileImage" alt="Profile Image" style="max-width: 200px;" />
+                    <img src="@Model.ProfileImage" alt="Profile Image" class="profile-img" />
                 }
                 else
                 {
                     <p>No profile image uploaded.</p>
                 }
-            </dd>
-        </dl>
+                <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
+                <h6 class="category text-info text-gradient">User</h6>
+            </div>
+            <dl class="row">
+                <dt class="col-sm-4">Phone Number:</dt>
+                <dd class="col-sm-8">@Model.PhoneNumber</dd>
 
-        <a asp-action="Update" class="btn btn-primary">Go Update Page</a>
+                <dt class="col-sm-4">Date of Birth:</dt>
+                <dd class="col-sm-8">@Model.DateOfBirth?.ToString("dd/MM/yyyy")</dd>
+
+                <dt class="col-sm-4">Address:</dt>
+                <dd class="col-sm-8">@Model.Address</dd>
+            </dl>
+            <a asp-action="Update" class="btn btn-primary">Go Update Page</a>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .profile-card {
+        background-color: rgba(255, 255, 255, 1); /* Transparan arka plan */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin-top: 20px;
+        max-width: 600px;
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #ddd;
+    }
+
+    .card-description {
+        margin: 20px 0;
+        font-style: italic;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+    }
+</style>
+
