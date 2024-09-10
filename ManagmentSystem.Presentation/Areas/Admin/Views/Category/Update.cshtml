@@ -4,40 +4,58 @@
     ViewData["Title"] = "Update";
 }
 
-<h1>Update Category</h1>
+<h1 class="text-center mt-4 mb-0">Update Category</h1>
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row justify-content-center">
+    <div class="col-md-6">
         <form asp-action="Update">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @* <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div> *@
+
             <div class="form-group">
-                <label asp-for="CategoryName" class="control-label">Category Name</label>@* Category Name Ekranda görünen Yazı *@
-                <input asp-for="CategoryName" class="form-control" />
+                <label asp-for="CategoryName" class="control-label">Category Name</label>
+                <input asp-for="CategoryName" type="categoryname" class="form-control form-control-alternative transparent-border-input" id="exampleFormControlInput1" placeholder="Category Name" />
                 <span asp-validation-for="CategoryName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Description" class="control-label">Description</label>
-                <input asp-for="Description" class="form-control" />
+                <textarea asp-for="Description" class="form-control transparent-border-input" rows="3"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <p></p>
-            <div class="form-group" style="margin-top: 10px">
+
+            <div class="text-center" style="margin-top: 10px">
                 <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+            <div class="text-center mt-4 mb-0" style="margin-top: 5px;">
+                <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div style="margin-top: 5px;">
-    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<!-- Transparan ve Belirgin Çerçeve Stilleri -->
+<style>
+    .transparent-border-input {
+        background-color: rgba(255, 255, 255, 0.2); /* Hafif transparan arka plan */
+        border: 2px solid rgba(255, 255, 255, 0.8); /* Daha belirgin şeffaf çerçeve */
+        color: #000; /* Yazı rengi */
+        padding: 10px;
+        border-radius: 8px;
+        transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+
+        .transparent-border-input:focus {
+            border-color: rgba(0, 123, 255, 0.9); /* Odaklandığında daha belirgin çerçeve */
+            background-color: rgba(255, 255, 255, 0.5); /* Focus olduğunda arka plan biraz daha dolu */
+            outline: none; /* Tarayıcı varsayılan outline'ını kaldırır */
+        }
+</style>
+
