@@ -4,65 +4,64 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1 class="text-center mt-4 mb-0">Edit User</h1>
+<div class="container text-center">
+    <h1 class="mt-4 mb-4">Edit User</h1>
 
-<hr />
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <hr />
+    <div class="card profile-card mx-auto">
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label">First Name</label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label">First Name</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label">Last Name</label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label">Last Name</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="Mail" class="control-label">E-Mail</label>
-                <input asp-for="Mail" class="form-control" />
-                <span asp-validation-for="Mail" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="Mail" class="control-label">E-Mail</label>
+                    <input asp-for="Mail" class="form-control" />
+                    <span asp-validation-for="Mail" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
-                <input asp-for="DateOfBirth" class="form-control" type="date" />
-                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
+                    <input asp-for="DateOfBirth" class="form-control" type="date" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="Address" class="control-label">Address</label>
-                <textarea asp-for="Address" class="form-control"></textarea>
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label">Address</label>
+                    <textarea asp-for="Address" class="form-control"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="ProfileImage" class="control-label">Profile Image</label>
-                <input asp-for="ProfileImage" class="form-control" type="file" />
-                <span asp-validation-for="ProfileImage" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="ProfileImage" class="control-label">Profile Image</label>
+                    <input asp-for="ProfileImage" class="form-control" type="file" />
+                    <span asp-validation-for="ProfileImage" class="text-danger"></span>
+                </div>
 
-            <div class="form-group text-center" style="margin-top: 10px">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="d-flex justify-content-center mt-4">
+                    <input type="submit" value="Save" class="btn btn-primary mx-2" />
+                    <a asp-action="ListUsers" class="btn btn-danger mx-2">Back to List</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<div class="text-center" style="margin-top: 5px;">
-    <a asp-action="ListUsers" class="btn" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;">Back to List</a>
 </div>
 
 @section Scripts {
@@ -70,4 +69,67 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
+<style>
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .profile-card {
+        background-color: rgba(255, 255, 255, 0.8); /* Transparan arka plan */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin-top: 20px;
+        max-width: 600px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Başlıkları sola hizala */
+    }
+
+        .form-group label {
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            margin-bottom: 5px;
+        }
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-center {
+        justify-content: center;
+    }
+
+    .mx-2 {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+</style>
 
