@@ -4,12 +4,11 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
+<h1 class="text-center mt-4 mb-0">Edit User</h1>
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row justify-content-center">
+    <div class="col-md-6">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -18,58 +17,52 @@
                 <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="LastName" class="control-label">Last Name</label>
                 <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Mail" class="control-label"></label>
+                <label asp-for="Mail" class="control-label">E-Mail</label>
                 <input asp-for="Mail" class="form-control" />
                 <span asp-validation-for="Mail" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
-                <input asp-for="DateOfBirth" class="form-control" />
+                <input asp-for="DateOfBirth" class="form-control" type="date" />
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
-                <label asp-for="Address" class="control-label">Address</label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div> *@
+
             <div class="form-group">
                 <label asp-for="Address" class="control-label">Address</label>
                 <textarea asp-for="Address" class="form-control"></textarea>
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="ProfileImage" class="control-label">Profile Image</label>
                 <input asp-for="ProfileImage" class="form-control" type="file" />
                 <span asp-validation-for="ProfileImage" class="text-danger"></span>
             </div>
-            @* <div class="form-group"><label asp-for="ProfileImage" class="control-label">Current Profile Image</label>    @if (!string.IsNullOrEmpty(Model.ProfileImage))
-                {
-                            <img src="~/uploads/profile-images/@Model.ProfileImage" alt="Profile Image" width="100" height="100" />
-                }
-                else
-                {
-                             <span>No profile image uploaded</span>
-                } </div> *@
-            <div class="form-group" style="margin-top: 10px">
+
+            <div class="form-group text-center" style="margin-top: 10px">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div style="margin-top: 5px;">
-    <a asp-action="ListUsers" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
+<div class="text-center" style="margin-top: 5px;">
+    <a asp-action="ListUsers" class="btn" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;">Back to List</a>
 </div>
 
 @section Scripts {
@@ -77,3 +70,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
