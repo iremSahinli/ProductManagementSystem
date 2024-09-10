@@ -4,115 +4,83 @@
     ViewData["Title"] = "Kullanıcılar";
 }
 
-<h1>Users</h1>
-
+<h1 class="text-center">Users</h1>
 
 <div class="button-container mb-3">
     <a href="@Url.Action("Create", "AdminUser")" class="btn btn-success">Create New User</a>
 </div>
 
 <form method="post" asp-controller="AdminUser" asp-action="UpdateLockoutStatus">
-    <!--Anti token koruması eklendi.-->
     @Html.AntiForgeryToken() <!-- koruma için Antiforgery token -->
 </form>
 
+<div class="card">
+    <div class="table-responsive">
+        <table class="table align-items-center mb-0">
+            <thead>
+                <tr>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Mail</th>
-            <th>Lock or Unlock Swich</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mail)
-                </td>
-                <td>
-                    <div class="form-group d-flex align-items-center" style="margin: 5px">
-                        <label class="switch" style="margin-left: 10px;">
-                            <input type="checkbox" id="lockoutEnabledSwitch-@item.Id"
-                                   data-user-id="@item.Id"
-                            @(item.LockoutEnabled ? "checked" : "")>
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <!-- Düzenle butonu -->
-                    <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Update</a>
-                    <a href="@Url.Action("UserDetail", "AdminUser", new { id = item.Id })" class="btn btn-info">Details</a>
-                    <a href="@Url.Action("Delete", "AdminUser", new { id = item.Id })" class="btn btn-danger">Delete</a>
-
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">First Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mail</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lock or Unlock Switch</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mail)
+                        </td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="lockoutEnabledSwitch-@item.Id"
+                                       data-user-id="@item.Id"
+                                @(item.LockoutEnabled ? "checked" : "") />
+                                <label class="form-check-label" for="lockoutEnabledSwitch-@item.Id"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Update</a>
+                            <a href="@Url.Action("UserDetail", "AdminUser", new { id = item.Id })" class="btn btn-info">Details</a>
+                            <a href="@Url.Action("Delete", "AdminUser", new { id = item.Id })" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <style>
-    .switch {
-        position: relative;
-        display: inline-block;
+    .form-check-input {
         width: 60px;
         height: 34px;
     }
 
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
+        .form-check-input:checked {
+            background-color: green;
         }
 
-    .slider {
-        position: absolute;
+        .form-check-input:not(:checked) {
+            background-color: red;
+        }
+
+    .form-check-label {
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        position: relative;
         cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: red;
-        transition: .4s;
     }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-        }
-
-    input:checked + .slider {
-        background-color: green;
-    }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-    .slider.round {
-        border-radius: 34px;
-    }
-
-        .slider.round:before {
-            border-radius: 50%;
-        }
 </style>
 
 @section Scripts {
@@ -140,9 +108,7 @@
                     error: function (error) {
                         console.log("Hata:", error);
                         alert('Kullanıcı durumu güncellenirken bir hata oluştu.');
-
-
-                        element.checked = !isEnabled;// hata olursa Switch'i eski durumuna geri döndür.
+                        element.checked = !isEnabled; // Hata olursa Switch'i eski durumuna geri döndür.
                     }
                 });
             });

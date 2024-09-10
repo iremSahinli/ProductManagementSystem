@@ -4,68 +4,65 @@
     ViewData["Title"] = "UserDetail";
 }
 
-<h1>UserDetail</h1>
+<h1 class="text-center">UserDetail</h1>
 
-<div>
-    <h4>AdminUserDetailVM</h4>
-    <hr />
-    <dl class="row">
-       @*  <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd> *@
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Mail)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Mail)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DateOfBirth)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class="col-sm-2">Profil Image</dt>
-        <dd class="col-sm-10">
-            @if (!string.IsNullOrEmpty(Model.ProfileImagePath))
-            {
-                <img src="@Url.Content(Model.ProfileImagePath)" alt="Profil Fotoğrafı" style="width: 150px; height: 150px; object-fit: cover;" />
-            }
-            else
-            {
-                <span>Profil fotoğrafı yok</span>
-            }
-        </dd>
-    </dl>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-transparent text-center">
+                <!-- CSS sınıfını ekleyin -->
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(Model.ProfileImagePath))
+                    {
+                        <img src="@Url.Content(Model.ProfileImagePath)" alt="Profile Photo" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover; margin-bottom: 15px;" />
+                    }
+                    else
+                    {
+                        <span>No profile photo</span>
+                    }
+
+                    <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
+                    <h6 class="category text-info text-gradient">User</h6>
+                    <hr />
+
+                    <dl class="row justify-content-center">
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Mail)</dd>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+                        <dd class="col-sm-8">
+                            @if (Model.DateOfBirth.HasValue)
+                            {
+                                @Model.DateOfBirth.Value.ToString("dd.MM.yyyy")
+                            }
+                            else
+                            {
+                                <span>N/A</span>
+                            }
+                        </dd>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="ListUsers">Back to List</a>
+
+<div class="text-center mt-4">
+    <a asp-action="ListUsers" class="btn btn-info">Back to List</a>
 </div>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .card-transparent {
+        background-color: rgba(255, 255, 255, 0.9); /* Beyaz arka plan, %90 opaklık */
+        border: 1px solid #ddd; /* Opsiyonel: Kartın etrafında ince bir sınır */
+    }
+
+</style>
