@@ -4,10 +4,10 @@
     ViewData["Title"] = "Update";
 }
 
-<h1>Update</h1>
+<h1 style ="text-align:center">Update</h1>
 
 <hr />
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-6">
         <form asp-action="Update" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -29,14 +29,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProductDescription" class="control-label">Product Description</label>
-                <textarea asp-for="ProductDescription" class="form-control"></textarea>
+<textarea asp-for="ProductDescription" class="form-control"></textarea>
                 <span asp-validation-for="ProductDescription" class="text-danger"></span>
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label for="ProductImage">Ürün Resmi</label>
 
                 @if (!string.IsNullOrEmpty(Model.ProductImagePath))
+
                 {
                     <div>
                         <img src="@Model.ProductImagePath" alt="Product Image" style="width:200px; height:auto;" />
@@ -51,29 +52,29 @@
                 </div>
 
 
+                <div class="form-group">
+                    <label asp-for="SelectedCategories" class="control-label">Select Categories</label>
+                    <select asp-for="SelectedCategories" class="form-control" multiple="multiple" id="categorySelect">
+                        @foreach (var category in Model.Categories)
 
-            <div class="form-group">
-                <label asp-for="SelectedCategories" class="control-label">Select Categories</label>
-                <select asp-for="SelectedCategories" class="form-control" multiple="multiple" id="categorySelect">
-                    @foreach (var category in Model.Categories)
-                    {
-                        <option value="@category.Id">@category.CategoryName</option>
-                    }
-                </select>
-                <span asp-validation-for="SelectedCategories" class="text-danger"></span>
-            </div>
+                        {
+                            <option value="@category.Id">@category.CategoryName</option>
+                        }
+                    </select>
+                    <span asp-validation-for="SelectedCategories" class="text-danger"></span>
+                </div>
 
 
-            <div class="form-group" style="margin-top: 10px">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+                <div class="text-center">
+                    <input type="submit" value="Update" class="btn btn-success btn-lg active mt-4 mb-0" />
+                </div>
+                <div class="text-center mt-4 mb-0">
+                    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
+                </div>
         </form>
     </div>
 </div>
 
-<div style="margin-top: 5px;">
-    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
-</div>
 
 @section Scripts {
     @{
