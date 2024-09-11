@@ -3,60 +3,179 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Product Details</h1>
-
-<hr />
-<dl class="row">
-    <dt class="col-sm-2">Product Name</dt>
-    <dd class="col-sm-10">
-        @Html.DisplayFor(model => model.ProductName)
-    </dd>
-
-    <dt class="col-sm-2">Product Price</dt>
-    <dd class="col-sm-10">
-        @if (Model.ProductPrice != null)
-        {
-            <span>@Model.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewData["Title"] - Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        /* Tablonun köşelerini oval yapmak için */
+        .table {
+            border-radius: 15px; /* Oval köşeler */
+            overflow: hidden; /* Taşmaları gizler */
         }
-        else
-        {
-            <span>No price available</span>
+
+        .card {
+            border-radius: 15px; /* Kartın köşelerini oval yap */
         }
-    </dd>
 
-    <dt class="col-sm-2">Product Description</dt>
-    <dd class="col-sm-10">
-        @Html.DisplayFor(model => model.ProductDescription)
-    </dd>
-    <dt class="col-sm-2">Categories</dt>
-    <dd class="col-sm-10">
-        @if (Model.CategoryNames != null && Model.CategoryNames.Any())
-        {
-            <span>@string.Join(" - ", Model.CategoryNames)</span>
+        /* Başlık hücreleri için */
+        thead th {
+            background-color: #f8f9fa;
         }
-        else
-        {
-            <span>No categories assigned</span>
+
+        .card-header h1 {
+            font-size: 1.5rem; /* Yazı boyutunu artır */
+            font-weight: bold; /* Yazıyı kalın yap */
         }
-    </dd>
-    <dt class="col-sm-2">Image</dt>
-    <dd class="col-sm-10">
-        @if (!string.IsNullOrEmpty(Model.ProductImage))
-        {
-            <img src ="@Model.ProductImage" alt="Ürün Görseli" style="max-width: 200px;" />
+
+        .btn-custom {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
         }
-        else
-        {
-            <p>No profile image uploaded.</p>
+
+            .btn-custom:hover {
+                background-color: darkred;
+            }
+
+        .image-cell {
+            padding-right: 10mm; /* Görsel hücresinin sağından 2mm boşluk bırak ÇALIŞMIYOR */
         }
-    </dd>
+
+        .table td, .table dd, .table span {
+            color: #6c757d;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <h1>Product Details</h1>
+                    </div>
+                    @* /* Tablonun Başlıklarınnı yatay olarak sıraladm */ *@
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Price</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Description</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Categories</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Images</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @* /* ürünleri yatay olarak sıraladım */ *@
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <dd class="col-sm-10">
+                                                        @Html.DisplayFor(model => model.ProductName)
+                                                    </dd>
+                                                </div>
+                                            </div>
+                                        </td>
 
 
-</dl>
+                                        <td>
+                                            <div>
+                                                <div>
+                                                    <dd class="col-sm-10">
+                                                        @if (Model.ProductPrice != null)
+                                                        {
+                                                            <span>@Model.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>No price available</span>
+                                                        }
+                                                    </dd>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+                                                    <dd class="col-sm-10">
+                                                        @Html.DisplayFor(model => model.ProductDescription)
+                                                    </dd>
 
-<div style="margin-top: 5px;">
-    <a asp-action="Index" class="btn" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px;">Back to List</a>
-</div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div>
+                                                <div>
+                                                    <dd class="col-sm-10">
+                                                        @if (Model.CategoryNames != null && Model.CategoryNames.Any())
+                                                        {
+                                                            <span>@string.Join(" - ", Model.CategoryNames)</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>No categories assigned</span>
+                                                        }
+                                                    </dd>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td
+                                            class="image-cell">
+                                            
+                                            <div>
+                                                <div>
+
+                                                    <dd class="col-sm-10">
+                                                        @if (!string.IsNullOrEmpty(Model.ProductImage))
+                                                        {
+                                                            <img src="@Model.ProductImage" alt="Ürün Görseli" style="max-width: 200px;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <p>No profile image uploaded.</p>
+                                                        }
+                                                    </dd>
+                                                </div>
+                                            </div>
+                                        </td>
 
 
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="margin-top: 5px;">
+                                                <a asp-action="Index" class="btn btn-custom">Back to List</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> *@
+</body>
+</html>
