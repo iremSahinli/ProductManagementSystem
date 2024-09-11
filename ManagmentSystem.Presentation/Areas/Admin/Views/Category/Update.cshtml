@@ -8,30 +8,31 @@
 
 <hr />
 <div class="row justify-content-center">
-    <div class="col-md-6">
-        <form asp-action="Update">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-8 col-lg-6">
+        <div class="card profile-card mx-auto">
+            <div class="card-body">
+                <form asp-action="Update">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <label asp-for="CategoryName" class="control-label">Category Name</label>
-                <input asp-for="CategoryName" type="categoryname" class="form-control form-control-alternative transparent-border-input" id="exampleFormControlInput1" placeholder="Category Name" />
-                <span asp-validation-for="CategoryName" class="text-danger"></span>
-            </div>
+                    <div class="form-group">
+                        <label asp-for="CategoryName" class="control-label">Category Name</label>
+                        <input asp-for="CategoryName" type="text" class="form-control transparent-border-input" id="exampleFormControlInput1" placeholder="Category Name" />
+                        <span asp-validation-for="CategoryName" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Description" class="control-label">Description</label>
-                <textarea asp-for="Description" class="form-control transparent-border-input" rows="3"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label">Description</label>
+                        <textarea asp-for="Description" class="form-control transparent-border-input" rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
 
-            <div class="text-center" style="margin-top: 10px">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                    <div class="d-flex justify-content-center mt-4 gap-2">
+                        <input type="submit" value="Save" class="btn btn-success" />
+                        <a asp-action="Index" class="btn btn-danger">Back to List</a>
+                    </div>
+                </form>
             </div>
-
-            <div class="text-center mt-4 mb-0" style="margin-top: 5px;">
-                <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -41,21 +42,78 @@
     }
 }
 
-<!-- Transparan ve Belirgin Çerçeve Stilleri -->
 <style>
+    .profile-card {
+        background-color: rgba(255, 255, 255, 1.0); /* Beyaz arka plan */
+        border-radius: 15px; /* Yuvarlak köşeler */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+        padding: 20px; /* İçerik etrafında boşluk */
+        margin-top: 20px; /* Üst boşluk */
+        max-width: 600px; /* Maksimum genişlik */
+    }
+
+    .form-group {
+        margin-bottom: 15px; /* Form grup boşluğu */
+    }
+
+        .form-group label {
+            margin-bottom: 5px; /* Etiket alt boşluğu */
+        }
+
+        .form-group input,
+        .form-group textarea {
+            margin-bottom: 5px; /* Input ve textarea alt boşluğu */
+        }
+
     .transparent-border-input {
-        background-color: rgba(255, 255, 255, 0.2); /* Hafif transparan arka plan */
-        border: 2px solid rgba(255, 255, 255, 0.8); /* Daha belirgin şeffaf çerçeve */
+        background-color: rgba(255, 255, 255, 0.9); /* Hafif saydam beyaz arka plan */
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Hafif gri kenarlık */
         color: #000; /* Yazı rengi */
         padding: 10px;
-        border-radius: 8px;
-        transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        border-radius: 8px; /* Yuvarlak köşeler */
+        transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Geçiş efektleri */
     }
 
         .transparent-border-input:focus {
-            border-color: rgba(0, 123, 255, 0.9); /* Odaklandığında daha belirgin çerçeve */
-            background-color: rgba(255, 255, 255, 0.5); /* Focus olduğunda arka plan biraz daha dolu */
-            outline: none; /* Tarayıcı varsayılan outline'ını kaldırır */
+            border-color: rgba(0, 123, 255, 0.9); /* Focus sırasında belirgin kenarlık */
+            background-color: rgba(255, 255, 255, 1); /* Focus sırasında tamamen beyaz arka plan */
+            outline: none; /* Varsayılan outline kaldırma */
         }
-</style>
 
+    .btn {
+        margin-top: 10px; /* Buton üst boşluğu */
+    }
+
+    .btn-success {
+        background-color: #28a745; /* Yeşil buton arka planı */
+        border-color: #28a745; /* Yeşil buton kenarlığı */
+        color: white; /* Yazı rengi beyaz */
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none; /* Kenarlık yok */
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Kırmızı buton arka planı */
+        border-color: #dc3545; /* Kırmızı buton kenarlığı */
+        color: white; /* Yazı rengi beyaz */
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none; /* Kenarlık yok */
+        text-decoration: none; /* Alt çizgi yok */
+    }
+
+
+    .d-flex {
+        display: flex; /* Flexbox düzeni */
+    }
+
+    .justify-content-center {
+        justify-content: center; /* Ortalamak için */
+    }
+
+    .mx-2 {
+        margin-left: 0.5rem; /* Sol boşluk */
+        margin-right: 0.5rem; /* Sağ boşluk */
+    }
+</style>

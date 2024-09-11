@@ -6,20 +6,56 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card text-center" style="background: rgba(255, 255, 255, 0.7); border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <div class="card-body">
+        <div class="col-md-8 col-lg-6">
+            <div class="card profile-card mx-auto">
+                <div class="card-body text-center">
                     <h4 class="card-title">@Html.DisplayFor(model => model.CategoryName)</h4>
-                    <h6 class="category text-info text-gradient">Category Details</h6>
+                    <h6 class="category text-info">Category Details</h6>
                     <p class="card-description">
                         @Html.DisplayFor(model => model.Description)
                     </p>
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a class="btn btn-twitter" asp-action="Index">Back to List</a>
+                <a class="btn btn-danger mx-2" asp-action="Index">Back to List</a>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    .profile-card {
+        background-color: rgba(255, 255, 255, 1.0); /* Beyaz arka plan */
+        border-radius: 15px; /* Yuvarlak köşeler */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+        padding: 20px; /* İçerik etrafında boşluk */
+        margin-top: 20px; /* Üst boşluk */
+        max-width: 600px; /* Maksimum genişlik */
+    }
+
+    .card-title {
+        font-size: 1.5rem; /* Başlık font boyutu */
+        margin-bottom: 10px; /* Başlık alt boşluğu */
+    }
+
+    .category {
+        font-size: 1.125rem; /* Alt başlık font boyutu */
+        margin-bottom: 20px; /* Alt başlık alt boşluğu */
+    }
+
+    .card-description {
+        font-size: 1rem; /* Açıklama font boyutu */
+        color: #333; /* Açıklama rengi */
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Kırmızı buton arka planı */
+        border-color: #dc3545; /* Kırmızı kenarlık */
+        color: white; /* Beyaz yazı rengi */
+        padding: 10px 20px; /* Buton iç boşluk */
+        text-decoration: none; /* Alt çizgi yok */
+        border-radius: 4px; /* Yuvarlak köşeler */
+        margin-top: 10px; /* Üst boşluk */
+    }
+</style>
 
