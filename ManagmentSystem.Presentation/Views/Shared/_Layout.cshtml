@@ -85,7 +85,7 @@
                 else if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">
+                        <a class="nav-link" asp-area="User" asp-controller="User" asp-action="GetProducts">
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
                             </div>
@@ -156,12 +156,12 @@
                         </div>
                     </div>
                     <ul class="navbar-nav  justify-content-end">
-                        <li class="nav-item d-flex align-items-center">
+                        @* <li class="nav-item d-flex align-items-center">
                             <a href="./Account/Login" class="nav-link text-white font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
                                 <span class="d-sm-inline d-none">Sign In</span>
                             </a>
-                        </li>
+                        </li> *@
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
                                 <div class="sidenav-toggler-inner">
@@ -172,16 +172,16 @@
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-white p-0">
+                            @* <a href="javascript:;" class="nav-link text-white p-0">
                                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                            </a>
+                            </a> *@
                         </li>
                         <li class="nav-item dropdown pe-2 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-bell cursor-pointer"></i>
                             </a>
-                            @* <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton"> *@
-                                @* <li class="mb-2">
+                            <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownmenubutton">
+                                <li class="mb-2">
                                     <a class="dropdown-item border-radius-md" href="javascript:;">
                                         <div class="d-flex py-1">
                                             <div class="my-auto">
@@ -189,16 +189,16 @@
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="text-sm font-weight-normal mb-1">
-                                                    <span class="font-weight-bold">New message</span> from Laur
+                                                    <span class="font-weight-bold">Admin<br>Yakında Burada olacağım..</span>
                                                 </h6>
                                                 <p class="text-xs text-secondary mb-0">
                                                     <i class="fa fa-clock me-1"></i>
-                                                    13 minutes ago
                                                 </p>
                                             </div>
                                         </div>
                                     </a>
-                                </li> *@
+                                </li>
+                                                    
                                 
                                 @* <li>
                                     <a class="dropdown-item border-radius-md" href="javascript:;">
@@ -317,11 +317,15 @@
     <!--   Core JS Files   -->
     <script src="~/assets/js/core/popper.min.js"></script>
     <script src="~/assets/js/core/bootstrap.min.js"></script>
-    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="~/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    @* <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script> *@ <!--Scroolbar eklentisi-->
+    @*  <script src="~/assets/js/plugins/smooth-scrollbar.min.js"></script> *@ <!--Scroolbar eklentisi-->
     <script src="~/assets/js/plugins/chartjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!--switch yapısı için gerekli--!>
+
+
+
+
     @* <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
 

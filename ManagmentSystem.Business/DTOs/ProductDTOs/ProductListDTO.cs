@@ -13,5 +13,6 @@ namespace ManagmentSystem.Business.DTOs.ProductDTOs
         public string ProductDescription { get; set; }
 
         public double ProductPrice { get; set; }
+        public string ProductImage { get; set; }
     }
 }
