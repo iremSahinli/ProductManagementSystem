@@ -1,69 +1,113 @@
-﻿@model IEnumerable<ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs.AdminProductListVM>
-
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Product List</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-success">Create New Product</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Product Name
-            </th>
-            <th>
-                Price
-            </th>
-            <th>
-                Description
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-                <tr>
-                    <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                    </td>
-                <td>
-                    @if (item.ProductPrice != null)
-                    {
-                        <span>@item.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
-                    }
-                    else
-                    {
-                        <span>No price available</span>
-                    }
-                </td>
-                    <td>
-                    @Html.DisplayFor(modelItem => item.ProductDescription)
-                    </td>
-                    <td>
-                        <!-- Güncelle butonu -->
-                        <form asp-action="Update" method="get" style="display:inline;">
-                            <input type="hidden" name="id" value="@item.Id" />
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </form>
-
-                        <!-- Detaylar butonu -->
-                        <form asp-action="Details" method="get" style="display:inline;">
-                            <input type="hidden" name="id" value="@item.Id" />
-                            <button type="submit" class="btn btn-info">Details</button>
-                        </form>
-
-                        <!-- Sil butonu -->
-                        <form asp-action="Delete" method="post" style="display:inline;" onsubmit="return confirm('Bu ürünü silmek istediğinize emin misiniz?');">
-                            <input type="hidden" name="id" value="@item.Id" />
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </td>
-                </tr>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewData["Title"] - Product List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        /* Tablonun köşelerini oval yapmak için */
+        .table {
+            border-radius: 15px; /* Oval köşeler */
+            overflow: hidden; /* Taşmaları gizler */
         }
-    </tbody>
-</table>
+
+
+        .card {
+            border-radius: 15px; /* Kartın köşelerini oval yap */
+        }
+
+        /* Başlık hücreleri için */
+        thead th {
+            background-color: #f8f9fa;
+        }
+
+        .card-header h6 {
+            font-size: 1.5rem; /* Yazı boyutunu artır */
+            font-weight: bold; /* Yazıyı kalın yap */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <h6>Product List</h6>
+                       
+                    </div>
+
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">@item.ProductName</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">
+                                                    @if (item.ProductPrice != null)
+                                                    {
+                                                        @item.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>No price available</span>
+                                                    }
+                                                </p>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-secondary text-xs font-weight-bold">@item.ProductDescription</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
+                                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                                                <form asp-action="Delete" method="post" style="display:inline;" onsubmit="return confirm('Bu ürünü silmek istediğinize emin misiniz?');">
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                    
+                                    <tr>
+                                        <td>
+                                            <div>
+                                            
+                                                <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 375px;">Create New Product</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> *@
+</body>
+</html>
