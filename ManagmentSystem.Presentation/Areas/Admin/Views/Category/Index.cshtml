@@ -6,11 +6,12 @@
 
 <h1 class="text-center">Categories</h1>
 
-
-<p>
-
-    <a asp-action="Create" class="btn btn-success">Create New Category</a>
-</p>
+<br />
+<br />
+<br />
+<div style="position: relative;">
+    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 375px;">Create New Category</a>
+</div>
 
 <div class="card">
     <div class="table-responsive">
@@ -51,3 +52,38 @@
     </div>
 </div>
 
+<style>
+    th, td {
+        padding: 12px 15px;
+        font-size: 0.85rem; /* Yazı boyutunu küçült */
+    }
+    .card {
+        max-width: 1600px; /* Kartın genişliğini kısalt */
+        margin: 0 auto; /* Kartı ortala */
+    }
+
+    .table-responsive {
+        padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */
+
+    }
+
+    .table {
+        width: 100%; /* Tablonun tam genişlikte görünmesini sağla */
+        margin: 0 auto; /* Tablonun kapsayıcı içinde ortalanmasını sağla */
+    }
+
+    th, td {
+        padding: 12px 15px; /* Hücrelerin iç boşluklarını belirle */
+        font-size: 2.85 rem;
+    }
+
+        th.text-uppercase, td.text-center {
+            text-align: left; /* Başlık ve hücre içi hizalamayı sol yap */
+        }
+
+    .btn {
+        margin-right: 5px; /* Butonlar arasında boşluk bırak */
+    }
+
+
+</style>

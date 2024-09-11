@@ -5,10 +5,14 @@
 }
 
 <h1 class="text-center">Users</h1>
-
-<div class="button-container mb-3">
-    <a href="@Url.Action("Create", "AdminUser")" class="btn btn-success">Create New User</a>
+<br />
+<br />
+<br />
+<div style="position: relative;">
+    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 290px;">Create New User</a>
 </div>
+
+
 
 <form method="post" asp-controller="AdminUser" asp-action="UpdateLockoutStatus">
     @Html.AntiForgeryToken() <!-- koruma için Antiforgery token -->
@@ -81,6 +85,34 @@
         position: relative;
         cursor: pointer;
     }
+
+
+    .card {
+        max-width: 1600px; /* Kartın genişliğini kısalt */
+        margin: 0 auto; /* Kartı ortala */
+    }
+
+    .table-responsive {
+        padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */
+    }
+
+    .table {
+        width: 100%; /* Tablonun tam genişlikte görünmesini sağla */
+        margin: 0 auto; /* Tablonun kapsayıcı içinde ortalanmasını sağla */
+    }
+
+    th, td {
+        padding: 12px 15px; /* Hücrelerin iç boşluklarını belirle */
+    }
+
+        th.text-uppercase, td.text-center {
+            text-align: left; /* Başlık ve hücre içi hizalamayı sol yap */
+        }
+
+    .btn {
+        margin-right: 5px; /* Butonlar arasında boşluk bırak */
+    }
+
 </style>
 
 @section Scripts {
