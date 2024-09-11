@@ -26,7 +26,14 @@
         .card-header h6 {
             font-size: 1.5rem; /* Yazı boyutunu artır */
             font-weight: bold; /* Yazıyı kalın yap */
+            color: #344767;
         }
+
+        .table td, .table dd, .table span, .table tr, .table th, .table tbody{
+            color: #6c757d;
+            font-weight: bold;
+        }
+       
 
     </style>
 </head>
@@ -37,7 +44,7 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Product List</h6>
-                       
+
                     </div>
 
                     <div class="card-body px-0 pt-0 pb-2">
@@ -87,11 +94,11 @@
                                             </td>
                                         </tr>
                                     }
-                                    
+
                                     <tr>
                                         <td>
                                             <div>
-                                            
+
                                                 <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 375px;">Create New Product</a>
                                             </div>
                                         </td>
