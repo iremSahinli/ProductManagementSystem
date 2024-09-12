@@ -13,7 +13,9 @@
                 <!-- Profil fotoğrafı burada gösterilecek -->
                 @if (!string.IsNullOrEmpty(Model.ProfileImage))
                 {
-                    <img src="@Model.ProfileImage" alt="Profile Image" class="profile-img" />
+                    <img src="@Model.ProfileImage" alt="Profile Image" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;" />
+
+
                 }
                 else
                 {
@@ -28,7 +30,8 @@
 
                 <dt class="col-sm-4">Date of Birth:</dt>
                 <dd class="col-sm-8">@Model.DateOfBirth?.ToString("dd/MM/yyyy")</dd>
-
+                <dt class="col-sm-4">Mail:</dt>
+                <dd class="col-sm-8">@Model.Mail</dd>
                 <dt class="col-sm-4">Address:</dt>
                 <dd class="col-sm-8">@Model.Address</dd>
             </dl>
@@ -60,16 +63,10 @@
 
     .profile-header {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
-    .profile-img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #ddd;
-    }
+
 
     .card-description {
         margin: 20px 0;
