@@ -247,13 +247,12 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 PhoneNumber = userProfile.PhoneNumber,
                 DateOfBirth = userProfile.DateOfBirth.Value,
                 Address = userProfile.Address,
-                ProfileImagePath = !string.IsNullOrEmpty(userProfile.ProfileImage)
-                            ? "/uploads/" + userProfile.ProfileImage
-                            : "/uploads/default.png" // Varsayılan resim
+                ProfileImage = userProfile.ProfileImage
 
             };
             return View(model);
         }
+
 
 
 

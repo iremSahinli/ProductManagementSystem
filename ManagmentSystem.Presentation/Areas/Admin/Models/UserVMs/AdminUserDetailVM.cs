@@ -9,6 +9,6 @@
         public string PhoneNumber { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Address { get; set; }
-        public string ProfileImagePath { get; set; }
+        public string? ProfileImage { get; set; }
     }
 }
