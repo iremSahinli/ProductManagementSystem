@@ -143,7 +143,7 @@
                         <div class="container d-flex justify-content-center align-items-center min-vh-100">
                             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column;">
                                 <div class="card card-plain">
-                                    <br />
+
                                     <div class="card-header pb-0 text-start" style="background-color: transparent;">
                                         <h4 class="font-weight-bolder">Login</h4>
                                         <p class="mb-0">Enter your email and password to sign in</p>
@@ -182,11 +182,11 @@
                                 </div>
                             </div>
                             <!--Image Panel Place-->
-                            <div class="col-md-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-                                <div class="background-image-container">
-                                    <span class="mask bg-gradient-primary opacity-6"></span>
-                                </div>
+                            @* <div class="col-md-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+                            <div class="background-image-container">
+                            <span class="mask bg-gradient-primary opacity-6"></span>
                             </div>
+                            </div> *@
                         </div>
                     </div>
                 </div>
@@ -200,24 +200,24 @@
     <script src="~/assets/js/plugins/smooth-scrollbar.min.js"></script>
 
 
-   
+
 
     <!---->
-  @*  @section Styles {
+    @*  @section Styles {
     <style>
-        @media only screen and (max-width: 768px) {
-            .card.card-plain {
-                width: 70%;
-                transform: translate(5%, 50%);
-            }
-        } *@
+    @media only screen and (max-width: 768px) {
+    .card.card-plain {
+    width: 70%;
+    transform: translate(5%, 50%);
+    }
+    } *@
     <style>
 
         .card.card-plain {
             position: absolute;
-            top: 0;
-            left: 0;
-            transform: translate(80%, 50%);
+            top: 10%;
+            left: 28%;
+            transform: translate(50%, 50%);
             width: 400px;
             padding: 0px;
             background-color: transparent !important;
@@ -231,17 +231,16 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 1;
-            z-index: -1;
+            opacity: 0;
+            z-index: 0;
             width: 100%;
             height: 100%;
         }
     </style>
-}
+    }
 
 
 </body>
 
 </html>
-
 
