@@ -4,3 +4,66 @@
 }
 
 
+@model IEnumerable<ManagmentSystem.Business.DTOs.ProductDTOs.ProductListDTO>
+
+@{
+    ViewData["Title"] = "GetProducts";
+}
+
+<h1 class="text-center">Products</h1>
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4 d-flex justify-content-center text-center">
+                <div class="card h-100 custom-card">
+                    <img class="card-img-top" src="@item.ProductImage" alt="Product Image" style="height: 180px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.ProductName)</h5>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                    </div>
+                    <div class="card-footer">
+                        <i class="ni ni-cart"></i>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<style>
+    .custom-card {
+        background-color: rgba(255, 255, 255, 0.5); /* Beyaz arka plan ve %90 opaklık */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+        border-radius: 20px; /* Köşeleri yuvarlama */
+        transition: transform 0.2s ease-in-out; /* Hover animasyonu için */
+        width: 100%; /* Kart genişliği kolon genişliğine göre */
+        max-width: 300px; /* Maksimum genişlik */
+    }
+
+    .card:hover {
+        transform: scale(1.03); /* Hover yapıldığında kartın biraz büyümesi */
+    }
+
+    .card-img-top {
+        height: 180px;
+        object-fit: cover; /* Görselin taşmadan sığması */
+        border-top-left-radius: 10px; /* Üst köşelerin yuvarlanması */
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        padding: 15px; /* İç boşluk */
+        flex-grow: 1; /* Kart içeriğinin kalanını doldur */
+    }
+
+    .card-footer {
+        background-color: transparent;
+        border-top: none;
+        text-align: center;
+    }
+</style>

@@ -1,3 +1,4 @@
+using ManagmentSystem.Business.Services.ProductServices;
 using ManagmentSystem.Presentation.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,17 +8,29 @@ namespace ManagmentSystem.Presentation.Controllers
     public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
+            _productService = productService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            //SuccesNotyf("Admin Page Opened Successfully");
-            return View();
+            var products = await _productService.GetAllAsync();
+            if (products.IsSucces)
+            {
+                SuccesNotyf("Ürünler Listelendi.");
+                return View(products.Data);  // Sadece listeyi (result.Data) View'a geç
+            }
+            ErrorNotyf("Ürünler Listeleme Baþarýsýz");
+            return View("Sayfa Yüklenirken Hata oluþtu, tekrar deneyiniz.");
+            
         }
+
+        
+
 
         public IActionResult Privacy()
         {
