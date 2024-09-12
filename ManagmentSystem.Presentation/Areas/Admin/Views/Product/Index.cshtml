@@ -1,120 +1,103 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewData["Title"] - Product List</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <style>
-        /* Tablonun köşelerini oval yapmak için */
-        .table {
-            border-radius: 15px; /* Oval köşeler */
-            overflow: hidden; /* Taşmaları gizler */
-        }
+﻿@model IEnumerable<ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs.AdminProductListVM>
 
+@{
+    ViewData["Title"] = "Product List";
+}
 
-        .card {
-            border-radius: 15px; /* Kartın köşelerini oval yap */
-        }
+<h1 class="text-center">Product List</h1>
 
-        /* Başlık hücreleri için */
-        thead th {
-            background-color: #f8f9fa;
-        }
+<br />
+<br />
+<br />
+<div style="position: relative;">
+    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 450px;">Create New Product</a>
+</div>
 
-        .card-header h6 {
-            font-size: 1.5rem; /* Yazı boyutunu artır */
-            font-weight: bold; /* Yazıyı kalın yap */
-            color: #344767;
-        }
+<div class="card">
+    <div class="table-responsive">
+        <table class="table align-items-center mb-0">
+            <thead>
+                <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
+                    <th class="text-secondary opacity-7"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex px-2 py-1">
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-xs">@Html.DisplayFor(modelItem => item.ProductName)</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-column justify-content-center">
+                                @if (item.ProductPrice != null)
+                                {
+                                    <span class="text-xs text-secondary mb-0">@item.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
+                                }
+                                else
+                                {
+                                    <span class="text-xs text-secondary mb-0">No price available</span>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-column justify-content-center">
+                                <p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                            </div>
+                        </td>
+                        
+                        <td class="align-middle text-center">
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
 
-        .table td, .table dd, .table span, .table tr, .table th, .table tbody{
-            color: #6c757d;
-            font-weight: bold;
-        }
-       
-
-    </style>
-</head>
-<body>
-    <div class="container-fluid py-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Product List</h6>
-
-                    </div>
-
-                    <div class="card-body px-0 pt-0 pb-2">
-                        <div class="table-responsive p-0">
-                            <table class="table align-items-center mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">@item.ProductName</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">
-                                                    @if (item.ProductPrice != null)
-                                                    {
-                                                        @item.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))
-                                                    }
-                                                    else
-                                                    {
-                                                        <span>No price available</span>
-                                                    }
-                                                </p>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-secondary text-xs font-weight-bold">@item.ProductDescription</span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
-                                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
-                                                <form asp-action="Delete" method="post" style="display:inline;" onsubmit="return confirm('Bu ürünü silmek istediğinize emin misiniz?');">
-                                                    <input type="hidden" name="id" value="@item.Id" />
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    }
-
-                                    <tr>
-                                        <td>
-                                            <div>
-
-                                                <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 375px;">Create New Product</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
+</div>
 
-    @* <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> *@
-</body>
-</html>
+<style>
+    th, td {
+        padding: 12px 15px;
+        font-size: 0.85rem; /* Yazı boyutunu küçült */
+    }
+
+    .card {
+        max-width: 1600px; /* Kartın genişliğini kısalt */
+        margin: 0 auto; /* Kartı ortala */
+    }
+
+    .table-responsive {
+        padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */
+    }
+
+    .table {
+        width: 100%; /* Tablonun tam genişlikte görünmesini sağla */
+        margin: 0 auto; /* Tablonun kapsayıcı içinde ortalanmasını sağla */
+    }
+
+    th, td {
+        padding: 12px 15px; /* Hücrelerin iç boşluklarını belirle */
+        font-size: 2.85 rem;
+    }
+
+        th.text-uppercase, td.text-center {
+            text-align: left; /* Başlık ve hücre içi hizalamayı sol yap */
+        }
+
+    .btn {
+        margin-right: 5px; /* Butonlar arasında boşluk bırak */
+    }
+
+</style>

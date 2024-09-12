@@ -4,134 +4,146 @@
     ViewData["Title"] = "Update";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewData["Title"] - Update</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <style>
-        /* Tablonun köşelerini oval yapmak için */
-        .table {
-            border-radius: 15px; /* Oval köşeler */
-            overflow: hidden; /* Taşmaları gizler */
-        }
+<h1 class="text-center">Update Product</h1>
 
-        .card {
-            border-radius: 15px; /* Kartın köşelerini oval yap */
-        }
+<hr />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Kartın genişliğini sınırlamak için genişliği 6 olarak ayarladık -->
+            <div class="card card-custom">
+                <div class="card-body">
+                    <form asp-action="Update" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
 
-        /* Başlık hücreleri için */
-        thead th {
-            background-color: #f8f9fa;
-        }
-
-        .card-header h6 {
-            font-size: 1.5rem; /* Yazı boyutunu artır */
-            font-weight: bold; /* Yazıyı kalın yap */
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container-fluid py-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Update Product</h6>
-                    </div>
-                    <div class="card-body px-0 pt-0 pb-2">
-                        <div class="table-responsive p-0">
-                            <form asp-action="Update" enctype="multipart/form-data">
-                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                <input type="hidden" asp-for="Id" />
-                                <div class="form-group">
-                                    <label asp-for="ProductName" class="control-label">Product Name</label>
-                                    <input asp-for="ProductName" class="form-control" />
-                                    <span asp-validation-for="ProductName" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="ProductPrice" class="control-label">Product Price</label>
-                                    <div class="input-group">
-                                        <input asp-for="ProductPrice" class="form-control" />
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">₺</span> <!-- TL simgesi -->
-                                        </div>
-                                    </div>
-                                    <span asp-validation-for="ProductPrice" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="ProductDescription" class="control-label">Product Description</label>
-                                    <textarea asp-for="ProductDescription" class="form-control"></textarea>
-                                    <span asp-validation-for="ProductDescription" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ProductImage">Product Image</label>
-                                    @if (!string.IsNullOrEmpty(Model.ProductImagePath))
-                                    {
-                                        <div>
-                                            <img src="@Model.ProductImagePath" alt="Product Image" style="width:200px; height:auto;" />
-                                        </div>
-                                    }
-                                    <input type="hidden" asp-for="ProductImagePath" />
-                                    <div class="form-group">
-                                        <label asp-for="ProductImage"></label>
-                                        <input asp-for="ProductImage" type="file" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="SelectedCategories" class="control-label">Select Categories</label>
-                                    <select asp-for="SelectedCategories" class="form-control" multiple="multiple" id="categorySelect">
-                                        @foreach (var category in Model.Categories)
-                                        {
-                                            <option value="@category.Id">@category.CategoryName</option>
-                                        }
-                                    </select>
-                                    <span asp-validation-for="SelectedCategories" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-group" style="margin-top: 10px">
-                                    <input type="submit" value="Save" class="btn btn-primary" />
-                                </div>
-
-
-                                <div style="margin-top: 5px;">
-                                    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to List</a>
-                                </div>
-
-
-
-                            </form>
+                        <!-- Ürün resmi bölümü -->
+                        <div class="form-group text-center">
+                            <label for="ProductImage" class="control-label">Product Image</label>
+                            <div class="image-container">
+                                @if (!string.IsNullOrEmpty(Model.ProductImagePath))
+                                {
+                                    <img src="@Model.ProductImagePath" alt="Product Image" class="img-fluid" />
+                                }
+                            </div>
                         </div>
-                    </div>
+
+                        <!-- Diğer form alanları -->
+                        <div class="form-group">
+                            <label asp-for="ProductName" class="control-label">Product Name</label>
+                            <input asp-for="ProductName" class="form-control" />
+                            <span asp-validation-for="ProductName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ProductPrice" class="control-label">Product Price</label>
+                            <div class="input-group">
+                                <input asp-for="ProductPrice" class="form-control" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text">?</span> <!-- TL simgesi -->
+                                </div>
+                            </div>
+                            <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ProductDescription" class="control-label">Product Description</label>
+                            <textarea asp-for="ProductDescription" class="form-control"></textarea>
+                            <span asp-validation-for="ProductDescription" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- ProductImagePath'i formda gizli alan olarak gönderiyoruz -->
+                            <input type="hidden" asp-for="ProductImagePath" />
+                            <label asp-for="ProductImage" class="control-label">Upload New Image</label>
+                            <input asp-for="ProductImage" type="file" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="SelectedCategories" class="control-label">Select Categories</label>
+                            <select asp-for="SelectedCategories" class="form-control" multiple="multiple" id="categorySelect">
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id">@category.CategoryName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="SelectedCategories" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4 gap-2">
+                            <input type="submit" value="Save" class="btn btn-success" />
+                            <a asp-action="Index" class="btn btn-danger">Back to List</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
-    @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#categorySelect').select2({
-                    placeholder: "Select categories",
-                    allowClear: true,
-                    width: '100%',
-                    minimumInputLength: 0
-                });
-            });
-        </script>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-</body>
-</html>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#categorySelect').select2({
+                placeholder: "Select categories",
+                allowClear: true,
+                width: '100%',
+                minimumInputLength: 0
+            });
+        });
+    </script>
+}
+
+<style>
+    .card-custom {
+        max-width: 800px; /* Kartın genişliğini sınırlayarak boyutunu küçült */
+        margin: 0 auto; /* Kartı ortala */
+        padding: 20px; /* Kartın iç boşluklarını ayarla */
+    }
+
+    .card-header {
+        background-color: #f8f9fa; /* Başlık arka plan rengini ayarla */
+    }
+
+    .card-body {
+        padding: 20px; /* İç boşlukları ayarla */
+    }
+
+    .form-group {
+        margin-bottom: 1rem; /* Form gruplarına alt boşluk ekle */
+    }
+
+    .form-control {
+        margin-bottom: 10px; /* Form elemanlarına alt boşluk ekle */
+    }
+
+    .btn-primary {
+        margin-top: 10px; /* Gönder butonuna üst boşluk ekle */
+    }
+
+    .text-center {
+        text-align: center; /* Metni ortala */
+    }
+
+    .image-container {
+        margin: 0 auto; /* Resim kapsayıcısını ortala */
+    }
+
+    .img-fluid {
+        max-width: 50%; /* Resmin genişliğini sınırlayarak uyumlu hale getir */
+        height: auto; /* Yüksekliği orantılı olarak ayarla */
+    }
+</style>

@@ -4,107 +4,72 @@
     ViewData["Title"] = "Create";
 }
 
-@* <h1 style="text-align: center;">Create New Product</h1> *@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewData["Title"] - Create</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <style>
-        /* Tablonun köşelerini oval yapmak için */
-        .table {
-            border-radius: 15px; /* Oval köşeler */
-            overflow: hidden; /* Taşmaları gizler */
-        }
+<h1 class="text-center">Create New Product</h1>
 
-        .card {
-            border-radius: 15px; /* Kartın köşelerini oval yap */
-        }
+<hr />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card card-custom">
+                <div class="card-body">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        /* Başlık hücreleri için */
-        thead th {
-            background-color: #f8f9fa;
-        }
-
-        .card-header h6 {
-            font-size: 1.5rem; /* Yazı boyutunu artır */
-            font-weight: bold; /* Yazıyı kalın yap */
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container-fluid py-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Create New Product</h6>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <form asp-action="Create" enctype="multipart/form-data">
-                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                @*   <input type="hidden" asp-for="SelectedCategoryId" /> *@
-
-                                <div class="form-group">
-                                    <label asp-for="ProductName" class="control-label">Product Name</label>
-                                    <input asp-for="ProductName" class="form-control" />
-                                    <span asp-validation-for="ProductName" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="ProductPrice" class="control-label">Product Price</label>
-                                    <div class="input-group">
-                                        <input asp-for="ProductPrice" class="form-control" />
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">₺</span>
-                                        </div>
-                                    </div>
-                                    <span asp-validation-for="ProductPrice" class="text-danger"></span>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label asp-for="ProductDescription" class="control-label">Product Description</label>
-<textarea asp-for="ProductDescription" class="form-control"></textarea>
-                                    <span asp-validation-for="ProductDescription" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="ProductImage" class="control-label">Product Image</label>
-                                    <input asp-for="ProductImage" class="form-control" type="file" />
-                                    <span asp-validation-for="ProductImage" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="SelectedCategories" class="control-label">Select Categories</label>
-                                    <select asp-for="SelectedCategories" class="form-control" multiple="multiple" id="categorySelect">
-                                        @foreach (var category in Model.Categories)
-
-                                        {
-                                            <option value="@category.Id">@category.CategoryName</option>
-                                        }
-                                    </select>
-                                    <span asp-validation-for="SelectedCategories" class="text-danger"></span>
-                                </div>
-
-                                <div class="text-center">
-                                    <input type="submit" value="Create" class="btn btn-success btn-lg active mt-4 mb-0" />
-                                </div>
-                                <div class="text-center mt-4 mb-0">
-                                    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; " class="btn">
-                                        Back to List
-
-                                    </a>
-                                </div>
-                            </form>
+                        <!-- Ürün adı -->
+                        <div class="form-group">
+                            <label asp-for="ProductName" class="control-label">Product Name</label>
+                            <input asp-for="ProductName" class="form-control" />
+                            <span asp-validation-for="ProductName" class="text-danger"></span>
                         </div>
-                    </div>
-</body>
-</html>
 
+                        <!-- Ürün fiyatı -->
+                        <div class="form-group">
+                            <label asp-for="ProductPrice" class="control-label">Product Price</label>
+                            <div class="input-group">
+                                <input asp-for="ProductPrice" class="form-control" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text">?</span> <!-- TL simgesi -->
+                                </div>
+                            </div>
+                            <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                        </div>
 
+                        <!-- Ürün açıklaması -->
+                        <div class="form-group">
+                            <label asp-for="ProductDescription" class="control-label">Product Description</label>
+                            <textarea asp-for="ProductDescription" class="form-control"></textarea>
+                            <span asp-validation-for="ProductDescription" class="text-danger"></span>
+                        </div>
+
+                        <!-- Ürün resmi yükleme -->
+                        <div class="form-group">
+                            <label asp-for="ProductImage" class="control-label">Product Image</label>
+                            <input asp-for="ProductImage" class="form-control" type="file" />
+                            <span asp-validation-for="ProductImage" class="text-danger"></span>
+                        </div>
+
+                        <!-- Kategoriler seçimi -->
+                        <div class="form-group">
+                            <label asp-for="SelectedCategories" class="control-label">Select Categories</label>
+                            <select asp-for="SelectedCategories" class="form-control" multiple="multiple" id="categorySelect">
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id">@category.CategoryName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="SelectedCategories" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4 gap-2">
+                            <input type="submit" value="Save" class="btn btn-success" />
+                            <a asp-action="Index" class="btn btn-danger">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     @{
@@ -131,3 +96,62 @@
         });
     </script>
 }
+
+<style>
+    .card-custom {
+        max-width: 800px; /* Kartın genişliğini sınırlayarak boyutunu küçült */
+        margin: 0 auto; /* Kartı ortala */
+        padding: 20px; /* Kartın iç boşluklarını ayarla */
+    }
+
+    .form-group {
+        margin-bottom: 1rem; /* Form gruplarına alt boşluk ekle */
+    }
+
+    .form-control {
+        margin-bottom: 10px; /* Form elemanlarına alt boşluk ekle */
+    }
+
+    .btn-success {
+        background-color: #28a745; /* Yeşil buton arka planı */
+        border-color: #28a745; /* Yeşil buton kenarlığı */
+        color: white; /* Yazı rengi beyaz */
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none; /* Kenarlık yok */
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Kırmızı buton arka planı */
+        border-color: #dc3545; /* Kırmızı buton kenarlığı */
+        color: white; /* Yazı rengi beyaz */
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none; /* Kenarlık yok */
+        text-decoration: none; /* Alt çizgi yok */
+    }
+
+    .text-center {
+        text-align: center; /* Metni ortala */
+    }
+
+    .d-flex {
+        display: flex; /* Flexbox düzeni */
+    }
+
+    .justify-content-center {
+        justify-content: center; /* Ortalamak için */
+    }
+
+    .mt-4 {
+        margin-top: 1.5rem; /* Üst boşluk */
+    }
+
+    .gap-2 {
+        gap: 0.5rem; /* Boşluklar arası mesafe */
+    }
+
+    .btn {
+        margin-top: 10px; /* Buton üst boşluğu */
+    }
+</style>
