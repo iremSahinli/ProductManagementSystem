@@ -149,5 +149,72 @@ namespace ManagmentSystem.Presentation.Controllers
             SuccesNotyf("Logout is success");
             return RedirectToAction("Login", "Account");
         }
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                ErrorNotyf("Mail adresiniz sistemde kayıtlı değildir");
+                return View();
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var resetLink = Url.Action("ResetPassword", "Account", new { token = token, email = email }, Request.Scheme);
+
+            await _mailService.SendMailAsync(email, "Şifre Sıfırlama Bağlantısı",
+                $"Şifrenizi sıfırlamak için <a href='{resetLink}'>buraya tıklayın</a>.");
+
+            TempData["Message"] = "Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.";
+            return View();
+        }
+        public IActionResult ResetPassword(string token, string email)
+        {
+            if (token == null || email == null)
+                return RedirectToAction("Error", "Home");
+
+            var model = new ForgotPasswordVM { Token = token, Email = email };
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ForgotPasswordVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "Geçersiz istek.";
+                return View(model);
+            }
+
+            if (model.Password != model.ConfirmPassword)
+            {
+                TempData["ErrorMessage"] = "Şifreler uyuşmuyor.";
+                return View(model);
+            }
+
+            var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+            if (result.Succeeded)
+            {
+                TempData["Message"] = "Yeni şifreniz başarıyla oluşturuldu.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return View(model);
+        }
     }
 }
