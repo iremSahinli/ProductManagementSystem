@@ -10,7 +10,7 @@
 <br />
 <br />
 <div style="position: relative;">
-    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 450px;">Create New Product</a>
+    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 420px;">Create New Product</a>
 </div>
 
 <div class="card">
@@ -18,9 +18,10 @@
         <table class="table align-items-center mb-0">
             <thead>
                 <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Image</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th>
+                    @* <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th> *@
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
                     <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -32,7 +33,26 @@
                         <td>
                             <div class="d-flex px-2 py-1">
                                 <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-xs">@Html.DisplayFor(modelItem => item.ProductName)</h6>
+                                    @if (!string.IsNullOrEmpty(item.ProductImage))
+                                    {
+                                        <img src="@item.ProductImage" alt="Product Image" class="product-image" />
+                                    }
+                                    else
+                                    {
+                                        <span>No Image</span>
+                                    }
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-column justify-content-center">
+                                <div class="tooltip-container">
+                                    <h6 class="mb-0 text-xs">
+                                        @Html.DisplayFor(modelItem => item.ProductName)
+                                    </h6>
+                                    <div class="tooltip-text">
+                                        <strong style="color:black">Description: </strong>@Html.DisplayFor(modelItem => item.ProductDescription)
+                                    </div>
                                 </div>
                             </div>
                         </td>
@@ -48,18 +68,17 @@
                                 }
                             </div>
                         </td>
-                        <td>
-                            <div class="d-flex flex-column justify-content-center">
-                                <p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
-                            </div>
-                        </td>
-                        
+                        @* <td>
+                    <div class="d-flex flex-column justify-content-center">
+                    <p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                    </div>
+                    </td> *@
+
                         <td class="align-middle text-center">
                             <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
                         </td>
-
                     </tr>
                 }
             </tbody>
@@ -68,6 +87,12 @@
 </div>
 
 <style>
+
+
+
+
+
+
     th, td {
         padding: 12px 15px;
         font-size: 0.85rem; /* Yazı boyutunu küçült */
@@ -89,7 +114,7 @@
 
     th, td {
         padding: 12px 15px; /* Hücrelerin iç boşluklarını belirle */
-        font-size: 2.85 rem;
+        font-size: 0.85rem;
     }
 
         th.text-uppercase, td.text-center {
@@ -100,4 +125,53 @@
         margin-right: 5px; /* Butonlar arasında boşluk bırak */
     }
 
+    /* Görselin büyüme efekti */
+    .product-image {
+        object-fit: cover;
+        object-position: center; /* Görseli kutu içinde ortala */
+        border-radius: 8px;
+        height: 100px;
+        width: 100px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasyon süresi */
+        z-index: 1;
+        position: relative;
+    }
+
+        .product-image:hover {
+            transform: scale(3); /* Görselin büyüklüğü %300 olacak şekilde büyüt */
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Hafif bir gölge ekle */
+            transform-origin: left; /* Görsel merkezden büyüsün */
+            position: absolute;
+            z-index: 10; /* Tablo üzerine çıkmasını sağla */
+            margin-right: -110px;
+        }
+
+    .tooltip-container {
+        position: relative;
+        display: inline-block;
+    }
+
+        .tooltip-container .tooltip-text {
+            visibility: hidden;
+            width: 200px; /* Tooltip genişliğini ihtiyaca göre ayarlayabilirsiniz */
+            background-color: #11cdef; /* Tooltip arka plan rengi*/
+            color: white; /* Tooltip metin rengini siyah yapıyoruz */
+            text-align: center;
+            border: 1px solid #ddd; /* Tooltip etrafında hafif bir sınır */
+            border-radius: 4px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            top: 50%; /* Tooltip’in yatay ortasında konumlanmasını sağlar */
+            left: 20%; /* Tooltip’in ürünün hemen yanında çıkmasını sağlar */
+            transform: translateY(-50%); /* Tooltip’in yatay olarak ortalanmasını sağlar */
+            margin-left: 5px; /* Tooltip ile ürün arasındaki boşluk */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
 </style>
