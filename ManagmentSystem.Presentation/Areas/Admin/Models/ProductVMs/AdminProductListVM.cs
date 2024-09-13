@@ -6,5 +6,6 @@
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }
         public string ProductDescription { get; set; }
+        public string ProductImage { get; set; } //ürün görsellerini görebilmek için gerekiyor.
     }
 }
