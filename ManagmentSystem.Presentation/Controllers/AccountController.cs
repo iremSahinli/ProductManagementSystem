@@ -120,7 +120,7 @@ namespace ManagmentSystem.Presentation.Controllers
                 {
                     var roles = await _userManager.GetRolesAsync(user);
 
-                    
+
                     if (roles.Contains("Admin"))
                     {
                         TempData["ToastMessage"] = "Admin Sayfasına Hoş geldiniz";
@@ -144,8 +144,8 @@ namespace ManagmentSystem.Presentation.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            
-            
+
+
             SuccesNotyf("Logout is success");
             return RedirectToAction("Login", "Account");
         }
@@ -160,17 +160,25 @@ namespace ManagmentSystem.Presentation.Controllers
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
-                ErrorNotyf("Mail adresiniz sistemde kayıtlı değildir");
-                return View();
+                ErrorNotyf("Your Mail Address not found! Please try again");
+                return RedirectToAction("Login", "Account");
             }
+            else
+            {
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var resetLink = Url.Action("ResetPassword", "Account", new { token = token, email = email }, Request.Scheme);
 
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = Url.Action("ResetPassword", "Account", new { token = token, email = email }, Request.Scheme);
+                await _mailService.SendMailAsync(email, "Şifre Sıfırlama Bağlantısı",
+                    $"Şifrenizi sıfırlamak için <a href='{resetLink}'>buraya tıklayın</a>.");
 
-            await _mailService.SendMailAsync(email, "Şifre Sıfırlama Bağlantısı",
-                $"Şifrenizi sıfırlamak için <a href='{resetLink}'>buraya tıklayın</a>.");
-
-            TempData["Message"] = "Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.";
+                TempData["Message"] = "Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.";
+                //SuccesNotyf("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.");
+                //SuccesNotyf("We send password mail your E-mail address");
+                return RedirectToAction("WeSendMail", "Account");
+            }
+        }
+        public IActionResult WeSendMail()
+        {
             return View();
         }
         public IActionResult ResetPassword(string token, string email)
@@ -205,7 +213,7 @@ namespace ManagmentSystem.Presentation.Controllers
             var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
             if (result.Succeeded)
             {
-                TempData["Message"] = "Yeni şifreniz başarıyla oluşturuldu.";
+               SuccesNotyf("Yeni şifreniz başarıyla oluşturuldu.");
                 return RedirectToAction("Login", "Account");
             }
 
@@ -216,5 +224,7 @@ namespace ManagmentSystem.Presentation.Controllers
 
             return View(model);
         }
+
+
     }
 }
