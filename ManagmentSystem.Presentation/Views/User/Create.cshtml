@@ -4,52 +4,111 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 class="text-center">Create User Profile</h1>
 
-<h4>UserProfileVM</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+
+
+<!-- Panel Container -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Almost complete! You must complete the membership process by filling in your profile information.</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="FirstName" class="control-label"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="control-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DateOfBirth" class="control-label"></label>
+                            <input asp-for="DateOfBirth" class="form-control" type="text" placeholder="dd/mm/yyyy" />
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Address" class="control-label"></label>
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Mail" class="control-label"></label>
+                            <input asp-for="Mail" class="form-control" />
+                            <span asp-validation-for="Mail" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ProfileImage" class="control-label"></label>
+                            <input asp-for="ProfileImage" class="form-control" type="file" />
+                            <span asp-validation-for="ProfileImage" class="text-danger"></span>
+                        </div>
+                        <div class="form-group d-flex justify-content-center">
+                            <input type="submit" value="Save" class="btn btn-success mr-2" /> 
+                            <a href="/User/User/GetProducts" class="btn btn-primary">Back to List</a> 
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label"></label>
-                <input asp-for="DateOfBirth" class="form-control" />
-                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Mail" class="control-label"></label>
-                <input asp-for="Mail" class="form-control" />
-                <span asp-validation-for="Mail" class="text-danger"></span>
-            </div>
-            <div class="form-group"><label asp-for="ProfileImage" class="control-label"></label><input asp-for="ProfileImage" class="form-control" type="file" /> <span asp-validation-for="ProfileImage" class="text-danger"></span></div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
+
+
+<style>
+    .card {
+        background-color: #ffffff; /* White background for the panel */
+        border-radius: 12px; /* Rounded corners */
+        padding: 20px; /* Padding inside the panel */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the panel */
+    }
+
+    .container {
+        margin-top: 10px;
+    }
+
+    .card-header {
+        background-color: #5e72e4; /* Light gray background for the header */
+        color: #ffffff;
+        border-bottom: 1px solid #ddd; /* Border at the bottom of the header */
+        padding: 10px 15px; /* Padding inside the header */
+    }
+
+    .form-control {
+        border-radius: 4px; /* Rounded corners for input fields */
+    }
+
+    .btn-success {
+        background-color: #28a745; /* Butonun arka plan rengi yeşil */
+        border-color: #28a745; /* Butonun kenar rengi yeşil */
+    }
+
+        .btn-success:hover {
+            background-color: #218838; /* Hover durumunda butonun arka plan rengi koyu yeşil */
+            border-color: #1e7e34; /* Hover durumunda butonun kenar rengi koyu yeşil */
+        }
+
+    .btn-secondary {
+        background-color: red; /* 'Back to List' butonunun arka plan rengi gri */
+        border-color: #6c757d; /* 'Back to List' butonunun kenar rengi gri */
+    }
+
+    .mr-2 {
+        margin-right: 5px; /* Butonlar arasındaki boşluk */
+    }
+</style>
