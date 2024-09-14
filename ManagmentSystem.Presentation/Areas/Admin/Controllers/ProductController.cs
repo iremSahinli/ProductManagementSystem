@@ -36,15 +36,37 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var result = await _productService.GetAllAsync();
-            var categoryVMs = result.Data.Adapt<List<AdminProductListVM>>();
             if (!result.IsSucces)
             {
                 ErrorNotyf(result.Message);
-                return View(categoryVMs);
+                return View(new List<AdminProductListVM>()); // Boş liste döndür
             }
+
+
+            var productListWithCategoryNames = new List<AdminProductListVM>();
+
+            foreach (var product in result.Data)
+            {
+                var categoryNames = await _productService.GetCategoryNamesByProductIdAsync(product.Id);
+
+                // ViewModel'e kategori isimlerini ekledim
+                var productVm = new AdminProductListVM
+                {
+                    Id = product.Id,
+                    ProductName = product.ProductName,
+                    ProductDescription = product.ProductDescription,
+                    ProductPrice = product.ProductPrice,
+                    ProductImage = product.ProductImage,
+                    CategoryNames = categoryNames
+                };
+
+                productListWithCategoryNames.Add(productVm);
+            }
+
             SuccesNotyf(result.Message);
-            return View(categoryVMs);
+            return View(productListWithCategoryNames);
         }
+
 
 
         public async Task<IActionResult> Create()

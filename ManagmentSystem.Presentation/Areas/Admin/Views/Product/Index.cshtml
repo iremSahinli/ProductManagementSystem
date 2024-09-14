@@ -10,7 +10,7 @@
 <br />
 <br />
 <div style="position: relative;">
-    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 420px;">Create New Product</a>
+    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; left: 20px;">Create New Product</a>
 </div>
 
 <div class="card">
@@ -21,7 +21,7 @@
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Image</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
-                    @* <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th> *@
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Categories</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
                     <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -68,11 +68,18 @@
                                 }
                             </div>
                         </td>
-                        @* <td>
-                    <div class="d-flex flex-column justify-content-center">
-                    <p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
-                    </div>
-                    </td> *@
+                        <td>
+                            <div class="d-flex flex-column justify-content-center">
+                                @if (!string.IsNullOrEmpty(item.CategoryNames))
+                                {
+                                    <span class="text-xs text-secondary">@item.CategoryNames</span>
+                                }
+                                else
+                                {
+                                    <span class="text-xs text-secondary mb-0">No categories</span>
+                                }
+                            </div>
+                        </td>
 
                         <td class="align-middle text-center">
                             <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
@@ -153,7 +160,7 @@
 
         .tooltip-container .tooltip-text {
             visibility: hidden;
-            width: 200px; /* Tooltip genişliğini ihtiyaca göre ayarlayabilirsiniz */
+            width: auto; /* Tooltip genişliğini ihtiyaca göre ayarlayabilirsiniz */
             background-color: #11cdef; /* Tooltip arka plan rengi*/
             color: white; /* Tooltip metin rengini siyah yapıyoruz */
             text-align: center;
@@ -174,4 +181,10 @@
             visibility: visible;
             opacity: 1;
         }
+
+    .category-list {
+        display: flex;
+        flex-direction: column;
+    }
 </style>
+

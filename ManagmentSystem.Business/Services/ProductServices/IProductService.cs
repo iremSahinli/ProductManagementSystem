@@ -20,6 +20,7 @@ namespace ManagmentSystem.Business.Services.ProductServices
         /// <returns>geriye true veya false döner.</returns>
         Task<bool> IsCategoryUsedAsync(Guid categoryId);  //silinmek istenen category product tablosunda kullanılıyormu?.
         Task<IDataResult<List<Guid>>> GetCategoryIdsByProductId(Guid? productId); //Idlerine göre Categoriyleri getirir.
-        
+        Task<string> GetCategoryNamesByProductIdAsync(Guid productId); //birden fazla kategoriler için.
+
     }
 }
