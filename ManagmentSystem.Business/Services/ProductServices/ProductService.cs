@@ -119,13 +119,28 @@ namespace ManagmentSystem.Business.Services.ProductServices
         public async Task<IDataResult<List<ProductListDTO>>> GetAllAsync()
         {
             var products = await _productRepository.GetAllAsync();
-            var productListDtos = products.Adapt<List<ProductListDTO>>();
+
+            var productListDtos = products.Select(product => new ProductListDTO
+            {
+                Id = product.Id,
+                ProductName = product.ProductName,
+                ProductDescription = product.ProductDescription,
+                ProductPrice = product.ProductPrice,
+                ProductImage = product.ProductImage,
+                SelectedCategories = product.ProductCategories
+                    .Where(pc => pc.Status != Status.Deleted)
+                    .Select(pc => pc.Category.CategoryName)
+                    .ToList()
+
+            }).ToList();
+
             if (productListDtos.Count() <= 0)
             {
                 return new ErrorDataResult<List<ProductListDTO>>(productListDtos, "Listelenecek Ürün Bulunamadı");
             }
             return new SuccessDataResult<List<ProductListDTO>>(productListDtos, "Ürün Listeleme Başarılı");
         }
+
 
         public async Task<IDataResult<List<ProductListDTOForSelect>>> GetAllForSelectAsync()
         {
@@ -258,6 +273,18 @@ namespace ManagmentSystem.Business.Services.ProductServices
             return await _context.ProductCategories.AnyAsync(pc => pc.CategoryId == categoryId && pc.Status != Status.Deleted);
         }
 
-       
+        //ProductId lerine göre categorilerini çekmek için metot yazdık.
+        public async Task<string> GetCategoryNamesByProductIdAsync(Guid productId)
+        {
+            var productCategories = await _productCategoryRepository.GetAllAsync(pc => pc.ProductId == productId);
+            var categoryIds = productCategories.Select(pc => pc.CategoryId).ToList();
+            if (!categoryIds.Any())
+            {
+                return string.Empty;
+            }
+            var categories = await _categoryRepository.GetAllAsync(c => categoryIds.Contains(c.Id));
+            var categoryNames = categories.Select(c => c.CategoryName).ToList();
+            return string.Join("- ", categoryNames);
+        }
     }
 }

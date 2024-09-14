@@ -14,6 +14,7 @@ namespace ManagmentSystem.Business.DTOs.ProductDTOs
 
         public double ProductPrice { get; set; }
         public string ProductImage { get; set; }
-        public List<Guid> SelectedCategories { get; set; } = new List<Guid>();
+        public IEnumerable<string> SelectedCategories { get; set; }
     }
+
 }
