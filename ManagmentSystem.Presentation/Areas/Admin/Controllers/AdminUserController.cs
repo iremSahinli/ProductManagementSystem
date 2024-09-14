@@ -42,18 +42,19 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
         public async Task<IActionResult> ListUsers()
         {
-            var userProfiles = await _userProfileService.GetAllUserProfilesAsync();
-            if (userProfiles is null)
-            {
-                ErrorNotyf("User List is Empty");
-            }
-            // Kullanıcıları IdentityUser tablosundan al ve LockoutEnabled bilgilerini ekle
-            var userList = new List<AdminUserListVM>();
-            foreach (var profile in userProfiles)
-            {
-                var identityUser = await _userManager.FindByIdAsync(profile.IdentityUserId);
+            var users = await _userManager.Users.Where(u => u.Email != "admin@admin.com").ToListAsync();
 
-                if (identityUser != null)
+
+            var userProfiles = await _userProfileService.GetAllUserProfilesAsync();
+
+            var userList = new List<AdminUserListVM>();
+
+
+            foreach (var user in users)
+            {
+                var profile = userProfiles.FirstOrDefault(up => up.IdentityUserId == user.Id);
+
+                if (profile != null)
                 {
                     var userVm = new AdminUserListVM
                     {
@@ -61,11 +62,24 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                         FirstName = profile.FirstName,
                         LastName = profile.LastName,
                         Mail = profile.Mail,
-                        LockoutEnabled = identityUser.LockoutEnabled
+                        LockoutEnabled = user.LockoutEnabled
+                    };
+                    userList.Add(userVm);
+                }
+                else
+                {
+                    var userVm = new AdminUserListVM
+                    {
+                        Id = Guid.Parse(user.Id),
+                        FirstName = "Kayıt Yapılmadı",
+                        LastName = "Kayıt Yapılmadı",
+                        Mail = user.Email,
+                        LockoutEnabled = user.LockoutEnabled
                     };
                     userList.Add(userVm);
                 }
             }
+
             SuccesNotyf("Users listed successfully.");
             return View(userList);
         }
@@ -142,14 +156,19 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (id == Guid.Empty)
             {
+                ErrorNotyf("Kullanıcı bulunamadı.");
                 return RedirectToAction("ListUsers", "AdminUser");
             }
             Console.WriteLine($"Kullanıcı ID: {id}");
 
 
+
+
+
             var userProfile = await _userProfileService.GetUserProfileByIdAsync(id);
             if (userProfile == null || userProfile.IdentityUserId == null)
             {
+                ErrorNotyf("Kullanıcı kayıt işlemini tamamlamadan güncelleştirme işlemi gerçekleştirilemez!");
                 return RedirectToAction("ListUsers", "AdminUser");
             }
 
@@ -262,43 +281,42 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             {
                 try
                 {
-                    
                     var userProfile = await _context.UserProfile.FirstOrDefaultAsync(up => up.Id == id);
-                    if (userProfile == null)
+
+                    IdentityUser user;
+                    if (userProfile != null)
                     {
-                        ErrorNotyf("Kullanıcı bulunamadı, tekrar deneyin!");
-                        return RedirectToAction("ListUsers", "AdminUser");
+                        user = await _userManager.FindByIdAsync(userProfile.IdentityUserId);
+                        _context.UserProfile.Remove(userProfile);
+                    }
+                    else
+                    {
+                        user = await _userManager.FindByIdAsync(id.ToString());
                     }
 
-                    
-                    var user = await _userManager.FindByIdAsync(userProfile.IdentityUserId);
                     if (user == null)
                     {
                         ErrorNotyf("Kullanıcı bulunamadı, tekrar deneyin!");
                         return RedirectToAction("ListUsers", "AdminUser");
                     }
 
-                   
-                    _context.UserProfile.Remove(userProfile); //UserProfile tablosundan sil.
 
-                    
-                    var result = await _userManager.DeleteAsync(user); //AspNetUsers sil.
+                    var result = await _userManager.DeleteAsync(user);
                     if (!result.Succeeded)
                     {
                         ErrorNotyf("Kullanıcı silinirken bir hata oluştu, tekrar deneyin!");
                         return RedirectToAction("ListUsers", "AdminUser");
                     }
 
-                    
+
                     await _context.SaveChangesAsync();
-                    await transaction.CommitAsync(); //Transaction tamamlanır.
+                    await transaction.CommitAsync();
 
                     SuccesNotyf("Kullanıcı başarıyla silindi");
                     return RedirectToAction("ListUsers", "AdminUser");
                 }
                 catch (Exception ex)
                 {
-                    
                     await transaction.RollbackAsync();
                     ErrorNotyf(ex.Message);
                     return RedirectToAction("ListUsers", "AdminUser");

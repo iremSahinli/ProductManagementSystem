@@ -7,6 +7,6 @@
         public string LastName { get; set; }
         public string Mail { get; set; }
         public bool LockoutEnabled { get; set; }
-
+       
     }
 }
