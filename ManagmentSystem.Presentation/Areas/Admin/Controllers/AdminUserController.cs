@@ -62,7 +62,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                         FirstName = profile.FirstName,
                         LastName = profile.LastName,
                         Mail = profile.Mail,
-                        LockoutEnabled = user.LockoutEnabled
+                        LockoutEnabled = user.LockoutEnabled,
+                        IsRecordMissing = false
                     };
                     userList.Add(userVm);
                 }
@@ -74,7 +75,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                         FirstName = "Kayıt Yapılmadı",
                         LastName = "Kayıt Yapılmadı",
                         Mail = user.Email,
-                        LockoutEnabled = user.LockoutEnabled
+                        LockoutEnabled = user.LockoutEnabled,
+                        IsRecordMissing = true
                     };
                     userList.Add(userVm);
                 }
@@ -326,7 +328,26 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
 
 
+        public async Task<IActionResult> AdminProfile()
+        {
+            var adminId = _userManager.GetUserId(User);
 
+            var admin = await _context.Admins.Where(a => a.IdentityId == adminId).Select(a => new AdminProfileVM
+            {
+                Id = a.IdentityId,
+                FirstName = a.FirstName,
+                LastName = a.LastName,
+                Email = a.Email,
+
+            }).FirstOrDefaultAsync();
+
+            if (admin == null)
+            {
+                ErrorNotyf("Admin bilgisi sistemde mevcut değil!");
+            }
+            return View(admin);
+
+        }
 
 
 

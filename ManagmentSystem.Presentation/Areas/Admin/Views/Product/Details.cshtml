@@ -3,24 +3,22 @@
 @{
     ViewData["Title"] = "Product Details";
 }
-<h1 class="text-center">Product Detail</h1>
+
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card text-center" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <div class="card text-center" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+                <h2 class="text-center">Product Details</h2>
                 <!-- Görsel -->
-                <div class="card-header" style="padding: 0; border-radius: 15px 15px 0 0;">
-                    @if (!string.IsNullOrEmpty(Model.ProductImage))
 
-                    {
-                        <img src="@Model.ProductImage" alt="Product Image" class="img-fluid" style="border-radius: 15px 15px 0 0; max-height: 150px; max-width: 150px; object-fit: cover; width: auto;" />
-                    }
-
-                    else
-
-                    {
-                        <p>No image available</p>
-                    }
+                <div class="form-group text-center">
+                    <label for="ProductImage" class="control-label">Product Image</label>
+                    <div class="image-container">
+                        @if (!string.IsNullOrEmpty(Model.ProductImage))
+                        {
+                            <img src="@Model.ProductImage" alt="Product Image" class="img-fluid" />
+                        }
+                    </div>
                 </div>
 
                 <!-- Diğer Bilgiler -->
@@ -58,9 +56,9 @@
                         }
                     </p>
                 </div>
+            <div class="mt-3">
+                <a href="@Url.Action("Index", "Product")" class="btn btn-danger btn-lg">Back</a>
             </div>
-            <div class="text-center mt-4">
-                <a class="btn btn-danger" asp-action="Index">Back to List</a>
             </div>
         </div>
     </div>
@@ -68,9 +66,9 @@
 
 <style>
     .card {
-        background-color: rgba(255, 255, 255, 0.9); /* Beyaz arka plan biraz şeffaf */
+        background-color: #f8f9fa /* Beyaz arka plan biraz şeffaf */
         border-radius: 15px; /* Oval köşeler */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+        
     }
 
     .card-header img {
@@ -102,5 +100,16 @@
         margin: 0;
         font-size: 1rem;
         color: #6c757d; /* Açık gri renk */
+    }
+
+    .image-container img {
+        width: 200px; /* Genişliği 300px olarak ayarla */
+        height: 200px; /* Yüksekliği 200px olarak ayarla */
+        object-fit: cover; /* Görseli kapsayıcıya uygun şekilde kes (opsiyonel) */
+    }
+
+    .img-fluid {
+        max-width: 50%; /* Resmin genişliğini sınırlayarak uyumlu hale getir */
+        height: auto; /* Yüksekliği orantılı olarak ayarla */
     }
 </style>
