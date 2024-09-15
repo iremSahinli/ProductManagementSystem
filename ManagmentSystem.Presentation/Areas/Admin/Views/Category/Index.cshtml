@@ -4,16 +4,18 @@
     ViewData["Title"] = "Kategori Listesi";
 }
 
-<h1 class="text-center">Categories</h1>
 
 <br />
 <br />
 <br />
-<div style="position: relative;">
-    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 375px;">Create New Category</a>
-</div>
+
 
 <div class="card">
+    <h2>Categories</h2>
+    <div style="position: relative;">
+        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 480px;">Create New Category</a>
+    </div>
+
     <div class="table-responsive">
         <table class="table align-items-center mb-0">
             <thead>
@@ -55,7 +57,7 @@
 <style>
     th, td {
         padding: 12px 15px;
-        font-size: 0.85rem; /* Yazı boyutunu küçült */
+        font-size: 12px; /* Yazı boyutunu küçült */
     }
 
     .card {
@@ -84,5 +86,7 @@
     .btn {
         margin-right: 5px; /* Butonlar arasında boşluk bırak */
     }
+
+    
 
 </style>

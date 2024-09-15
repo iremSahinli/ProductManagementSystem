@@ -4,44 +4,45 @@
     ViewData["Title"] = "Kullanıcılar";
 }
 
-<h1 class="text-center">Users</h1>
+
 <br />
 <br />
 <br />
-<div style="position: relative;">
-    <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -60px; right: 290px;">Create New User</a>
-</div>
-
-
-
+<br />
 <form method="post" asp-controller="AdminUser" asp-action="UpdateLockoutStatus">
     @Html.AntiForgeryToken() <!-- koruma için Antiforgery token -->
 </form>
 
 <div class="card">
+    <h2>Users</h2>
+    <div style="position: relative;">
+        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 260px;">Create New User</a>
+    </div>
+
     <div class="table-responsive">
         <table class="table align-items-center mb-0">
             <thead>
                 <tr>
 
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">First Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">First Name</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mail</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lock or Unlock Switch</th>
-                    <th></th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
+                    <th class="text-secondary opacity-7"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
+                        <td class="@(item.IsRecordMissing ? "missing-record" : "")">
                             @Html.DisplayFor(modelItem => item.FirstName)
                         </td>
-                        <td>
+                        <td class="@(item.IsRecordMissing ? "missing-record" : "")">
                             @Html.DisplayFor(modelItem => item.LastName)
                         </td>
-                        <td>
+                        <td class="@(item.IsRecordMissing ? "missing-record" : "")">
                             @Html.DisplayFor(modelItem => item.Mail)
                         </td>
                         <td>
@@ -52,7 +53,7 @@
                                 <label class="form-check-label" for="lockoutEnabledSwitch-@item.Id"></label>
                             </div>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Update</a>
                             <a href="@Url.Action("UserDetail", "AdminUser", new { id = item.Id })" class="btn btn-info">Details</a>
                             <a href="@Url.Action("Delete", "AdminUser", new { id = item.Id })" class="btn btn-danger">Delete</a>
@@ -64,9 +65,12 @@
     </div>
 </div>
 
+
+
+
 <style>
     .form-check-input {
-        width: 60px;
+        width: 80px;
         height: 34px;
     }
 
@@ -98,19 +102,25 @@
 
     .table {
         width: 100%; /* Tablonun tam genişlikte görünmesini sağla */
-        margin: 0 auto; /* Tablonun kapsayıcı içinde ortalanmasını sağla */
+        /* Tablonun kapsayıcı içinde ortalanmasını sağla */
     }
 
-    th, td {
-        padding: 12px 15px; /* Hücrelerin iç boşluklarını belirle */
+
+
+    th.text-uppercase, td.text-center {
+        text-align: left; /* Başlık ve hücre içi hizalamayı sol yap */
     }
 
-        th.text-uppercase, td.text-center {
-            text-align: left; /* Başlık ve hücre içi hizalamayı sol yap */
-        }
+    th:not(.form-check-label), td:not(:has(.form-check)) {
+        font-size: 12px; /* Tablo içi metin boyutu */
+    }
 
     .btn {
         margin-right: 5px; /* Butonlar arasında boşluk bırak */
+    }
+
+    .missing-record {
+        color: red; /* Kayıt yapılmadı mesajını kırmızı yapar */
     }
 
 </style>

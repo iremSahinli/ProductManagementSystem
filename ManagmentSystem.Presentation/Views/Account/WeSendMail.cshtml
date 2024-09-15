@@ -9,32 +9,95 @@
     <title>Mail Gönderildi</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #e9ecef;
         }
+
         .message-container {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             text-align: center;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
         }
-        .message-container h1 {
-            font-size: 24px;
-            color: #28a745;
+
+            .message-container img {
+                width: 100px; /* Görselin genişliğini ayarla */
+                height: auto;
+                margin-bottom: 20px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .message-container h1 {
+                font-size: 22px;
+                color: #28a745;
+                margin-bottom: 10px;
+            }
+
+            .message-container p {
+                font-size: 16px;
+                color: #555;
+                margin-bottom: 20px;
+            }
+
+            .message-container .close-text {
+                font-size: 14px;
+                color: #888;
+                margin-top: 20px;
+            }
+
+            /* Düğme hover etkisi */
+            .message-container button {
+                background-color: #28a745;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+            }
+
+                .message-container button:hover {
+                    background-color: #218838;
+                }
+
+        .custom-image {
+            width: 250px; /* Genişlik ayarı */
+            height: 250px; /* Yükseklik ayarı */
+            object-fit: cover; /* Görselin düzgün ölçeklenmesi için */
+            margin-bottom: 30px; /* Görselin altına boşluk */
         }
     </style>
 </head>
 <body>
     <div class="message-container">
-        <h1>Adresinize mail gönderdik.</h1>
-        <h1>Lütfen Mail adresini kontrol et!</h1>
-        <h1>Bu sayfayı kapatabilirsin</h1>
+        <!-- Görsel eklendi -->
+        <img class="custom-image" src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Mail Sent Icon ">
+        <!-- Başlıklar -->
+        <h1>We have sent an email to your address.</h1>
+        <p>Please check your email address.</p>
+        <p>You can close this page.</p>
+
+        <button type="button" class="btn btn-success" onclick="window.location.href='@Url.Action("Login", "Account")'">Back to Home</button>
+
+
     </div>
 </body>
 </html>
+
+
+        
+
+
+
