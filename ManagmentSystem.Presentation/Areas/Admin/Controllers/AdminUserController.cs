@@ -221,6 +221,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             {
                 return RedirectToAction("ListUsers", "AdminUser");
             }
+            var oldProfileImage = existingUserProfile.ProfileImage; //Mevcut görsel parametresi.
 
             // Güncellenmiş bilgileri mevcut varlık üzerinde uygulayın
             existingUserProfile.FirstName = model.FirstName;
@@ -229,8 +230,41 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             existingUserProfile.DateOfBirth = model.DateOfBirth;
             existingUserProfile.Address = model.Address;
             existingUserProfile.Mail = model.Mail;
-            existingUserProfile.ProfileImage = model.ProfileImage;
 
+            if (model.ProfileImagePath != null && model.ProfileImagePath.Length > 0)
+            {
+
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(model.ProfileImagePath.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ProfileImagePath.CopyToAsync(fileStream);
+                }
+
+                // Eski görseli silin, eğer "Not Image" değilse
+                if (!string.IsNullOrEmpty(oldProfileImage) && oldProfileImage != "Not Image.jpg")
+                {
+                    var oldFilePath = Path.Combine(uploadsFolder, oldProfileImage);
+                    if (System.IO.File.Exists(oldFilePath))
+                    {
+                        System.IO.File.Delete(oldFilePath);
+                    }
+                }
+
+
+
+                // Veritabanında dosya adını saklayın
+                existingUserProfile.ProfileImage = uniqueFileName;
+            }
             var identityUserId = existingUserProfile.IdentityUserId;
             var identityUser = await _userManager.FindByIdAsync(identityUserId);
             if (identityUser == null)
@@ -242,13 +276,12 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             identityUser.NormalizedUserName = model.Mail;
             var updatedResult = await _userManager.UpdateAsync(identityUser);
 
-            // Varlığı `DbContext`'e yeniden ekleyin ve güncelleyin
+
             _context.Update(existingUserProfile);
             await _context.SaveChangesAsync();
-
+            SuccesNotyf("User update is successfully");
             return RedirectToAction("ListUsers", "AdminUser");
         }
-
 
         public async Task<IActionResult> UserDetail(Guid id)
         {
@@ -273,8 +306,6 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             };
             return View(model);
         }
-
-
 
 
         public async Task<IActionResult> Delete(Guid id)

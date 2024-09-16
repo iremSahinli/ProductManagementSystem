@@ -28,7 +28,8 @@ namespace ManagmentSystem.Presentation.Models.AccountVM
 
         public string Mail { get; set; }
 
-        public IFormFile? ProfileImage { get; set; }
+        public IFormFile? ProfileImagePath { get; set; }
+        public string? ProfileImage { get; set; }
 
     }
 }

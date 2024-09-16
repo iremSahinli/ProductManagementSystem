@@ -5,13 +5,13 @@
 }
 
 <div class="container text-center">
-    <h1 class="mt-4 mb-4">Create New User</h1>
+
     <hr />
     <div class="card profile-card mx-auto">
         <div class="card-body">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+                <h2 class="text-center">Create New User</h2>
                 <div class="form-group">
                     <label asp-for="FirstName" class="control-label">First Name</label>
                     <input asp-for="FirstName" class="form-control" />
@@ -76,7 +76,7 @@
     }
 
     .profile-card {
-        background-color: rgba(255, 255, 255, 0.8); /* Transparan arka plan */
+        background-color: rgba(255, 255, 255); /* Transparan arka plan */
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         padding: 20px;

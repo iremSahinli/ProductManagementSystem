@@ -4,22 +4,25 @@
     ViewData["Title"] = "UserDetail";
 }
 
-<h1 class="text-center">UserDetail</h1>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-transparent text-center">
-                <!-- CSS sınıfını ekleyin -->
                 <div class="card-body">
-                    @if (!string.IsNullOrEmpty(Model.ProfileImage))
-                    {
-                        <img src="@Model.ProfileImage" alt="Profile Photo" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover; margin-bottom: 15px;" />
-                    }
-                    else
-                    {
-                        <span>No profile photo</span>
-                    }
+                    <h2 class="text-center">UserDetail</h2>
+
+                    <div class="image-container mx-auto">
+
+                        @if (!string.IsNullOrEmpty(Model.ProfileImage))
+                        {
+                            <img src="@Url.Content($"~/uploads/{Model.ProfileImage}")" alt="Profile Photo" class="profile-photo" />
+                        }
+                        else
+                        {
+                            <img src="/uploads/Not Image.jpg" alt="Profile Photo" class="profile-photo" />
+                        }
+                    </div>
 
                     <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
                     <h6 class="category text-info text-gradient">User</h6>
@@ -40,15 +43,16 @@
                         </dd>
                         <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
                     </dl>
+                    <div class="text-center mt-4">
+                        <a asp-action="ListUsers" class="btn btn-info">Back to List</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="text-center mt-4">
-    <a asp-action="ListUsers" class="btn btn-info">Back to List</a>
-</div>
+
 
 
 
@@ -61,8 +65,25 @@
 
 <style>
     .card-transparent {
-        background-color: rgba(255, 255, 255, 0.9); /* Beyaz arka plan, %90 opaklık */
+        background-color: rgba(255, 255, 255); /* Beyaz arka plan, %90 opaklık */
         border: 1px solid #ddd; /* Opsiyonel: Kartın etrafında ince bir sınır */
     }
 
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 30px;
+        border: 2px solid #ddd; /* Çerçeve ekliyoruz */
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 </style>

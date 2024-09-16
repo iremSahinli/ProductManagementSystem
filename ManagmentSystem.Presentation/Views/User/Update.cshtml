@@ -5,7 +5,7 @@
 }
 
 <div class="container">
-    <h1 class="text-center">Update Profile</h1>
+
 
     <hr />
 
@@ -14,6 +14,18 @@
             <div class="form-container">
                 <form asp-action="Update" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <h2 class="text-center">Update Profile</h2>
+                    <div class="image-container mx-auto">
+                        <!-- Görsel kapsayıcıya ortalama ekledik -->
+                        @if (!string.IsNullOrEmpty(Model.ProfileImage))
+                        {
+                            <img src="@Url.Content($"~/uploads/{Model.ProfileImage}")" alt="Profile Photo" class="profile-photo" />
+                        }
+                        else
+                        {
+                            <img src="/uploads/Not Image.jpg" alt="Profile Photo" class="profile-photo" />
+                        }
+                    </div>
                     <div class="form-group">
                         <label asp-for="FirstName" class="control-label">First Name</label>
                         <input asp-for="FirstName" class="form-control" />
@@ -45,9 +57,9 @@
                         <span asp-validation-for="Mail" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="ProfileImage" class="control-label">Profile Image</label>
-                        <input asp-for="ProfileImage" class="form-control" type="file" />
-                        <span asp-validation-for="ProfileImage" class="text-danger"></span>
+                        <label asp-for="ProfileImagePath" class="control-label">Profile Image</label>
+                        <input asp-for="ProfileImagePath" class="form-control" type="file" />
+                        <span asp-validation-for="ProfileImagePath" class="text-danger"></span>
                     </div>
                     <div class="form-group button-group text-center" style="margin-top: 20px">
                         <input type="submit" value="Save" class="btn btn-success" />
@@ -72,7 +84,7 @@
     }
 
     .form-container {
-        background-color: rgba(255, 255, 255, 0.9); /* Transparan arka plan */
+        background-color: rgba(255, 255, 255); /* Transparan arka plan */
         padding: 10px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -88,7 +100,7 @@
         gap: 10px; /* Butonlar arasındaki boşluk */
     }
 
-    
+
     .btn {
         text-decoration: none;
         color: white;
@@ -102,28 +114,45 @@
     .text-center {
         text-align: center;
     }
-   
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 30px;
+        border: 2px solid #ddd; /* Çerçeve ekliyoruz */
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 </style>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+<!-- Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<!-- Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('#categorySelect').select2({
-                placeholder: "Select categories",
-                allowClear: true,
-                width: '100%',
-                minimumInputLength: 0
-            });
+<script>
+    $(document).ready(function () {
+        $('#categorySelect').select2({
+            placeholder: "Select categories",
+            allowClear: true,
+            width: '100%',
+            minimumInputLength: 0
         });
-    </script>
+    });
+</script>
 }
 
