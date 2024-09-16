@@ -34,6 +34,7 @@
                 {
                     <tr>
                         <td>
+                            <div class="image-container">
                             <div class="d-flex px-2 py-1">
                                 <div class="d-flex flex-column justify-content-center">
                                     @if (!string.IsNullOrEmpty(item.ProductImage))
@@ -45,6 +46,7 @@
                                         <span>No Image</span>
                                     }
                                 </div>
+                            </div>
                             </div>
                         </td>
                         <td>
@@ -114,7 +116,8 @@
     }
 
     .table-responsive {
-        padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */
+        /* padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */ */
+        overflow: hidden;
     }
 
     .table {
@@ -145,13 +148,14 @@
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasyon süresi */
         z-index: 1;
         position: relative;
+       
     }
 
         .product-image:hover {
             transform: scale(3); /* Görselin büyüklüğü %300 olacak şekilde büyüt */
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Hafif bir gölge ekle */
             transform-origin: left; /* Görsel merkezden büyüsün */
-            position: absolute;
+             position: absolute;  
             z-index: 20; /* Tablo üzerine çıkmasını sağla */
             margin-right: 100px;
         }
@@ -193,6 +197,13 @@
     .product-heading {
        
         margin-left: 30px; 
+    }
+
+    .image-container {
+        
+        width: 100px; /* Görselin orijinal genişliği */
+        height: 100px; /* Görselin orijinal yüksekliği */
+        overflow: hidden; /* Büyüyen görselin kapsayıcıyı aşmasını engeller */
     }
 
 
