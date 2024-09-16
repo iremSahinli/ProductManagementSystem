@@ -29,7 +29,9 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Models.UserVMs
         public string Address { get; set; }
 
         public string? ProfileImage { get; set; } // Optional field, no annotations
-        
+        public IFormFile? ProfileImagePath { get; set; }
+
+
 
 
 
