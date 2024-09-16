@@ -14,7 +14,7 @@
 </form>
 
 <div class="card">
-    <h2>Users</h2>
+    <h2 class="users-heading">Users</h2>
     <div style="position: relative;">
         <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 260px;">Create New User</a>
     </div>
@@ -121,6 +121,10 @@
 
     .missing-record {
         color: red; /* Kayıt yapılmadı mesajını kırmızı yapar */
+    }
+
+    .users-heading {
+        margin-left: 30px; 
     }
 
 </style>
