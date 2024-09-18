@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACTIONS_" xml:space="preserve">
+    <value>İŞLEMLER</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="Admin Home" xml:space="preserve">
+    <value>Admin Paneli</value>
+  </data>
+  <data name="Admin Profile" xml:space="preserve">
+    <value>Admin Profil</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Geri Dön</value>
+  </data>
+  <data name="Back to List" xml:space="preserve">
+    <value>Geri Dön</value>
+  </data>
+  <data name="Buy" xml:space="preserve">
+    <value>Satın Al</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategoriler</value>
+  </data>
+  <data name="CATEGORIES_" xml:space="preserve">
+    <value>KATEGORİLER</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>KATEGORİ</value>
+  </data>
+  <data name="Category Details" xml:space="preserve">
+    <value>Kategori Detayları</value>
+  </data>
+  <data name="Category Name" xml:space="preserve">
+    <value>Kategori Adı</value>
+  </data>
+  <data name="CATEGORY NAME_" xml:space="preserve">
+    <value>KATEGORİ ADI</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Oluştur</value>
+  </data>
+  <data name="Create Category" xml:space="preserve">
+    <value>Kategori Oluştur</value>
+  </data>
+  <data name="Create New Category" xml:space="preserve">
+    <value>Yeni Kategori Oluştur</value>
+  </data>
+  <data name="Create New Product" xml:space="preserve">
+    <value>Yeni Ürün Ekle</value>
+  </data>
+  <data name="Create New User" xml:space="preserve">
+    <value>Yeni Kullanıcı Oluştur</value>
+  </data>
+  <data name="Date of Birth" xml:space="preserve">
+    <value>Doğum Tarihi</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="DESCRIPTION_" xml:space="preserve">
+    <value>AÇIKLAMA</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="Don't have an account?" xml:space="preserve">
+    <value>Üye değil misin?</value>
+  </data>
+  <data name="E-Mail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="Email address:" xml:space="preserve">
+    <value>E-posta adresi:</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>İngilizce</value>
+  </data>
+  <data name="Enter your email and password to sign in" xml:space="preserve">
+    <value>Giriş yapmak için e-postanızı ve şifrenizi girin</value>
+  </data>
+  <data name="First Name" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="FIRST NAME_" xml:space="preserve">
+    <value>İSİM</value>
+  </data>
+  <data name="Forgot your password?" xml:space="preserve">
+    <value>Şifreni mi unuttun?</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Tam İsmi</value>
+  </data>
+  <data name="Go Update Page" xml:space="preserve">
+    <value>Güncelleme Sayfasına Git</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="Last Name" xml:space="preserve">
+    <value>Soyad</value>
+  </data>
+  <data name="LAST NAME_" xml:space="preserve">
+    <value>SOYADI</value>
+  </data>
+  <data name="LOCK OR UNLUCK SWITCH_" xml:space="preserve">
+    <value>KULLANICIYI ETKİN VEYA ETKİSİZ YAP</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="MAIL_" xml:space="preserve">
+    <value>MAIL</value>
+  </data>
+  <data name="Page Not Found." xml:space="preserve">
+    <value>Sayfa Bulunamadı.</value>
+  </data>
+  <data name="Phone Number" xml:space="preserve">
+    <value>Telefon Numarası</value>
+  </data>
+  <data name="Please check your email address." xml:space="preserve">
+    <value>Lütfen email adresinizi kontrol ediniz.</value>
+  </data>
+  <data name="Please enter your registered email address and we will send you a password reset link." xml:space="preserve">
+    <value>Lütfen kayıtlı e-posta adresinizi girin, size bir şifre sıfırlama bağlantısı göndereceğiz.</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Fiyat</value>
+  </data>
+  <data name="PRICE_" xml:space="preserve">
+    <value>FİYAT</value>
+  </data>
+  <data name="Product Description" xml:space="preserve">
+    <value>Ürün Açıklaması</value>
+  </data>
+  <data name="Product Details" xml:space="preserve">
+    <value>Ürün Detayları</value>
+  </data>
+  <data name="PRODUCT IMAGE" xml:space="preserve">
+    <value>ÜRÜN GÖRSELİ</value>
+  </data>
+  <data name="Product Image for Create" xml:space="preserve">
+    <value>Ürün Görseli</value>
+  </data>
+  <data name="Product Image_" xml:space="preserve">
+    <value>Ürün Fotoğrafı</value>
+  </data>
+  <data name="Product Listing Failed!" xml:space="preserve">
+    <value>Ürün Listelemesi Başarısız!</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>Ürün Adı</value>
+  </data>
+  <data name="Product Price" xml:space="preserve">
+    <value>Ürün Fiyatı</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Ürünler</value>
+  </data>
+  <data name="Products Listed!" xml:space="preserve">
+    <value>Ürünler Listelendi!</value>
+  </data>
+  <data name="Profile Details" xml:space="preserve">
+    <value>Profil Detayları</value>
+  </data>
+  <data name="Profile Image" xml:space="preserve">
+    <value>Profil Resmi</value>
+  </data>
+  <data name="Profile Settings" xml:space="preserve">
+    <value>Profil Ayarları</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Kayıt</value>
+  </data>
+  <data name="remember me" xml:space="preserve">
+    <value>beni hatırla</value>
+  </data>
+  <data name="Select Categories" xml:space="preserve">
+    <value>Kategorileri Seç</value>
+  </data>
+  <data name="Select Categories for Create" xml:space="preserve">
+    <value>Kategorileri Seç</value>
+  </data>
+  <data name="Select Language" xml:space="preserve">
+    <value>Dil Seç</value>
+  </data>
+  <data name="Send Mail" xml:space="preserve">
+    <value>Maili Gönder</value>
+  </data>
+  <data name="Sign Up" xml:space="preserve">
+    <value>Kayıt Ol</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="Terms and Conditions" xml:space="preserve">
+    <value>Şartlar Ve Koşullar</value>
+  </data>
+  <data name="The model is invalid!" xml:space="preserve">
+    <value>Model geçersiz!</value>
+  </data>
+  <data name="There was an error while loading the page, please try again." xml:space="preserve">
+    <value>Sayfa Yüklenirken Hata oluştu, tekrar deneyiniz.</value>
+  </data>
+  <data name="Turkish" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="Update Category" xml:space="preserve">
+    <value>Kategoriyi Güncelle</value>
+  </data>
+  <data name="Update failed." xml:space="preserve">
+    <value>Güncelleme başarısız.</value>
+  </data>
+  <data name="Update Product" xml:space="preserve">
+    <value>Ürünü Güncelle</value>
+  </data>
+  <data name="Update successful!" xml:space="preserve">
+    <value>Güncelleme başarılı!</value>
+  </data>
+  <data name="Update User Profile" xml:space="preserve">
+    <value>Kullanıcı Profilini Güncelle</value>
+  </data>
+  <data name="Upload New Image" xml:space="preserve">
+    <value>Ürün Görseli Ekle</value>
+  </data>
+  <data name="Use this form to create a new account." xml:space="preserve">
+    <value>Bu Sayfayı Kullanarak Yeni Bir Kullanıcı Oluşturun.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Kullanıcı</value>
+  </data>
+  <data name="User Detail" xml:space="preserve">
+    <value>Kullanıcı Detayları</value>
+  </data>
+  <data name="User profile not found." xml:space="preserve">
+    <value>Kullanıcı profili bulunamadı.</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Kullanıcılar</value>
+  </data>
+  <data name="We have sent an email to your address." xml:space="preserve">
+    <value>E-mail adresine mail gönderdik.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Hoşgeldiniz</value>
+  </data>
+  <data name="Welcome Admin Page" xml:space="preserve">
+    <value>Admin Paneline Hoşgeldiniz</value>
+  </data>
+  <data name="Welcome User Page" xml:space="preserve">
+    <value>Kullanıcı Sayfasına Hoşgeldiniz</value>
+  </data>
+  <data name="Welcome!" xml:space="preserve">
+    <value>Hoş Geldiniz!</value>
+  </data>
+  <data name="You can close this page." xml:space="preserve">
+    <value>Bu sayfayı kapatabilirsiniz</value>
+  </data>
+</root>

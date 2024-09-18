@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Create";
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <div class="container text-center">
 
@@ -11,52 +13,52 @@
         <div class="card-body">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <h2 class="text-center">Create New User</h2>
+                <h2 class="text-center">@Localizer["Create New User"]"</h2>
                 <div class="form-group">
-                    <label asp-for="FirstName" class="control-label">First Name</label>
+                    <label asp-for="FirstName" class="control-label">@Localizer["First Name"]</label>
                     <input asp-for="FirstName" class="form-control" />
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="LastName" class="control-label">Last Name</label>
+                    <label asp-for="LastName" class="control-label">@Localizer["Last Name"]</label>
                     <input asp-for="LastName" class="form-control" />
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Mail" class="control-label">E-Mail</label>
+                    <label asp-for="Mail" class="control-label">@Localizer["E-Mail"]</label>
                     <input asp-for="Mail" class="form-control" />
                     <span asp-validation-for="Mail" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                    <label asp-for="PhoneNumber" class="control-label">@Localizer["Phone Number"]</label>
                     <input asp-for="PhoneNumber" class="form-control" />
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="DateOfBirth" class="control-label">Date of Birth</label>
+                    <label for="DateOfBirth" class="control-label">@Localizer["Date of Birth"]</label>
                     <input asp-for="DateOfBirth" class="form-control" type="date" id="DateOfBirth" />
                     <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Address" class="control-label">Address</label>
+                    <label asp-for="Address" class="control-label">@Localizer["Address"]</label>
                     <textarea asp-for="Address" class="form-control"></textarea>
                     <span asp-validation-for="Address" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="ProfileImage" class="control-label">Profile Image</label>
+                    <label asp-for="ProfileImage" class="control-label">@Localizer["Profile Image"]</label>
                     <input asp-for="ProfileImage" class="form-control" type="file" />
                     <span asp-validation-for="ProfileImage" class="text-danger"></span>
                 </div>
 
                 <div class="d-flex justify-content-center mt-4">
                     <input type="submit" value="Create" class="btn btn-success mx-2" />
-                    <a asp-action="ListUsers" class="btn btn-danger mx-2">Back to List</a>
+                    <a asp-action="ListUsers" class="btn btn-danger mx-2">@Localizer["Back to List"]</a>
                 </div>
             </form>
         </div>

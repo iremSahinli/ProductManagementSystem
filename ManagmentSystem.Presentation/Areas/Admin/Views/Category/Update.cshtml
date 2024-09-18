@@ -3,36 +3,37 @@
 @{
     ViewData["Title"] = "Update";
 }
-
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <hr />
 <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
         <div class="card profile-card mx-auto">
             <div class="card-body">
-                <h2 class="text-center">Update Category</h2>
+                <h2 class="text-center">@Localizer["Update Category"]</h2>
 
                 <form asp-action="Update">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="form-group">
-                        <label asp-for="CategoryName" class="control-label">Category Name</label>
+                        <label asp-for="CategoryName" class="control-label">@Localizer["Category Name"]</label>
                         <input asp-for="CategoryName" type="text" class="form-control transparent-border-input" id="exampleFormControlInput1" placeholder="Category Name" />
                         <span asp-validation-for="CategoryName" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Description" class="control-label">Description</label>
+                        <label asp-for="Description" class="control-label">@Localizer["Description"]</label>
                         <textarea asp-for="Description" class="form-control transparent-border-input" rows="3"></textarea>
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
 
                     <div class="d-flex justify-content-center mt-4 gap-2">
                         <div class="mt-3">
-                            <a href="@Url.Action("Index", "Category", new { id = Model.Id })" class="btn btn-success btn-lg">Create</a>
+                            <a href="@Url.Action("Index", "Category", new { id = Model.Id })" class="btn btn-success btn-lg">@Localizer["Create"]</a>
                         </div>
                         <div class="mt-3">
-                            <a href="@Url.Action("Index", "Category", new { id = Model.Id })" class="btn btn-danger btn-lg">Back</a>
+                            <a href="@Url.Action("Index", "Category", new { id = Model.Id })" class="btn btn-danger btn-lg">@Localizer["Back"]</a>
                         </div>
 
                     </div>

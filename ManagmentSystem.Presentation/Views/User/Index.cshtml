@@ -1,3 +1,6 @@
-﻿<h1 class="text-center">Welcome User Page</h1>
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
+
+<h1 class="text-center">@Localizer["Welcome User Page"]</h1>
 
 

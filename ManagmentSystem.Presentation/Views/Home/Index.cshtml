@@ -5,12 +5,14 @@
 
 
 @model IEnumerable<ManagmentSystem.Business.DTOs.ProductDTOs.ProductListDTO>
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 @{
     ViewData["Title"] = "GetProducts";
 }
 
-<h1 class="text-center">Products</h1>
+<h1 class="text-center">@Localizer["Products"]</h1>
 <br />
 <br />
 <div class="container">
@@ -26,7 +28,7 @@
                     </div>
                     <div class="card-footer">
                         <i class="ni ni-cart"></i>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-primary">@Localizer["Buy"]</a>
                     </div>
                 </div>
             </div>

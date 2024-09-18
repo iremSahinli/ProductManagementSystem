@@ -3,7 +3,8 @@
 @{
     ViewData["Title"] = "Product List";
 }
-
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 
 <br />
@@ -12,20 +13,20 @@
 
 
 <div class="card">
-    <h2 class="product-heading">Products</h2>
+    <h2 class="product-heading">@Localizer["Products"]</h2>
 
     <div style="position: relative;">
-        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 300px;">Create New Product</a>
+        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 300px;">@Localizer["Create New Product"]</a>
     </div>
     <div class="table-responsive">
         <table class="table align-items-center mb-0">
             <thead>
                 <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Image</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product Name</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Categories</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["PRODUCT IMAGE"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["PRODUCT NAME"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["PRICE_"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["CATEGORIES_"]</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
                     <th class="text-secondary opacity-7"></th>
                 </tr>
             </thead>
@@ -87,9 +88,9 @@
                         </td>
 
                         <td class="align-middle text-center">
-                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
                         </td>
                     </tr>
                 }

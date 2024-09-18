@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Kullanıcılar";
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 
 <br />
@@ -16,7 +18,7 @@
 <div class="card">
     <h2 class="users-heading">Users</h2>
     <div style="position: relative;">
-        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 260px;">Create New User</a>
+        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 260px;">@Localizer["Create New User"]</a>
     </div>
 
     <div class="table-responsive">
@@ -24,11 +26,11 @@
             <thead>
                 <tr>
 
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">First Name</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mail</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Lock or Unlock Switch</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["FIRST NAME_"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["LAST NAME_"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["MAIL_"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["LOCK OR UNLUCK SWITCH_"]</th>
+                    <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS_"]</th>
                     <th class="text-secondary opacity-7"></th>
                 </tr>
             </thead>
@@ -54,9 +56,9 @@
                             </div>
                         </td>
                         <td class="text-center">
-                            <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">Update</a>
-                            <a href="@Url.Action("UserDetail", "AdminUser", new { id = item.Id })" class="btn btn-info">Details</a>
-                            <a href="@Url.Action("Delete", "AdminUser", new { id = item.Id })" class="btn btn-danger">Delete</a>
+                            <a href="@Url.Action("Edit", "AdminUser", new { id = item.Id })" class="btn btn-primary">@Localizer["Update"]</a>
+                            <a href="@Url.Action("UserDetail", "AdminUser", new { id = item.Id })" class="btn btn-info">@Localizer["Details"]</a>
+                            <a href="@Url.Action("Delete", "AdminUser", new { id = item.Id })" class="btn btn-danger">@Localizer["Delete"]</a>
                         </td>
                     </tr>
                 }

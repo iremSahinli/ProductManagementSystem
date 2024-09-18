@@ -1,6 +1,9 @@
 ﻿@{
     Layout = null;
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -68,9 +71,9 @@
                 transition: background-color 0.3s ease;
             }
 
-                .message-container button:hover {
-                    background-color: #218838;
-                }
+            .message-container button:hover {
+                background-color: #218838;
+            }
 
         .custom-image {
             width: 250px; /* Genişlik ayarı */
@@ -85,11 +88,11 @@
         <!-- Görsel eklendi -->
         <img class="custom-image" src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Mail Sent Icon ">
         <!-- Başlıklar -->
-        <h1>We have sent an email to your address.</h1>
-        <p>Please check your email address.</p>
-        <p>You can close this page.</p>
+        <h1>@Localizer["We have sent an email to your address."]</h1>
+        <p>@Localizer["Please check your email address."]</p>
+        <p>@Localizer["You can close this page."]</p>
 
-        <button type="button" class="btn btn-success" onclick="window.location.href='@Url.Action("Login", "Account")'">Back to Home</button>
+        <button type="button" class="btn btn-success" onclick="window.location.href='@Url.Action("Login", "Account")'">@Localizer["Back"]</button>
 
 
     </div>

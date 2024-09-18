@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACTIONS_" xml:space="preserve">
+    <value>ACTIONS</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Admin Home" xml:space="preserve">
+    <value>Admin Home</value>
+  </data>
+  <data name="Admin Profile" xml:space="preserve">
+    <value>Admin Profile</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Back to List" xml:space="preserve">
+    <value>Back to List </value>
+  </data>
+  <data name="Buy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="CATEGORIES_" xml:space="preserve">
+    <value>CATEGORIES</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>CATEGORY</value>
+  </data>
+  <data name="Category Details" xml:space="preserve">
+    <value>Category Details</value>
+  </data>
+  <data name="Category Name" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="CATEGORY NAME_" xml:space="preserve">
+    <value>CATEGORY NAME</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Create Category" xml:space="preserve">
+    <value>Create Category</value>
+  </data>
+  <data name="Create New Category" xml:space="preserve">
+    <value>Create New Category</value>
+  </data>
+  <data name="Create New Product" xml:space="preserve">
+    <value>Create New Product</value>
+  </data>
+  <data name="Create New User" xml:space="preserve">
+    <value>Create New User</value>
+  </data>
+  <data name="Date of Birth" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DESCRIPTION_" xml:space="preserve">
+    <value>DESCRIPTION</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Don't have an account?" xml:space="preserve">
+    <value>Don't have an account?</value>
+  </data>
+  <data name="E-Mail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="Email address:" xml:space="preserve">
+    <value>Email address:</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Enter your email and password to sign in" xml:space="preserve">
+    <value>Enter your email and password to sign in</value>
+  </data>
+  <data name="First Name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="FIRST NAME_" xml:space="preserve">
+    <value>FIRST NAME</value>
+  </data>
+  <data name="Forgot your password?" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>FullName</value>
+  </data>
+  <data name="Go Update Page" xml:space="preserve">
+    <value>Go Update Page</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Last Name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="LAST NAME_" xml:space="preserve">
+    <value>LAST NAME</value>
+  </data>
+  <data name="LOCK OR UNLUCK SWITCH_" xml:space="preserve">
+    <value>LOCK OR UNLUCK SWITCH</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="MAIL_" xml:space="preserve">
+    <value>MAIL</value>
+  </data>
+  <data name="Page Not Found." xml:space="preserve">
+    <value>Page Not Found.</value>
+  </data>
+  <data name="Phone Number" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Please check your email address." xml:space="preserve">
+    <value>Please check your email address.</value>
+  </data>
+  <data name="Please enter your registered email address and we will send you a password reset link." xml:space="preserve">
+    <value>Please enter your registered email address and we will send you a password reset link.</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PRICE_" xml:space="preserve">
+    <value>PRICE</value>
+  </data>
+  <data name="Product Description" xml:space="preserve">
+    <value>Product Description</value>
+  </data>
+  <data name="Product Details" xml:space="preserve">
+    <value>Product Details</value>
+  </data>
+  <data name="PRODUCT IMAGE" xml:space="preserve">
+    <value>PRODUCT IMAGE</value>
+  </data>
+  <data name="Product Image for Create" xml:space="preserve">
+    <value>Product Image</value>
+  </data>
+  <data name="Product Image_" xml:space="preserve">
+    <value>Product Image</value>
+  </data>
+  <data name="Product Listing Failed!" xml:space="preserve">
+    <value>Product Listing Failed!</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="Product Price for Create" xml:space="preserve">
+    <value>Product Price</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Products Listed!" xml:space="preserve">
+    <value>Products Listed</value>
+  </data>
+  <data name="Profile Details" xml:space="preserve">
+    <value>Profile Details</value>
+  </data>
+  <data name="Profile Image" xml:space="preserve">
+    <value>Profile Image</value>
+  </data>
+  <data name="Profile Settings" xml:space="preserve">
+    <value>Profile Settings</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="remember me" xml:space="preserve">
+    <value>remember me</value>
+  </data>
+  <data name="Select Categories" xml:space="preserve">
+    <value>Select Categories</value>
+  </data>
+  <data name="Select Categories for Create" xml:space="preserve">
+    <value>Select Categories</value>
+  </data>
+  <data name="Select Language" xml:space="preserve">
+    <value>Select Language</value>
+  </data>
+  <data name="Send Mail" xml:space="preserve">
+    <value>Send Mail</value>
+  </data>
+  <data name="Sign Up" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="Terms and Conditions" xml:space="preserve">
+    <value>Terms and Conditions</value>
+  </data>
+  <data name="The model is invalid!" xml:space="preserve">
+    <value>The model is invalid!</value>
+  </data>
+  <data name="There was an error while loading the page, please try again." xml:space="preserve">
+    <value>There was an error while loading the page, please try again.</value>
+  </data>
+  <data name="Turkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Update Category" xml:space="preserve">
+    <value>Update Category</value>
+  </data>
+  <data name="Update failed." xml:space="preserve">
+    <value>Update failed.</value>
+  </data>
+  <data name="Update Product" xml:space="preserve">
+    <value>Update Product</value>
+  </data>
+  <data name="Update successful!" xml:space="preserve">
+    <value>Update successful!</value>
+  </data>
+  <data name="Update User Profile" xml:space="preserve">
+    <value>Update User Profile</value>
+  </data>
+  <data name="Upload New Image" xml:space="preserve">
+    <value>Upload New Image</value>
+  </data>
+  <data name="Use this form to create a new account." xml:space="preserve">
+    <value>Use this form to create a new account.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="User Detail" xml:space="preserve">
+    <value>User Detail</value>
+  </data>
+  <data name="User profile not found." xml:space="preserve">
+    <value>User profile not found.</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="We have sent an email to your address." xml:space="preserve">
+    <value>We have sent an email to your address.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="Welcome Admin Page" xml:space="preserve">
+    <value>Welcome Admin Page</value>
+  </data>
+  <data name="Welcome User Page" xml:space="preserve">
+    <value>Welcome User Page</value>
+  </data>
+  <data name="Welcome!" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="You can close this page." xml:space="preserve">
+    <value>You can close this page.</value>
+  </data>
+</root>

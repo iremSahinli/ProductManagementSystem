@@ -65,6 +65,8 @@
     }
 } *@
 
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 
 @model ManagmentSystem.Presentation.Models.AccountVM.LoginVM
@@ -94,7 +96,7 @@
                 <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
                     <div class="container-fluid">
                         <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3" href="/Home/Index" ">
-                            Home
+                        @Localizer["Home"]
                         </a>
                         <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon mt-2">
@@ -109,14 +111,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link me-2" href="/Account/Register">
                                         <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                                        Register
+                            @Localizer["Register"]
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link me-2" href="/Account/Login">
                                         <i class="fa fa-user opacity-6 text-dark me-1"></i>
-                                        Login
+                                @Localizer["Login"]
                                     </a>
                                 </li>
                             </ul>
@@ -141,8 +143,8 @@
                                 <div class="card card-plain">
 
                                     <div class="card-header pb-0 text-start" style="background-color: transparent;">
-                                        <h4 class="font-weight-bolder">Login</h4>
-                                        <p class="mb-0">Enter your email and password to sign in</p>
+                                        <h4 class="font-weight-bolder">@Localizer["Login"]</h4>
+                                        <p class="mb-0">@Localizer["Enter your email and password to sign in"]</p>
                                     </div>
                                     <div class="card-body">
                                         <form asp-action="Login">
@@ -157,11 +159,11 @@
                                             </div>
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" id="rememberme">
-                                                <label class="form-check-label" for="rememberme">remember me</label>
+                                                <label class="form-check-label" for="rememberme">@Localizer["remember me"]</label>
                                             </div>
                                             <div class="text-center">
                                                 <button type="submit" class="btn btn-primary btn-lg active w-100 mt-4 mb-0" role="button" aria-pressed="true">
-                                                    Login
+                                                    @Localizer["Login"]
                                                 </button>
                                             </div>
 
@@ -170,11 +172,11 @@
                                     </div>
                                     <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                         <p class="mb-4 text-sm mx-auto">
-                                            Don't have an account?
-                                            <a href="~/Account/Register" class="text-primary text-gradient font-weight-bold">Register</a>
+                                            @Localizer["Don't have an account?"]
+                                            <a href="~/Account/Register" class="text-primary text-gradient font-weight-bold">@Localizer["Register"]</a>
 
                                         </p>
-                                        <a href="@Url.Action("ForgotPassword", "Account")">Şifremi Unuttum</a>
+                                        <a href="@Url.Action("ForgotPassword", "Account")">@Localizer["Şifremi Unuttum"]</a>
 
                                     </div>
                                 </div>

@@ -3,10 +3,15 @@
 @{
     ViewData["Title"] = "GetProducts";
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
-<h1 class="text-center">Products</h1>
+<h1 class="text-center">@Localizer["Products"]</h1>
 <br />
 <br />
+
+
+
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
@@ -22,7 +27,7 @@
                     </div>
                     <div class="card-footer">
                         <i class="ni ni-cart"></i>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <a href="#" class="btn btn-primary">@Localizer["Buy"]</a>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,8 @@
     ViewData["Title"] = "Kategori Listesi";
 }
 
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <br />
 <br />
@@ -11,18 +13,18 @@
 
 
 <div class="card">
-    <h2 class="categories-heading">Categories</h2>
+    <h2 class="categories-heading">@Localizer["Categories"]</h2>
     <div style="position: relative;">
-        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 480px;">Create New Category</a>
+        <a asp-action="Create" class="btn btn-success" style="position: absolute; top: -40px; right: 480px;">@Localizer["Create New Category"]</a>
     </div>
 
     <div class="table-responsive">
         <table class="table align-items-center mb-0">
             <thead>
                 <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category Name</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["CATEGORY NAME_"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["DESCRIPTION_"]</th>
+                    <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
                     <th class="text-secondary opacity-7"></th>
                 </tr>
             </thead>
@@ -43,9 +45,9 @@
                             </div>
                         </td>
                         <td class="align-middle text-center">
-                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
                         </td>
                     </tr>
                 }
