@@ -133,10 +133,10 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             }).ToList();
         }
 
-        public async Task<bool> IsCategoryNameExistAsync(string categoryName, string description)  //sistemde aynı kategoriden varmı, büyük/küçük harf farkı dikkate almadan kontrol.
+        public async Task<bool> IsCategoryNameExistAsync(string categoryName)  //sistemde aynı kategoriden varmı, büyük/küçük harf farkı dikkate almadan kontrol.
         {
             return await _context.Categories.AnyAsync(c =>
-                    (c.CategoryName.ToLower() == categoryName.ToLower()) || (c.Description.ToLower() == description.ToLower())
+                    (c.CategoryName.ToLower() == categoryName.ToLower())
                     );
         }
     }

@@ -104,6 +104,10 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
                 productImagePath = "/uploads/" + uniqueFileName;
             }
+            else
+            {
+                productImagePath = "/uploads/Not Image.jpg";
+            }
 
 
             var productCreateDTO = new ProductCreateDTO
@@ -174,7 +178,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             {
                 model.Categories = await GetCategories(model.Id);
                 return View(model);
-                
+
             }
 
             if (model.ProductImage != null)
@@ -197,14 +201,14 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                     await model.ProductImage.CopyToAsync(stream);
                 }
 
-                
+
                 model.ProductImagePath = $"/uploads/{uniqueFileName}"; //doğru dosya yolunu DTO ya veriyoruz.
             }
 
             var productUpdateDTO = model.Adapt<ProductUpdateDTO>();
 
 
-            
+
             var result = await _productService.UpdateAsync(model.Adapt<ProductUpdateDTO>());
 
             if (!result.IsSucces)
@@ -215,7 +219,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 return View(model);
             }
 
-           
+
             SuccesNotyf(result.Message);
             Console.WriteLine(model.ProductImage);
             return RedirectToAction("Index");
