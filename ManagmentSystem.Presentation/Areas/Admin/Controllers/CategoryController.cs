@@ -48,7 +48,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 return View(model);
             }
 
-            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName, model.Description); //Aynı kategori ve description sistemde varmı kontrol eder.
+            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName); //Aynı kategori ve description sistemde varmı kontrol eder.
             if (categoryExist)
             {
                 ErrorNotyf("Kaydetmek istedğiniz kategori sistemde bulunmaktadır, Lütfen farklı bir kategori ekleyiniz");
@@ -114,7 +114,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             }
 
             //Kategori sistemde varmı kontrol ediyor ve model dönüyor.
-            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName, model.Description);
+            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName);
             if (categoryExist)
             {
                 ErrorNotyf("A category with this name or description already exists.");

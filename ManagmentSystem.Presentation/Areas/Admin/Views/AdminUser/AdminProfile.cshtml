@@ -6,13 +6,16 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> Localizer
 
-<h1 class="text-center">@Localizer["Admin Profile"]</h1>
+    <br />
+    <br />
+    <br />
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card profile-card mx-auto">
                 <div class="card-body text-center">
                     <p class="card-description">
+                        <h2 class="text-center">@Localizer["Admin Profile"]</h2>
                         <h6 class="card-title">
                             <strong>@Localizer["FullName"]:</strong>  @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)
                         </h6>

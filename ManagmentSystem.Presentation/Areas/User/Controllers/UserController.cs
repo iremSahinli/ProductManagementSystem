@@ -1,7 +1,9 @@
 ﻿using ManagmentSystem.Business.Services.ProductServices;
+using ManagmentSystem.Business.Services.UserProfileServices;
 using ManagmentSystem.Presentation.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ManagmentSystem.Presentation.Areas.User.Controllers
 {
@@ -11,14 +13,33 @@ namespace ManagmentSystem.Presentation.Areas.User.Controllers
     {
 
         private readonly IProductService _productService;
+        private readonly IUserProfileService _userProfileService;
 
-        public UserController(IProductService productService)
+        public UserController(IProductService productService, IUserProfileService userProfileService)
         {
             _productService = productService;
+            _userProfileService = userProfileService;
         }
 
         public async Task<IActionResult> GetProducts()
         {
+            var identityUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            // ID'yi Guid'e dönüştürüyoruz
+            if (!Guid.TryParse(identityUserIdString, out Guid identityUserId))
+            {
+                ErrorNotyf("Geçersiz kullanıcı ID'si.");
+                return RedirectToAction("Error", "Home");  // Hata sayfasına yönlendirme yapabilirsiniz
+            }
+
+            var userProfile = await _userProfileService.GetUserProfileAsync(identityUserIdString);
+            if (userProfile == null)
+            {
+                ErrorNotyf("Ürünler sayfasına gidebilmek için lütfen profil bilgilerinizi eksiksiz doldurunuz ve kaydediniz!");
+                return Redirect("https://localhost:7223/User/Create"); //Profil tablosuna yölendir. 
+            }
+
+
             var result = await _productService.GetAllAsync();  // SuccessDataResult döner
             if (result.IsSucces)
             {
