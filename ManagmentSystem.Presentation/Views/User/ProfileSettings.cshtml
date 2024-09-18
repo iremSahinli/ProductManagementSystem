@@ -1,11 +1,13 @@
 ﻿@model ManagmentSystem.Business.DTOs.UserProfileDTOs.UserProfileDTO
 
 @{
-    ViewData["Title"] = "Profile Details";
+    ViewData["Title"] = Localizer["Profile Details"];
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <div class="container text-center">
-    <h2>@ViewData["Title"]</h2>
+    <h2>@Localizer["Profile Details"]</h2>
 
     <div class="card profile-card mx-auto">
         <div class="card-body">
@@ -22,20 +24,20 @@
                     }
                 </div>
                 <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
-                <h6 class="category text-info text-gradient">User</h6>
+                <h6 class="category text-info text-gradient">@Localizer["User"]</h6>
             </div>
             <dl class="row">
-                <dt class="col-sm-4">Phone Number:</dt>
+                <dt class="col-sm-4">@Localizer["Phone Number"]:</dt>
                 <dd class="col-sm-8">@Model.PhoneNumber</dd>
 
-                <dt class="col-sm-4">Date of Birth:</dt>
+                <dt class="col-sm-4">@Localizer["Date of Birth"]:</dt>
                 <dd class="col-sm-8">@Model.DateOfBirth?.ToString("dd/MM/yyyy")</dd>
-                <dt class="col-sm-4">Mail:</dt>
+                <dt class="col-sm-4">@Localizer["Mail"]:</dt>
                 <dd class="col-sm-8">@Model.Mail</dd>
-                <dt class="col-sm-4">Address:</dt>
+                <dt class="col-sm-4">@Localizer["Address"]:</dt>
                 <dd class="col-sm-8">@Model.Address</dd>
             </dl>
-            <a asp-action="Update" class="btn btn-primary">Go Update Page</a>
+            <a asp-action="Update" class="btn btn-primary">@Localizer["Go Update Page"]</a>
         </div>
     </div>
 </div>

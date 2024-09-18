@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Create";
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 
 
@@ -18,14 +20,14 @@
 
                         <!-- Ürün adı -->
                         <div class="form-group">
-                            <label asp-for="ProductName" class="control-label">Product Name</label>
+                            <label asp-for="ProductName" class="control-label">@Localizer["Product Name"]</label>
                             <input asp-for="ProductName" class="form-control" />
                             <span asp-validation-for="ProductName" class="text-danger"></span>
                         </div>
 
                         <!-- Ürün fiyatı -->
                         <div class="form-group">
-                            <label asp-for="ProductPrice" class="control-label">Product Price</label>
+                            <label asp-for="ProductPrice" class="control-label">@Localizer["Product Price"]</label>
                             <div class="input-group">
                                 <input asp-for="ProductPrice" class="form-control" />
                                 <div class="input-group-append">
@@ -37,21 +39,21 @@
 
                         <!-- Ürün açıklaması -->
                         <div class="form-group">
-                            <label asp-for="ProductDescription" class="control-label">Product Description</label>
+                            <label asp-for="ProductDescription" class="control-label">@Localizer["Product Description"]</label>
                             <textarea asp-for="ProductDescription" class="form-control"></textarea>
                             <span asp-validation-for="ProductDescription" class="text-danger"></span>
                         </div>
 
                         <!-- Ürün resmi yükleme -->
                         <div class="form-group">
-                            <label asp-for="ProductImage" class="control-label">Product Image</label>
+                            <label asp-for="ProductImage" class="control-label">@Localizer["Product Image"]</label>
                             <input asp-for="ProductImage" class="form-control" type="file" />
                             <span asp-validation-for="ProductImage" class="text-danger"></span>
                         </div>
 
                         <!-- Kategoriler seçimi -->
                         <div class="form-group">
-                            <label asp-for="SelectedCategories" class="control-label">Select Categories</label>
+                            <label asp-for="SelectedCategories" class="control-label">@Localizer["Select Categories"]</label>
                             <select asp-for="SelectedCategories" class="form-control" multiple="multiple" id="categorySelect">
                                 @foreach (var category in Model.Categories)
                                 {
@@ -63,7 +65,7 @@
 
                         <div class="d-flex justify-content-center mt-4 gap-2">
                             <input type="submit" value="Save" class="btn btn-success" />
-                            <a asp-action="Index" class="btn btn-danger">Back to List</a>
+                            <a asp-action="Index" class="btn btn-danger">@Localizer["Back to List"]</a>
                         </div>
                     </form>
                 </div>

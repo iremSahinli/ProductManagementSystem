@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Update Profile";
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <div class="container">
 
@@ -27,43 +29,43 @@
                         }
                     </div>
                     <div class="form-group">
-                        <label asp-for="FirstName" class="control-label">First Name</label>
+                        <label asp-for="FirstName" class="control-label">@Localizer["First Name"]</label>
                         <input asp-for="FirstName" class="form-control" />
                         <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="LastName" class="control-label">Last Name</label>
+                        <label asp-for="LastName" class="control-label">@Localizer["Last Name"]</label>
                         <input asp-for="LastName" class="form-control" />
                         <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                        <label asp-for="PhoneNumber" class="control-label">@Localizer["Phone Number"]</label>
                         <input asp-for="PhoneNumber" class="form-control" />
                         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
+                        <label asp-for="DateOfBirth" class="control-label">@Localizer["Date of Birth"]</label>
                         <input asp-for="DateOfBirth" class="form-control" type="datetime-local" />
                         <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Address" class="control-label">Address</label>
+                        <label asp-for="Address" class="control-label">@Localizer["Address"]</label>
                         <input asp-for="Address" class="form-control" />
                         <span asp-validation-for="Address" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Mail" class="control-label">Mail</label>
+                        <label asp-for="Mail" class="control-label">@Localizer["Mail"]</label>
                         <input asp-for="Mail" class="form-control" readonly />
                         <span asp-validation-for="Mail" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="ProfileImagePath" class="control-label">Profile Image</label>
+                        <label asp-for="ProfileImagePath" class="control-label">@Localizer["Profile Image_"]</label>
                         <input asp-for="ProfileImagePath" class="form-control" type="file" />
                         <span asp-validation-for="ProfileImagePath" class="text-danger"></span>
                     </div>
                     <div class="form-group button-group text-center" style="margin-top: 20px">
                         <input type="submit" value="Save" class="btn btn-success" />
-                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                        <a asp-action="Index" class="btn btn-secondary">@Localizer["Back to List"]</a>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,6 @@
 ﻿@model ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs.AdminProductDetailVM
-
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 @{
     ViewData["Title"] = "Product Details";
 }
@@ -8,11 +9,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card text-center" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
-                <h2 class="text-center">Product Details</h2>
+                <h2 class="text-center">@Localizer["Product Details"]</h2>
                 <!-- Görsel -->
 
                 <div class="form-group text-center">
-                    <label for="ProductImage" class="control-label">Product Image</label>
+                    <label for="ProductImage" class="control-label">@Localizer["Product Image_"]</label>
                     <div class="image-container">
                         @if (!string.IsNullOrEmpty(Model.ProductImage))
                         {
@@ -24,10 +25,10 @@
                 <!-- Diğer Bilgiler -->
                 <div class="card-body">
                     <h4 class="card-title">@Html.DisplayFor(model => model.ProductName)</h4>
-                    <h6 class="text-info">Product Details</h6>
+                    <h6 class="text-info">@Localizer["Product Details"]</h6>
 
                     <p>
-                        <strong>Price:</strong> @if (Model.ProductPrice != null)
+                        <strong>@Localizer["Price"]:</strong> @if (Model.ProductPrice != null)
 
                         {
                             @Model.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))
@@ -43,7 +44,7 @@
                     @* <p><strong>Description:</strong> @Html.DisplayFor(model => model.ProductDescription)</p> *@
 
                     <p>
-                        <strong>Categories:</strong> @if (Model.CategoryNames != null && Model.CategoryNames.Any())
+                        <strong>@Localizer["Categories"]:</strong> @if (Model.CategoryNames != null && Model.CategoryNames.Any())
 
                         {
                             @string.Join(" - ", Model.CategoryNames)
@@ -57,7 +58,7 @@
                     </p>
                 </div>
             <div class="mt-3">
-                <a href="@Url.Action("Index", "Product")" class="btn btn-danger btn-lg">Back</a>
+                <a href="@Url.Action("Index", "Product")" class="btn btn-danger btn-lg">@Localizer["Back"]</a>
             </div>
             </div>
         </div>

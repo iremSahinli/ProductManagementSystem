@@ -3,19 +3,21 @@
 @{
     ViewData["Title"] = "Detaylar";
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card profile-card mx-auto">
                 <div class="card-body text-center">
-                    <h2>Category Details</h2>
+                    <h2>@Localizer["Category Details"]</h2>
                     <h4 class="card-title">@Html.DisplayFor(model => model.CategoryName)</h4>
                     <p class="card-description">
-                        <strong>Description:</strong> @Html.DisplayFor(model => model.Description)
+                        <strong>@Localizer["Description"]:</strong> @Html.DisplayFor(model => model.Description)
                     </p>
                     <div class="mt-3">
-                        <a href="@Url.Action("Index", "Category")" class="btn btn-danger btn-lg">Back</a>
+                        <a href="@Url.Action("Index", "Category")" class="btn btn-danger btn-lg">@Localizer["Back"]</a>
                     </div>
                 </div>
             </div>

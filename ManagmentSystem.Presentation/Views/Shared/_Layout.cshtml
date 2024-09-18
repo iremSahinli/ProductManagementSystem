@@ -1,13 +1,16 @@
 ﻿@{
     Layout = null;
 }
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <!DOCTYPE html>
 <html lang="en">
-
+<html lang="@(ViewBag.CurrentUICulture ?? "en")">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - ManagmentSystem</title>
     <link rel="apple-touch-icon" sizes="76x76" href="~/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="~/assets/img/favicon.png">
     <title>
@@ -36,10 +39,16 @@
                 <span class="ms-1 font-weight-bold">morseluxe.com.tr</span>
             </a>
         </div>
-        <hr class="horizontal dark mt-0">
+        <hr class="horizontal dark mt-0 text-center">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
-
+                <li class="nav-item">
+                    <select id="languageSelect">
+                        <option>@Localizer["Select Language"]</option>
+                        <option value="tr">@Localizer["Turkish"]</option>
+                        <option value="en">@Localizer["English"]</option>
+                    </select>
+                </li>
                 @if (User.IsInRole("Admin"))
                 {
                     <li class="nav-item">
@@ -47,7 +56,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Admin Home</span>
+                            <span class="nav-link-text ms-1">@Localizer["Admin Home"]</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -55,7 +64,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-app text-info text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Categories</span>
+                            <span class="nav-link-text ms-1">@Localizer["Categories"]</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -63,14 +72,14 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-collection text-danger text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Products</span>
+                            <span class="nav-link-text ms-1">@Localizer["Products"]</span>
                         </a>
                     <li class="nav-item">
                         <a class="nav-link" asp-area="Admin" asp-controller="AdminUser" asp-action="AdminProfile">
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Admin Profile</span>
+                            <span class="nav-link-text ms-1">@Localizer["Admin Profile"]</span>
                         </a>
                     </li>
                     </li>
@@ -79,7 +88,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Users</span>
+                            <span class="nav-link-text ms-1">@Localizer["Users"]</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -87,7 +96,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Logout</span>
+                            <span class="nav-link-text ms-1">@Localizer["Logout"]</span>
                         </a>
                     </li>
                 }
@@ -98,7 +107,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Products</span>
+                            <span class="nav-link-text ms-1">@Localizer["Products"]</span>
                         </a>
                     </li>
 
@@ -107,7 +116,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Profile Settings</span>
+                            <span class="nav-link-text ms-1">@Localizer["Profile Settings"]</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -115,7 +124,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Logout</span>
+                            <span class="nav-link-text ms-1">@Localizer["Logout"]</span>
                         </a>
                     </li>
                 }
@@ -126,7 +135,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Home</span>
+                            <span class="nav-link-text ms-1">@Localizer["Home"]</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -134,7 +143,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-collection text-info text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Register</span>
+                            <span class="nav-link-text ms-1">@Localizer["Register"]</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -142,7 +151,7 @@
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
                             </div>
-                            <span class="nav-link-text ms-1">Login</span>
+                            <span class="nav-link-text ms-1">@Localizer["Login"]</span>
                         </a>
                     </li>
                 }
@@ -155,31 +164,40 @@
 
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->
-      <!--  <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-              <div class="container-fluid py-1 px-3">  Login sayfasında üstteki beyaz çizgi bunu kapatınca kalkıyor-->
+        <!--  <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+                <div class="container-fluid py-1 px-3">  Login sayfasında üstteki beyaz çizgi bunu kapatınca kalkıyor-->
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
 
-                    <ul class="navbar-nav  justify-content-end">
+            <ul class="navbar-nav  justify-content-end">
 
-                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                                <div class="sidenav-toggler-inner">
-                                    <i class="sidenav-toggler-line bg-white"></i>
-                                    <i class="sidenav-toggler-line bg-white"></i>
-                                    <i class="sidenav-toggler-line bg-white"></i>
-                                </div>
-                            </a>
-                        </li>
+                <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                        <div class="sidenav-toggler-inner">
+                            <i class="sidenav-toggler-line bg-white"></i>
+                            <i class="sidenav-toggler-line bg-white"></i>
+                            <i class="sidenav-toggler-line bg-white"></i>
+                        </div>
+                    </a>
+                </li>
 
 
-                    </ul>
-                </div>
-            </div>
+            </ul>
+        </div>
+        </div>
         </nav>
         <!-- End Navbar -->
         @RenderBody()
         @RenderSection("Scripts", required: false)
+        <script>
+            document.getElementById('languageSelect').addEventListener('change', function () {
+                var selectedLan = this.value;
+                console.log(selectedLan); // Log the selected language value
+                document.cookie = ".AspNetCore.Culture=c=" + selectedLan + "|uic=" + selectedLan + "; path=/";
+                console.log(document.cookie); // Log the cookie before reloading
+                location.reload();
+            });
 
+        </script>
 
     </main>
     @* <div class="fixed-plugin">

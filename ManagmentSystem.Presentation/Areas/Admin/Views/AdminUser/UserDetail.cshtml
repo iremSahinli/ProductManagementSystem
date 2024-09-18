@@ -4,13 +4,15 @@
     ViewData["Title"] = "UserDetail";
 }
 
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-transparent text-center">
                 <div class="card-body">
-                    <h2 class="text-center">UserDetail</h2>
+                    <h2 class="text-center">@Localizer["User Detail"]</h2>
 
                     <div class="image-container mx-auto">
 
@@ -25,7 +27,7 @@
                     </div>
 
                     <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
-                    <h6 class="category text-info text-gradient">User</h6>
+                    <h6 class="category text-info text-gradient">@Localizer["User"]</h6>
                     <hr />
 
                     <dl class="row justify-content-center">
@@ -44,7 +46,7 @@
                         <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
                     </dl>
                     <div class="text-center mt-4">
-                        <a asp-action="ListUsers" class="btn btn-info">Back to List</a>
+                        <a asp-action="ListUsers" class="btn btn-info">@Localizer["Back to List"]</a>
                     </div>
                 </div>
             </div>
