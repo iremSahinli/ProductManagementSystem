@@ -43,14 +43,14 @@ namespace ManagmentSystem.Business.Services.CategoryServices
 
             var newCategory = categoryCreateDTO.Adapt<Category>();
 
-           
+
             if (categoryCreateDTO.ParentCategoryId.HasValue)
             {
                 newCategory.ParentCategoryId = categoryCreateDTO.ParentCategoryId;
             }
             else
             {
-                newCategory.ParentCategoryId = null; 
+                newCategory.ParentCategoryId = null;
             }
 
             await _categoryRepository.AddAsync(newCategory);
@@ -67,20 +67,20 @@ namespace ManagmentSystem.Business.Services.CategoryServices
                 return new ErrorResult("Kategori Bulunamadı");
             }
 
-            
+
             var subCategories = await _context.Categories
                 .Where(c => c.ParentCategoryId == deletingCategory.Id).ToListAsync();
 
             if (subCategories.Any())
             {
-               
+
                 foreach (var subCategory in subCategories)
                 {
                     await _categoryRepository.DeleteAsync(subCategory);
                 }
             }
 
-            
+
             await _categoryRepository.DeleteAsync(deletingCategory);
             await _categoryRepository.SaveChangeAsync();
             return new SuccessResult("Kategori silme Başarılı");
@@ -125,7 +125,7 @@ namespace ManagmentSystem.Business.Services.CategoryServices
                 updatingCategory.CategoryName = categoryUpdateDTO.CategoryName;
                 updatingCategory.Description = categoryUpdateDTO.Description;
 
-               
+
                 updatingCategory.ParentCategoryId = categoryUpdateDTO.ParentCategoryId;
 
                 await _categoryRepository.UpdateAsync(updatingCategory);
@@ -162,6 +162,7 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             {
                 Id = c.Id,
                 CategoryName = c.CategoryName,
+                ParentCategoryId = c.ParentCategoryId,
 
             }).ToList();
         }
