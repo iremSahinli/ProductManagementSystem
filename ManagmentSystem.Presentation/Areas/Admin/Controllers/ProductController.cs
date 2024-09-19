@@ -288,16 +288,19 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         }
         private async Task<List<CategorySelectModel>> GetCategories(Guid? productId = null)
         {
-            var categoriListDTOs = (await _categoryService.GetAllAsync()).Data;
+            // Sadece alt kategorileri getrme
+            var categoriListDTOs = (await _categoryService.GetAllAsync()).Data.Where(c => c.ParentCategoryId != null).ToList();
             var categoriSelectModels = categoriListDTOs.Adapt<List<CategorySelectModel>>();
+
             if (productId == null)
             {
                 return categoriSelectModels;
             }
+
             var result = await _productService.GetCategoryIdsByProductId(productId);
             if (!result.IsSucces)
             {
-                var message = _stringLocalizer["Categories are not recieved"];
+                var message = _stringLocalizer["Categories are not received"];
                 ErrorNotyf(result.Message);
                 return categoriSelectModels;
             }
