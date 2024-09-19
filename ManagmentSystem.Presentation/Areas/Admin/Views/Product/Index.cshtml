@@ -16,9 +16,12 @@
     <h2 class="product-heading">@Localizer["Products"]</h2>
 
     <div style="position: relative;">
-        <a asp-action="Create" class="btn btn-success" style="position: fixed; top: 90px; right: 300px;">@Localizer["Create New Product"]</a>
+        <a asp-action="Create" class="btn btn-success style="position: fixed; top: 90px; right: 460px;">@Localizer["Create New Product"]</a>
     </div>
+        
+
     <div class="table-responsive">
+
         <table class="table align-items-center mb-0">
             <thead>
                 <tr>
@@ -36,18 +39,18 @@
                     <tr>
                         <td>
                             <div class="image-container">
-                            <div class="d-flex px-2 py-1">
-                                <div class="d-flex flex-column justify-content-center">
-                                    @if (!string.IsNullOrEmpty(item.ProductImage))
-                                    {
-                                        <img src="@item.ProductImage" alt="Product Image" class="product-image" />
-                                    }
-                                    else
-                                    {
-                                        <span>No Image</span>
-                                    }
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        @if (!string.IsNullOrEmpty(item.ProductImage))
+                                        {
+                                            <img src="@item.ProductImage" alt="Product Image" class="product-image" />
+                                        }
+                                        else
+                                        {
+                                            <span>No Image</span>
+                                        }
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </td>
                         <td>
@@ -117,9 +120,11 @@
     }
 
     .table-responsive {
-        /* padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */ */
-        overflow: hidden;
+        overflow: visible;
     }
+
+    
+
 
     .table {
         width: 100%; /* Tablonun tam genişlikte görünmesini sağla */
@@ -149,14 +154,13 @@
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasyon süresi */
         z-index: 1;
         position: relative;
-       
     }
 
         .product-image:hover {
             transform: scale(3); /* Görselin büyüklüğü %300 olacak şekilde büyüt */
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Hafif bir gölge ekle */
             transform-origin: left; /* Görsel merkezden büyüsün */
-             position: absolute;  
+            position: absolute;
             z-index: 20; /* Tablo üzerine çıkmasını sağla */
             margin-right: 100px;
         }
@@ -196,22 +200,14 @@
     }
 
     .product-heading {
-       
-        margin-left: 30px; 
+        margin-left: 30px;
     }
 
     .image-container {
-        
         width: 100px; /* Görselin orijinal genişliği */
         height: 100px; /* Görselin orijinal yüksekliği */
         overflow: hidden; /* Büyüyen görselin kapsayıcıyı aşmasını engeller */
     }
 
-
-    
-
-
-
-    
 </style>
 
