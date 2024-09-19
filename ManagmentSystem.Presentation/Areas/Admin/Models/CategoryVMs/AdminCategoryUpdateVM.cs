@@ -11,5 +11,6 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs
 
         [StringLength(250, ErrorMessage = "Description can't be longer than 250 characters.")]
         public string Description { get; set; }
+        public Guid? ParentCategoryId { get; set; }
     }
 }

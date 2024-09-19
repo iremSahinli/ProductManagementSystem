@@ -7,19 +7,17 @@
 @inject IStringLocalizer<SharedResources> Localizer
 
 <hr />
-<hr />
-<hr />
 <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
         <div class="card profile-card mx-auto">
             <div class="card-body">
                 <h2 class="text-center">@Localizer["Create Category"]</h2>
-                <form asp-action="Create">
+                <form asp-action="Create" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="form-group">
                         <label asp-for="CategoryName" class="control-label">@Localizer["Category Name"]</label>
-                        <input asp-for="CategoryName" type="text" class="form-control transparent-border-input" id="exampleFormControlInput1" placeholder="Category Name" />
+                        <input asp-for="CategoryName" type="text" class="form-control transparent-border-input" placeholder="Category Name" />
                         <span asp-validation-for="CategoryName" class="text-danger"></span>
                     </div>
 
@@ -27,6 +25,22 @@
                         <label asp-for="Description" class="control-label">@Localizer["Description"]</label>
                         <textarea asp-for="Description" class="form-control transparent-border-input" rows="3"></textarea>
                         <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <!-- Ana/Alt Kategori Seçimi -->
+                    <div class="form-group">
+                        <label>@Localizer["Kategori Türü"]</label><br />
+                        <input type="radio" name="IsMainCategory" value="true" checked /> @Localizer["Ana Kategori"]
+                        <input type="radio" name="IsMainCategory" value="false" /> @Localizer["Alt Kategori"]
+                    </div>
+
+                    <!-- Ana Kategori Seçimi (Eğer Alt Kategori Seçildiyse Gösterilecek) -->
+                    <div class="form-group" id="parentCategoryDropdown" style="display:none;">
+                        <label for="ParentCategoryId">@Localizer["Ana Kategori Seçin"]</label>
+                        <select asp-for="ParentCategoryId" class="form-control transparent-border-input" asp-items="ViewBag.Categories">
+                            <option value="">@Localizer["Bir Ana Kategori Seçin"]</option>
+                        </select>
+                        <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
                     </div>
 
                     <div class="d-flex justify-content-center mt-4 gap-2">
@@ -47,6 +61,19 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        // Eğer alt kategori seçildiyse ana kategori dropdown'ını göster
+        document.querySelectorAll('input[name="IsMainCategory"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.value === "false") {
+                    document.getElementById('parentCategoryDropdown').style.display = 'block';
+                } else {
+                    document.getElementById('parentCategoryDropdown').style.display = 'none';
+                }
+            });
+        });
+    </script>
 }
 
 <style>

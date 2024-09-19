@@ -42,23 +42,51 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             }
 
             var newCategory = categoryCreateDTO.Adapt<Category>();
+
+           
+            if (categoryCreateDTO.ParentCategoryId.HasValue)
+            {
+                newCategory.ParentCategoryId = categoryCreateDTO.ParentCategoryId;
+            }
+            else
+            {
+                newCategory.ParentCategoryId = null; 
+            }
+
             await _categoryRepository.AddAsync(newCategory);
             await _categoryRepository.SaveChangeAsync();
             return new SuccessResult("Kategori Ekleme işlemi başarılı");
         }
 
+
         public async Task<IResult> DeleteAsync(Guid id)
         {
-
             var deletingCategory = await _categoryRepository.GetByIdAsync(id);
             if (deletingCategory is null)
             {
                 return new ErrorResult("Kategori Bulunamadı");
             }
+
+            
+            var subCategories = await _context.Categories
+                .Where(c => c.ParentCategoryId == deletingCategory.Id).ToListAsync();
+
+            if (subCategories.Any())
+            {
+               
+                foreach (var subCategory in subCategories)
+                {
+                    await _categoryRepository.DeleteAsync(subCategory);
+                }
+            }
+
+            
             await _categoryRepository.DeleteAsync(deletingCategory);
             await _categoryRepository.SaveChangeAsync();
             return new SuccessResult("Kategori silme Başarılı");
         }
+
+
 
         public async Task<IDataResult<List<CategoryListDTO>>> GetAllAsync()
         {
@@ -94,17 +122,22 @@ namespace ManagmentSystem.Business.Services.CategoryServices
 
             try
             {
-                var updatedCategory = categoryUpdateDTO.Adapt(updatingCategory);
-                await _categoryRepository.UpdateAsync(updatedCategory);
+                updatingCategory.CategoryName = categoryUpdateDTO.CategoryName;
+                updatingCategory.Description = categoryUpdateDTO.Description;
+
+               
+                updatingCategory.ParentCategoryId = categoryUpdateDTO.ParentCategoryId;
+
+                await _categoryRepository.UpdateAsync(updatingCategory);
                 await _categoryRepository.SaveChangeAsync();
                 return new SuccessResult("Kategori Güncelleme Başarılı");
             }
             catch (Exception ex)
             {
-
                 return new ErrorResult("Hata: " + ex.Message);
             }
         }
+
 
         public async Task<bool> IsCategoryUsedAsync(Guid categoryId)
         {
@@ -133,11 +166,12 @@ namespace ManagmentSystem.Business.Services.CategoryServices
             }).ToList();
         }
 
-        public async Task<bool> IsCategoryNameExistAsync(string categoryName)  //sistemde aynı kategoriden varmı, büyük/küçük harf farkı dikkate almadan kontrol.
+        public async Task<bool> IsCategoryNameExistAsync(string categoryName, Guid? categoryId = null)
         {
-            return await _context.Categories.AnyAsync(c =>
-                    (c.CategoryName.ToLower() == categoryName.ToLower())
-                    );
+            return await _context.Categories
+      .AnyAsync(c => c.CategoryName.ToLower() == categoryName.ToLower()
+                     && (categoryId == null || c.Id != categoryId)  // Güncellenen kategoriyi kontrol dışı bırak
+                     && c.Status != Status.Deleted);
         }
     }
 }

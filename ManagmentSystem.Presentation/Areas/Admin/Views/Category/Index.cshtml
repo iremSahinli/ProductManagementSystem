@@ -24,6 +24,7 @@
                 <tr>
                     <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["CATEGORY NAME_"]</th>
                     <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["DESCRIPTION_"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["CATEGORY TYPE"]</th> 
                     <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
                     <th class="text-secondary opacity-7"></th>
                 </tr>
@@ -44,6 +45,20 @@
                                 <p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.Description)</p>
                             </div>
                         </td>
+                        <td>
+                            @if (item.ParentCategoryId != null)
+                            {
+                                <!-- Alt kategori, ana kategoriyi göster -->
+                                <p class="text-xs text-secondary mb-0">
+                                    Alt Kategori (Ana Kategori: @item.ParentCategoryName)
+                                </p>
+                            }
+                            else
+                            {
+                                <!-- Ana kategori -->
+                                <p class="text-xs text-secondary mb-0">Ana Kategori</p>
+                            }
+                        </td>
                         <td class="align-middle text-center">
                             <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
@@ -52,9 +67,15 @@
                     </tr>
                 }
             </tbody>
+
+
+
+
+
         </table>
     </div>
 </div>
+
 
 <style>
     th, td {
