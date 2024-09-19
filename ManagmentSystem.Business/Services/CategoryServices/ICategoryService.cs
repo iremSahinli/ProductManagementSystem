@@ -26,6 +26,7 @@ namespace ManagmentSystem.Business.Services.CategoryServices
         /// </summary>
         /// <param name="categoryName"></param>
         /// <returns></returns>
-        Task<bool> IsCategoryNameExistAsync(string categoryName);
+        Task<bool> IsCategoryNameExistAsync(string categoryName, Guid? categoryId = null);
+
     }
 }

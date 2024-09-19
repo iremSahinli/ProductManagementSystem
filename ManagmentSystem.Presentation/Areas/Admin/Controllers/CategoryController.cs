@@ -6,6 +6,7 @@ using ManagmentSystem.Domain.Utilities.Concretes;
 using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 {
@@ -30,12 +31,43 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ErrorNotyf("Failed");
                 return View(result.Data.Adapt<List<AdminCategoryListVM>>());
             }
-            SuccesNotyf("Categories Listed");
-            return View(result.Data.Adapt<List<AdminCategoryListVM>>());
+
+            var categories = result.Data.Adapt<List<AdminCategoryListVM>>();
+
+            // Alt kategoriler için ana kategoriyi bul ve ParentCategoryName'e ata
+            foreach (var category in categories)
+            {
+                Console.WriteLine($"Category: {category.CategoryName}, ParentCategoryId: {category.ParentCategoryId}");
+
+                if (category.ParentCategoryId != null)
+                {
+                    var parentCategory = categories.FirstOrDefault(c => c.Id == category.ParentCategoryId);
+                    if (parentCategory != null)
+                    {
+                        category.ParentCategoryName = parentCategory.CategoryName;
+                        Console.WriteLine($"Parent Category Found: {parentCategory.CategoryName} for {category.CategoryName}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Parent Category not found for {category.CategoryName}");
+                    }
+                }
+            }
+
+            return View(categories);
         }
+
+
+
 
         public async Task<IActionResult> Create()
         {
+            
+            var categories = await _categoryService.GetAllCategoriesAsync(); 
+            var parentCategories = categories.Where(c => c.ParentCategoryId == null).ToList(); 
+
+            ViewBag.Categories = new SelectList(parentCategories, "Id", "CategoryName"); 
+
             return View();
         }
 
@@ -48,20 +80,24 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 return View(model);
             }
 
-            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName); //Aynı kategori ve description sistemde varmı kontrol eder.
+            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName);
             if (categoryExist)
             {
                 ErrorNotyf("Kaydetmek istedğiniz kategori sistemde bulunmaktadır, Lütfen farklı bir kategori ekleyiniz");
                 return View(model);
             }
 
+           
+            var result = await _categoryService.AddAsync(new CategoryCreateDTO
+            {
+                CategoryName = model.CategoryName,
+                Description = model.Description,
+                ParentCategoryId = model.ParentCategoryId  
+            });
 
-
-            var result = await _categoryService.AddAsync(model.Adapt<CategoryCreateDTO>());
             if (!result.IsSucces)
             {
-
-                ErrorNotyf(result.Message); // Mesaj: "Kategori Sistemde Mevcut"
+                ErrorNotyf(result.Message);
                 return View(model);
             }
 
@@ -100,9 +136,17 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ErrorNotyf(result.Message);
                 return RedirectToAction("Index");
             }
-            SuccesNotyf("Category updating page.");
+
+            // Sadece ana kategorileri çekiyoruz, ParentCategoryId'si null olanlar
+            var categories = await _categoryService.GetAllCategoriesAsync();
+            var parentCategories = categories.Where(c => c.ParentCategoryId == null).ToList();
+
+            // ViewBag ile dropdown'da göstermek için ana kategorileri gönderiyoruz
+            ViewBag.Categories = new SelectList(parentCategories, "Id", "CategoryName");
+
             return View(result.Data.Adapt<AdminCategoryUpdateVM>());
         }
+
 
 
         [HttpPost]
@@ -113,14 +157,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 return View(model);
             }
 
-            //Kategori sistemde varmı kontrol ediyor ve model dönüyor.
-            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName);
+            
+            var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName, model.Id);
             if (categoryExist)
             {
-                ErrorNotyf("A category with this name or description already exists.");
+                ErrorNotyf("A category with this name already exists.");
                 return View(model);
             }
-
 
             var result = await _categoryService.UpdateAsync(model.Adapt<CategoryUpdateDTO>());
             if (!result.IsSucces)
@@ -128,9 +171,12 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ErrorNotyf("Category update failed.");
                 return View(model);
             }
+
             SuccesNotyf("Category updated successfully.");
             return RedirectToAction("Index");
         }
+
+
 
 
         public async Task<IActionResult> Details(Guid id)
