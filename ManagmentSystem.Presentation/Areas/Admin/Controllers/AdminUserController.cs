@@ -10,6 +10,7 @@ using Mapster;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
@@ -24,12 +25,15 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly AppDbContext _context;
         private readonly IMailService _mailService;
 
-        public AdminUserController(IUserProfileService userProfileService, UserManager<IdentityUser> userManager, AppDbContext context, IMailService mailService)
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+
+        public AdminUserController(IUserProfileService userProfileService, UserManager<IdentityUser> userManager, AppDbContext context, IMailService mailService, IStringLocalizer<SharedResources> stringLocalizer)
         {
             _userProfileService = userProfileService;
             _userManager = userManager;
             _context = context;
             _mailService = mailService;
+            _stringLocalizer = stringLocalizer;
         }
 
 
@@ -82,7 +86,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 }
             }
 
-            SuccesNotyf("Users listed successfully.");
+            var message = _stringLocalizer["Users listed successfully."];
+            SuccesNotyf(message);
             return View(userList);
         }
 
@@ -103,7 +108,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var existingUser = await _userManager.FindByEmailAsync(model.Mail);
             if (existingUser != null)
             {
-                ErrorNotyf("Bu e-posta adresine sahip kullanıcı zaten mevcut.");
+                var message = _stringLocalizer["The user with this email address already exists."];
+                ErrorNotyf(message);
                 return View(model);
             }
 
@@ -149,7 +155,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             // UserProfile'ı veritabanına kaydet
             _context.UserProfile.Add(userProfile);
             await _context.SaveChangesAsync();
-
+            var message2 = _stringLocalizer["User creation  successful"];
+            SuccesNotyf(message2);
             return RedirectToAction("ListUsers", "AdminUser");
         }
 
@@ -158,7 +165,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (id == Guid.Empty)
             {
-                ErrorNotyf("Kullanıcı bulunamadı.");
+                var message = _stringLocalizer["User profile not found."];
+                ErrorNotyf(message);
                 return RedirectToAction("ListUsers", "AdminUser");
             }
             Console.WriteLine($"Kullanıcı ID: {id}");
@@ -170,7 +178,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var userProfile = await _userProfileService.GetUserProfileByIdAsync(id);
             if (userProfile == null || userProfile.IdentityUserId == null)
             {
-                ErrorNotyf("Kullanıcı kayıt işlemini tamamlamadan güncelleştirme işlemi gerçekleştirilemez!");
+                var message = _stringLocalizer["The update cannot be performed until the user completes the registration process!"];//Kullanıcı kayıt işlemini tamamlamadan güncelleştirme işlemi gerçekleştirilemez!
+                ErrorNotyf(message);
                 return RedirectToAction("ListUsers", "AdminUser");
             }
 
@@ -279,7 +288,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             _context.Update(existingUserProfile);
             await _context.SaveChangesAsync();
-            SuccesNotyf("User update is successfully");
+            var message = _stringLocalizer["Update successful!"];
+            SuccesNotyf(message);
             return RedirectToAction("ListUsers", "AdminUser");
         }
 
@@ -289,7 +299,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             if (userProfile == null)
             {
-                ErrorNotyf("Kullanıcı bulunamadı,tekrar deneyin");
+                var message = _stringLocalizer["User not found,please try again"];
+                ErrorNotyf(message);
                 return RedirectToAction("ListUsers", "AdminUser");
             }
 
@@ -329,7 +340,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
                     if (user == null)
                     {
-                        ErrorNotyf("Kullanıcı bulunamadı, tekrar deneyin!");
+                        var message = _stringLocalizer["User not found,please try again"];
+                        ErrorNotyf(message);
                         return RedirectToAction("ListUsers", "AdminUser");
                     }
 
@@ -337,7 +349,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                     var result = await _userManager.DeleteAsync(user);
                     if (!result.Succeeded)
                     {
-                        ErrorNotyf("Kullanıcı silinirken bir hata oluştu, tekrar deneyin!");
+                        var message2 = _stringLocalizer["An error occurred while deleting the user, try again!"];
+                        ErrorNotyf(message2);
                         return RedirectToAction("ListUsers", "AdminUser");
                     }
 
@@ -345,13 +358,15 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                     await _context.SaveChangesAsync();
                     await transaction.CommitAsync();
 
+                    var message3 = _stringLocalizer["User deleted successfully"];
                     SuccesNotyf("Kullanıcı başarıyla silindi");
                     return RedirectToAction("ListUsers", "AdminUser");
                 }
                 catch (Exception ex)
                 {
                     await transaction.RollbackAsync();
-                    ErrorNotyf(ex.Message);
+                    var message4 = _stringLocalizer["Failed"];
+                    ErrorNotyf(message4);
                     return RedirectToAction("ListUsers", "AdminUser");
                 }
             }
@@ -374,7 +389,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             if (admin == null)
             {
-                ErrorNotyf("Admin bilgisi sistemde mevcut değil!");
+                var message = _stringLocalizer["Admin information is not avaible in this system"];
+                ErrorNotyf(message);
             }
             return View(admin);
 
@@ -422,11 +438,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             if (result.Succeeded)
             {
-                return Ok("Kullanıcı durumu güncellendi.");
+                var message = _stringLocalizer["User status updated."];
+                return Ok(message);
             }
             else
             {
-                return BadRequest("Güncelleme başarısız oldu.");
+                var message2 = _stringLocalizer["User status not updated."];
+                return BadRequest(message2);
             }
         }
 

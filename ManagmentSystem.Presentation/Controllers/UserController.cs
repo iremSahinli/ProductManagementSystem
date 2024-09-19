@@ -3,6 +3,7 @@ using ManagmentSystem.Business.Services.UserProfileServices;
 using ManagmentSystem.Presentation.Models.AccountVM;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using System.Security.Claims;
 
 namespace ManagmentSystem.Presentation.Controllers
@@ -11,11 +12,12 @@ namespace ManagmentSystem.Presentation.Controllers
     {
         private readonly IUserProfileService _userProfileService;
         private readonly IWebHostEnvironment _webHostEnvironment;
-
-        public UserController(IUserProfileService userProfileService, IWebHostEnvironment webHostEnvironment)
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+        public UserController(IUserProfileService userProfileService, IWebHostEnvironment webHostEnvironment, IStringLocalizer<SharedResources> stringLocalizer)
         {
             _userProfileService = userProfileService;
             _webHostEnvironment = webHostEnvironment;
+            _stringLocalizer = stringLocalizer;
         }
 
         public async Task<IActionResult> Index()
@@ -130,7 +132,8 @@ namespace ManagmentSystem.Presentation.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ErrorNotyf("Model geçersiz!");
+                var message2 = _stringLocalizer["Failed"];
+                ErrorNotyf(message2);
                 return View(model);
             }
 
@@ -142,7 +145,8 @@ namespace ManagmentSystem.Presentation.Controllers
 
             if (userProfileDTO == null)
             {
-                ErrorNotyf("Kullanıcı profili bulunamadı.");
+                var message2 = _stringLocalizer["User profile not found."];
+                ErrorNotyf(message2);
                 ModelState.AddModelError("", "User profile not found.");
                 return View(model);
             }
@@ -194,12 +198,12 @@ namespace ManagmentSystem.Presentation.Controllers
 
             if (!result.IsSucces)
             {
-                ErrorNotyf("Güncelleme başarısız: " + result.Message);
+                ErrorNotyf(_stringLocalizer["Update unsuccessful!"] + result.Message);
                 ModelState.AddModelError(string.Empty, result.Message);
                 return View(model);
             }
-
-            SuccesNotyf("Güncelleme başarılı!");
+            var message = _stringLocalizer["Update successful!"];
+            SuccesNotyf(message);
 
             return RedirectToAction("ProfileSettings");
         }

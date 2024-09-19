@@ -2,6 +2,7 @@
 using ManagmentSystem.Presentation.Models.AccountVM;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 namespace ManagmentSystem.Presentation.Controllers
 {
@@ -10,12 +11,13 @@ namespace ManagmentSystem.Presentation.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMailService _mailService;
-
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IMailService mailService)
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IMailService mailService, IStringLocalizer<SharedResources> stringLocalizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _mailService = mailService;
+            _stringLocalizer = stringLocalizer;
         }
 
         public IActionResult Register()
@@ -213,7 +215,8 @@ namespace ManagmentSystem.Presentation.Controllers
             var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
             if (result.Succeeded)
             {
-               SuccesNotyf("Yeni şifreniz başarıyla oluşturuldu.");
+                var message = _stringLocalizer["New password create successfully"];
+               SuccesNotyf(message);
                 return RedirectToAction("Login", "Account");
             }
 

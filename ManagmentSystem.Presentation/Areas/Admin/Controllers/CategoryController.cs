@@ -7,6 +7,7 @@ using ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Localization;
 
 namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 {
@@ -16,10 +17,12 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
 
-        public CategoryController(ICategoryService categoryService, IProductService productService)
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+        public CategoryController(ICategoryService categoryService, IProductService productService, IStringLocalizer<SharedResources> stringLocalizer)
         {
             _categoryService = categoryService;
             _productService = productService;
+            _stringLocalizer = stringLocalizer;
         }
 
 
@@ -28,7 +31,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.GetAllAsync();
             if (!result.IsSucces)
             {
-                ErrorNotyf("Failed");
+                var message = _stringLocalizer["Failed"];
+                ErrorNotyf(message);
                 return View(result.Data.Adapt<List<AdminCategoryListVM>>());
             }
 
@@ -76,14 +80,16 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ErrorNotyf("Lütfen formu doğru şekilde doldurun.");
+                var message = _stringLocalizer["Please fill out the form correctly."];
+                ErrorNotyf(message);
                 return View(model);
             }
 
             var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName);
             if (categoryExist)
             {
-                ErrorNotyf("Kaydetmek istedğiniz kategori sistemde bulunmaktadır, Lütfen farklı bir kategori ekleyiniz");
+                var message2 = _stringLocalizer["The category you want to save is in the system, please add a different category."];
+                ErrorNotyf(message2);
                 return View(model);
             }
 
@@ -101,7 +107,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 return View(model);
             }
 
-            SuccesNotyf("Kategori başarıyla eklendi.");
+            var message4 = _stringLocalizer["Category successfully added"];
+            SuccesNotyf(message4);
             return RedirectToAction("Index");
         }
 
@@ -110,17 +117,20 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var isCategoryUsed = await _productService.IsCategoryUsedAsync(id); //Product tablosunda kullanılıyor mu kontrol eder.
             if (isCategoryUsed)
             {
-                ErrorNotyf("Silmek İstediğiniz Kategori Üründe Kullanılıyor, Silinemez ");
+                var message = _stringLocalizer["The category you want to delete is used in the product and cannot be deleted."];
+                ErrorNotyf(message);
                 return RedirectToAction("Index");
             }
 
             var result = await _categoryService.DeleteAsync(id);
             if (!result.IsSucces)
             {
-                ErrorNotyf("Failed");
+                var message2 = _stringLocalizer["Failed"];
+                ErrorNotyf(message2);
                 return RedirectToAction("Index");
             }
-            SuccesNotyf("Deleted is successfully");
+            var message3 = _stringLocalizer["Deleted is successfully"];
+            SuccesNotyf(message3);
             return RedirectToAction("Index");
 
         }
@@ -133,7 +143,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.GetByIdAsync(id);
             if (!result.IsSucces)
             {
-                ErrorNotyf(result.Message);
+                var message = _stringLocalizer["Failed"];
+                ErrorNotyf(message);
                 return RedirectToAction("Index");
             }
 
@@ -161,18 +172,20 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var categoryExist = await _categoryService.IsCategoryNameExistAsync(model.CategoryName, model.Id);
             if (categoryExist)
             {
-                ErrorNotyf("A category with this name already exists.");
+                var message3 = _stringLocalizer["A category with this name already exists."];
+                ErrorNotyf(message3);
                 return View(model);
             }
 
             var result = await _categoryService.UpdateAsync(model.Adapt<CategoryUpdateDTO>());
             if (!result.IsSucces)
             {
-                ErrorNotyf("Category update failed.");
+                var message2 = _stringLocalizer["Category update failed."];
+                ErrorNotyf(message2);
                 return View(model);
             }
-
-            SuccesNotyf("Category updated successfully.");
+            var message = _stringLocalizer["Category updated successfully."];
+            SuccesNotyf(message);
             return RedirectToAction("Index");
         }
 
@@ -184,11 +197,12 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _categoryService.GetByIdAsync(id);
             if (!result.IsSucces)
             {
-                ErrorNotyf("Category Detail Page Loaded Successfully");
+                var message = _stringLocalizer["Failed"];
+                ErrorNotyf(message);
                 return RedirectToAction("Index");
             }
-
-            SuccesNotyf("Category Detail Page Loaded Successfully");
+            var message2 = _stringLocalizer["Category Detail Page Loaded Successfully"];
+            SuccesNotyf(message2);
             return View(result.Data.Adapt<AdminCategoryDetailVM>());
 
         }
