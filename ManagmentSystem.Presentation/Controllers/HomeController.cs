@@ -1,6 +1,7 @@
 using ManagmentSystem.Business.Services.ProductServices;
 using ManagmentSystem.Presentation.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using System.Diagnostics;
 
 namespace ManagmentSystem.Presentation.Controllers
@@ -9,11 +10,12 @@ namespace ManagmentSystem.Presentation.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
-
-        public HomeController(ILogger<HomeController> logger, IProductService productService)
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+        public HomeController(ILogger<HomeController> logger, IProductService productService, IStringLocalizer<SharedResources> stringLocalizer)
         {
             _logger = logger;
             _productService = productService;
+            _stringLocalizer = stringLocalizer;
         }
 
         public async Task<IActionResult> Index()
@@ -21,11 +23,14 @@ namespace ManagmentSystem.Presentation.Controllers
             var products = await _productService.GetAllAsync();
             if (products.IsSucces)
             {
-                SuccesNotyf("Ürünler Listelendi.");
+                var message = _stringLocalizer["Products Listed!"];
+                SuccesNotyf(message);
                 return View(products.Data);  // Sadece listeyi (result.Data) View'a geç
             }
-            ErrorNotyf("Ürünler Listeleme Baþarýsýz");
-            return View("Sayfa Yüklenirken Hata oluþtu, tekrar deneyiniz.");
+            var message2 = _stringLocalizer["Product listing faild"];
+            ErrorNotyf(message2);
+            var message3 = _stringLocalizer["Failed"];
+            return View(message3);
             
         }
 

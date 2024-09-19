@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="A category with this name already exists." xml:space="preserve">
+    <value>Kategori ismi tanımlıdır.</value>
+  </data>
   <data name="ACTIONS_" xml:space="preserve">
     <value>İŞLEMLER</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="Admin Home" xml:space="preserve">
     <value>Admin Paneli</value>
+  </data>
+  <data name="Admin information is not avaible in this system" xml:space="preserve">
+    <value>Admin bilgisi sistemde mevcut değil</value>
   </data>
   <data name="Admin Profile" xml:space="preserve">
     <value>Admin Profil</value>
@@ -141,11 +147,23 @@
   <data name="Categories" xml:space="preserve">
     <value>Kategoriler</value>
   </data>
+  <data name="Categories are not recieved" xml:space="preserve">
+    <value>Kategoriler alınamadı</value>
+  </data>
+  <data name="Categories Listed" xml:space="preserve">
+    <value>Kategoriler listelendi</value>
+  </data>
   <data name="CATEGORIES_" xml:space="preserve">
     <value>KATEGORİLER</value>
   </data>
   <data name="Category" xml:space="preserve">
     <value>KATEGORİ</value>
+  </data>
+  <data name="Category Available in System" xml:space="preserve">
+    <value>Kategori sistemde mevcut</value>
+  </data>
+  <data name="Category Detail Page Loaded Successfully" xml:space="preserve">
+    <value>Ürün detay sayfası başarıyla yüklendi.</value>
   </data>
   <data name="Category Details" xml:space="preserve">
     <value>Kategori Detayları</value>
@@ -155,6 +173,15 @@
   </data>
   <data name="CATEGORY NAME_" xml:space="preserve">
     <value>KATEGORİ ADI</value>
+  </data>
+  <data name="Category successfully added" xml:space="preserve">
+    <value>Kategori ekleme başarılı</value>
+  </data>
+  <data name="Category update failed." xml:space="preserve">
+    <value>Kategori güncelleme hatası</value>
+  </data>
+  <data name="Category updated successfully." xml:space="preserve">
+    <value>Kategori başarıyla güncellendi</value>
   </data>
   <data name="Create" xml:space="preserve">
     <value>Oluştur</value>
@@ -176,6 +203,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Sil</value>
+  </data>
+  <data name="Deleted is successfully" xml:space="preserve">
+    <value>Silme işlemi başarılı</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Açıklama</value>
@@ -200,6 +230,9 @@
   </data>
   <data name="Enter your email and password to sign in" xml:space="preserve">
     <value>Giriş yapmak için e-postanızı ve şifrenizi girin</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Hata</value>
   </data>
   <data name="First Name" xml:space="preserve">
     <value>İsim</value>
@@ -240,6 +273,9 @@
   <data name="MAIL_" xml:space="preserve">
     <value>MAIL</value>
   </data>
+  <data name="New password create successfully" xml:space="preserve">
+    <value>Yeni şifre başarı ile oluşturuldu</value>
+  </data>
   <data name="Page Not Found." xml:space="preserve">
     <value>Sayfa Bulunamadı.</value>
   </data>
@@ -252,14 +288,38 @@
   <data name="Please enter your registered email address and we will send you a password reset link." xml:space="preserve">
     <value>Lütfen kayıtlı e-posta adresinizi girin, size bir şifre sıfırlama bağlantısı göndereceğiz.</value>
   </data>
+  <data name="Please fill out the form correctly." xml:space="preserve">
+    <value>Lütfen formu doğru şekilde girin</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>Fiyat</value>
   </data>
   <data name="PRICE_" xml:space="preserve">
     <value>FİYAT</value>
   </data>
+  <data name="Product creation successful" xml:space="preserve">
+    <value>Ürün oluşturma başarılı</value>
+  </data>
+  <data name="Product creation unsuccessful" xml:space="preserve">
+    <value>Ürün oluşturma başarısız</value>
+  </data>
+  <data name="Product deleted" xml:space="preserve">
+    <value>Ürün Silindi</value>
+  </data>
+  <data name="Product deleting successful" xml:space="preserve">
+    <value>Ürün silme başarılı</value>
+  </data>
+  <data name="Product deleting unsuccessful" xml:space="preserve">
+    <value>Ürün silme başarısız</value>
+  </data>
   <data name="Product Description" xml:space="preserve">
     <value>Ürün Açıklaması</value>
+  </data>
+  <data name="Product Detail Page Loaded Successfully" xml:space="preserve">
+    <value>Ürün detay sayfasının yüklenmesi başarılı</value>
+  </data>
+  <data name="Product Detail Page Loaded unsuccessfully" xml:space="preserve">
+    <value>Ürün detay sayfasının yüklenmesi başarısız oldu</value>
   </data>
   <data name="Product Details" xml:space="preserve">
     <value>Ürün Detayları</value>
@@ -273,6 +333,12 @@
   <data name="Product Image_" xml:space="preserve">
     <value>Ürün Fotoğrafı</value>
   </data>
+  <data name="Product is not deleted" xml:space="preserve">
+    <value>Ürün silinemedi</value>
+  </data>
+  <data name="Product listing faild" xml:space="preserve">
+    <value>Ürün listeleme başarısız</value>
+  </data>
   <data name="Product Listing Failed!" xml:space="preserve">
     <value>Ürün Listelemesi Başarısız!</value>
   </data>
@@ -281,6 +347,12 @@
   </data>
   <data name="Product Price" xml:space="preserve">
     <value>Ürün Fiyatı</value>
+  </data>
+  <data name="Product update successful" xml:space="preserve">
+    <value>Ürün güncelleme başarılı</value>
+  </data>
+  <data name="Product update unsuccessful" xml:space="preserve">
+    <value>Ürün güncelleme başarısız</value>
   </data>
   <data name="Products" xml:space="preserve">
     <value>Ürünler</value>
@@ -324,14 +396,26 @@
   <data name="Terms and Conditions" xml:space="preserve">
     <value>Şartlar Ve Koşullar</value>
   </data>
+  <data name="The category you want to delete is used in the product and cannot be deleted." xml:space="preserve">
+    <value>Silmek istediğiniz kategori bir üründe kullanılıyor</value>
+  </data>
+  <data name="The category you want to save is in the system, please add a different category." xml:space="preserve">
+    <value>Kaydetmek istediğiniz kategori sistemde mevcuttur. Lütfen farklı bir kategori girin.</value>
+  </data>
   <data name="The model is invalid!" xml:space="preserve">
     <value>Model geçersiz!</value>
+  </data>
+  <data name="The update cannot be performed until the user completes the registration process!" xml:space="preserve">
+    <value>Kullanıcı kayıt işlemini tamamlamadan güncelleştirme işlemi gerçekleştirilemez!</value>
   </data>
   <data name="There was an error while loading the page, please try again." xml:space="preserve">
     <value>Sayfa Yüklenirken Hata oluştu, tekrar deneyiniz.</value>
   </data>
   <data name="Turkish" xml:space="preserve">
     <value>Türkçe</value>
+  </data>
+  <data name="Unsuccess" xml:space="preserve">
+    <value>Başarısız</value>
   </data>
   <data name="Update" xml:space="preserve">
     <value>Güncelle</value>
@@ -348,6 +432,9 @@
   <data name="Update successful!" xml:space="preserve">
     <value>Güncelleme başarılı!</value>
   </data>
+  <data name="Update unsuccessful!" xml:space="preserve">
+    <value>Güncelleme başarısız</value>
+  </data>
   <data name="Update User Profile" xml:space="preserve">
     <value>Kullanıcı Profilini Güncelle</value>
   </data>
@@ -360,14 +447,32 @@
   <data name="User" xml:space="preserve">
     <value>Kullanıcı</value>
   </data>
+  <data name="User creation  successful" xml:space="preserve">
+    <value>Kullanıcı oluşturma başarılı</value>
+  </data>
+  <data name="User deleted successfully" xml:space="preserve">
+    <value>Kullanıcı başarı ile silindi</value>
+  </data>
   <data name="User Detail" xml:space="preserve">
     <value>Kullanıcı Detayları</value>
+  </data>
+  <data name="User not found,please try again" xml:space="preserve">
+    <value>Kullanıcı bulunamadı,lütfen tekrar deneyin</value>
   </data>
   <data name="User profile not found." xml:space="preserve">
     <value>Kullanıcı profili bulunamadı.</value>
   </data>
+  <data name="User status not updated." xml:space="preserve">
+    <value>Kullancı durumu güncellenemedi</value>
+  </data>
+  <data name="User status updated." xml:space="preserve">
+    <value>Kullanıcı durumu güncellendi</value>
+  </data>
   <data name="Users" xml:space="preserve">
     <value>Kullanıcılar</value>
+  </data>
+  <data name="Users listed successfully." xml:space="preserve">
+    <value>Kullanıcılar başarı ile listelendi</value>
   </data>
   <data name="We have sent an email to your address." xml:space="preserve">
     <value>E-mail adresine mail gönderdik.</value>

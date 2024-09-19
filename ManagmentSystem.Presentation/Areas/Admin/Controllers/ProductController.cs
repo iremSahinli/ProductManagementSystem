@@ -12,6 +12,7 @@ using ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 
 namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 {
@@ -23,14 +24,16 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
         private readonly AppDbContext _context;
 
 
+        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
 
 
-        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository, AppDbContext context)
+        public ProductController(IProductService productService, ICategoryService categoryService, IProductRepository productRepository, AppDbContext context, IStringLocalizer<SharedResources> stringLocalizer)
         {
             _productService = productService;
             _categoryService = categoryService;
             _productRepository = productRepository;
             _context = context;
+            _stringLocalizer = stringLocalizer;
         }
 
         public async Task<IActionResult> Index()
@@ -38,7 +41,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _productService.GetAllAsync();
             if (!result.IsSucces)
             {
-                ErrorNotyf(result.Message);
+                var message = _stringLocalizer["Unsuccess"];
+                ErrorNotyf(message);
                 return View(new List<AdminProductListVM>()); // Boş liste döndür
             }
 
@@ -62,7 +66,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
                 productListWithCategoryNames.Add(productVm);
             }
-
+            var message2 = _stringLocalizer["Success"];
+            SuccesNotyf(message2);
             SuccesNotyf(result.Message);
             return View(productListWithCategoryNames);
         }
@@ -124,12 +129,14 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             if (!result.IsSucces)
             {
 
-                ErrorNotyf(result.Message);
+                var message = _stringLocalizer["Product creation unsuccessful"];
+                ErrorNotyf(message);
                 model.Categories = await GetCategories();
                 return View(model);
             }
 
-            SuccesNotyf(result.Message);
+            var message2 = _stringLocalizer["Product creation successful"];
+            SuccesNotyf(message2);
             return RedirectToAction("Index");
         }
 
@@ -213,14 +220,15 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
             if (!result.IsSucces)
             {
+                var message = _stringLocalizer["Product update unsuccessful"];
                 // Eğer güncelleme başarısız olursa, hata mesajı ile sayfa tekrar yüklenir.
-                ErrorNotyf(result.Message);
+                ErrorNotyf(message);
                 model.Categories = await GetCategories(model.Id); // Kategoriler yeniden yüklenir.
                 return View(model);
             }
 
-
-            SuccesNotyf(result.Message);
+            var message2 = _stringLocalizer["Product update successful"];
+            SuccesNotyf(message2);
             Console.WriteLine(model.ProductImage);
             return RedirectToAction("Index");
         }
@@ -237,7 +245,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var categoryIds = await _productService.GetCategoryIdsByProductId(id);
             if (!categoryIds.IsSucces)
             {
-                ErrorNotyf("Error");
+                var message = _stringLocalizer["Product Detail Page Loaded unsuccessfully"];
+                ErrorNotyf(message);
                 return RedirectToAction("Index");
             }
 
@@ -253,7 +262,8 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 ProductImage = product.ProductImage
 
             };
-            SuccesNotyf("Product Detail Page Loaded Successfully");
+            var message2 = _stringLocalizer["Product Detail Page Loaded Successfully"];
+            SuccesNotyf(message2);
             return View(model);
 
         }
@@ -266,10 +276,13 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _productService.DeleteAsync(id);
             if (!result.IsSucces)
             {
-                ErrorNotyf(result.Message);
+
+                var message = _stringLocalizer["Product is not deleted"];
+                ErrorNotyf(message);
                 return RedirectToAction("Index");
             }
-            SuccesNotyf(result.Message);
+            var message2 = _stringLocalizer["Product deleted"];
+            SuccesNotyf(message2);
             return RedirectToAction("Index");
 
         }
@@ -284,6 +297,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
             var result = await _productService.GetCategoryIdsByProductId(productId);
             if (!result.IsSucces)
             {
+                var message = _stringLocalizer["Categories are not recieved"];
                 ErrorNotyf(result.Message);
                 return categoriSelectModels;
             }
