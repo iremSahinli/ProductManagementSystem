@@ -123,7 +123,7 @@
   <data name="A category with this name already exists." xml:space="preserve">
     <value>A category with this name already exists.</value>
   </data>
-  <data name="ACTIONS_" xml:space="preserve">
+  <data name="ACTIONS" xml:space="preserve">
     <value>ACTIONS</value>
   </data>
   <data name="Address" xml:space="preserve">
@@ -176,6 +176,9 @@
   </data>
   <data name="Category successfully added" xml:space="preserve">
     <value>Category successfully added</value>
+  </data>
+  <data name="CATEGORY TYPE" xml:space="preserve">
+    <value>CATEGORY TYPE</value>
   </data>
   <data name="Category update failed." xml:space="preserve">
     <value>Category update failed.</value>
@@ -272,6 +275,9 @@
   </data>
   <data name="MAIL_" xml:space="preserve">
     <value>MAIL</value>
+  </data>
+  <data name="Main Category" xml:space="preserve">
+    <value>Main Category</value>
   </data>
   <data name="New password create successfully" xml:space="preserve">
     <value>New password create successfully</value>
@@ -389,6 +395,9 @@
   </data>
   <data name="Sign Up" xml:space="preserve">
     <value>Sign Up</value>
+  </data>
+  <data name="Subcategory" xml:space="preserve">
+    <value>Subcategory</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Successful</value>
