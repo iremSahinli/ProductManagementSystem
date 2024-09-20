@@ -57,7 +57,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                     }
                 }
             }
-
+            SuccesNotyf(_stringLocalizer["Category Listing Success"]);
             return View(categories);
         }
 

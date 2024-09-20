@@ -17,7 +17,7 @@
 
                     <div class="form-group">
                         <label asp-for="CategoryName" class="control-label">@Localizer["Category Name"]</label>
-                        <input asp-for="CategoryName" type="text" class="form-control transparent-border-input" placeholder="Category Name" />
+                        <input asp-for="CategoryName" type="text" class="form-control transparent-border-input" placeholder="@Localizer["Category Name"]" />
                         <span asp-validation-for="CategoryName" class="text-danger"></span>
                     </div>
 
@@ -29,16 +29,16 @@
 
                     <!-- Ana/Alt Kategori Seçimi -->
                     <div class="form-group">
-                        <label>@Localizer["Kategori Türü"]</label><br />
-                        <input type="radio" name="IsMainCategory" value="true" checked /> @Localizer["Ana Kategori"]
-                        <input type="radio" name="IsMainCategory" value="false" /> @Localizer["Alt Kategori"]
+                        <label>@Localizer["Category Types"]</label><br />
+                        <input type="radio" name="IsMainCategory" value="true" checked /> @Localizer["Main Category"]
+                        <input type="radio" name="IsMainCategory" value="false" /> @Localizer["Sub Category"]
                     </div>
 
                     <!-- Ana Kategori Seçimi (Eğer Alt Kategori Seçildiyse Gösterilecek) -->
                     <div class="form-group" id="parentCategoryDropdown" style="display:none;">
-                        <label for="ParentCategoryId">@Localizer["Ana Kategori Seçin"]</label>
+                        <label for="ParentCategoryId">@Localizer["Select Main Category"]</label>
                         <select asp-for="ParentCategoryId" class="form-control transparent-border-input" asp-items="ViewBag.Categories">
-                            <option value="">@Localizer["Bir Ana Kategori Seçin"]</option>
+                            <option value="">@Localizer["Choose a Main Category"]</option>
                         </select>
                         <span asp-validation-for="ParentCategoryId" class="text-danger"></span>
                     </div>

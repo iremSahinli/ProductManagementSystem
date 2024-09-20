@@ -66,9 +66,9 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
                 productListWithCategoryNames.Add(productVm);
             }
-            var message2 = _stringLocalizer["Success"];
+            var message2 = _stringLocalizer["Product Listing Successful"];
+            
             SuccesNotyf(message2);
-            SuccesNotyf(result.Message);
             return View(productListWithCategoryNames);
         }
 
