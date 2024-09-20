@@ -120,7 +120,10 @@
   <data name="A category with this name already exists." xml:space="preserve">
     <value>Kategori ismi tanımlıdır.</value>
   </data>
-  <data name="ACTİONS" xml:space="preserve">
+  <data name="ACTIONS" xml:space="preserve">
+    <value>İŞLEMLER</value>
+  </data>
+  <data name="ACTIONS_" xml:space="preserve">
     <value>İŞLEMLER</value>
   </data>
   <data name="Address" xml:space="preserve">
@@ -168,6 +171,9 @@
   <data name="Category Details" xml:space="preserve">
     <value>Kategori Detayları</value>
   </data>
+  <data name="Category Listing Success" xml:space="preserve">
+    <value>Kategori Listeleme Başarılı</value>
+  </data>
   <data name="Category Name" xml:space="preserve">
     <value>Kategori Adı</value>
   </data>
@@ -180,11 +186,17 @@
   <data name="CATEGORY TYPE" xml:space="preserve">
     <value>KATEGORİ TÜRÜ</value>
   </data>
+  <data name="Category Types" xml:space="preserve">
+    <value>Kategori Türleri</value>
+  </data>
   <data name="Category update failed." xml:space="preserve">
     <value>Kategori güncelleme hatası</value>
   </data>
   <data name="Category updated successfully." xml:space="preserve">
     <value>Kategori başarıyla güncellendi</value>
+  </data>
+  <data name="Choose a Main Category" xml:space="preserve">
+    <value>Bir Ana Kategori Seçin</value>
   </data>
   <data name="Create" xml:space="preserve">
     <value>Oluştur</value>
@@ -196,7 +208,7 @@
     <value>Yeni Kategori Oluştur</value>
   </data>
   <data name="Create New Product" xml:space="preserve">
-    <value>Yeni Ürün Ekle</value>
+    <value>Yeni Ürün Oluştur</value>
   </data>
   <data name="Create New User" xml:space="preserve">
     <value>Yeni Kullanıcı Oluştur</value>
@@ -348,6 +360,9 @@
   <data name="Product Listing Failed!" xml:space="preserve">
     <value>Ürün Listelemesi Başarısız!</value>
   </data>
+  <data name="Product Listing Successful" xml:space="preserve">
+    <value>Ürün Listeleme Başarılı</value>
+  </data>
   <data name="Product Name" xml:space="preserve">
     <value>Ürün Adı</value>
   </data>
@@ -381,20 +396,32 @@
   <data name="remember me" xml:space="preserve">
     <value>beni hatırla</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
   <data name="Select Categories" xml:space="preserve">
     <value>Kategorileri Seç</value>
   </data>
   <data name="Select Categories for Create" xml:space="preserve">
     <value>Kategorileri Seç</value>
   </data>
+  <data name="Select File" xml:space="preserve">
+    <value>Dosya Seç</value>
+  </data>
   <data name="Select Language" xml:space="preserve">
     <value>Dil Seç</value>
+  </data>
+  <data name="Select Main Category" xml:space="preserve">
+    <value>Ana Kategoriyi Seçin</value>
   </data>
   <data name="Send Mail" xml:space="preserve">
     <value>Maili Gönder</value>
   </data>
   <data name="Sign Up" xml:space="preserve">
     <value>Kayıt Ol</value>
+  </data>
+  <data name="Sub Category" xml:space="preserve">
+    <value>Alt Kategori</value>
   </data>
   <data name="Subcategory" xml:space="preserve">
     <value>Alt Kategori</value>

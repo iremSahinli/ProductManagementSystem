@@ -126,6 +126,9 @@
   <data name="ACTIONS" xml:space="preserve">
     <value>ACTIONS</value>
   </data>
+  <data name="ACTIONS_" xml:space="preserve">
+    <value>ACTIONS_</value>
+  </data>
   <data name="Address" xml:space="preserve">
     <value>Address</value>
   </data>
@@ -168,6 +171,9 @@
   <data name="Category Details" xml:space="preserve">
     <value>Category Details</value>
   </data>
+  <data name="Category Listing Success" xml:space="preserve">
+    <value>Category Listing Success</value>
+  </data>
   <data name="Category Name" xml:space="preserve">
     <value>Category Name</value>
   </data>
@@ -180,11 +186,17 @@
   <data name="CATEGORY TYPE" xml:space="preserve">
     <value>CATEGORY TYPE</value>
   </data>
+  <data name="Category Types" xml:space="preserve">
+    <value>Category Types</value>
+  </data>
   <data name="Category update failed." xml:space="preserve">
     <value>Category update failed.</value>
   </data>
   <data name="Category updated successfully." xml:space="preserve">
     <value>Category updated successfully.</value>
+  </data>
+  <data name="Choose a Main Category" xml:space="preserve">
+    <value>Choose a Main Category</value>
   </data>
   <data name="Create" xml:space="preserve">
     <value>Create</value>
@@ -348,6 +360,9 @@
   <data name="Product Listing Failed!" xml:space="preserve">
     <value>Product Listing Failed!</value>
   </data>
+  <data name="Product Listing Successful" xml:space="preserve">
+    <value>Product Listing Successful</value>
+  </data>
   <data name="Product Name" xml:space="preserve">
     <value>Product Name</value>
   </data>
@@ -381,20 +396,32 @@
   <data name="remember me" xml:space="preserve">
     <value>remember me</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="Select Categories" xml:space="preserve">
     <value>Select Categories</value>
   </data>
   <data name="Select Categories for Create" xml:space="preserve">
     <value>Select Categories</value>
   </data>
+  <data name="Select File" xml:space="preserve">
+    <value>Select File</value>
+  </data>
   <data name="Select Language" xml:space="preserve">
     <value>Select Language</value>
+  </data>
+  <data name="Select Main Category" xml:space="preserve">
+    <value>Select Main Category</value>
   </data>
   <data name="Send Mail" xml:space="preserve">
     <value>Send Mail</value>
   </data>
   <data name="Sign Up" xml:space="preserve">
     <value>Sign Up</value>
+  </data>
+  <data name="Sub Category" xml:space="preserve">
+    <value>Sub Category</value>
   </data>
   <data name="Subcategory" xml:space="preserve">
     <value>Subcategory</value>

@@ -14,7 +14,7 @@
         <div class="col-md-6">
             <div class="card card-custom">
                 <div class="card-body">
-                    <h2 class="text-center">Create New Product</h2>
+                    <h2 class="text-center">@Localizer["Create New Product"]</h2>
                     <form asp-action="Create" enctype="multipart/form-data">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -46,7 +46,7 @@
 
                         <!-- Ürün resmi yükleme -->
                         <div class="form-group">
-                            <label asp-for="ProductImage" class="control-label">@Localizer["Product Image"]</label>
+                            <label asp-for="ProductImage" class="control-label">@Localizer["Product Image_"]</label>
                             <input asp-for="ProductImage" class="form-control" type="file" />
                             <span asp-validation-for="ProductImage" class="text-danger"></span>
                         </div>
@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="d-flex justify-content-center mt-4 gap-2">
-                            <input type="submit" value="Save" class="btn btn-success" />
+                            <input type="submit" value="@Localizer["Save"]" class="btn btn-success" />
                             <a asp-action="Index" class="btn btn-danger">@Localizer["Back to List"]</a>
                         </div>
                     </form>
@@ -91,7 +91,7 @@
     <script>
         $(document).ready(function () {
             $('#categorySelect').select2({
-                placeholder: "Select categories",
+                placeholder: "Select Categories",
                 allowClear: true,
                 width: '100%',
                 minimumInputLength: 0
