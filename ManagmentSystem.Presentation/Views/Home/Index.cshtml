@@ -28,7 +28,7 @@
                     </div>
                     <div class="card-footer">
                         <i class="ni ni-cart"></i>
-                        <a href="#" class="btn btn-primary">@Localizer["Buy"]</a>
+                        <a href="#" class="btn btn-primary buy-button" data-authenticated="@User.Identity.IsAuthenticated">@Localizer["Buy"]</a>
                     </div>
                 </div>
             </div>
@@ -36,6 +36,31 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var notyf = new Notyf(); // Notyf nesnesini oluştur
+
+        // Tüm buy butonlarını seç
+        var buyButtons = document.querySelectorAll('.buy-button');
+        buyButtons.forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Varsayılan form gönderimini engelle
+
+                // Kullanıcının oturum açıp açmadığını kontrol et
+                var isAuthenticated = this.getAttribute('data-authenticated') === 'True';
+
+                if (isAuthenticated) {
+                    // Kullanıcı oturum açmışsa satın alma işlemini burada yapabilirsiniz
+                    window.location.href = "/buy/product-id"; // Örnek yönlendirme, kendi rota ve logic'inize göre güncelleyin
+                } else {
+                    // Kullanıcı oturum açmamışsa uyarı mesajı göster
+                    notyf.error('Satın almak için lütfen sisteme giriş yapın, üyeliğiniz yok ise lütfen kayıt olun! ');
+                   
+                }
+            });
+        });
+    });
+</script>
 
 <style>
     .custom-card {

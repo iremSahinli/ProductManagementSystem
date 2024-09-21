@@ -306,6 +306,9 @@
   <data name="Please enter your registered email address and we will send you a password reset link." xml:space="preserve">
     <value>Please enter your registered email address and we will send you a password reset link.</value>
   </data>
+  <data name="Please fill in the product information completely!" xml:space="preserve">
+    <value>Please fill in the product information completely!</value>
+  </data>
   <data name="Please fill out the form correctly." xml:space="preserve">
     <value>Please fill out the form correctly.</value>
   </data>

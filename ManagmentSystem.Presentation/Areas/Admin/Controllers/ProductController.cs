@@ -67,7 +67,7 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 productListWithCategoryNames.Add(productVm);
             }
             var message2 = _stringLocalizer["Product Listing Successful"];
-            
+
             SuccesNotyf(message2);
             return View(productListWithCategoryNames);
         }
@@ -93,6 +93,19 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
                 model.Categories = await GetCategories();
                 return View(model);
             }
+
+            if (string.IsNullOrEmpty(model.ProductName) ||
+               string.IsNullOrEmpty(model.ProductDescription) ||
+               model.ProductPrice < 0 ||
+               model.SelectedCategories == null || !model.SelectedCategories.Any())
+            {
+                var message = _stringLocalizer["Please fill in the product information completely!"];
+                ErrorNotyf(message);
+                model.Categories = await GetCategories();
+                return View(model);
+            }
+
+
 
 
             string productImagePath = null; //Görsel kaydetme işlemi için gerekli alan.
