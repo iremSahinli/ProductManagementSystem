@@ -306,6 +306,9 @@
   <data name="Please enter your registered email address and we will send you a password reset link." xml:space="preserve">
     <value>Lütfen kayıtlı e-posta adresinizi girin, size bir şifre sıfırlama bağlantısı göndereceğiz.</value>
   </data>
+  <data name="Please fill in the product information completely!" xml:space="preserve">
+    <value>Lütfen ürün bilgilerini eksiksiz doldurunuz!</value>
+  </data>
   <data name="Please fill out the form correctly." xml:space="preserve">
     <value>Lütfen formu doğru şekilde girin</value>
   </data>
