@@ -208,7 +208,8 @@ namespace ManagmentSystem.Presentation.Controllers
 
             if (model.Password != model.ConfirmPassword)
             {
-                TempData["ErrorMessage"] = "Şifreler uyuşmuyor.";
+                var message =  "Şifreler uyuşmuyor.";
+                Console.Out.WriteLineAsync(message);
                 return View(model);
             }
 
