@@ -6,12 +6,14 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> Localizer
 
+<br />
 <div class="container text-center">
-    <h2>@Localizer["Profile Details"]</h2>
 
     <div class="card profile-card mx-auto">
         <div class="card-body">
             <div class="profile-header">
+                <h2>@Localizer["Profile Details"]</h2>
+
                 <div class="image-container mx-auto">
 
                     @if (!string.IsNullOrEmpty(Model.ProfileImage))
@@ -29,7 +31,6 @@
             <dl class="row">
                 <dt class="col-sm-4">@Localizer["Phone Number"]:</dt>
                 <dd class="col-sm-8">@Model.PhoneNumber</dd>
-
                 <dt class="col-sm-4">@Localizer["Date of Birth"]:</dt>
                 <dd class="col-sm-8">@Model.DateOfBirth?.ToString("dd/MM/yyyy")</dd>
                 <dt class="col-sm-4">@Localizer["Mail"]:</dt>
@@ -37,10 +38,11 @@
                 <dt class="col-sm-4">@Localizer["Address"]:</dt>
                 <dd class="col-sm-8">@Model.Address</dd>
             </dl>
-            <a asp-action="Update" class="btn btn-primary">@Localizer["Go Update Page"]</a>
+            <a asp-action="Update" class="btn btn-success">@Localizer["Go Update Page"]</a>
         </div>
     </div>
 </div>
+
 
 @section Scripts {
     @{
@@ -50,7 +52,8 @@
 
 <style>
     .container {
-        max-width: 100%;
+        display: grid;
+        max-width:  50%;
         padding: 0 15px;
     }
 
@@ -59,13 +62,12 @@
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         padding: 20px;
-        margin-top: 20px;
-        max-width: 600px;
+        max-width: 450px;
     }
 
     .profile-header {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
 
@@ -78,18 +80,21 @@
     .btn {
         display: inline-block;
         margin-top: 20px;
+        min-width: 100px; /* Butonların minimum genişliği */
+        height: 40px; /* Butonların sabit yüksekliği */
+        
     }
 
     .image-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         overflow: hidden;
-        margin-bottom: 30px;
-        border: 2px solid #ddd; /* Çerçeve ekliyoruz */
+        margin-bottom: 5px;
+        border: 1px solid #ddd; /* Çerçeve ekliyoruz */
     }
 
     .profile-photo {
@@ -97,5 +102,28 @@
         height: 100%;
         object-fit: cover;
     }
+
+    .row dl {
+        display: table; /* Tablo yapısı oluşturur */
+        width: 50%; /* Genişliği %50 yapar */
+    }
+
+    .row dt {
+        display: grid;
+        width: 50%; /* Her iki sütunun eşit genişlikte olmasını sağlar */
+        text-align: right; /* Metinleri sağa hizalar */
+        vertical-align: middle; /* Dikeyde ortalar */
+    }
+
+    .row dd {
+        display: grid;
+        width: 50%; /* Her iki sütunun eşit genişlikte olmasını sağlar */
+        padding: 0px; /* İç boşluk */
+        vertical-align: middle; /* Dikeyde ortalar */
+        text-align: left;
+        white-space: normal;
+    }
+
+ 
 </style>
 
