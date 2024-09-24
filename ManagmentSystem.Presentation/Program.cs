@@ -28,11 +28,16 @@ builder.Services.AddTransient<IMailService, MailService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (!app.Environment.IsProduction())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseExceptionHandler("/Error/500");
+    app.UseStatusCodePagesWithReExecute("/Error/{0}"); // Diðer hatalar için yönlendirme.
     app.UseHsts();
+}
+else
+{
+    // Geliþtirme ortamýnda hatalarý görmek için developer exception page aktif edilir.
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();
@@ -44,6 +49,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "Areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
 app.MapDefaultControllerRoute();
 app.Run();

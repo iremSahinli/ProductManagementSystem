@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Erişim Reddedildi";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+        <div class="container">
+            <h1>Erişim Reddedildi!</h1>
+            <p>Bu sayfaya erişim izniniz yok!</p>
+            <p>Butona tıklayarak anasayfaya dönebilirsin.</p>
+            <a href="@Url.Action("Index", "Home", new { area = "" })" class="btn-custom">
+                Anasayfaya Dön
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .background-image {
+        background-image: url('/Access.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .content {
+        display: grid z-index: 10; /* Üstte görünmesi için */
+        text-align: left; /* Yazı ortalanır */
+        color: #FFFFFF; /* Yazı rengi beyaz */
+        margin-left: 10rem;
+        margin-top: -30rem;
+        color: black;
+        font-size: 16px; /* Yazı boyutunu büyütür */
+    }
+
+    .btn-custom {
+        display: inline-block;
+        background-color: darkred;
+        color: white; /* Beyaz yazı */
+        padding: 15px 30px; /* Butona içerik boşluğu */
+        border-radius: 10px; /* Hafif yuvarlak köşeler */
+        text-align: center;
+        font-size: 16px; /* Yazı boyutu */
+        text-decoration: none; /* Alt çizgiyi kaldır */
+        width: 100%; /* Tam genişlik */
+        max-width: 120px; /* Maksimum genişlik */
+        margin: 10px auto; /* Üst ve alt boşluk */
+        transition: background-color 0.3s ease; /* Renk değişiminde animasyon */
+    }
+
+        .btn-custom:hover {
+            background-color: #2dce89; /*renk değiştir */
+            text-decoration: none; /* Hover durumunda alt çizgi eklenmemesi */
+        }
+</style>
+

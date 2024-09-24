@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "404 - Sayfa Bulunamadı";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="svg.css">
+    <title>Full video</title>
+</head>
+<body>
+    <div id="hero">
+        <video autoplay loop muted>
+            <source src="/404.mp4" type="video/mp4">
+        </video>
+        <div class="content">
+            <div class="container">
+                <h1>Sayfalar arasında kayboldun...</h1>
+                <h1>Merak etme!</h1>
+                <p>Butona tıklayarak anasayfaya dönebilirsin.</p>
+                <a href="@Url.Action("Index", "Home", new { area = "" })" class="btn-custom">
+                    Anasayfaya Dön
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #hero video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Video ekranı tam doldurur, orantıyı bozmadan */
+        position: absolute; /* Video tam ekrana yerleşir */
+        top: 0;
+        left: 0;
+        z-index: -1; /* Diğer içeriklerin altında kalması için */
+
+    }
+
+    #hero.content {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+        z-index: 20;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        display:flex;
+        z-index: 10; /* Üstte görünmesi için */
+        text-align: left; /* Yazı ortalanır */
+        color: #FFFFFF; /* Yazı rengi beyaz */
+        margin-left:4rem;
+        margin-top: 10rem;
+
+    }
+
+    .btn-custom {
+        display: inline-block;
+        background-color: chocolate ;
+        color: white; /* Beyaz yazı */
+        padding: 15px 30px; /* Butona içerik boşluğu */
+        border-radius: 5px; /* Hafif yuvarlak köşeler */
+        text-align: center;
+        font-size: 16px; /* Yazı boyutu */
+        text-decoration: none; /* Alt çizgiyi kaldır */
+        width: 100%; /* Tam genişlik */
+        max-width: 150px; /* Maksimum genişlik */
+        margin: 10px auto; /* Üst ve alt boşluk */
+        transition: background-color 0.3s ease; /* Renk değişiminde animasyon */
+    }
+
+        .btn-custom:hover {
+            background-color: #2dce89; /* Hover durumunda koyu mavi renk */
+            text-decoration: none; /* Hover durumunda alt çizgi eklenmemesi */
+        }
+</style>
+
+
+
+
+
+
