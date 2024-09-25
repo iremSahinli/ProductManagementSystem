@@ -27,16 +27,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- CSS Files -->
     <link id="pagestyle" href="~/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <!--Culture Icons CSS-->
     <style>
         .flag-icon-small {
             width: 30px; /* Küçük boyut için */
             height: auto;
-            
         }
 
-       
+        li {
+            list-style-type: none;
+        }
 
     </style>
+
+
+
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -51,19 +56,11 @@
         </div>
         <hr class="horizontal dark mt-0 text-center">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
-            <a href="#"><img src="~/assets/img/icons/flags/gb.png" class="flag-icon-small"  /></a>
-            <a href="#"><img src="~/assets/img/icons/flags/flag-of-turkey.png" class="flag-icon-small" /></a>
-            <ul class="navbar-nav">
-               
 
-                <li class="nav-item">
-                    <select id="languageSelect" style="background-color: floralwhite; color: #333; border: 1px solid #007bff; padding: 5px; font-size: 16px; border-radius: 5px; margin-left:30px;">
-                        >
-                        <option>@Localizer["Select Language"]</option>
-                        <option value="tr" style="background-color: #fff; color: black ;">@Localizer["Turkish"]</option>
-                        <option value="en" style="background-color:lightgrey; color: black ;">@Localizer["English"]</option>
-                    </select>
-                </li>
+            <ul class="navbar-nav">
+
+
+
                 @if (User.IsInRole("Admin"))
                 {
 
@@ -182,6 +179,23 @@
             </ul>
 
         </div>
+        <!--Culture-->
+        <li class="nav-item" style="position: absolute; bottom: 0; width: 100%;">
+            <div id="languageSelect" style="color: black; padding: 10px; font-size: 14px; border-radius: 15px;  display: inline-block;">
+                <div style="margin-bottom: 5px;">@Localizer["Select Language"]:</div>
+                <label style="margin-right: 15px;">
+                    <input type="radio" name="language" value="tr" />
+                    <img src="~/assets/img/icons/flags/flag-of-turkey.png" class="flag-icon-small" style="margin-right: 5px;" />
+                    @Localizer["Turkish"]
+                </label>
+                <label>
+                    <input type="radio" name="language" value="en" />
+                    <img src="~/assets/img/icons/flags/gb.png" class="flag-icon-small" style="margin-right: 5px;" />
+                    @Localizer["English"]
+                </label>
+            </div>
+        </li>
+
 
     </aside>
 
@@ -207,23 +221,38 @@
 
             </ul>
         </div>
-        </div>
-        </nav>
+
+       
         <!-- End Navbar -->
         @RenderBody()
         @RenderSection("Scripts", required: false)
+        <!--Radio button JS for Culture-->
         <script>
-            document.getElementById('languageSelect').addEventListener('change', function () {
-                var selectedLan = this.value;
-                console.log(selectedLan); // Log the selected language value
-                document.cookie = ".AspNetCore.Culture=c=" + selectedLan + "|uic=" + selectedLan + "; path=/";
-                console.log(document.cookie); // Log the cookie before reloading
-                location.reload();
+            document.addEventListener("DOMContentLoaded", function () {
+                var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en'; // Varsayılan dil 'en'
+                var radioButtons = document.querySelectorAll('input[name="language"]');
+
+                // Mevcut dili radyo butonunda işaretli hale getir
+                radioButtons.forEach(function (radio) {
+                    if (radio.value === selectedLanguage) {
+                        radio.checked = true;
+                    }
+                });
+                radioButtons.forEach(function (radio) {
+                    radio.addEventListener('change', function () {
+                        var selectedLan = this.value; // Seçilen dil değeri
+                        console.log(selectedLan);
+                        document.cookie = ".AspNetCore.Culture=c=" + selectedLan + "|uic=" + selectedLan + "; path=/";
+                        console.log(document.cookie); // Çerez değerini logla
+                        localStorage.setItem('selectedLanguage', selectedLan);
+                        location.reload(); // Sayfayı yenile
+                    });
+                });
             });
 
         </script>
-       
-        
+
+
     </main>
 
     @* <div class="fixed-plugin">
