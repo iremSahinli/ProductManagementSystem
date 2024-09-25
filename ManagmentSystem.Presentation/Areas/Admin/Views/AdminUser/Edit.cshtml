@@ -6,15 +6,15 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> Localizer
 
+<br />
 <div class="container text-center">
-    <hr />
-    <div class="card profile-card mx-auto">
+
+    <div class="card profile">
         <div class="card-body">
             <form asp-action="Edit" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <h2 class="text-center">@Localizer["Update User Profile"]</h2>
+                <h3 class="text-center">@Localizer["Update User Profile"]</h3>
                 <div class="image-container mx-auto">
-                    <!-- Görsel kapsayıcıya ortalama ekledik -->
                     @if (!string.IsNullOrEmpty(Model.ProfileImage))
                     {
                         <img src="@Url.Content($"~/uploads/{Model.ProfileImage}")" alt="Profile Photo" class="profile-photo" />
@@ -45,7 +45,7 @@
 
                 <div class="form-group">
                     <label asp-for="PhoneNumber" class="control-label">@Localizer["Phone Number"]</label>
-                    <input asp-for="PhoneNumber" class="form-control" />
+                    <input asp-for="PhoneNumber" class="form-control" maxlength="10" pattern="0[0-9]{9}" title="Telefon numarası 10 haneli ve başında 0 olmayacak şekilde girilmelidir." placeholder="--- --- -- --" />
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
 
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center mt-4">
-                    <input type="submit" value="@Localizer["Save"]" class="btn btn-primary mx-2" />
+                    <input type="submit" value="@Localizer["Save"]" class="btn btn-success mx-2" />
                     <a asp-action="ListUsers" class="btn btn-danger mx-2">@Localizer["Back to List"]</a>
                 </div>
             </form>
@@ -84,76 +84,38 @@
 
 <style>
     .container {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-
-    .profile-card {
-        background-color: rgba(255, 255, 255); /* Transparan arka plan */
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        margin-top: 20px;
         max-width: 600px;
+        margin: 0 auto;
+
+    }
+    
+    .profile-card {
+        background-color: rgba(255, 255, 255);
+        padding: 5px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        max-height: 500px;
+        
     }
 
     .form-group {
-        margin-bottom: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Başlıkları sola hizala */
+        text-align: left;
+        margin-bottom: -0.3rem;
     }
 
-        .form-group label {
-            margin-bottom: 5px;
-        }
 
-        .form-group input,
-        .form-group textarea {
-            margin-bottom: 5px;
-        }
-
-    .btn {
-        margin-top: 10px;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-
-    .btn-danger {
-        background-color: #dc3545;
-        border-color: #dc3545;
-        color: white;
-        padding: 10px 15px;
-        text-decoration: none;
-        border-radius: 4px;
-    }
-
-    .d-flex {
-        display: flex;
-    }
-
-    .justify-content-center {
-        justify-content: center;
-    }
-
-    .mx-2 {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-    }
 
     .image-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         overflow: hidden;
-        margin-bottom: 30px;
-        border: 2px solid #ddd; /* Çerçeve ekliyoruz */
+        margin-bottom: 5px;
+        border: 1px solid #ddd; /* Çerçeve ekliyoruz */
     }
 
     .profile-photo {
@@ -161,6 +123,12 @@
         height: 100%;
         object-fit: cover;
     }
+
+    .btn {
+        min-width: 100px; /* Butonların minimum genişliği */
+        height: 40px; /* Butonların sabit yüksekliği */
+        margin: 5px; /* Butonlar arasındaki boşluk */
+        
+    }
+
 </style>
-
-
