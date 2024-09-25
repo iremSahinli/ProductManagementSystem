@@ -27,6 +27,7 @@ namespace ManagmentSystem.Business.Services.CategoryServices
         /// <param name="categoryName"></param>
         /// <returns></returns>
         Task<bool> IsCategoryNameExistAsync(string categoryName, Guid? categoryId = null);
+        Task<bool> IsSubCategoryUsedAsync(Guid categoryId);  //silinmek istenen category product tablosunda kullanılıyormu?.
 
     }
 }
