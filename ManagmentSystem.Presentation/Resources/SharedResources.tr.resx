@@ -441,6 +441,9 @@
   <data name="The category you want to delete is used in the product and cannot be deleted." xml:space="preserve">
     <value>Silmek istediğiniz kategori bir üründe kullanılıyor</value>
   </data>
+  <data name="The category you want to delete is used in the subcategory and cannot be deleted." xml:space="preserve">
+    <value>Silmek istediğiniz kategori bir alt kategoride kullanılıyor</value>
+  </data>
   <data name="The category you want to save is in the system, please add a different category." xml:space="preserve">
     <value>Kaydetmek istediğiniz kategori sistemde mevcuttur. Lütfen farklı bir kategori girin.</value>
   </data>

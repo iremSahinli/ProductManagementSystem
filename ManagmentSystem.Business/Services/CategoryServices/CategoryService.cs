@@ -174,5 +174,10 @@ namespace ManagmentSystem.Business.Services.CategoryServices
                      && (categoryId == null || c.Id != categoryId)  // Güncellenen kategoriyi kontrol dışı bırak
                      && c.Status != Status.Deleted);
         }
+
+        public async Task<bool> IsSubCategoryUsedAsync(Guid categoryId)
+        {
+            return await _context.Categories.AnyAsync(pc => pc.ParentCategoryId == categoryId && pc.Status != Status.Deleted);
+        }
     }
 }

@@ -114,6 +114,16 @@ namespace ManagmentSystem.Presentation.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
+
+            //Yapılacak işlem eğer categorinin sub kategorisi varsa silinmesin sub kategoriyi bulmak için ilgili kategorinin ıd si ile parentleri karşılaştır eğer bir veya 1den çok parentıd varsa statusuna veya statuslarına bak .statuslarınadan herhangi biri 1 ise bu kategori alt kategoride kullanılıyor de silme işleminden vazgeç
+
+            var isSubCategoryUsed = await _categoryService.IsSubCategoryUsedAsync(id);
+            if (isSubCategoryUsed)
+            {
+                var message = _stringLocalizer["The category you want to delete is used in the subcategory and cannot be deleted."];
+                ErrorNotyf(message);
+                return RedirectToAction("Index");
+            }
             var isCategoryUsed = await _productService.IsCategoryUsedAsync(id); //Product tablosunda kullanılıyor mu kontrol eder.
             if (isCategoryUsed)
             {
