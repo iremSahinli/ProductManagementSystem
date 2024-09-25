@@ -303,6 +303,9 @@
   <data name="Please check your email address." xml:space="preserve">
     <value>Please check your email address.</value>
   </data>
+  <data name="Please enter your 10-digit number without leading 0" xml:space="preserve">
+    <value>Please enter your 10-digit number without leading 0</value>
+  </data>
   <data name="Please enter your registered email address and we will send you a password reset link." xml:space="preserve">
     <value>Please enter your registered email address and we will send you a password reset link.</value>
   </data>
@@ -467,6 +470,9 @@
   </data>
   <data name="Update Product" xml:space="preserve">
     <value>Update Product</value>
+  </data>
+  <data name="Update Profile" xml:space="preserve">
+    <value>Update Profile</value>
   </data>
   <data name="Update successful!" xml:space="preserve">
     <value>Update successful!</value>

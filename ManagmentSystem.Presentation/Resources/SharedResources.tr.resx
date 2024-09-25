@@ -303,6 +303,9 @@
   <data name="Please check your email address." xml:space="preserve">
     <value>Lütfen email adresinizi kontrol ediniz.</value>
   </data>
+  <data name="Please enter your 10-digit number without leading 0" xml:space="preserve">
+    <value>Lütfen başında 0 olmadan 10 haneli numaranızı girin</value>
+  </data>
   <data name="Please enter your registered email address and we will send you a password reset link." xml:space="preserve">
     <value>Lütfen kayıtlı e-posta adresinizi girin, size bir şifre sıfırlama bağlantısı göndereceğiz.</value>
   </data>
@@ -467,6 +470,9 @@
   </data>
   <data name="Update Product" xml:space="preserve">
     <value>Ürünü Güncelle</value>
+  </data>
+  <data name="Update Profile" xml:space="preserve">
+    <value>Profil Güncelle</value>
   </data>
   <data name="Update successful!" xml:space="preserve">
     <value>Güncelleme başarılı!</value>
