@@ -1,4 +1,4 @@
-﻿ @model IEnumerable<ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs.AdminCategoryListVM>
+﻿@model IEnumerable<ManagmentSystem.Presentation.Areas.Admin.Models.CategoryVMs.AdminCategoryListVM>
 
 @{
     ViewData["Title"] = "Kategori Listesi";
@@ -11,22 +11,20 @@
 <br />
 <br />
 
-
 <div class="card">
     <h2 class="categories-heading">@Localizer["Categories"]</h2>
-    <div style="position: relative;">
-        <a asp-action="Create" class="btn btn-success" style="position: fixed; top: 90px; right: 300px; width: 200px;">@Localizer["Create New Category"]</a>
+    <div class="button-container">
+        <a asp-action="Create" class="btn btn-success create-button">@Localizer["Create New Category"]</a>
     </div>
 
     <div class="table-responsive">
         <table class="table align-items-center mb-0">
             <thead>
                 <tr>
-                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["CATEGORY NAME_"]</th>
-                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["DESCRIPTION_"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["CATEGORY NAME"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["DESCRIPTION"]</th>
                     <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["CATEGORY TYPE"]</th>
-                    <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
-                    <th class="text-secondary opacity-7"></th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,80 +46,83 @@
                         <td>
                             @if (item.ParentCategoryId != null)
                             {
-                                <!-- Alt kategori, ana kategoriyi göster -->
+                                <p class="text-xs text-secondary mb-0 main-category">
+                                    @Localizer["Subcategory"] 
+                                </p>
+
                                 <p class="text-xs text-secondary mb-0">
-                                    @Localizer["Subcategory"] (<span style="color:#11cdef ">@Localizer["Main Category"]:</span> @item.ParentCategoryName)
+                                     (<span style="color:#11cdef ">@Localizer["Main Category"]:</span> @item.ParentCategoryName)
                                 </p>
                             }
                             else
                             {
-                                <!-- Ana kategori -->
                                 <p class="text-xs text-secondary mb-0 main-category">@Localizer["Main Category"]</p>
                             }
                         </td>
                         <td class="align-middle text-center">
-                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
+                            <div class="button-group">
+                                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
+                            </div>
                         </td>
                     </tr>
                 }
             </tbody>
-
-
-
-
-
         </table>
     </div>
 </div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-
     <style>
-        .main-category {
-            color: #2dce89 !important; /* Yeşil renk */
-            font-weight: bold; /* Kalın yazı tipi */
+        .card {
+            max-width: 1400px;
+            margin: auto;
+            display: grid;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+            .button-group .btn {
+                min-width: 80px;
+                white-space: nowrap;
+            }
+
+        .table-responsive {
+            padding: 10px;
+        }
+
+        .table {
+            width: 100%;
+            margin: 0 auto;
         }
 
         th, td {
             padding: 12px 15px;
-            font-size: 12px; /* Yazı boyutunu küçült */
-        }
-
-        .card {
-            max-width: 1600px; /* Kartın genişliğini kısalt */
-            margin: 0 auto; /* Kartı ortala */
-        }
-
-        .table-responsive {
-            padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */
-        }
-
-        .table {
-            width: 100%; /* Tablonun tam genişlikte görünmesini sağla */
-            margin: 0 auto; /* Tablonun kapsayıcı içinde ortalanmasını sağla */
-        }
-
-        th, td {
-            padding: 12px 15px; /* Hücrelerin iç boşluklarını belirle */
-            font-size: 2.85 rem;
-        }
-
-            .th.text-uppercase, td.text-center {
-                text-align: left; /* Başlık ve hücre içi hizalamayı sol yap */
-            }
-
-        .btn {
-            margin-right: 5px; /* Butonlar arasında boşluk bırak */
+            font-size: 12px;
         }
 
         .categories-heading {
-            margin-left: 30px;
+            margin-right: auto;
         }
 
+        .main-category {
+            color: #2dce89 !important;
+            font-weight: bold;
+        }
+
+        .create-button {
+            position: relative;
+            margin-bottom: 10px;
+        }
     </style>
 }
