@@ -291,6 +291,9 @@
   <data name="Main Category" xml:space="preserve">
     <value>Main Category</value>
   </data>
+  <data name="NAME" xml:space="preserve">
+    <value>NAME</value>
+  </data>
   <data name="New password create successfully" xml:space="preserve">
     <value>New password create successfully</value>
   </data>
@@ -320,6 +323,9 @@
   </data>
   <data name="PRICE_" xml:space="preserve">
     <value>PRICE</value>
+  </data>
+  <data name="PRODUCT" xml:space="preserve">
+    <value>PRODUCT</value>
   </data>
   <data name="Product creation successful" xml:space="preserve">
     <value>Product creation successful</value>
@@ -371,6 +377,9 @@
   </data>
   <data name="Product Name" xml:space="preserve">
     <value>Product Name</value>
+  </data>
+  <data name="PRODUCT NAME_" xml:space="preserve">
+    <value>PRODUCT NAME</value>
   </data>
   <data name="Product Price for Create" xml:space="preserve">
     <value>Product Price</value>

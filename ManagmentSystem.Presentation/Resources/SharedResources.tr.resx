@@ -291,6 +291,9 @@
   <data name="Main Category" xml:space="preserve">
     <value>Ana Kategori</value>
   </data>
+  <data name="NAME" xml:space="preserve">
+    <value>İSMİ</value>
+  </data>
   <data name="New password create successfully" xml:space="preserve">
     <value>Yeni şifre başarı ile oluşturuldu</value>
   </data>
@@ -320,6 +323,9 @@
   </data>
   <data name="PRICE_" xml:space="preserve">
     <value>FİYAT</value>
+  </data>
+  <data name="PRODUCT" xml:space="preserve">
+    <value>ÜRÜN</value>
   </data>
   <data name="Product creation successful" xml:space="preserve">
     <value>Ürün oluşturma başarılı</value>
@@ -371,6 +377,9 @@
   </data>
   <data name="Product Name" xml:space="preserve">
     <value>Ürün Adı</value>
+  </data>
+  <data name="PRODUCT NAME_" xml:space="preserve">
+    <value>ÜRÜN ADI</value>
   </data>
   <data name="Product Price" xml:space="preserve">
     <value>Ürün Fiyatı</value>

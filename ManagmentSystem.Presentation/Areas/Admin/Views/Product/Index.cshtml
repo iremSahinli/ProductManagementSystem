@@ -14,20 +14,22 @@
 
 <div class="card">
     <h2 class="product-heading">@Localizer["Products"]</h2>
-    <div style="position: relative;">
-        <a asp-action="Create" class="btn btn-success" style="position: fixed; top: 90px; right: 280px; width: 200px;">@Localizer["Create New Product"]</a>
-    </div>
+    
+        
+    
     <div class="table-responsive">
-
+        <div class="button-container">
+            <a asp-action="Create" class="btn btn-success create-button">@Localizer["Create New Product"]</a>
+        </div>
         <table class="table align-items-center mb-0">
             <thead>
                 <tr>
-                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["PRODUCT IMAGE"]</th>
-                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["PRODUCT NAME"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["PRODUCT IMAGE"]</th>
+                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["PRODUCT NAME_"]</th>
                     <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["PRICE_"]</th>
                     <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["CATEGORIES_"]</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
-                    <th class="text-secondary opacity-7"></th>
+
                 </tr>
             </thead>
             <tbody>
@@ -86,11 +88,15 @@
                                 }
                             </div>
                         </td>
+                       
 
+                            
                         <td class="align-middle text-center">
-                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
+                            <div class="button-group">
+                                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
+                            </div>
                         </td>
                     </tr>
                 }
@@ -102,45 +108,28 @@
 <style>
 
 
-
-
-
-
-    th, td {
-        padding: 12px 15px;
-        font-size: 0.85rem; /* Yazı boyutunu küçült */
-    }
-
     .card {
-        max-width: 1600px; /* Kartın genişliğini kısalt */
-        margin: 0 auto; /* Kartı ortala */
+        display: grid;
+        max-width: 1400px; /* Kartın genişliğini kısalt */
+        margin: auto; /* Kartı ortala */
+        
     }
 
-    .table-responsive {
-        overflow: visible;
+
+    .button-group {
+        display: flex; /* Butonları yan yana dizmek için */
+        justify-content: center; /* Butonları merkezde hizalar */
+        flex-wrap: wrap; /* Ekran küçüldüğünde butonların alt satıra geçmesini sağlar */
+        gap: 5px; /* Butonlar arasında boşluk bırakır */
     }
 
-
-
-
-    .table {
-        width: 100%; /* Tablonun tam genişlikte görünmesini sağla */
-        margin: 0 auto; /* Tablonun kapsayıcı içinde ortalanmasını sağla */
-    }
-
-    th, td {
-        padding: 12px 15px; /* Hücrelerin iç boşluklarını belirle */
-        font-size: 0.85rem;
-    }
-
-        th.text-uppercase, td.text-center {
-            text-align: left; /* Başlık ve hücre içi hizalamayı sol yap */
+        .button-group .btn {
+            min-width: 80px; /* Butonların minimum genişliği */
+            white-space: nowrap; /* Buton metninin satıra sığması için */
         }
+           
 
-    .btn {
-        margin-right: 5px; /* Butonlar arasında boşluk bırak */
-    }
-
+    
     /* Görselin büyüme efekti */
     .product-image {
         object-fit: cover;
@@ -152,6 +141,7 @@
         z-index: 1;
         position: relative;
     }
+
 
         .product-image:hover {
             transform: scale(3); /* Görselin büyüklüğü %300 olacak şekilde büyüt */
@@ -178,7 +168,7 @@
             padding: 10px;
             position: absolute;
             z-index: 1;
-           bottom:-70px; /* Tooltip’in yatay ortasında konumlanmasını sağlar */
+            bottom: -70px; /* Tooltip’in yatay ortasında konumlanmasını sağlar */
             left: 10px; /* Tooltip’in ürünün hemen yanında çıkmasını sağlar */
             transform: translateY(-50%); /* Tooltip’in yatay olarak ortalanmasını sağlar */
             margin-left: 5px; /* Tooltip ile ürün arasındaki boşluk */
@@ -191,13 +181,9 @@
             opacity: 1;
         }
 
-    .category-list {
-        display: flex;
-        flex-direction: column;
-    }
 
     .product-heading {
-        margin-left: 30px;
+        margin-right: auto;
     }
 
     .image-container {
@@ -205,6 +191,23 @@
         height: 100px; /* Görselin orijinal yüksekliği */
         overflow: hidden; /* Büyüyen görselin kapsayıcıyı aşmasını engeller */
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 </style>
 
