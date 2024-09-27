@@ -17,10 +17,11 @@
                     <p class="card-description">
                         <h2 class="text-center">@Localizer["Admin Profile"]</h2>
                         <h6 class="card-title">
-                            <strong>@Localizer["FullName"]:</strong>  @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)
+                            <strong>@Localizer["Name"]:</strong>  @Html.DisplayFor(model => model.FirstName)
                         </h6>
-                        <h6 class="category text-info">@Localizer["Admin"]</h6>
-                        <h6>
+                        <h6 class="card-title">
+                            <strong>@Localizer["Surname"]:</strong>  @Html.DisplayFor(model => model.LastName)
+                        </h6>
                             <strong>@Localizer["E-Mail"]:</strong> @Html.DisplayFor(model => model.Email)
                         </h6>
                         <div class="mt-3">

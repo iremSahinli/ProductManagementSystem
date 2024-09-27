@@ -1,71 +1,4 @@
-﻿@* @model ManagmentSystem.Presentation.Models.AccountVM.LoginVM
-
-@{
-    ViewData["Title"] = "Giriş Yap";
-}
-
-<h1>Login</h1>
-
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label">Mail</label>
-                <input asp-for="Email" class="form-control" placeholder="Write your E-mail" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label">Password</label>
-                <div class="input-group">
-                    <input asp-for="Password" class="form-control" id="password" placeholder="Write your Password" />
-                    <div class="input-group-append">
-                        <span class="input-group-text" onclick="togglePassword()">
-                            <i id="eyeIcon" class="fa fa-eye"></i>
-                        </span>
-                    </div>
-                </div>
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group" style="margin-top: 10px">
-                <input type="submit" value="Login" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-
-<div style="margin-top: 5px;">
-    <a asp-controller="Home"  asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Back to Home</a>
-</div> *@
-@* <div style="margin-top: 5px;">
-    <a asp-action="Index" style="background-color: red; color: white; border: none; padding: 10px 15px; text-decoration: none; border-radius: 4px; display: inline-block;" class="btn">Home</a>
-</div> *@
-
-@* @section Scripts {
-    <script>
-        function togglePassword() {
-            var passwordField = document.getElementById("password");
-            var eyeIcon = document.getElementById("eyeIcon");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                eyeIcon.classList.remove("fa-eye");
-                eyeIcon.classList.add("fa-eye-slash");
-            } else {
-                passwordField.type = "password";
-                eyeIcon.classList.remove("fa-eye-slash");
-                eyeIcon.classList.add("fa-eye");
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-} *@
-
-@using Microsoft.Extensions.Localization
+﻿@using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> Localizer
 
 
@@ -136,54 +69,57 @@
     <main class="main-content mt-0">
         <section>
             <div class="page-header min-vh-100">
-                <div class="container d-flex flex-column justify-content-end ">
-                    <div class="row">
-                        <div class="container d-flex justify-content-center align-items-center min-vh-100">
-                            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column;">
-                                <div class="card card-plain">
+                <div class="container">
 
-                                    <div class="card-header pb-0 text-start" style="background-color: transparent;">
-                                        <h4 class="font-weight-bolder">@Localizer["Login"]</h4>
-                                        <p class="mb-0">@Localizer["Enter your email and password to sign in"]</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <form asp-action="Login">
-                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                            <div class="mb-3">
-                                                <input asp-for="Email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
-                                                <span asp-validation-for="Email" class="text-danger"></span>
-                                            </div>
-                                            <div class="mb-3">
-                                                <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
-                                                <span asp-validation-for="Password" class="text-danger"></span>
-                                            </div>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="rememberme">
-                                                <label class="form-check-label" for="rememberme">@Localizer["remember me"]</label>
-                                            </div>
-                                            <div class="text-center">
-                                                <button type="submit" class="btn btn-primary btn-lg active w-100 mt-4 mb-0" role="button" aria-pressed="true">
-                                                    @Localizer["Login"]
-                                                </button>
-                                            </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-7 col-lg-5 col-xl-4 mx-auto">
+
+                            <div class="card z-index-0">
 
 
-                                        </form>
-                                    </div>
-                                    <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                                        <p class="mb-4 text-sm mx-auto">
-                                            @Localizer["Don't have an account?"]
-                                            <a href="~/Account/Register" class="text-primary text-gradient font-weight-bold">@Localizer["Register"]</a>
+                                <div class="card-header pb-0 text-center" style="background-color: transparent;">
+                                    <h4 class="font-weight-bolder">@Localizer["Login"]</h4>
+                                    <p class="mb-0">@Localizer["Enter your email and password to sign in"]</p>
+                                </div>
 
-                                        </p>
-                                        <a href="@Url.Action("ForgotPassword", "Account")">@Localizer["Şifremi Unuttum"]</a>
+                                <div class="card-body">
+                                    <form asp-action="Login">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="mb-3">
+                                            <input asp-for="Email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="rememberme">
+                                            <label class="form-check-label" for="rememberme">@Localizer["remember me"]</label>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg active w-100 mt-4 mb-0" role="button" aria-pressed="true">
+                                                @Localizer["Login"]
+                                            </button>
+                                        </div>
 
-                                    </div>
+
+                                    </form>
+                                </div>
+                                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                                    <p class="mb-4 text-sm mx-auto">
+                                        @Localizer["Don't have an account?"]
+                                        <a href="~/Account/Register" class="text-primary text-gradient font-weight-bold">@Localizer["Register"]</a>
+
+                                    </p>
+                                    <a href="@Url.Action("ForgotPassword", "Account")">@Localizer["Şifremi Unuttum"]</a>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
     </main>
@@ -200,48 +136,36 @@
 
     <style>
 
-        
-        .navbar {
-            display: flex;
-            justify-content: center; /* Yatayda ortalama */
-            align-items: center; /* Dikeyde ortalama */
-            width: 80%;
-            background-color: #f8f9fa; /* Arka plan rengini ayarlayabilirsiniz */
-            padding: 0; /* Üst ve alt padding'i kaldırdık */
-
-           
-            
-        }
 
 
         .card.card-plain {
-            position: absolute ;
-            top: 10%;
-            left: 20%;
-            transform: translate(50%, 50%);
-            width: 400px;
-            padding: 0px;
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%; /* Mobil cihazlarda tam genişlik */
+            padding: 15px; /* Kenarlardan boşluk bırak */
             background-color: transparent !important;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .background-image-container {
-            position: relative;
-            background-image: url('/assets/img/plastikler.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0;
-            z-index: 0;
-            width: 100%;
-            height: 100%;
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Tüm ekranı kaplaması için */
+            padding: 0;
+            flex-direction: column;
+            text-align: center; /* İçeriği ortalama */
         }
 
-        .sidenav {
-            display: none !important;
+        .card {
+            max-width: 100%;
+            width: auto;
         }
+
     </style>
+
 
 
 </body>
