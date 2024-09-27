@@ -1,9 +1,13 @@
 ﻿@model IEnumerable<ManagmentSystem.Presentation.Areas.Admin.Models.ProductVMs.AdminProductListVM>
 
 @{
+
     ViewData["Title"] = "Product List";
+
 }
+
 @using Microsoft.Extensions.Localization
+
 @inject IStringLocalizer<SharedResources> Localizer
 
 
@@ -13,11 +17,10 @@
 
 
 <div class="card">
-    <h2 class="product-heading">@Localizer["Products"]</h2>
-    
-        
-    
+
+
     <div class="table-responsive">
+        <h2 class="product-heading">@Localizer["Products"]</h2>
         <div class="button-container">
             <a asp-action="Create" class="btn btn-success create-button">@Localizer["Create New Product"]</a>
         </div>
@@ -33,20 +36,28 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var item in Model)
+
                 {
                     <tr>
                         <td>
                             <div class="image-container">
                                 <div class="d-flex px-2 py-1">
                                     <div class="d-flex flex-column justify-content-center">
+
                                         @if (!string.IsNullOrEmpty(item.ProductImage))
+
                                         {
                                             <img src="@item.ProductImage" alt="Product Image" class="product-image" />
+
                                         }
+
                                         else
+
                                         {
                                             <span>No Image</span>
+
                                         }
                                     </div>
                                 </div>
@@ -56,6 +67,7 @@
                             <div class="d-flex flex-column justify-content-center">
                                 <div class="tooltip-container">
                                     <h6 class="mb-0 text-xs">
+
                                         @Html.DisplayFor(modelItem => item.ProductName)
                                     </h6>
                                     <div class="tooltip-text">
@@ -66,31 +78,42 @@
                         </td>
                         <td>
                             <div class="d-flex flex-column justify-content-center">
+
                                 @if (item.ProductPrice != null)
+
                                 {
                                     <span class="text-xs text-secondary mb-0">@item.ProductPrice.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("tr-TR"))</span>
+
                                 }
+
                                 else
+
                                 {
                                     <span class="text-xs text-secondary mb-0">No price available</span>
+
                                 }
                             </div>
                         </td>
                         <td>
                             <div class="d-flex flex-column justify-content-center">
+
                                 @if (!string.IsNullOrEmpty(item.CategoryNames))
+
                                 {
                                     <span class="text-xs text-secondary">@item.CategoryNames</span>
+
                                 }
+
                                 else
+
                                 {
                                     <span class="text-xs text-secondary mb-0">No categories</span>
+
                                 }
                             </div>
                         </td>
-                       
 
-                            
+
                         <td class="align-middle text-center">
                             <div class="button-group">
                                 <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
@@ -99,6 +122,7 @@
                             </div>
                         </td>
                     </tr>
+
                 }
             </tbody>
         </table>
@@ -107,37 +131,48 @@
 
 <style>
 
+    .table-responsive {
+        padding: 10px; /* İç boşluk ekleyerek tabloyu ferahlat */
+
+        overflow-x: auto;
+    }
 
     .card {
         display: grid;
-        max-width: 1400px; /* Kartın genişliğini kısalt */
+        max-width: 90%; /* Kartın genişliğini kısalt */
+
         margin: auto; /* Kartı ortala */
-        
     }
 
 
     .button-group {
         display: flex; /* Butonları yan yana dizmek için */
+
         justify-content: center; /* Butonları merkezde hizalar */
+
         flex-wrap: wrap; /* Ekran küçüldüğünde butonların alt satıra geçmesini sağlar */
+
         gap: 5px; /* Butonlar arasında boşluk bırakır */
     }
 
         .button-group .btn {
             min-width: 80px; /* Butonların minimum genişliği */
+
             white-space: nowrap; /* Buton metninin satıra sığması için */
         }
-           
 
-    
+
     /* Görselin büyüme efekti */
+
     .product-image {
         object-fit: cover;
         object-position: center; /* Görseli kutu içinde ortala */
+
         border-radius: 8px;
         height: 100px;
         width: 100px;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasyon süresi */
+
         z-index: 1;
         position: relative;
     }
@@ -145,10 +180,14 @@
 
         .product-image:hover {
             transform: scale(3); /* Görselin büyüklüğü %300 olacak şekilde büyüt */
+
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Hafif bir gölge ekle */
+
             transform-origin: left; /* Görsel merkezden büyüsün */
+
             position: absolute;
             z-index: 20; /* Tablo üzerine çıkmasını sağla */
+
             margin-right: 100px;
         }
 
@@ -160,18 +199,26 @@
         .tooltip-container .tooltip-text {
             visibility: hidden;
             width: auto; /* Tooltip genişliğini ihtiyaca göre ayarlayabilirsiniz */
+
             background-color: white; /* Tooltip arka plan rengi*/
+
             color: black; /* Tooltip metin rengini siyah yapıyoruz */
+
             text-align: center;
             border: 1px solid #ddd; /* Tooltip etrafında hafif bir sınır */
+
             border-radius: 4px;
             padding: 10px;
             position: absolute;
             z-index: 1;
             bottom: -70px; /* Tooltip’in yatay ortasında konumlanmasını sağlar */
+
             left: 10px; /* Tooltip’in ürünün hemen yanında çıkmasını sağlar */
+
             transform: translateY(-50%); /* Tooltip’in yatay olarak ortalanmasını sağlar */
+
             margin-left: 5px; /* Tooltip ile ürün arasındaki boşluk */
+
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -183,31 +230,15 @@
 
 
     .product-heading {
-        margin-right: auto;
+        margin-right: 10px;
     }
 
     .image-container {
         width: 100px; /* Görselin orijinal genişliği */
+
         height: 100px; /* Görselin orijinal yüksekliği */
+
         overflow: hidden; /* Büyüyen görselin kapsayıcıyı aşmasını engeller */
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
 </style>
 
