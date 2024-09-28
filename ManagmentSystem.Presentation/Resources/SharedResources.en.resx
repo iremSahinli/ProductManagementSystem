@@ -129,6 +129,9 @@
   <data name="ACTIONS_" xml:space="preserve">
     <value>ACTIONS_</value>
   </data>
+  <data name="Adding a New User:" xml:space="preserve">
+    <value>Adding a New User:</value>
+  </data>
   <data name="Address" xml:space="preserve">
     <value>Address</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Buy" xml:space="preserve">
     <value>Buy</value>
+  </data>
+  <data name="Can I make a product purchase?" xml:space="preserve">
+    <value>Can I make a product purchase?</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
@@ -243,6 +249,9 @@
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="Enter product names and descriptions carefully, making sure they match the categories correctly. Also, adding an image of the product makes it easier to recognize." xml:space="preserve">
+    <value>Enter product names and descriptions carefully, making sure they match the categories correctly. Also, adding an image of the product makes it easier to recognize.</value>
+  </data>
   <data name="Enter your email and password to sign in" xml:space="preserve">
     <value>Enter your email and password to sign in</value>
   </data>
@@ -255,6 +264,9 @@
   <data name="FIRST NAME_" xml:space="preserve">
     <value>FIRST NAME</value>
   </data>
+  <data name="For now, you can view the products page and update your profile information specifically for users in the application interface." xml:space="preserve">
+    <value>For now, you can view the products page and update your profile information specifically for users in the application interface.</value>
+  </data>
   <data name="Forgot your password?" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
@@ -264,8 +276,23 @@
   <data name="Go Update Page" xml:space="preserve">
     <value>Go Update Page</value>
   </data>
+  <data name="Hello Admin!" xml:space="preserve">
+    <value>Hello Admin!</value>
+  </data>
+  <data name="Hello User!" xml:space="preserve">
+    <value>Hello User!</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="How Can I Reach the Authorized Person (Admin) on the Site?" xml:space="preserve">
+    <value>How Can I Reach the Authorized Person (Admin) on the Site?</value>
+  </data>
+  <data name="How Do I Manage Users?" xml:space="preserve">
+    <value>How Do I Manage Users?</value>
+  </data>
+  <data name="If you experience any problems with your account information, you can reach us at the e-mail address below." xml:space="preserve">
+    <value>If you experience any problems with your account information, you can reach us at the e-mail address below.</value>
   </data>
   <data name="Last Name" xml:space="preserve">
     <value>Last Name</value>
@@ -290,6 +317,9 @@
   </data>
   <data name="Main Category" xml:space="preserve">
     <value>Main Category</value>
+  </data>
+  <data name="Make sure you match your products to the right categories. Always listing products under the right category will help users find the products they are looking for more easily." xml:space="preserve">
+    <value>Make sure you match your products to the right categories. Always listing products under the right category will help users find the products they are looking for more easily.</value>
   </data>
   <data name="NAME" xml:space="preserve">
     <value>NAME</value>
@@ -360,6 +390,9 @@
   <data name="Product Image for Create" xml:space="preserve">
     <value>Product Image</value>
   </data>
+  <data name="Product Images:" xml:space="preserve">
+    <value>Product Images:</value>
+  </data>
   <data name="Product Image_" xml:space="preserve">
     <value>Product Image</value>
   </data>
@@ -411,6 +444,12 @@
   <data name="remember me" xml:space="preserve">
     <value>remember me</value>
   </data>
+  <data name="Remember, you have control over the application!" xml:space="preserve">
+    <value>Remember, you have control over the application!</value>
+  </data>
+  <data name="Right Category, right product!:" xml:space="preserve">
+    <value>Right Category, right product!:</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
@@ -447,6 +486,9 @@
   <data name="Terms and Conditions" xml:space="preserve">
     <value>Terms and Conditions</value>
   </data>
+  <data name="The application continues to be developed and we are working to offer new features to users, please do not forget to follow us!" xml:space="preserve">
+    <value>The application continues to be developed and we are working to offer new features to users, please do not forget to follow us!</value>
+  </data>
   <data name="The category you want to delete is used in the product and cannot be deleted." xml:space="preserve">
     <value>The category you want to delete is used in the product and cannot be deleted.</value>
   </data>
@@ -456,6 +498,9 @@
   <data name="The category you want to save is in the system, please add a different category." xml:space="preserve">
     <value>The category you want to save is in the system, please add a different category.</value>
   </data>
+  <data name="The interface is user-friendly and simple, the application is still under development and no product sales are currently made. Different features will continue to be added to the system with updates." xml:space="preserve">
+    <value>The interface is user-friendly and simple, the application is still under development and no product sales are currently made. Different features will continue to be added to the system with updates.</value>
+  </data>
   <data name="The model is invalid!" xml:space="preserve">
     <value>The model is invalid!</value>
   </data>
@@ -464,6 +509,9 @@
   </data>
   <data name="There was an error while loading the page, please try again." xml:space="preserve">
     <value>There was an error while loading the page, please try again.</value>
+  </data>
+  <data name="This application that you are authorized for is a product - category, user management system. It is quite simple, easy to manage and you can easily access all areas in the system with the menu on the left. Product and category management is very simple. You can easily switch to product and category tables from the menu on the left in the same way. You can add, update, delete operations for product and category tables in seconds with the help of buttons and see the details of the product." xml:space="preserve">
+    <value>This application that you are authorized for is a product - category, user management system. It is quite simple, easy to manage and you can easily access all areas in the system with the menu on the left. Product and category management is very simple. You can easily switch to product and category tables from the menu on the left in the same way. You can add, update, delete operations for product and category tables in seconds with the help of buttons and see the details of the product.</value>
   </data>
   <data name="Turkish" xml:space="preserve">
     <value>Turkish</value>
@@ -504,6 +552,9 @@
   <data name="User" xml:space="preserve">
     <value>User</value>
   </data>
+  <data name="User Activity Monitoring:" xml:space="preserve">
+    <value>User Activity Monitoring:</value>
+  </data>
   <data name="User creation  successful" xml:space="preserve">
     <value>User creation  successful</value>
   </data>
@@ -531,8 +582,23 @@
   <data name="Users listed successfully." xml:space="preserve">
     <value>Users listed successfully.</value>
   </data>
+  <data name="Using high-quality and accurate product images increases the user experience and makes products more eye-catching. You should pay attention to this issue so that the right product reaches the right customer." xml:space="preserve">
+    <value>Using high-quality and accurate product images increases the user experience and makes products more eye-catching. You should pay attention to this issue so that the right product reaches the right customer.</value>
+  </data>
+  <data name="We have compiled a few questions and answers regarding the application for you, you can find them below." xml:space="preserve">
+    <value>We have compiled a few questions and answers regarding the application for you, you can find them below.</value>
+  </data>
+  <data name="We have compiled the following information for you on how to use the application. We recommend that you read it before you start using it!" xml:space="preserve">
+    <value>We have compiled the following information for you on how to use the application. We recommend that you read it before you start using it!</value>
+  </data>
   <data name="We have sent an email to your address." xml:space="preserve">
     <value>We have sent an email to your address.</value>
+  </data>
+  <data name="We kindly request you to read it!" xml:space="preserve">
+    <value>We kindly request you to read it!</value>
+  </data>
+  <data name="We will contact you as soon as possible!" xml:space="preserve">
+    <value>We will contact you as soon as possible!</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
@@ -540,13 +606,43 @@
   <data name="Welcome Admin Page" xml:space="preserve">
     <value>Welcome Admin Page</value>
   </data>
+  <data name="Welcome to the app." xml:space="preserve">
+    <value>Welcome to the app.</value>
+  </data>
+  <data name="Welcome to the product management system." xml:space="preserve">
+    <value>Welcome to the product management system.</value>
+  </data>
   <data name="Welcome User Page" xml:space="preserve">
     <value>Welcome User Page</value>
   </data>
   <data name="Welcome!" xml:space="preserve">
     <value>Welcome!</value>
   </data>
+  <data name="What are the Application Interface and Features?" xml:space="preserve">
+    <value>What are the Application Interface and Features?</value>
+  </data>
+  <data name="What should I do for product management?" xml:space="preserve">
+    <value>What should I do for product management?</value>
+  </data>
+  <data name="What's in the App Interface?" xml:space="preserve">
+    <value>What's in the App Interface?</value>
+  </data>
+  <data name="When Adding a New Product:" xml:space="preserve">
+    <value>When Adding a New Product:</value>
+  </data>
   <data name="You can close this page." xml:space="preserve">
     <value>You can close this page.</value>
+  </data>
+  <data name="You can create a new account from the user table. This account is a user account, a random password is generated by the system for the mail account you registered while creating it and this password is sent to the mail address. The user can immediately log in to the system with this password and it becomes active." xml:space="preserve">
+    <value>You can create a new account from the user table. This account is a user account, a random password is generated by the system for the mail account you registered while creating it and this password is sent to the mail address. The user can immediately log in to the system with this password and it becomes active.</value>
+  </data>
+  <data name="You can perform basic user operations on the user panel, update the user when necessary, and view detailed information about the user using the button on the table." xml:space="preserve">
+    <value>You can perform basic user operations on the user panel, update the user when necessary, and view detailed information about the user using the button on the table.</value>
+  </data>
+  <data name="You can see the full list of registered users in the system in the users section of the admin panel. You will see users who have not completed the registration process in red as Registration Incomplete. In such long-term cases, you can delete the user from the system or block the user from entering the system using switches on the same table. We still recommend that you try not to abuse this situation!" xml:space="preserve">
+    <value>You can see the full list of registered users in the system in the users section of the admin panel. You will see users who have not completed the registration process in red as Registration Incomplete. In such long-term cases, you can delete the user from the system or block the user from entering the system using switches on the same table. We still recommend that you try not to abuse this situation!</value>
+  </data>
+  <data name="You can view products and get price information, but you cannot make a purchase at this time. We will activate payment transactions for you soon." xml:space="preserve">
+    <value>You can view products and get price information, but you cannot make a purchase at this time. We will activate payment transactions for you soon.</value>
   </data>
 </root>

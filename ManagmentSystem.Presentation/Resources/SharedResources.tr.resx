@@ -126,6 +126,9 @@
   <data name="ACTIONS_" xml:space="preserve">
     <value>İŞLEMLER</value>
   </data>
+  <data name="Adding a New User:" xml:space="preserve">
+    <value>Yeni Kullanıcı Ekleme:</value>
+  </data>
   <data name="Address" xml:space="preserve">
     <value>Adres</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Buy" xml:space="preserve">
     <value>Satın Al</value>
+  </data>
+  <data name="Can I make a product purchase?" xml:space="preserve">
+    <value>Ürün Satın Alma İşlemi Yapabilirmiyim?</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategoriler</value>
@@ -243,6 +249,9 @@
   <data name="English" xml:space="preserve">
     <value>İngilizce</value>
   </data>
+  <data name="Enter product names and descriptions carefully, making sure they match the categories correctly. Also, adding an image of the product makes it easier to recognize." xml:space="preserve">
+    <value>Ürün adlarını ve açıklamalarını dikkatlice girin ve kategorilerle doğru şekilde eşleştiğinden emin olun. Ayrıca, ürünün bir resmini eklemek tanınmasını kolaylaştırır.</value>
+  </data>
   <data name="Enter your email and password to sign in" xml:space="preserve">
     <value>Giriş yapmak için e-postanızı ve şifrenizi girin</value>
   </data>
@@ -255,6 +264,9 @@
   <data name="FIRST NAME_" xml:space="preserve">
     <value>İSİM</value>
   </data>
+  <data name="For now, you can view the products page and update your profile information specifically for users in the application interface." xml:space="preserve">
+    <value>Şuan için uygulama arayüzünde kullanıcılara özel olarak ürünler sayfasını görüntüleyebilir, profil bilgilerini güncelleyebilirsin.</value>
+  </data>
   <data name="Forgot your password?" xml:space="preserve">
     <value>Şifreni mi unuttun?</value>
   </data>
@@ -264,8 +276,23 @@
   <data name="Go Update Page" xml:space="preserve">
     <value>Güncelleme Sayfasına Git</value>
   </data>
+  <data name="Hello Admin!" xml:space="preserve">
+    <value>Merhaba Admin!</value>
+  </data>
+  <data name="Hello User!" xml:space="preserve">
+    <value>Merhaba Kullanıcı!</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Anasayfa</value>
+  </data>
+  <data name="How Can I Reach the Authorized Person (Admin) on the Site?" xml:space="preserve">
+    <value>Site de Yetkili Kişiye(Admin) Nasıl Ulaşabilirim?</value>
+  </data>
+  <data name="How Do I Manage Users?" xml:space="preserve">
+    <value>Kullanıcıları Nasıl Yönetirim?</value>
+  </data>
+  <data name="If you experience any problems with your account information, you can reach us at the e-mail address below." xml:space="preserve">
+    <value>Hesap bilgilerinle ilgili bir problem yaşarsan bize aşağıdaki mail adresinden ulaşabilirsin.</value>
   </data>
   <data name="Last Name" xml:space="preserve">
     <value>Soyad</value>
@@ -290,6 +317,9 @@
   </data>
   <data name="Main Category" xml:space="preserve">
     <value>Ana Kategori</value>
+  </data>
+  <data name="Make sure you match your products to the right categories. Always listing products under the right category will help users find the products they are looking for more easily." xml:space="preserve">
+    <value>Ürünlerinizi doğru kategorilerle eşleştirdiğinizden emin olun. Ürünleri her zaman doğru kategori altında listelemek kullanıcıların aradıkları ürünleri daha kolay bulmalarına yardımcı olacaktır.</value>
   </data>
   <data name="NAME" xml:space="preserve">
     <value>İSMİ</value>
@@ -360,6 +390,9 @@
   <data name="Product Image for Create" xml:space="preserve">
     <value>Ürün Görseli</value>
   </data>
+  <data name="Product Images:" xml:space="preserve">
+    <value>Ürün Görselleri:</value>
+  </data>
   <data name="Product Image_" xml:space="preserve">
     <value>Ürün Fotoğrafı</value>
   </data>
@@ -411,6 +444,12 @@
   <data name="remember me" xml:space="preserve">
     <value>beni hatırla</value>
   </data>
+  <data name="Remember, you have control over the application!" xml:space="preserve">
+    <value>Unutmayın, uygulamanın kontrolü sizde!</value>
+  </data>
+  <data name="Right Category, right product!:" xml:space="preserve">
+    <value>Doğru Kategori, Doğru Ürün!:</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Kaydet</value>
   </data>
@@ -447,6 +486,9 @@
   <data name="Terms and Conditions" xml:space="preserve">
     <value>Şartlar Ve Koşullar</value>
   </data>
+  <data name="The application continues to be developed and we are working to offer new features to users, please do not forget to follow us!" xml:space="preserve">
+    <value>Uygulama geliştirilmeye devam etmekte ve kullanıcılara yeni özellikler sunmak için çalışmalar yapmaktayız, bizi takip etmeyi unutma lütfen!</value>
+  </data>
   <data name="The category you want to delete is used in the product and cannot be deleted." xml:space="preserve">
     <value>Silmek istediğiniz kategori bir üründe kullanılıyor</value>
   </data>
@@ -456,6 +498,9 @@
   <data name="The category you want to save is in the system, please add a different category." xml:space="preserve">
     <value>Kaydetmek istediğiniz kategori sistemde mevcuttur. Lütfen farklı bir kategori girin.</value>
   </data>
+  <data name="The interface is user-friendly and simple, the application is still under development and no product sales are currently made. Different features will continue to be added to the system with updates." xml:space="preserve">
+    <value>Arayüzü kullanıcı dostu ve basittir, uygulama hala geliştirilme aşamasındadır ve şu anda herhangi bir ürün satışı yapılmamaktadır. Güncellemelerle sisteme farklı özellikler eklenmeye devam edecektir.</value>
+  </data>
   <data name="The model is invalid!" xml:space="preserve">
     <value>Model geçersiz!</value>
   </data>
@@ -464,6 +509,9 @@
   </data>
   <data name="There was an error while loading the page, please try again." xml:space="preserve">
     <value>Sayfa Yüklenirken Hata oluştu, tekrar deneyiniz.</value>
+  </data>
+  <data name="This application that you are authorized for is a product - category, user management system. It is quite simple, easy to manage and you can easily access all areas in the system with the menu on the left. Product and category management is very simple. You can easily switch to product and category tables from the menu on the left in the same way. You can add, update, delete operations for product and category tables in seconds with the help of buttons and see the details of the product." xml:space="preserve">
+    <value>Yetkili olduğunuz bu uygulama bir ürün - kategori, kullanıcı yönetim sistemidir. Oldukça basit, yönetimi kolaydır ve soldaki menü ile sistemdeki tüm alanlara kolayca erişebilirsiniz. Ürün ve kategori yönetimi oldukça basittir. Aynı şekilde soldaki menüden ürün ve kategori tablolarına kolayca geçiş yapabilirsiniz. Ürün ve kategori tabloları için butonlar yardımıyla saniyeler içinde ekleme, güncelleme, silme işlemlerini yapabilir ve ürünün detaylarını görebilirsiniz.</value>
   </data>
   <data name="Turkish" xml:space="preserve">
     <value>Türkçe</value>
@@ -504,6 +552,9 @@
   <data name="User" xml:space="preserve">
     <value>Kullanıcı</value>
   </data>
+  <data name="User Activity Monitoring:" xml:space="preserve">
+    <value>Kullanıcı Etkinliği İzleme:</value>
+  </data>
   <data name="User creation  successful" xml:space="preserve">
     <value>Kullanıcı oluşturma başarılı</value>
   </data>
@@ -531,8 +582,23 @@
   <data name="Users listed successfully." xml:space="preserve">
     <value>Kullanıcılar başarı ile listelendi</value>
   </data>
+  <data name="Using high-quality and accurate product images increases the user experience and makes products more eye-catching. You should pay attention to this issue so that the right product reaches the right customer." xml:space="preserve">
+    <value>Yüksek kaliteli ve doğru ürün görselleri kullanmak kullanıcı deneyimini artırır ve ürünleri daha dikkat çekici hale getirir. Doğru ürünün doğru müşteriye ulaşması için bu konuya dikkat etmelisiniz.</value>
+  </data>
+  <data name="We have compiled a few questions and answers regarding the application for you, you can find them below." xml:space="preserve">
+    <value>Uygulamaya ilişkin birkaç soru ve cevabı sizler için derledik, aşağıda bulabilirsiniz.</value>
+  </data>
+  <data name="We have compiled the following information for you on how to use the application. We recommend that you read it before you start using it!" xml:space="preserve">
+    <value>Uygulamayı nasıl kullanacağınıza dair bilgileri sizin için derledik. Kullanmaya başlamadan önce okumanızı öneririz!</value>
+  </data>
   <data name="We have sent an email to your address." xml:space="preserve">
     <value>E-mail adresine mail gönderdik.</value>
+  </data>
+  <data name="We kindly request you to read it!" xml:space="preserve">
+    <value>Okumanızı rica ederiz!</value>
+  </data>
+  <data name="We will contact you as soon as possible!" xml:space="preserve">
+    <value>En kısa sürede sizinle iletişime geçeceğiz!</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Hoşgeldiniz</value>
@@ -540,13 +606,43 @@
   <data name="Welcome Admin Page" xml:space="preserve">
     <value>Admin Paneline Hoşgeldiniz</value>
   </data>
+  <data name="Welcome to the app." xml:space="preserve">
+    <value>Uygulamaya hoşgeldiniz.</value>
+  </data>
+  <data name="Welcome to the product management system." xml:space="preserve">
+    <value>Ürün yönetim sistemine hoşgeldiniz.</value>
+  </data>
   <data name="Welcome User Page" xml:space="preserve">
     <value>Kullanıcı Sayfasına Hoşgeldiniz</value>
   </data>
   <data name="Welcome!" xml:space="preserve">
     <value>Hoş Geldiniz!</value>
   </data>
+  <data name="What are the Application Interface and Features?" xml:space="preserve">
+    <value>Uygulama Arayüzü ve Özellikleri Nelerdir?</value>
+  </data>
+  <data name="What should I do for product management?" xml:space="preserve">
+    <value>Ürün yönetimi için ne yapmalıyım?</value>
+  </data>
+  <data name="What's in the App Interface?" xml:space="preserve">
+    <value>Uygulama Arayüzünde neler var?</value>
+  </data>
+  <data name="When Adding a New Product:" xml:space="preserve">
+    <value>Yeni Bir Ürün Eklerken:</value>
+  </data>
   <data name="You can close this page." xml:space="preserve">
     <value>Bu sayfayı kapatabilirsiniz</value>
+  </data>
+  <data name="You can create a new account from the user table. This account is a user account, a random password is generated by the system for the mail account you registered while creating it and this password is sent to the mail address. The user can immediately log in to the system with this password and it becomes active." xml:space="preserve">
+    <value>Kullanıcı tablosundan yeni bir hesap oluşturabilirsiniz. Bu hesap bir kullanıcı hesabıdır, oluştururken kaydettiğiniz mail hesabı için sistem tarafından rastgele bir şifre üretilir ve bu şifre mail adresine gönderilir. Kullanıcı bu şifre ile hemen sisteme giriş yapabilir ve aktif hale gelir.</value>
+  </data>
+  <data name="You can perform basic user operations on the user panel, update the user when necessary, and view detailed information about the user using the button on the table." xml:space="preserve">
+    <value>Kullanıcı paneli üzerinden temel kullanıcı işlemlerini gerçekleştirebilir, gerektiğinde kullanıcıyı güncelleyebilir, tabloda bulunan butonu kullanarak kullanıcıya ait detaylı bilgileri görüntüleyebilirsiniz.</value>
+  </data>
+  <data name="You can see the full list of registered users in the system in the users section of the admin panel. You will see users who have not completed the registration process in red as Registration Incomplete. In such long-term cases, you can delete the user from the system or block the user from entering the system using switches on the same table. We still recommend that you try not to abuse this situation!" xml:space="preserve">
+    <value>Sistemde kayıtlı kullanıcıların tam listesini admin panelinin kullanıcılar kısmından görebilirsiniz. Kayıt işlemini tamamlamamış kullanıcıları kırmızı renkte "Kayıt Yapılmadı" olarak göreceksiniz. Bu gibi uzun vadeli durumlarda kullanıcıyı sistemden silebilir veya aynı tablodaki switch'leri kullanarak kullanıcının sisteme girmesini engelleyebilirsiniz. Yine de bu durumu kötüye kullanmamaya çalışmanızı öneririz!</value>
+  </data>
+  <data name="You can view products and get price information, but you cannot make a purchase at this time. We will activate payment transactions for you soon." xml:space="preserve">
+    <value>Ürünleri görüntüleyebilir ve fiyat bilgisi alabilirsin ancak satın alma işlemi şuan için gerçekleştiremezsin. Yakın zamanda ödeme işlemlerini senin için aktive edeceğiz.</value>
   </data>
 </root>
