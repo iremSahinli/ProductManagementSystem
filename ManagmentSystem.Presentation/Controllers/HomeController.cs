@@ -30,7 +30,7 @@ namespace ManagmentSystem.Presentation.Controllers
             var message2 = _stringLocalizer["Product listing faild"];
             ErrorNotyf(message2);
             var message3 = _stringLocalizer["Failed"];
-            return View(message3);
+            return RedirectToAction("Login", "Account");
             
         }
 

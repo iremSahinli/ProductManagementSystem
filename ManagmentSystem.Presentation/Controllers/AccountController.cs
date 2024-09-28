@@ -43,6 +43,7 @@ namespace ManagmentSystem.Presentation.Controllers
 
                 TempData["ToastMessage"] = "Registration successful! Please check your email.";
                 TempData["ToastType"] = "success";
+                SuccesNotyf("Registration successful! Please check your email.");
                 return RedirectToAction("Login", "Account");
             }
 
@@ -101,6 +102,7 @@ namespace ManagmentSystem.Presentation.Controllers
                 {
                     TempData["ToastMessage"] = "Email not confirmed!";
                     TempData["ToastType"] = "warning";
+                    ErrorNotyf("Your email or password is incorrect, please try again.");
 
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var confirmationLink = Url.Action("ConfirmEmail", "Account",
