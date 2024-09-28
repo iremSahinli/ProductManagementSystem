@@ -1,4 +1,153 @@
 ﻿@using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> Localizer
+<br />
+<br />
 
 <h1 class="text-center">@Localizer["Welcome Admin Page"]</h1>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="custom-panel">
+                <h3 class="text-center">Merhaba Admin!</h3>
+                <h3 class="text-center">Ürün yönetim sistemine hoşgeldin!</h3>
+                <p class="text-center custom-paragraph">Uygulamayı nasıl kullanman gerektiğine dair aşağıdaki bilgileri senin için derledik. Kullanmaya başlamadan önce okumanı tavsiye ederiz!</p>
+                <div class="accordion custom-accordion" id="accordionRental">
+                    <div class="accordion-item mb-3">
+                        <h5 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Uygulama Arayüzü ve Özellikleri Nelerdir?
+                                <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"></i>
+                            </button>
+                        </h5>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionRental">
+                            <div class="accordion-body text-dark custom-body">
+                                Yetkili olduğun bu uygulama ürün - kategori, kullanıcı yönetim sistemidir. Oldukça sade, kolayca yönetilebilir ve sistemdeki tüm alanlara solda bulunan menü ile rahatça ulaşabilirsin. Ürün ve kategori yönetimi çok basittir. Ürün ve kategori tabloları için yine aynı şekilde soldaki menüden rahatça geçiş yapabilirsin. Ürün ve kategori tabloları için ekleme, güncelleme, silme işlemlerini butonlar yardımıyla saniyeler içinde yapabilir ve ürüne ait detayları görebilirsin.
+                                <br>
+                                Kullanıcı paneli üzerinde kullanıcı temel işlemlerini gerçekleştirebilirsin, gerektiği durumlarda kullanıcıyı güncelleyebilir ve kullanıcıya ait detaylı bilgileri tablo üzerindeki buton yardımıyla görebilirsin.
+                                <br>
+                                Arayüzü kullanıcı dostu ve sade bir uygulamadır, uygulama halen geliştirilmekte olup şuan için ürün satışı gerçekleştirilmemektedir. Güncellemelerle farklı özellikler sisteme eklenmeye devam edecektir.
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h5 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Ürün yönetimi için neler yapmalıyım?
+                                    <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                    <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                </button>
+                            </h5>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRental">
+                                <div class="accordion-body text-dark custom-body">
+                                    <strong>Yeni Ürün Eklerken:</strong> Ürün adlarını ve açıklamalarını dikkatli bir şekilde girin, kategorilerle doğru eşleştiğinden emin olun. Ayrıca, ürünün görselini eklemek, ürünün daha kolay tanınmasını sağlar.
+                                    <br>
+                                    <strong>Ürün Görselleri:</strong> Yüksek kaliteli ve doğru ürün görselleri kullanmak, kullanıcı deneyimini artırır ve ürünlerin daha dikkat çekici olmasını sağlar. Doğru ürünün doğru müşteriye ulaşması için bu konuya dikkat etmelisin.
+                                    <br>
+                                    <strong>Doğru Kategori Doğru Ürün!:</strong> Ürünlerinizi doğru kategorilerle eşleştirdiğinizden emin olun. Ürünlerin her zaman doğru kategori altında yer alması, kullanıcıların aradıkları ürünleri daha rahat bulmasına olanak tanır.
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h5 class="accordion-header" id="headingFifth">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth">
+                                    Kullanıcı Yönetimini Nasıl Gerçekleştiririm?
+                                    <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                    <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                </button>
+                            </h5>
+                            <div id="collapseFifth" class="accordion-collapse collapse" aria-labelledby="headingFifth" data-bs-parent="#accordionRental">
+                                <div class="accordion-body text-dark custom-body">
+                                    <strong>Kullanıcı Aktivite İzleme:</strong> Admin panelinde yer alan kullanıcılar bölümünde sistemde kayıtlı kullanıcıların tam listesini görebilirsin. Kayıt işlemini tamamlamamış kullanıcıları kırmızı renkle "Kayıt Tamamlanmadı" olarak göreceksin. Bunun gibi uzun süreli durumlarda kullanıcıyı sistemden silebilir yada kullanıcının sisteme girişini switchler yardımıyla aynı tablo üzerinden engelleyebilirsin. Yine de bu durumu kötüye kullanmamaya gayret etmeni tavsiye ederiz!
+                                    <p style="color:red">Unutma, uygulamanın kontrolü senin elinde!.</p>
+                                    <strong>Yeni Kullanıcı Ekleme:</strong> Kullanıcı tablosundan yeni bir hesap oluşturabilirsin. Oluşturulan bu hesap kullanıcı hesabı olup, oluştururken kaydettiğin Mail hesabına rastgele sistem tarafından bir şifre oluşturulur ve mail adresine bu şifreyi gönderir. Kullanıcı bu şifreyle hemen sisteme giriş yapabilir ve aktif hale gelir.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+    .container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    /* Panel (Card) Stili */
+    .custom-panel {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    /* Başlık ve Paragraf Stilleri */
+    .custom-heading {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333333;
+    }
+
+    .custom-paragraph {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #172b4d;
+    }
+
+    /* Accordion Stili */
+    .custom-accordion .accordion-button {
+        font-weight: bold;
+        background-color: #f8f9fa;
+        color: #000000;
+
+    }
+
+        .custom-accordion .accordion-button:focus {
+            box-shadow: none;
+        }
+
+    .custom-accordion .accordion-body {
+        background-color: #ffffff;
+        color: #444444;
+        border-top: 1px solid #eaeaea;
+        padding: 20px;
+    }
+
+    /* Accordion item hover ve aktif durum */
+    .custom-accordion .accordion-button:not(.collapsed) {
+        background-color: #e9ecef;
+        color: #000000;
+    }
+
+        .custom-accordion .accordion-button:not(.collapsed)::after {
+            transform: rotate(90deg);
+        }
+
+
+    .accordion-button i {
+        font-size: 14px;
+    }
+
+    .accordion-button .collapse-open {
+        display: none;
+    }
+
+    .accordion-button:not(.collapsed) .collapse-open {
+        display: inline;
+    }
+
+    .accordion-button:not(.collapsed) .collapse-close {
+        display: none;
+    }
+</style>
