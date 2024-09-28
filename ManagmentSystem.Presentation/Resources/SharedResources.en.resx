@@ -123,11 +123,8 @@
   <data name="A category with this name already exists." xml:space="preserve">
     <value>A category with this name already exists.</value>
   </data>
-  <data name="ACTIONS" xml:space="preserve">
-    <value>ACTIONS</value>
-  </data>
   <data name="ACTIONS_" xml:space="preserve">
-    <value>ACTIONS_</value>
+    <value>ACTIONS</value>
   </data>
   <data name="Adding a New User:" xml:space="preserve">
     <value>Adding a New User:</value>
