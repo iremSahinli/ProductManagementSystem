@@ -12,64 +12,66 @@
 <br />
 
 <div class="card">
-    <h2 class="categories-heading">@Localizer["Categories"]</h2>
-    <div class="button-container">
-        <a asp-action="Create" class="btn btn-success create-button">@Localizer["Create New Category"]</a>
-    </div>
-
     <div class="table-responsive">
-        <table class="table align-items-center mb-0">
-            <thead>
-                <tr>
-                    <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["CATEGORY NAME"]</th>
-                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["DESCRIPTION"]</th>
-                    <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["CATEGORY TYPE"]</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            <div class="d-flex px-2 py-1">
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-xs">@Html.DisplayFor(modelItem => item.CategoryName)</h6>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex flex-column justify-content-center">
-                                <p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.Description)</p>
-                            </div>
-                        </td>
-                        <td>
-                            @if (item.ParentCategoryId != null)
-                            {
-                                <p class="text-xs text-secondary mb-0 main-category">
-                                    @Localizer["Subcategory"] 
-                                </p>
+        <h2 class="categories-heading">@Localizer["Categories"]</h2>
+        <div class="button-container">
+            <a asp-action="Create" class="btn btn-success create-button">@Localizer["Create New Category"]</a>
+        </div>
 
-                                <p class="text-xs text-secondary mb-0">
-                                     (<span style="color:#11cdef ">@Localizer["Main Category"]:</span> @item.ParentCategoryName)
-                                </p>
-                            }
-                            else
-                            {
-                                <p class="text-xs text-secondary mb-0 main-category">@Localizer["Main Category"]</p>
-                            }
-                        </td>
-                        <td class="align-middle text-center">
-                            <div class="button-group">
-                                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
-                            </div>
-                        </td>
+        <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+                <thead>
+                    <tr>
+                        <th class="text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["CATEGORY NAME"]</th>
+                        <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["DESCRIPTION"]</th>
+                        <th class="text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Localizer["CATEGORY TYPE"]</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Localizer["ACTIONS"]</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-xs">@Html.DisplayFor(modelItem => item.CategoryName)</h6>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.Description)</p>
+                                </div>
+                            </td>
+                            <td>
+                                @if (item.ParentCategoryId != null)
+                                {
+                                    <p class="text-xs text-secondary mb-0 main-category">
+                                        @Localizer["Subcategory"]
+                                    </p>
+
+                                    <p class="text-xs text-secondary mb-0">
+                                        (<span style="color:#11cdef ">@Localizer["Main Category"]:</span> @item.ParentCategoryName)
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p class="text-xs text-secondary mb-0 main-category">@Localizer["Main Category"]</p>
+                                }
+                            </td>
+                            <td class="align-middle text-center">
+                                <div class="button-group">
+                                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">@Localizer["Update"]</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">@Localizer["Details"]</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">@Localizer["Delete"]</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

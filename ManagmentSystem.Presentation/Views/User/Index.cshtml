@@ -1,6 +1,152 @@
 ﻿@using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> Localizer
 
+<br />
+<br />
 <h1 class="text-center">@Localizer["Welcome User Page"]</h1>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="custom-panel">
+                <h3 class="text-center">Merhaba Kullanıcı!</h3>
+                <h3 class="text-center">Uygulamaya Hoşgeldin.</h3>
+                <p class="text-center custom-paragraph">Uygulamaya yönelik senin için birkaç soru-cevap derledik, aşağıda bulabilirsin.</p>
+                <p class="text-center" style="color:#2dce89 ">Okumanı önemle rica ederiz!</p>
+                <div class="accordion custom-accordion" id="accordionRental">
+                    <div class="accordion-item mb-3">
+                        <h5 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Uygulama Arayüzünde neler var?
+                                <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"></i>
+                            </button>
+                        </h5>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionRental">
+                            <div class="accordion-body text-dark custom-body">
+                                Şuan için uygulama arayüzünde kullanıcılara özel olarak ürünler sayfasını görüntüleyebilir, profil bilgilerini güncelleyebilirsin.
+                                <br />
+                                Uygulama geliştirilmeye devam etmekte ve kullanıcılara yeni özellikler sunmak için çalışmalar yapmaktayız, bizi takip etmeyi unutma lütfen!
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h5 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Ürün Satın Alma İşlemi Yapabilirmiyim?
+                                    <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                    <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                </button>
+                            </h5>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRental">
+                                <div class="accordion-body text-dark custom-body">
+                                    Ürünleri görüntüleyebilir ve fiyat bilgisi alabilirsin ancak satın alma işlemi şuan için gerçekleştiremezsin. Yakın zamanda ödeme işlemlerini senin için aktive edeceğiz.
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h5 class="accordion-header" id="headingFifth">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                    Site de Yetkili Kişiye(Admin) Nasıl Ulaşabilirim?
+                                    <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                    <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3"></i>
+                                </button>
+                            </h5>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionRental">
+                                <div class="accordion-body text-dark custom-body">
+                                    Hesap bilgilerinle ilgili bir problem yaşarsan bize mail <a href="#"></a>
+                                    <br />
+                                    <strong>mertgdc@gmail.com</strong>
+                                    <br />
+                                    En kısa sürede sizinle iletişime geçeceğiz!
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+    .container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    /* Panel (Card) Stili */
+    .custom-panel {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    /* Başlık ve Paragraf Stilleri */
+    .custom-heading {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333333;
+    }
+
+    .custom-paragraph {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #172b4d;
+    }
+
+    /* Accordion Stili */
+    .custom-accordion .accordion-button {
+        font-weight: bold;
+        background-color: #f8f9fa;
+        color: #000000;
+    }
+
+        .custom-accordion .accordion-button:focus {
+            box-shadow: none;
+        }
+
+    .custom-accordion .accordion-body {
+        background-color: #ffffff;
+        color: #444444;
+        border-top: 1px solid #eaeaea;
+        padding: 20px;
+    }
+
+    /* Accordion item hover ve aktif durum */
+    .custom-accordion .accordion-button:not(.collapsed) {
+        background-color: #e9ecef;
+        color: #000000;
+    }
+
+        .custom-accordion .accordion-button:not(.collapsed)::after {
+            transform: rotate(90deg);
+        }
+
+
+    .accordion-button i {
+        font-size: 14px;
+    }
+
+    .accordion-button .collapse-open {
+        display: none;
+    }
+
+    .accordion-button:not(.collapsed) .collapse-open {
+        display: inline;
+    }
+
+    .accordion-button:not(.collapsed) .collapse-close {
+        display: none;
+    }
+</style>
 
 
