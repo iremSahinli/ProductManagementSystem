@@ -32,7 +32,7 @@ namespace ManagmentSystem.Presentation.Areas.User.Controllers
         {
             var identityUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            // ID'yi Guid'e dönüştürüyoruz
+            // ID'yi Guid'e dönüştürüyoruz // x
             if (!Guid.TryParse(identityUserIdString, out Guid identityUserId))
             {
                 ErrorNotyf("Geçersiz kullanıcı ID'si.");
