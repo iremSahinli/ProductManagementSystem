@@ -286,5 +286,27 @@ namespace ManagmentSystem.Business.Services.ProductServices
             var categoryNames = categories.Select(c => c.CategoryName).ToList();
             return string.Join("- ", categoryNames);
         }
+
+        public async Task<IDataResult<List<ProductListDTO>>> GetProductsByCategoryAsync(Guid categoryId)
+        {
+            var products = await _productRepository.GetAllAsync(p => p.ProductCategories.Any(pc => pc.CategoryId == categoryId));
+
+            var productListDtos = products.Select(product => new ProductListDTO
+            {
+                Id = product.Id,
+                ProductName = product.ProductName,
+                ProductDescription = product.ProductDescription,
+                ProductPrice = product.ProductPrice,
+                ProductImage = product.ProductImage,
+                SelectedCategories = product.ProductCategories
+                    .Where(pc => pc.Status != Status.Deleted)
+                    .Select(pc => pc.Category.CategoryName)
+                    .ToList()
+            }).ToList();
+
+            return productListDtos.Count > 0
+                ? new SuccessDataResult<List<ProductListDTO>>(productListDtos, "Ürünler Listelendi")
+                : new ErrorDataResult<List<ProductListDTO>>(productListDtos, "Bu kategoride ürün bulunamadı.");
+        }
     }
 }

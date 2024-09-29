@@ -7,13 +7,37 @@
 @inject IStringLocalizer<SharedResources> Localizer
 
 <h1 class="text-center">@Localizer["Products"]</h1>
-<br />
+
 <br />
 
+<!-- Kategori Dropdown -->
+<div class="container text-center">
+    <label for="categorySelect">@Localizer[""]</label>
+    <select id="categorySelect" class="form-control filter-select">
+        <option value="">@Localizer["All Categories"]</option>
+        @foreach (var category in ViewBag.Categories)
+        {
+            <option value="@category.Id">@category.CategoryName</option>
+        }
+    </select>
+</div>
 
+<br />
+
+<!-- Seçili Filtreyi Gösteren Chip Alanı -->
+<div class="container text-left" id="selectedFilter" style="display:none; margin-left: 0;">
+    <div class="chip-container">
+        <span class="badge badge-primary filter-chip">
+            <span id="selectedCategoryName"></span>
+            <button type="button" class="btn btn-sm btn-light filter-chip-close" id="clearFilterBtn">&times;</button>
+        </span>
+    </div>
+</div>
+
+<br />
 
 <div class="container">
-    <div class="row">
+    <div id="productList" class="row">
         @foreach (var item in Model)
         {
             <div class="col-md-4 mb-4 d-flex justify-content-center text-center">
@@ -23,10 +47,8 @@
                         <h5 class="card-title">@Html.DisplayFor(modelItem => item.ProductName)</h5>
                         <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
                         <p class="card-text"><strong>Price:</strong> @Html.DisplayFor(modelItem => item.ProductPrice) <span class="currency-symbol">₺</span></p>
-
                     </div>
                     <div class="card-footer">
-                        <i class="ni ni-cart"></i>
                         <a href="#" class="btn btn-primary">@Localizer["Buy"]</a>
                     </div>
                 </div>
@@ -36,29 +58,30 @@
 </div>
 
 <style>
+    /* Kart stil düzenlemeleri */
     .custom-card {
-        background-color: rgba(255, 255, 255, 0.5); /* Beyaz arka plan ve %90 opaklık */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
-        border-radius: 20px; /* Köşeleri yuvarlama */
-        transition: transform 0.2s ease-in-out; /* Hover animasyonu için */
-        width: 100%; /* Kart genişliği kolon genişliğine göre */
-        max-width: 300px; /* Maksimum genişlik */
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        transition: transform 0.2s ease-in-out;
+        width: 100%;
+        max-width: 300px;
     }
 
     .card:hover {
-        transform: scale(1.03); /* Hover yapıldığında kartın biraz büyümesi */
+        transform: scale(1.03);
     }
 
     .card-img-top {
         height: 180px;
-        object-fit: cover; /* Görselin taşmadan sığması */
-        border-top-left-radius: 10px; /* Üst köşelerin yuvarlanması */
+        object-fit: cover;
+        border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
 
     .card-body {
-        padding: 15px; /* İç boşluk */
-        flex-grow: 1; /* Kart içeriğinin kalanını doldur */
+        padding: 15px;
+        flex-grow: 1;
     }
 
     .card-footer {
@@ -66,4 +89,112 @@
         border-top: none;
         text-align: center;
     }
+
+    /* Kategori Dropdown düzenlemeleri */
+    .filter-select {
+        max-width: 250px;
+    }
+
+    /* Chip alanı ve çarpı butonu hizalaması */
+    .chip-container {
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+
+    .filter-chip {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #007bff;
+        color: white;
+    }
+
+    .filter-chip-close {
+        font-size: 12px;
+        background-color: white;
+        border-radius: 4px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        color: black;
+        margin-left: 8px;
+        cursor: pointer;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filter-chip-close:hover {
+        background-color: lightgray;
+    }
+
+    /* Çarpı simgesinin boyutunu ve hizasını ayarlama */
+    .filter-chip-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    /* Gerekli margin ayarları */
+    .filter-chip-close {
+        margin-bottom: 0 !important;
+    }
 </style>
+
+<script>
+    $(document).ready(function () {
+        $('#categorySelect').change(function () {
+            var categoryId = $(this).val();
+            var categoryName = $('#categorySelect option:selected').text(); // Seçilen kategori adını alıyoruz
+
+            if (categoryId) {
+                // AJAX çağrısı ile kategoriye göre ürünleri getir
+                $.ajax({
+                    url: '@Url.Action("FilterProductsByCategory", "User")',
+                    type: 'GET',
+                    data: { categoryId: categoryId },
+                    success: function (data) {
+                        // Ürünleri güncelle
+                        $('#productList').html(data);
+
+                        // Seçili kategori ismini göster ve "X" butonunu etkinleştir
+                        $('#selectedCategoryName').text(categoryName);
+                        $('#selectedFilter').show();
+                    },
+                    error: function () {
+                        alert('Ürünler yüklenirken bir hata oluştu.');
+                    }
+                });
+            }
+        });
+
+        // "X" butonuna tıklandığında filtreyi kaldır
+        $('#clearFilterBtn').click(function () {
+            // Tüm ürünleri getir
+            $.ajax({
+                url: '@Url.Action("GetProducts", "User")',
+                type: 'GET',
+                success: function (data) {
+                    $('#productList').html($(data).find('#productList').html());
+
+                    // Filtreyi gizle ve kategori dropdown'ını sıfırla
+                    $('#selectedFilter').hide();
+                    $('#categorySelect').val('');
+                },
+                error: function () {
+                    alert('Tüm ürünler yüklenirken bir hata oluştu.');
+                }
+            });
+        });
+    });
+</script>

@@ -90,5 +90,14 @@ namespace ManagmentSystem.Business.Services.ProductServices
         /// </returns>
         Task<string> GetCategoryNamesByProductIdAsync(Guid productId); //birden fazla kategoriler için.
 
+        /// <summary>
+        /// Belirtilen kategori kimliğine (ID) göre ürünleri getirir.
+        /// </summary>
+        /// <param name="categoryId">Ürünleri getirilecek kategorinin benzersiz kimliği (ID).</param>
+        /// <returns>
+        /// Ürünlerin detaylarını içeren ProductListDTO nesnelerinin listesini döndüren bir IDataResult ile tamamlanan asenkron bir görev.
+        /// </returns>
+        Task<IDataResult<List<ProductListDTO>>> GetProductsByCategoryAsync(Guid categoryId);
+
     }
 }
