@@ -1,0 +1,13 @@
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\bin\Debug\net8.0\ManagmentSystem.Domain.deps.json
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\bin\Debug\net8.0\ManagmentSystem.Domain.dll
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\bin\Debug\net8.0\ManagmentSystem.Domain.pdb
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.csproj.AssemblyReference.cache
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.AssemblyInfo.cs
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.sourcelink.json
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.dll
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\refint\ManagmentSystem.Domain.dll
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ManagmentSystem.Domain.pdb
+C:\Users\pc\OneDrive\Masaüstü\HS-15-Ekip2-Project\ManagmentSystem.Domain\obj\Debug\net8.0\ref\ManagmentSystem.Domain.dll

@@ -1,0 +1,1565 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ManagmentSystem.Presentation.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ManagmentSystem.Presentation.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\404.mp4",
+      "PackagePath": "staticwebassets\\404.mp4"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\Access.gif",
+      "PackagePath": "staticwebassets\\Access.gif"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\Generic.png",
+      "PackagePath": "staticwebassets\\Generic.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\Server.png",
+      "PackagePath": "staticwebassets\\Server.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\css\\argon-dashboard.css",
+      "PackagePath": "staticwebassets\\assets\\css\\argon-dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\css\\argon-dashboard.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\argon-dashboard.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\css\\argon-dashboard.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\argon-dashboard.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\css\\nucleo-icons.css",
+      "PackagePath": "staticwebassets\\assets\\css\\nucleo-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\css\\nucleo-svg.css",
+      "PackagePath": "staticwebassets\\assets\\css\\nucleo-svg.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo-icons.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo-icons.eot"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo-icons.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo-icons.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo-icons.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo-icons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo-icons.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo-icons.woff"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo-icons.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo-icons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo.eot"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo.ttf"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo.woff"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\fonts\\nucleo.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\nucleo.woff2"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\apple-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\apple-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\bg-profile.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bg-profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\bg1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bg1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\bruce-mars.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bruce-mars.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\carousel-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\carousel-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\carousel-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\carousel-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\carousel-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\carousel-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved0.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved11-small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved11-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved19.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved21.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved5-small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved5-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved6-small.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved6-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\curved9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\curved9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\curved-images\\white-curved.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\curved-images\\white-curved.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\down-arrow-dark.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\down-arrow-dark.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\down-arrow-white.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\down-arrow-white.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\down-arrow.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\down-arrow.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\home-decor-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\home-decor-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\home-decor-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\home-decor-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\home-decor-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\home-decor-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\icons\\flags\\AU.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\flags\\AU.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\icons\\flags\\BR.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\flags\\BR.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\icons\\flags\\DE.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\flags\\DE.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\icons\\flags\\GB.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\flags\\GB.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\icons\\flags\\US.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\flags\\US.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\icons\\flags\\flag-of-Turkey.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\flags\\flag-of-Turkey.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\illustrations\\icon-documentation.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\icon-documentation.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\illustrations\\rocket-white.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\rocket-white.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\ivana-square.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\ivana-square.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\ivancik.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\ivancik.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\kal-visuals-square.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\kal-visuals-square.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\logo-ct-dark.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-ct-dark.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\logo-ct.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-ct.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\logos\\mastercard.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logos\\mastercard.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\logos\\visa.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logos\\visa.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\marie.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\marie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\plastikler.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\plastikler.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\pattern-lines.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\pattern-lines.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\shape-1.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\shape-1.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\shape-2.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\shape-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\shape-3.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\shape-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\wave-down.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\wave-down.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\wave-up.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\wave-up.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\waves-gray.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\waves-gray.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\shapes\\waves-white.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\shapes\\waves-white.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\icon-sun-cloud.png",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\icon-sun-cloud.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\logo-atlassian.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\logo-atlassian.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\logo-invision.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\logo-invision.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\logo-jira.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\logo-jira.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\logo-slack.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\logo-slack.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\logo-spotify.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\logo-spotify.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\logo-webdev.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\logo-webdev.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\small-logos\\logo-xd.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\small-logos\\logo-xd.svg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\team-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\team-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\team-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\angular.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\angular.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\bootstrap.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\bootstrap.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\dribbble.png",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\dribbble.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\dropbox.png",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\dropbox.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\mastercard.png",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\mastercard.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\paypal.png",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\paypal.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\react.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\react.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\sketch.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\sketch.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\slack.png",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\slack.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\spotify.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\spotify.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\tim.png",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\tim.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\unass.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\unass.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\visa.png",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\visa.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\theme\\vue.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\theme\\vue.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\img\\vr-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\vr-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\argon-dashboard.js",
+      "PackagePath": "staticwebassets\\assets\\js\\argon-dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\argon-dashboard.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\argon-dashboard.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\argon-dashboard.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\argon-dashboard.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\core\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\core\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\core\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\core\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\core\\popper.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\core\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\plugins\\Chart.extension.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\Chart.extension.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\plugins\\bootstrap-notify.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\bootstrap-notify.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\plugins\\chartjs.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\chartjs.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\plugins\\perfect-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\perfect-scrollbar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\js\\plugins\\smooth-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins\\smooth-scrollbar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_avatars.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_avatars.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_breadcrumbs.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_breadcrumbs.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_cards.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_dark-version.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_dark-version.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_dropup.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_dropup.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_fixed-plugin.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_fixed-plugin.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_footer.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_gradients.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_gradients.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_header.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_info-areas.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_info-areas.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_misc.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_nav.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_nav.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_navbar-vertical.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_navbar-vertical.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_navbar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_popovers.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_popovers.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_progress.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_rtl.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_rtl.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_social-buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_social-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_tables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_tilt.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_tilt.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_timeline.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_timeline.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_tooltips.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_tooltips.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_typography.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_typography.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_utilities-extend.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_utilities-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_accordion.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_accordion.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_containers.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_containers.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_helpers.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_helpers.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_maps.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_maps.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_offcanvas.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_placeholders.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_placeholders.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_spinners.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_spinners.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_toasts.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_toasts.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_labels.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\forms\\_validation.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_color-bg.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_color-bg.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_position.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_stacks.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_stacks.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_vr.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\helpers\\_vr.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_backdrop.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_backdrop.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_container.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\utilities\\_api.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\bootstrap\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\bootstrap\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\cards\\card-background.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\cards\\card-background.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\cards\\card-carousel.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\cards\\card-carousel.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\custom\\_styles.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\custom\\_styles.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\custom\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\custom\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\forms\\_form-switch.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\forms\\_form-switch.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\forms\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\forms\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\forms\\_inputs.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\forms\\_inputs.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\forms\\_labels.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\mixins\\_colored-shadows.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\mixins\\_colored-shadows.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\mixins\\_social-buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\mixins\\_social-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\mixins\\mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\mixins\\mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\plugins\\free\\_flatpickr.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\plugins\\free\\_flatpickr.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\plugins\\free\\_nouislider.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\plugins\\free\\_nouislider.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\plugins\\free\\_perfect-scrollbar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\plugins\\free\\_perfect-scrollbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\plugins\\free\\_prism.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\plugins\\free\\_prism.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\plugins\\free\\plugins.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\plugins\\free\\plugins.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\theme.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\theme.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_animations.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_animations.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_avatars.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_avatars.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_breadcrumb.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_cards-extend.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_cards-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_cards.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_choices.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_choices.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_dark-version.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_dark-version.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_dropdowns.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_dropdowns.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_fixed-plugin.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_fixed-plugin.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_form-switch.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_form-switch.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_full-calendar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_full-calendar.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_header.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_info-areas.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_info-areas.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_misc-extend.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_misc-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_misc.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_navbar-vertical.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_navbar-vertical.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_navbar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_rtl.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_rtl.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_social-buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_social-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_table.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_table.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_timeline.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_timeline.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_utilities-extend.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_utilities-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\assets\\scss\\argon-dashboard\\variables\\_virtual-reality.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\argon-dashboard\\variables\\_virtual-reality.scss"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\031641f5-f7c1-45b6-b2f2-e452ab8f0e8e_Ekran görüntüsü 2024-09-16 011928.png",
+      "PackagePath": "staticwebassets\\uploads\\031641f5-f7c1-45b6-b2f2-e452ab8f0e8e_Ekran görüntüsü 2024-09-16 011928.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\105a641c-cc39-43b0-93d4-6a0f2744b90b_IMG_20240917_155121_669 (1).webp",
+      "PackagePath": "staticwebassets\\uploads\\105a641c-cc39-43b0-93d4-6a0f2744b90b_IMG_20240917_155121_669 (1).webp"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\1669b960-e101-46ed-abc5-12acede5b916_ikram-seti-11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1669b960-e101-46ed-abc5-12acede5b916_ikram-seti-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\1ad013a2-f201-40f0-be97-64321b91e539_Vileda.html",
+      "PackagePath": "staticwebassets\\uploads\\1ad013a2-f201-40f0-be97-64321b91e539_Vileda.html"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\1e2a3fb4-8b29-4d8f-8956-fc6219aa2532_gitHub_Profile.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1e2a3fb4-8b29-4d8f-8956-fc6219aa2532_gitHub_Profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\266ec4f5-e392-4f12-b86a-275c1eb0c592_vişne.jpg",
+      "PackagePath": "staticwebassets\\uploads\\266ec4f5-e392-4f12-b86a-275c1eb0c592_vişne.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\2b4920f4-2e10-4b5a-b4bd-98a8e568a96f_ikram-seti-11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2b4920f4-2e10-4b5a-b4bd-98a8e568a96f_ikram-seti-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\2c2f1305-abde-42db-8bf7-44c2d0981ce7_Sepet.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2c2f1305-abde-42db-8bf7-44c2d0981ce7_Sepet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\3dc2feb7-aad4-430d-9691-7c6b8865da36_İrem.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3dc2feb7-aad4-430d-9691-7c6b8865da36_İrem.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\3e66a09e-2ac5-41a0-aa8e-f31d46cf1d1e_Ekran görüntüsü 2024-09-16 191049.png",
+      "PackagePath": "staticwebassets\\uploads\\3e66a09e-2ac5-41a0-aa8e-f31d46cf1d1e_Ekran görüntüsü 2024-09-16 191049.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\453eaecc-a03a-4837-8723-672df9c0a895_tabaklik.jpg",
+      "PackagePath": "staticwebassets\\uploads\\453eaecc-a03a-4837-8723-672df9c0a895_tabaklik.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\487c7d6a-948b-45ea-9f0c-cd617ce4687e_Buz_kalip.jpg",
+      "PackagePath": "staticwebassets\\uploads\\487c7d6a-948b-45ea-9f0c-cd617ce4687e_Buz_kalip.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\535f459a-3107-4b35-85e6-e4865e95a294_ikram-seti-11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\535f459a-3107-4b35-85e6-e4865e95a294_ikram-seti-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\5626caba-431a-4f3b-a2c9-c75b599f5cd2_Plastik kab.jpg",
+      "PackagePath": "staticwebassets\\uploads\\5626caba-431a-4f3b-a2c9-c75b599f5cd2_Plastik kab.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\59803cf6-9531-4bb9-a64b-31070ac705d8_Ekran görüntüsü 2024-09-11 212223.png",
+      "PackagePath": "staticwebassets\\uploads\\59803cf6-9531-4bb9-a64b-31070ac705d8_Ekran görüntüsü 2024-09-11 212223.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\65e7c6a5-77f1-4a24-ba0e-67082573ad40_Ekran görüntüsü 2024-09-11 212223.png",
+      "PackagePath": "staticwebassets\\uploads\\65e7c6a5-77f1-4a24-ba0e-67082573ad40_Ekran görüntüsü 2024-09-11 212223.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\7c9e92ce-0645-478f-b994-b179aab91c4b_456313219_1243059500332683_8046785174692797181_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7c9e92ce-0645-478f-b994-b179aab91c4b_456313219_1243059500332683_8046785174692797181_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\818a8857-6d34-4f5c-9a7c-ab71f65ae692_gitHub_Profile.jpg",
+      "PackagePath": "staticwebassets\\uploads\\818a8857-6d34-4f5c-9a7c-ab71f65ae692_gitHub_Profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\85374c85-f721-4893-9cad-233b57695fc1_gitHub_Profile.jpg",
+      "PackagePath": "staticwebassets\\uploads\\85374c85-f721-4893-9cad-233b57695fc1_gitHub_Profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\87c9f98b-bc0a-4d05-b8a9-487f390740c3_nohut.webp",
+      "PackagePath": "staticwebassets\\uploads\\87c9f98b-bc0a-4d05-b8a9-487f390740c3_nohut.webp"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\8984d5ab-0f6e-497d-b747-94af7ef5ddd3_IMG_20240917_155121_669 (1).webp",
+      "PackagePath": "staticwebassets\\uploads\\8984d5ab-0f6e-497d-b747-94af7ef5ddd3_IMG_20240917_155121_669 (1).webp"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\8f31917e-8e83-4307-86e7-bd5da0e0267b_vileda.webp",
+      "PackagePath": "staticwebassets\\uploads\\8f31917e-8e83-4307-86e7-bd5da0e0267b_vileda.webp"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\90472fa8-d11b-4194-b149-bfabb25252c8_bugday-unu.jpg",
+      "PackagePath": "staticwebassets\\uploads\\90472fa8-d11b-4194-b149-bfabb25252c8_bugday-unu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\Not Image.jpg",
+      "PackagePath": "staticwebassets\\uploads\\Not Image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\b72821a2-3142-4817-8938-9df40e323b7c_Ekran görüntüsü 2024-09-10 160900.png",
+      "PackagePath": "staticwebassets\\uploads\\b72821a2-3142-4817-8938-9df40e323b7c_Ekran görüntüsü 2024-09-10 160900.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\c50c6055-d2bb-4d90-8f82-a40a4f564cac_Ekran görüntüsü 2024-07-28 154630.png",
+      "PackagePath": "staticwebassets\\uploads\\c50c6055-d2bb-4d90-8f82-a40a4f564cac_Ekran görüntüsü 2024-07-28 154630.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\c594c056-235e-4f48-a5b3-ece014465888_vişne.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c594c056-235e-4f48-a5b3-ece014465888_vişne.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\cde30834-a021-45fd-813a-2c0de923405e_Ekran görüntüsü 2024-09-17 125820.png",
+      "PackagePath": "staticwebassets\\uploads\\cde30834-a021-45fd-813a-2c0de923405e_Ekran görüntüsü 2024-09-17 125820.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\d73dd088-38d4-4af7-9382-805c261a957a_vişne.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d73dd088-38d4-4af7-9382-805c261a957a_vişne.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\d74757b7-34db-45a0-ad11-ef7066cf07ba_1111.png",
+      "PackagePath": "staticwebassets\\uploads\\d74757b7-34db-45a0-ad11-ef7066cf07ba_1111.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\d9a5e1b7-84a6-4bcf-9b49-09c1cd11618e_mango.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d9a5e1b7-84a6-4bcf-9b49-09c1cd11618e_mango.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\e22b1b07-fc7c-4751-9d24-ab321c444782_Buz_kalip.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e22b1b07-fc7c-4751-9d24-ab321c444782_Buz_kalip.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\e69aedb9-f3d7-4f66-bcc2-8eced71c7825_IMG_20231007_143345.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e69aedb9-f3d7-4f66-bcc2-8eced71c7825_IMG_20231007_143345.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\e9160f8d-d8e1-4467-8ba9-50d45728ee71_Ekran görüntüsü 2024-09-16 191049.png",
+      "PackagePath": "staticwebassets\\uploads\\e9160f8d-d8e1-4467-8ba9-50d45728ee71_Ekran görüntüsü 2024-09-16 191049.png"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\english-flag.jpg",
+      "PackagePath": "staticwebassets\\uploads\\english-flag.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\ikram-seti-11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ikram-seti-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\pc\\OneDrive\\Masaüstü\\HS-15-Ekip2-Project\\ManagmentSystem.Presentation\\wwwroot\\uploads\\turkish-flag.jpg",
+      "PackagePath": "staticwebassets\\uploads\\turkish-flag.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ManagmentSystem.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ManagmentSystem.Presentation.props",
+      "PackagePath": "build\\ManagmentSystem.Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ManagmentSystem.Presentation.props",
+      "PackagePath": "buildMultiTargeting\\ManagmentSystem.Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ManagmentSystem.Presentation.props",
+      "PackagePath": "buildTransitive\\ManagmentSystem.Presentation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
